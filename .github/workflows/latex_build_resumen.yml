@@ -1,8 +1,8 @@
-name: Compile LaTeX document
+name: Compile LaTeX document: Resumen Compilado
 on:
   push:
     paths:
-      - '**/*.tex'
+      - 'Resumen Compilado.tex'
     branches:
       - main
 
@@ -12,34 +12,27 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-
-    - name: Find Modified TeX Files
-      id: find-tex
-      run: |
-        echo "changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '\.tex$' | xargs)" >> $GITHUB_ENV
       
     - name: Set up TeX Live
       uses: xu-cheng/latex-action@v2
       with:
-        root_file: ${{ env.changed_files }}
-    
+        root_file: Resumen Compilado.tex
+
     - name: Compile LaTeX document
       uses: xu-cheng/latex-action@v3
       with:
-        root_file: ${{ env.changed_files }}
+        root_file: Resumen Compilado.tex
 
     - name: Upload PDF
       uses: actions/upload-artifact@v2
-      if: env.changed_files != ''
       with:
         name: PDF
-        path: "${{ env.changed_files }}.pdf"
+        path: "Resumen Compilado.pdf"
 
     - name: Commit PDF
-      if: env.changed_files != ''
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add -f "${{ env.changed_files }}.pdf"
+        git add -f "Resumen Compilado.pdf"
         git commit -m "chore: se agrega el PDF compilado ♻️" || echo "No changes to commit"
         git push
