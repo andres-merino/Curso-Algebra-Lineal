@@ -1,4 +1,4 @@
-name: Compile LaTeX document: Resumen Compilado
+name: Compile LaTeX document
 on:
   push:
     paths:
