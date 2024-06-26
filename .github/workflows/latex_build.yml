@@ -12,18 +12,19 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      
-    - name: Set up TeX Live
-      uses: xu-cheng/latex-action@v2
 
     - name: Find Modified TeX Files
       id: find-tex
       run: |
         echo "changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep '\.tex$' | xargs)" >> $GITHUB_ENV
-
+      
+    - name: Set up TeX Live
+      uses: xu-cheng/latex-action@v2
+      with:
+        root_file: ${{ env.changed_files }}
+    
     - name: Compile LaTeX document
       uses: xu-cheng/latex-action@v3
-      if: env.changed_files != ''
       with:
         root_file: ${{ env.changed_files }}
 
