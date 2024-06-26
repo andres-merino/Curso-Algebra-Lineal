@@ -1,0 +1,2237 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{systeme}
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos}
+\asignatura{Álgebra lineal}
+\tema{Ejercicios resueltos}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+% -- Comandos adicionales
+\setlist[enumerate]{label=\roman*.}
+
+\begin{document}
+
+\encabezado
+
+\vspace*{-10mm}
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Matrices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Dada la matriz 
+    \[
+        A = \begin{pmatrix} 
+            1 & 2 & 3 \\ 
+            4 & 5 & 6 \\ 
+            -1 & 0 & 2
+            \end{pmatrix},
+    \]
+    calcule:
+\begin{enumerate}
+    \item $A^\intercal + A$
+    \item $A - A$
+    \item $A + A$
+    \item $3A$
+\end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+    \item Se tiene que:
+    \[
+    A^\intercal + A 
+    = \begin{pmatrix} 1 & 4 & -1\\ 2 & 5 & 0 \\  3 & 6 &2\end{pmatrix} +
+      \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ -1 & 0 &2\end{pmatrix} 
+    = \begin{pmatrix} 2 & 6 & 2 \\ 6 & 10& 6 \\  2 & 6 & 4  \end{pmatrix}
+    \]
+    \item Se tiene que:
+    \[
+    A - A 
+    = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ -1 & 0 & 2\end{pmatrix}
+    - \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ -1 & 0 & 2\end{pmatrix}
+    = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\  0 & 0 & 0\end{pmatrix}
+    \]
+    \item Se tiene que:
+    \[
+    A + A 
+    = \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ -1 & 0 & 2\end{pmatrix}
+    + \begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ -1 & 0 & 2\end{pmatrix}
+    = \begin{pmatrix} 2 & 4 & 6 \\ 8 & 10 & 12 \\ -2 & 0 & 4\end{pmatrix}
+    \]
+    \item Se tiene que:
+    \[
+    3A 
+    = 3\begin{pmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ -1 & 0 & 2\end{pmatrix}
+    =  \begin{pmatrix} 3 & 6 & 9 \\ 12 & 15 & 18 \\ -3 & 0 & 6\end{pmatrix}
+    \]
+\end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Utilizando las matrices
+    \[
+    A = \begin{pmatrix}1&2&3&-1\\-2&3&1&5\end{pmatrix}, \quad 
+    B=\begin{pmatrix} 1 &0 &2 \\ -1& -1& 1\\ 0&2& 0 \\ 1& 1& 0\end{pmatrix}, \quad C=\begin{pmatrix}1&0&0\\2&1&0 \\3&2&1\end{pmatrix}, 
+    \]
+    \[
+    D=\begin{pmatrix}1&2&3\\0&1&0\\-1&0&2\end{pmatrix} \texty E=\begin{pmatrix}1&2&0&0\\0&0&-1&-2\end{pmatrix};
+    \] 
+    calcule:
+    \begin{enumerate}
+        \item $AB$;
+        \item $BC$;
+        \item $B(C+D)$;
+        \item $(E+A)B$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+\begin{enumerate}
+    \item $AB = \begin{pmatrix} -2&3&4\\0&4&-1\end{pmatrix}$.
+    \item $BC= \begin{pmatrix}7&4&2\\0&1&1\\4&2&0\\3&1&0\end{pmatrix}$.
+    \item $B(C+D)=\begin{pmatrix}1&0&2\\-1&-1&1\\0&2&0\\1&1&0\end{pmatrix}\begin{pmatrix} 2&3&3\\2&2&0\\2&2&3 \end{pmatrix}
+    =\begin{pmatrix}6&6&9\\-2&-2&0\\4&4&0\\4&4&3\end{pmatrix}$.
+    \item $(E+A)B = \begin{pmatrix}2&4&3&-1\\-2&3&0&3\end{pmatrix}
+    \begin{pmatrix}1&0&2\\-1&-1&1&\\0&2&0\\1&1&0\end{pmatrix}
+    =\begin{pmatrix}-3&1&8\\-2&0&-1\end{pmatrix}$.
+\end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Considere la matriz
+    \[ 
+        A=\begin{pmatrix}
+            1 & 2 & 0 \\
+            0 & 1 & 3 \\
+            0 & 0 & 1 
+        \end{pmatrix} 
+    \]
+    y sea $B=A-I$; donde $I$ es la identidad. Calcule $B^{n}$ para todo $n>0$.
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+Para $n=1$,
+    \[
+        B^{1}=B=A-I= \begin{pmatrix}
+            0 & 2 & 0 \\
+            0 & 0 & 3 \\
+            0 & 0 & 0
+        \end{pmatrix}.
+    \]
+Para $n=2$, 
+    \[
+        B^{2}=B  B = \begin{pmatrix}
+            0 & 0 & 6 \\
+            0 & 0 & 0 \\
+            0 & 0 & 0 
+        \end{pmatrix}.
+    \]
+Para $n=3$, 
+    \[
+        B^{3}=B^{2} B= \begin{pmatrix}
+            0 & 0 & 0 \\
+            0 & 0 & 0 \\
+            0 & 0 & 0
+        \end{pmatrix} 
+        = 0.
+    \]
+que es la matriz nula.
+
+Para $n\geq 3$, $B^{n}=B^{3} B^{n-3}=0$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Dadas las siguientes matrices:
+    \[
+        A=
+        \begin{pmatrix}
+        3 & 1 & 3\\
+        1 & 2 & 3\\
+        -1 & -3 & 4\\
+        3 & 9 & -12
+        \end{pmatrix}
+        , \hspace{0.1cm}
+       B=
+        \begin{pmatrix}
+        1 & -1 & 1 & 4\\
+        3 & 2 & 1 & 2\\
+        4 & 2 & 2 & 8
+        \end{pmatrix}
+        \texty
+        C=
+        \begin{pmatrix}
+        -2 & 3 & 1 &0\\
+        1 & 3 & -1 & -2
+        \end{pmatrix},
+    \]
+    hallar su rango.
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+    \item 
+        Vamos a hallar el rango de $A$, para ello reduciremos la matriz $A$ por filas.
+        \begin{align*}
+            \begin{pmatrix}
+            3 & 1 & 3\\
+            1 & 2 & 3\\
+            -1 & -3 & 4\\
+            3 & 9 & -12
+            \end{pmatrix} & \sim 
+            \begin{pmatrix}
+            1 & 2 & 3\\
+            3 & 1 & 3\\
+            -1 & -3 & 4\\
+            3 & 9 & -12
+            \end{pmatrix} &&
+            F_1 \leftrightarrow F_2\\
+            & \sim 
+            \begin{pmatrix}
+            1 & 2 & 3\\
+            0 & -5 & -6\\
+            -1 & -3 & 4\\
+            3 & 9 & -12
+            \end{pmatrix} &&
+            -3F_1 + F_2 \to F_2\\ 
+            & \sim 
+            \begin{pmatrix}
+            1 & 2 & 3\\
+            0 & -5 & -6\\
+            0 & -1 & 7\\
+            3 & 9 & -12
+            \end{pmatrix} &&
+            F_1 + F_3 \to F_3\\  
+            & \sim 
+            \begin{pmatrix}
+            1 & 2 & 3\\
+            0 & -5 & -6\\
+            0 & -1 & 7\\
+            0 & 3 & -21
+            \end{pmatrix} &&
+            -3F_1 + F_4 \to F_4\\
+            & \sim 
+            \begin{pmatrix}
+            1 & 2 & 3\\
+            0 & 1 & -7\\
+            0 & -5 & -6\\
+            0 & 3 & -21
+            \end{pmatrix} &&
+            -F_3 \leftrightarrow F_2\\
+            & \sim 
+            \begin{pmatrix}
+            1 & 2 & 3\\
+            0 & 1 & -7\\
+            0 & 0 & -41\\
+            0 & 3 & -21
+            \end{pmatrix} &&
+            5F_2 + F_3 \to F_3 \\     
+            & \sim 
+            \begin{pmatrix}
+            1 & 2 & 3\\
+            0 & 1 & -7\\
+            0 & 0 & -41\\
+            0 & 0 & 0
+            \end{pmatrix} &&
+            -3F_2 + F_4 \to F_4 \\  
+            & \sim 
+            \begin{pmatrix}
+            1 & 2 & 3\\
+            0 & 1 & -7\\
+            0 & 0 & 1\\
+            0 & 0 & 0
+            \end{pmatrix} &&
+            -\frac{1}{41}F_3 \to F_3\\
+            & \sim
+             \begin{pmatrix}
+            1 & 2 & 3\\
+            0 & 1 & 0\\
+            0 & 0 & 1\\
+            0 & 0 & 0
+            \end{pmatrix} &&
+            7F_3+F_2 \to F_2\\
+            & \sim 
+            \begin{pmatrix}
+            1 & 2 & 0\\
+            0 & 1 & 0\\
+            0 & 0 & 1\\
+            0 & 0 & 0
+            \end{pmatrix} &&
+            -3F_3+F_1 \to F_1\\
+            & \sim \begin{pmatrix}
+            1 & 0 & 0\\
+            0 & 1 & 0\\
+            0 & 0 & 1\\
+            0 & 0 & 0
+            \end{pmatrix} &&
+            -2F_2+F_1 \to F_1\\                
+        \end{align*}
+        Así la matriz escalonada reducida por filas, equivalente a $A$ es 
+        \[
+            \begin{pmatrix}
+            1 & 0 & 0\\
+            0 & 1 & 0\\
+            0 & 0 & 1\\
+            0 & 0 & 0
+            \end{pmatrix}           
+        \]
+        Por lo tanto $\rang(A)=3$.
+    \item 
+        Para encontrar el rango de $B$ hallaremos la matriz escalonada reducida por filas equivalente a $B$.
+        \begin{align*}
+            \begin{pmatrix}
+            1 & -1 & 1 & 4\\
+            3 & 2 & 1 & 2\\
+            4 & 2 & 2 & 8
+            \end{pmatrix}
+            & \sim 
+            \begin{pmatrix}
+            1 & -1 & 1 & 4\\
+            0 & -5 & 2 & 10\\
+            4 & 2 & 2 & 8
+            \end{pmatrix} &&
+            3F_1 - F_2 \to F_2\\
+            & \sim 
+            \begin{pmatrix}
+            1 & -1 & 1 & 4\\
+            0 & -5 & 2 & 10\\
+            0 & -6 & 2 & 8
+            \end{pmatrix} &&
+            4F_1 - F_3 \to F_3\\
+            & \sim 
+            \begin{pmatrix}
+            1 & -1 & 1 & 4\\
+            0 & 1 & -\frac{2}{5} & -2\\
+            0 & -6 & 2 & 8
+            \end{pmatrix} &&
+            \frac{1}{5}F_2 \to F_2\\    
+            & \sim 
+            \begin{pmatrix}
+            1 & -1 & 1 & 4\\
+            0 & 1 & -\frac{2}{5} & -2\\
+            0 & 0 & -\frac{2}{5} & -4
+            \end{pmatrix} &&
+            6F_2 + F_3 \to F_3\\       
+            & \sim 
+            \begin{pmatrix}
+            1 & -1 & 1 & 4\\
+            0 & 1 & -\frac{2}{5} & -2\\
+            0 & 0 & 1 & 10
+            \end{pmatrix} &&
+            -\frac{5}{2}F_3 \to F_3\\    
+            & \sim 
+            \begin{pmatrix}
+            1 & -1 & 1 & 4\\
+            0 & 1 & 0 & 2\\
+            0 & 0 & 1 & 10
+            \end{pmatrix} &&
+            \frac{2}{5}F_3  + F_2 \to F_2\\     
+            & \sim 
+            \begin{pmatrix}
+            1 & -1 & 0 & -6\\
+            0 & 1 & 0 & 2\\
+            0 & 0 & 1 & 10
+            \end{pmatrix} &&
+            F_1  - F_3 \to F_1\\
+            & \sim 
+            \begin{pmatrix}
+            1 & 0 & 0 & -4\\
+            0 & 1 & 0 & 2\\
+            0 & 0 & 1 & 10
+            \end{pmatrix} &&
+            F_1  + F_2 \to F_1\\
+        \end{align*}
+    Así la matriz escalonada reducida por filas, equivalente a $B$ es
+        \[
+            \begin{pmatrix}
+            1 & 0 & 0 & -4\\
+            0 & 1 & 0 & 2\\
+            0 & 0 & 1 & 10
+            \end{pmatrix} .   
+        \]
+    Por lo tanto $\rang(B)=3$.
+    \item Para encontrar el rango de $C$ hallaremos la matriz escalonada reducida por filas equivalente a $C$.
+        \begin{align*}
+            \begin{pmatrix}
+            -2 & 3 & 1 &0\\
+            1 & 3 & -1 & -2
+            \end{pmatrix} 
+            & \sim
+            \begin{pmatrix}
+            1 & 3 & -1 & -2\\
+            -2 & 3 & 1 &0
+            \end{pmatrix} &&
+            F_1 \leftrightarrow F_2\\
+            & \sim
+            \begin{pmatrix}
+            1 & 3 & -1 & -2\\
+            0 & 9 & -1 & -4
+            \end{pmatrix} &&
+            2F_1 + F_2 \to F_2\\     
+            & \sim
+            \begin{pmatrix}
+            1 & 3 & -1 & -2\\
+            0 & 1 & -\frac{1}{9} & -\frac{4}{9}
+            \end{pmatrix} &&
+            \frac{1}{9}F_2 \to F_2\\ 
+            & \sim
+            \begin{pmatrix}
+            1 & 0 & -\frac{2}{3} & -\frac{2}{3}\\
+            0 & 1 & -\frac{1}{9} & -\frac{4}{9}
+            \end{pmatrix} &&
+            F_1 - 3F_2 \to F_1\\   
+         \end{align*}
+    Así la matriz escalonada reducida por filas equivalente a $C$ es
+        \[
+            \begin{pmatrix}
+            1 & 0 & -\frac{2}{3} & -\frac{2}{3}\\
+            0 & 1 & -\frac{1}{9} & -\frac{4}{9}
+            \end{pmatrix} .           
+        \]
+    Por lo tanto $\rang(C)=2$.
+    \end{enumerate}
+\end{proof}
+
+\section{Soluciones de sistemas de ecuaciones lineales}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Dado el sistema lineal de ecuaciones 
+    \[
+    \systeme{x+5y-4z=0, x-2y+z=0, 3x+y-2z=0}
+    \]
+    utilizar la eliminación de Gauss-Jordan para determinar el conjunto de soluciones del sistema.
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    La forma matricial del sistema es:
+    \[
+    \begin{pmatrix}
+    1&5&-4\\1&-2&1\\3&1&-2
+    \end{pmatrix}
+    \begin{pmatrix}
+    x \\ y\\ z
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    0 \\ 0\\ 0
+    \end{pmatrix}.
+    \]
+    La matriz ampliada correspondiente es:
+    \[
+    \begin{pmatrix}
+    1&5&-4&|&0\\
+    1&-2&1&|&0\\
+    3&1&-2&|&0
+    \end{pmatrix}
+    \]
+    Ahora, podemos aplicar la aliminación de Gauss-Jordan a la matriz ampliada:
+    \begin{align*}
+      \begin{pmatrix}
+        1&5&-4&|&0\\
+        1&-2&1&|&0\\
+        3&1&-2&|&0
+      \end{pmatrix}
+      & \sim 
+      \begin{pmatrix}
+        1&5&-4&|&0\\
+        0&-7&5&|&0\\
+        0&-14&10&|&0
+      \end{pmatrix}
+      && -1F_1+F_2\to F_2\\
+      &&&-3F_1+F_3\to F_3\\
+      & \sim 
+      \begin{pmatrix}
+        1&5&-4&|&0\\
+        0&-7&5&|&0\\
+        0&0&0&|&0
+      \end{pmatrix}
+      && -2F_2+F_3\to F_3\\
+      & \sim 
+      \begin{pmatrix}
+        1&5&-4&|&0\\
+        0&1&-\frac{5}{7}&|&0\\
+        0&0&0&|&0
+      \end{pmatrix}
+      && -\frac{1}{7}F_2\to F_2\\
+      & \sim 
+      \begin{pmatrix}
+        1&0&-\frac{3}{7}&|&0\\
+        0&1&-\frac{5}{7}&|&0\\
+        0&0&0&|&0
+      \end{pmatrix}
+      && -5F_2+F_1\to F_1\\
+      \end{align*}
+      Como la matriz equivalente a la matriz de los coeficientes ya es escalonada reducida por filas, comparamos los rangos $\rang (A) = \rang (A|b) = 2$ y es menor que el número de incógnitas $(3)$ entonces, el sistema tiene infinitas soluciones. Como los sistemas
+      \[
+      \systeme{x+5y-4z=0, x-2y+z=0, 3x+y-2z=0}
+      \]
+      y
+      \[
+      \systeme{x-\frac{3}{7}z=0, y-\frac{5}{7}z=0}
+      \]
+      son equivalentes, por ende, tienen las mismas soluciones
+      \[
+      \systeme{x=\frac{3}{7}t, y=\frac{5}{7}t, z=t}
+      \]
+      Es decir, el conjunto de soluciones del sistema es
+      \[
+      \left\{ \left( \frac{3}{7}t,\frac{5}{7}t\right),t:t \in \R \right\}.\qedhere
+      \]
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Dado el sistema de ecuaciones lineales:
+    \[
+        \systeme{x+y-3z=-1, 2x+y-2z=1, x+y+z=3, x+2y-3z=1}
+    \]
+    utilizar la eliminación de Gauss-Jordan para determinar si el sistema es consistente.
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Tenemos las matrices
+    \[
+        A = \begin{pmatrix}
+            1&1&-3\\2&1&-2\\1&1&1\\1&2&-3
+        \end{pmatrix}
+        \texty
+        b = \begin{pmatrix}
+             -1 \\ 1\\ 3 \\ 1
+        \end{pmatrix}.
+    \]
+    
+    Así, el sistema en forma matricial es
+    \[
+        \begin{pmatrix}
+            1&1&-3\\2&1&-2\\1&1&1\\1&2&-3
+        \end{pmatrix}
+        \begin{pmatrix}
+            x \\ y\\ z
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            -1 \\ 1\\ 3 \\ 1
+        \end{pmatrix}.
+    \]
+    De donde, la matriz ampliada $(A|b)$ es
+    \[
+        \begin{pmatrix}
+            1&1&-3&|&-1\\
+            2&1&-2&|&1\\
+            1&1&1&|&3\\
+            1&2&-3&|&1
+         \end{pmatrix}
+    \]
+    Realizamos la eliminación de Gauss-Jordan sobre la matriz ampliada, así:
+    \begin{align*}
+        \begin{pmatrix}
+            1&1&-3&|&-1\\
+            2&1&-2&|&1\\
+            1&1&1&|&3\\
+            1&2&-3&|&1
+        \end{pmatrix}
+        & \sim 
+        \begin{pmatrix}
+            1&1&-3&|&-1\\
+            0&-1&4&|&3\\
+            0&0&4&|&4\\
+            0&1&0&|&2
+        \end{pmatrix}
+        && -2F_1+F_2\to F_2\\
+        &&&-1F_1+F_3\to F_3\\
+        &&&-1F_1+F_4\to F_4\\
+        & \sim 
+        \begin{pmatrix}
+            1&1&-3&|&-1\\
+            0&0&4&|&5\\
+            0&0&4&|&4\\
+            0&1&0&|&2
+        \end{pmatrix}
+        && F_4+F_2\to F_2\\
+        & \sim 
+        \begin{pmatrix}
+            1&1&-3&|&-1\\
+            0&1&0&|&2\\
+            0&0&4&|&4\\
+            0&0&4&|&5
+        \end{pmatrix}
+        && F_2 \leftrightarrow F_4\\
+        & \sim 
+        \begin{pmatrix}
+            1&1&-3&|&-1\\
+            0&1&0&|&2\\
+            0&0&4&|&4\\
+            0&0&0&|&1
+        \end{pmatrix}
+        && -1F_3+F_4\to F_4\\
+        & \sim 
+        \begin{pmatrix}
+            1&1&-3&|&-1\\
+            0&1&0&|&2\\
+            0&0&1&|&1\\
+            0&0&0&|&1
+        \end{pmatrix}
+        && \frac{1}{4}F_4\to F_4\\
+         & \sim 
+        \begin{pmatrix}
+            1&0&-3&|&-3\\
+            0&1&0&|&2\\
+            0&0&1&|&1\\
+            0&0&0&|&1
+        \end{pmatrix}
+        && -1F_2+F_1\to F_1\\
+        & \sim 
+        \begin{pmatrix}
+            1&0&0&|&0\\
+            0&1&0&|&2\\
+            0&0&1&|&1\\
+            0&0&0&|&1
+        \end{pmatrix}
+        && 3F_3+F_1\to F_1\\
+    \end{align*}
+    Con esto, tenemos que $\rang(A)=3 < \rang(A|b) = 4$, entonces el sistema es inconsistente; es decir, no tiene solución.
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sea $\alpha \in \R$; y considere el sistema lineal
+    \[
+        \systeme{x+y+\alpha z=2, 3x+4y+2z=\alpha, 2x+3y-z=1}
+    \]
+    \begin{enumerate}
+        \item Utilizando la eliminación de Gauss-Jordan, determine las condiciones sobre $\alpha$ tales que el sistema tenga solución.
+        \item Para las condiciones sobre $\alpha$ en que el sistema tiene solución, escriba el conjunto de soluciones del sistema.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+    \item 
+        Tenemos las matrices
+        \[
+            A = \begin{pmatrix}
+            1&1&\alpha\\3&4&2\\2&3&-1
+            \end{pmatrix}
+            \texty
+            b = \begin{pmatrix}
+            2 \\ \alpha\\ 1
+            \end{pmatrix}.
+        \]
+
+    Así, el sistema en forma matricial es
+    \[
+        \begin{pmatrix}
+        1&1&\alpha\\3&4&2\\2&3&-1
+        \end{pmatrix}
+        \begin{pmatrix}
+        x \\ y\\ z
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+        2 \\ \alpha\\ 1
+        \end{pmatrix}.
+    \]
+    De donde, la matriz ampliada $(A|b)$ es
+    \[
+        \begin{pmatrix}
+        1&1&\alpha&|&2\\
+        3&4&2&|&\alpha\\
+        2&3&-1&|&1
+        \end{pmatrix}
+    \]
+    Realizamos la eliminación de Gauss-Jordan sobre la matriz ampliada, así:
+        \begin{align*}
+        \begin{pmatrix}
+        1&1&\alpha&|&2\\
+        3&4&2&|&\alpha\\
+        2&3&-1&|&1
+        \end{pmatrix}
+        & \sim 
+        \begin{pmatrix}
+        1&1&\alpha&|&2\\
+        0&1&2-3\alpha&|&\alpha - 6\\
+        0&1&-1-2 \alpha&|&-3
+        \end{pmatrix}
+        && -3F_1+F_2\to F_2\\
+        &&&-2F_1+F_3\to F_3\\
+        & \sim 
+        \begin{pmatrix}
+        1&1&\alpha&|&2\\
+        0&1&2-3\alpha&|&\alpha - 6\\
+        0&0&\alpha - 3&|& 3 - \alpha
+        \end{pmatrix}
+        && -1F_2+F_3\to F_3\\
+        \end{align*}
+    Si $\alpha \neq 3$, entonces 
+    \begin{align*}
+        & \sim 
+        \begin{pmatrix}
+        1&1&\alpha&|&2\\
+        0&1&2-3\alpha&|&\alpha - 6\\
+        0&0&1&|& \frac{3 - \alpha}{\alpha - 3}
+        \end{pmatrix}
+        && \frac{1}{\alpha - 3}F_3\to F_3\\
+        & \sim 
+        \begin{pmatrix}
+        1&1&\alpha&|&2\\
+        0&1&0&|&-2\alpha - 4\\
+        0&0&1&|& -1
+        \end{pmatrix}
+        && -(2-3\alpha)F_3+F_2\to F_2\\
+        & \sim 
+        \begin{pmatrix}
+        1&1&0&|&\alpha+2\\
+        0&1&0&|&-2\alpha - 4\\
+        0&0&1&|& -1
+        \end{pmatrix}
+        && -\alpha F_3+F_1\to F_1\\
+        & \sim 
+        \begin{pmatrix}
+        1&0&0&|& 3 \alpha+6\\
+        0&1&0&|&-2\alpha - 4\\
+        0&0&1&|& -1
+        \end{pmatrix}
+        && -1F_2+F_1\to F_1\\
+        \end{align*}
+    De donde, tenemos que el $\rang(A)=3 = \rang(A|b)$. Entonces el sistema tiene una solución única si $\alpha \neq 3$.
+    Ahora, analizamos el sistema lineal cuando $\alpha = 3$;es decir, regresamos a la matriz ampliada
+    \[
+       \begin{pmatrix}
+        1&1&\alpha&|&2\\
+        0&1&2-3\alpha&|&\alpha - 6\\
+        0&0&\alpha - 3&|& 3 - \alpha
+        \end{pmatrix}
+    \]
+    Reemplazamos $\alpha = 3$, realizamos la eliminación de Gauss-Jordan y obtenemos
+    \[
+        \begin{pmatrix}
+        1&0&10&|&5\\
+        0&1&-7&|&-3\\
+        0&0&0&|&0
+        \end{pmatrix}
+    \]
+    Si comparamos los rangos, tenemos que, $\rang(A)=2= \rang(A|b)$, pero es menor que el número de incógnitas $(3)$, entonces el sistema tiene infinitas soluciones.  \item Si $\alpha \neq 3 $, la matriz ampliada asociada al sistema es
+    \[
+        \begin{pmatrix}
+        1&0&0&|& 3 \alpha+6\\
+        0&1&0&|&-2\alpha - 4\\
+        0&0&1&|& -1
+        \end{pmatrix}               .
+    \]
+    entonces el conjunto de soluciones del sistema es 
+    \[
+        \{(3 \alpha+6,-2\alpha - 4,-1):\alpha \neq 3\}.\qedhere
+    \]
+    Si $\alpha = 3 $, la matriz ampliada asociada al sistema es
+    \[
+        \begin{pmatrix}
+        1&0&10&|&5\\
+        0&1&-7&|&-3\\
+        0&0&0&|&0
+        \end{pmatrix}
+    \]
+    Así, tenemos que
+    \[
+    \systeme{x = 5 - 10r, y= -3 +7r, z= r}
+    \]
+    es una solución del sistema lineal para todo $r \in \R$. Entonces el conjunto de soluciones del sistema, cuando $\alpha = 3$, es
+    \[
+        \{(5 - 10r,-3 +7r,r):r \in \R\}.\qedhere
+    \]
+    
+ \end{enumerate}
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sea $p \in \R$ y $q \in \R$; y considere el sistema lineal
+    \[
+    \systeme{x+z=q, y+2w=0, x+2z+3w=0, 2y+3z+pw=3}
+    \]
+    Determine las condiciones sobre $p$ y $q$ para que el sistema tenga una única solución.
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    La representación matricial del sistema es
+    \[
+    \begin{pmatrix}
+                1&0&1&0\\0&1&0&2\\1&0&2&3\\0&2&3&p
+                \end{pmatrix}
+                \begin{pmatrix}
+                x \\ y\\ z \\ w
+                \end{pmatrix}
+                =
+                \begin{pmatrix}
+                q \\ 0\\ 0\\ 3
+                \end{pmatrix}.
+    \]
+    de donde, la matriz ampliada asociada al sistema es
+    \[
+                \begin{pmatrix}
+                1&0&1&0&|&q\\
+                0&1&0&2&|& 0\\
+                1&0&2&3&|& 0\\
+                0&2&3&p&|& 3
+                \end{pmatrix} 
+    \]
+    Luego de aplicar la eliminación de Gauss-Jordan a la matriz ampliada, tenemos 
+    \[
+                \begin{pmatrix}
+                1&0&0&0&|&\frac{2pq-17q+9}{p-13}\\
+                0&1&0&0&|& \frac{-6q-6}{p-13}\\
+                0&0&1&0&|& \frac{-pq+4q-9}{p-13}\\
+                0&0&0&1&|& \frac{3q+3}{p-13}
+                \end{pmatrix} 
+    \]
+    De donde, tenemos que, si $p \neq 13$ y para todo $q \in \R$, $\rang(A)=4 = \rang(A|b)$; y ademas es igual al número de incógnitas $(4)$. Entonces, el sistema es consistente y tiene una única solución si $p \neq 13$ y para todo $q \in \R$. Es fácil verificar que cuando $p=13$ el sistema o bien no tiene solución o tiene infinitas soluciones, por lo que este caso queda excluido de este análisis.
+\end{proof}
+
+
+\section{Inversa de una matriz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En cada caso, suponga que la matriz $A$ es invertible, utilizar operaciones por filas para determinar su matriz inversa.
+    \begin{enumerate}
+        \item $A = \begin{pmatrix}
+                2 & -1\\ 3 & 0
+            \end{pmatrix}$
+        \item $A = \begin{pmatrix}
+                1 & 0 & 3\\ 0 & -2 &  1 \\ 2 & 2 & 4
+            \end{pmatrix}$
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    % \comentario{Utilizar la propiedad de que si $A$ es invertible, entonces $(A|I_n)\sim (I_n|A^{-1})$ y operaciones por filas para determinar $A^{-1}$.}
+    Puesto que $A$ es invertible, se tiene que 
+    \[
+        (A|I_2)\sim (I_2|A^{-1}).
+    \]
+    Utilicemos esto en cada caso:
+    \begin{enumerate}
+        \item Notemos que 
+        \[
+           (A|I_2) =  \begin{pmatrix}
+                2 & -1 & | & 1 & 0\\ 3 & 0 & | & 0 & 1
+            \end{pmatrix}.
+        \]
+            Así, aplicando operaciones de fila, tenemos que 
+        \begin{align*}
+            \begin{pmatrix}
+                2 & -1 & | & 1 & 0\\[0.75em]
+                3 & 0 & | & 0 & 1
+            \end{pmatrix}& \sim \begin{pmatrix}
+                3 & 0 & | & 0 & 1 \\[0.75em]
+                2 & -1 & | & 1 & 0
+            \end{pmatrix} && F_1 \leftrightarrow F_2,  \\[0.25em]
+            &\sim \begin{pmatrix}
+                1 & 0 & | & 0 & \dfrac{1}{3} \\[0.75em]
+                2 & -1 & | & 1 & 0
+            \end{pmatrix} && \dfrac{1}{3}F_1 \rightarrow F_1, \\[0.25em]
+            & \sim \begin{pmatrix}
+                1 & 0 & | & 0 & \dfrac{1}{3} \\[0.75em]
+                0 & -1 & | & 1 & -\dfrac{2}{3}
+            \end{pmatrix} && F_2 - 2 F_1 \rightarrow F_2, \\[0.25em]
+            & \sim \begin{pmatrix}
+                1 & 0 & | & 0 & \dfrac{1}{3} \\[0.75em]
+                0 & 1 & | & -1 & \dfrac{2}{3}
+            \end{pmatrix} && -F_2 \rightarrow F_2.
+        \end{align*}
+        Así, 
+        \[
+            (I_2|A^{-1}) = \begin{pmatrix}
+                1 & 0 & | & 0 & \dfrac{1}{3} \\[0.75em]
+                0 & 1 & | & -1 & \dfrac{2}{3}
+            \end{pmatrix},
+        \]
+        y, por lo tanto 
+        \[
+            A^{-1} = \begin{pmatrix}
+                0 & \dfrac{1}{3} \\[0.75em]
+                -1 & \dfrac{2}{3}
+            \end{pmatrix}.
+        \]
+    \item Notemos que 
+        \[
+           (A|I_3) =  \begin{pmatrix}
+                1 & 0 & 3 & | & 1 & 0 & 0 \\
+                0 & -2 & 1 & | & 0 & 1 & 0 \\
+                2 & 2 & 4 & | & 0 & 0 & 1 
+            \end{pmatrix}.
+        \]
+        Así, aplicando operaciones de fila, tenemos que 
+        \begin{align*}
+            \begin{pmatrix}
+                1 & 0 & 3 & | & 1 & 0 & 0 \\
+                0 & -2 & 1 & | & 0 & 1 & 0 \\
+                2 & 2 & 4 & | & 0 & 0 & 1 
+            \end{pmatrix} & \sim \begin{pmatrix}
+                1 & 0 & 3 & | & 1 & 0 & 0 \\
+                0 & -2 & 1 & | & 0 & 1 & 0 \\
+                0 & 2 & -2 & | & -2 & 0 & 1 
+            \end{pmatrix} && F_3 - 2 F_1 \rightarrow F_3 \\
+            & \sim \begin{pmatrix}
+                1 & 0 & 3 & | & 1 & 0 & 0 \\
+                0 & -2 & 1 & | & 0 & 1 & 0 \\
+                0 & 0 & -1 & | & -2 & 1 & 1 
+            \end{pmatrix} && F_3 + F_2 \rightarrow F_3 \\
+            & \sim \begin{pmatrix}
+                1 & 0 & 3 & | & 1 & 0 & 0 \\
+                0 & 1 & -\dfrac{1}{2} & | & 0 & -\dfrac{1}{2} & 0 \\
+                0 & 0 & -1 & | & -2 & 1 & 1 
+            \end{pmatrix} && -\dfrac{1}{2} F_2 \rightarrow F_2 \\
+            & \sim \begin{pmatrix}
+                1 & 0 & 3 & | & 1 & 0 & 0 \\
+                0 & 1 & -\dfrac{1}{2} & | & 0 & -\dfrac{1}{2} & 0 \\
+                0 & 0 & 1 & | & 2 & -1 & -1 
+            \end{pmatrix} && - F_3 \rightarrow F_3 \\
+            & \sim \begin{pmatrix}
+                1 & 0 & 0 & | & -5 & 3 & 3 \\
+                0 & 1 & -\dfrac{1}{2} & | & 0 & -\dfrac{1}{2} & 0 \\
+                0 & 0 & 1 & | & 2 & -1 & -1 
+            \end{pmatrix} && F_1 - 3 F_3 \rightarrow F_1 \\
+            & \sim \begin{pmatrix}
+                1 & 0 & 0 & | & -5 & 3 & 3 \\
+                0 & 1 & 0 & | & 1 & -1 & -\dfrac{1}{2} \\
+                0 & 0 & 1 & | & 2 & -1 & -1 
+            \end{pmatrix} && F_2 + \dfrac{1}{2} F_3 \rightarrow F_2 \\
+        \end{align*}
+        Así, 
+        \[
+            (I_3|A^{-1}) = \begin{pmatrix}
+                -5 & 3 & 3 \\
+                 1 & -1 & -\dfrac{1}{2} \\
+                 2 & -1 & -1 
+            \end{pmatrix},
+        \]
+        y, por lo tanto, 
+        \[
+            A^{-1} = \begin{pmatrix}
+                -5 & 3 & 3 \\
+                 1 & -1 & -\dfrac{1}{2} \\
+                 2 & -1 & -1 
+            \end{pmatrix}. \qedhere
+        \]
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sea la matriz:
+    \[
+        A= \begin{pmatrix}
+            \alpha & -1 & 0 \\
+            -2 & \alpha & -2 \\
+            0 & -1 & \alpha
+        \end{pmatrix},
+    \]
+    donde $\alpha \in \mathbb{R}$.
+    \begin{enumerate}
+    \item 
+        ¿Para qu\'{e} valores de $\alpha$ la matriz $A$ es invertible? 
+    \item 
+        Calcule la inversa de $A$ cuando sea posible.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+        \item Supongamos que la matriz es invertible, por lo tanto como $A\in\R^{3\times 3}$, se tiene que es invertible si y solo si $\rang(A)=3$. Así, calculemos la matriz reducida por filas equivalente.
+        \begin{align*}
+            \begin{pmatrix}
+                \alpha & -1 & 0 \\
+                -2 & \alpha & -2 \\
+                0 & -1 & \alpha
+            \end{pmatrix}
+         & \sim \begin{pmatrix}
+                \alpha & -1 & 0 \\
+                0 & \dfrac{\alpha^2-2}{\alpha} & -2 \\
+                0 & -1 & \alpha 
+            \end{pmatrix} && F_2 + \dfrac{2}{\alpha} F_1 \rightarrow F_2 \\
+        &\sim \begin{pmatrix}
+                \alpha & -1 & 0 \\
+                0 & \dfrac{\alpha^2-2}{\alpha} & -2 \\
+                0 & 0 & \dfrac{\alpha^3-4\alpha}{\alpha^2-2}
+            \end{pmatrix} && F_3 + \dfrac{\alpha}{\alpha^2-2} F_2 \rightarrow F_3.
+        \end{align*}
+        Así, para que $\rang(A)=3$, se necesita que 
+        \[
+            \dfrac{\alpha^3-4\alpha}{\alpha^2-2} \neq 0.
+        \]
+        De donde, 
+        \[
+            \alpha^3-4\alpha = \alpha ( \alpha^2-4) = \alpha (\alpha-2)(\alpha+2)\neq 0.
+        \]
+        Por lo tanto, $A$ es invertible si y solo si $\alpha \neq-2$, $\alpha\neq0$ y $\alpha\neq2$.
+    % \comentario{Igual que en el ejercicio anterior, utilizar el la propiedad del rango para determinar si la matriz es invertible y calcularla por operaciones por filas. Dejo la solución original para ver la respuesta.}
+    % \begin{enumerate}
+    % \item 
+    % Para saber si A es invertible, se debe calcular el determinante: 
+    % \[
+    % det(A)=\begin{vmatrix}
+    %             \alpha & -1 & 0 \\
+    %             -2 & \alpha & -2 \\
+    %             0 & -1 & \alpha
+    %             \end{vmatrix}=\alpha \begin{vmatrix}
+    %             \alpha & -2 \\
+    %             -1 & \alpha
+    %             \end{vmatrix}-\begin{vmatrix}
+    %             -2 & -2 \\
+    %             0 & \alpha
+    %             \end{vmatrix}=\alpha^3-4\alpha.\\
+    % \]
+    % Por lo tanto, $A$ es invertible si y solo si $\alpha \neq-2$, $\alpha\neq0$ y $\alpha\neq2$.
+    
+    \item Supongamos que $\alpha \in \mathbb{R}-\{-2, 0, 2\}$. Entonces, $A^{-1}$ existe. Así, como $A$ es invertible, se tiene que 
+    \[
+        (A|I_3)\sim (I_3|A^{-1}).
+    \]
+    Es decir, 
+    \[
+        (A|I_3) =  \begin{pmatrix}
+                \alpha & -1 & 0 & | & 1 & 0 & 0 \\
+                -2 & \alpha & -2 & | & 0 & 1 & 0\\
+                0 & -1 & \alpha & | & 0 & 0 & 1
+            \end{pmatrix}
+    \]
+    Por lo tanto, aplicando operaciones por filas
+    \begin{align*}
+         \begin{pmatrix}
+                \alpha & -1 & 0 & | & 1 & 0 & 0 \\
+                -2 & \alpha & -2 & | & 0 & 1 & 0\\
+                0 & -1 & \alpha & | & 0 & 0 & 1
+            \end{pmatrix} &\sim  \begin{pmatrix}
+                \alpha & -1 & 0 & | & 1 & 0 & 0 \\
+                0 & \dfrac{\alpha^2-2}{\alpha} & -2 & | & \dfrac{2}{\alpha} & 1 & 0\\
+                0 & -1 & \alpha & | & 0 & 0 & 1
+            \end{pmatrix} && F_2 + \dfrac{2}{\alpha} F_1 \rightarrow F_2, \\
+            & \sim \begin{pmatrix}
+                \alpha & -1 & 0 & | & 1 & 0 & 0 \\
+                0 & \dfrac{\alpha^2-2}{\alpha} & -2 & | & \dfrac{2}{\alpha} & 1 & 0\\
+                0 & 0 & \dfrac{\alpha^3-4\alpha}{\alpha^2-2} & | & \dfrac{2}{\alpha^2-2} & \dfrac{\alpha}{\alpha^2-2} & 1
+            \end{pmatrix} && F_3 + \dfrac{\alpha}{\alpha^2-2} F_2 \rightarrow F_3, \\
+            & \sim \begin{pmatrix}
+                \alpha & -1 & 0 & | & 1 & 0 & 0 \\
+                0 & \dfrac{\alpha^2-2}{\alpha} & -2 & | & \dfrac{2}{\alpha} & 1 & 0\\
+                0 & 0 & 1 & | & \dfrac{2}{\alpha^3-4\alpha} & \dfrac{\alpha}{\alpha^3-4\alpha} & \dfrac{\alpha^2-2}{\alpha^3-4\alpha}
+            \end{pmatrix} && \dfrac{\alpha^2-2}{\alpha^3-4\alpha} F_3 \rightarrow F_3, \\
+            & \sim \begin{pmatrix}
+                \alpha & -1 & 0 & | & 1 & 0 & 0 \\
+                0 & \dfrac{\alpha^2-2}{\alpha} & 0 & | & \dfrac{2(\alpha^2-2)}{\alpha(\alpha^2-4)} & \dfrac{\alpha^2-2}{\alpha^2-4} & \dfrac{2(\alpha^2-2)}{\alpha^3-4\alpha}\\
+                0 & 0 & 1 & | & \dfrac{2}{\alpha^3-4\alpha} & \dfrac{\alpha}{\alpha^3-4\alpha} & \dfrac{\alpha^2-2}{\alpha^3-4\alpha}
+            \end{pmatrix} &&  F_2 + 2 F_3 \rightarrow F_2, \\
+            & \sim \begin{pmatrix}
+                \alpha & -1 & 0 & | & 1 & 0 & 0 \\
+                0 & 1 & 0 & | & \dfrac{2}{\alpha^2-4} & \dfrac{\alpha}{\alpha^2-4} & \dfrac{2\alpha}{\alpha^3-4\alpha}\\
+                0 & 0 & 1 & | & \dfrac{2}{\alpha^3-4\alpha} & \dfrac{\alpha}{\alpha^3-4\alpha} & \dfrac{\alpha^2-2}{\alpha^3-4\alpha}
+            \end{pmatrix} && \dfrac{\alpha}{\alpha^2-2}F_2 \rightarrow F_2, \\
+            & \sim \begin{pmatrix}
+                \alpha & 0 & 0 & | & \dfrac{\alpha^2-2}{\alpha^2-4} & \dfrac{\alpha}{\alpha^2-4} & \dfrac{2\alpha}{\alpha^3-4\alpha}\\
+                0 & 1 & 0 & | & \dfrac{2}{\alpha^2-2} & \dfrac{\alpha}{\alpha^2-4} & \dfrac{2}{\alpha^2-4}\\
+                0 & 0 & 1 & | & \dfrac{2}{\alpha^3-4\alpha} & \dfrac{1}{\alpha^2-4} & \dfrac{\alpha^2-2}{\alpha^3-4\alpha}
+            \end{pmatrix} && F_1 + F_2 \rightarrow F_1, \\
+            & \sim \begin{pmatrix}
+                1 & 0 & 0 & | & \dfrac{\alpha^2-2}{\alpha(\alpha^2-4)} & \dfrac{1}{\alpha^2-4} & \dfrac{2}{\alpha^3-4\alpha}\\
+                0 & 1 & 0 & | & \dfrac{2}{\alpha^2-2} & \dfrac{\alpha}{\alpha^2-4} & \dfrac{2}{\alpha^2-4}\\
+                0 & 0 & 1 & | & \dfrac{2}{\alpha^3-4\alpha} & \dfrac{1}{\alpha^2-4} & \dfrac{\alpha^2-2}{\alpha^3-4\alpha}
+            \end{pmatrix} && \dfrac{1}{\alpha} F_1 \rightarrow F_1.
+    \end{align*}
+    Así, 
+    \[
+        (I_3|A^{-1}) = \begin{pmatrix}
+                1 & 0 & 0 & | & \dfrac{\alpha^2-2}{\alpha(\alpha^2-4)} & \dfrac{1}{\alpha^2-4} & \dfrac{2}{\alpha^3-4\alpha}\\
+                0 & 1 & 0 & | & \dfrac{2}{\alpha^2-2} & \dfrac{\alpha}{\alpha^2-4} & \dfrac{2}{\alpha^2-4}\\
+                0 & 0 & 1 & | & \dfrac{2}{\alpha^3-4\alpha} & \dfrac{1}{\alpha^2-4} & \dfrac{\alpha^2-2}{\alpha^3-4\alpha}
+            \end{pmatrix},
+    \]
+    y, por lo tanto, 
+    \[
+        A^{-1} = \begin{pmatrix}
+                \dfrac{\alpha^2-2}{\alpha(\alpha^2-4)} & \dfrac{1}{\alpha^2-4} & \dfrac{2}{\alpha^3-4\alpha}\\
+                \dfrac{2}{\alpha^2-2} & \dfrac{\alpha}{\alpha^2-4} & \dfrac{2}{\alpha^2-4}\\
+                \dfrac{2}{\alpha^3-4\alpha} & \dfrac{1}{\alpha^2-4} & \dfrac{\alpha^2-2}{\alpha^3-4\alpha}
+            \end{pmatrix}. \qedhere
+    \]
+    % tenemos:
+    % \[
+    % A^{-1}=\frac{1}{det(A)}Adj(A)=\frac{1}{\alpha^3-4\alpha}   \begin{pmatrix}
+    %             \alpha^2-2 & \alpha & 2 \\
+    %             2\alpha & \alpha^2 & 2\alpha \\
+    %             2 & \alpha & \alpha^2-2
+    %         \end{pmatrix}
+    % \]
+    \end{enumerate}
+\end{proof}
+
+
+\section{Aplicaciones de sistemas de ecuaciones}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Resolver el sistema $Ax = b$, donde $A$ y $b$ se indican a continuación, utilizando una descomposición $LU$ de la matriz $A$.
+    \[
+        A = \begin{pmatrix}
+        3 & -7 & -2\\
+        -3 & 5 & 1\\
+        6 & -4 & 0
+        \end{pmatrix} \texty b = \begin{pmatrix}
+        -7 \\ 5 \\ 2
+        \end{pmatrix}.
+    \]
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Se tiene que $A=LU$, donde
+    \[
+    L = \begin{pmatrix}
+    1 & 0 & 0\\
+    -1 & 1 & 0\\
+    2 & -5 & 1
+    \end{pmatrix} \texty U = \begin{pmatrix}
+    3 & -7 & -2\\
+    0 & -2 & -1\\
+    0 & 0 & -1
+    \end{pmatrix}.
+    \]
+    La solución del sistema $Ly = b$ es
+    \[
+    c = \begin{pmatrix}
+    -7 \\ -2 \\ 6
+    \end{pmatrix}
+    \]
+    y la solución del sistema $Ux = c$ es
+    \[
+    \begin{pmatrix}
+    3 \\ 4 \\ -6
+    \end{pmatrix},
+    \]
+    que es la solución del sistema $Ax = b$.
+\end{proof}
+
+\section{Determinantes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sea la matriz:
+    \[
+        A= \begin{pmatrix}
+            \alpha & -1 & 0 \\
+            -2 & \alpha & -2 \\
+            0 & -1 & \alpha
+        \end{pmatrix},
+    \]
+    donde $\alpha \in \mathbb{R}$.
+    \begin{enumerate}
+    \item 
+        ¿Para qu\'{e} valores de $\alpha$ la matriz $A$ es invertible? 
+    \item 
+        Calcule la inversa de $A$ cuando sea posible.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+    \item 
+    Para saber si A es invertible, se debe calcular el determinante: 
+    \[
+    det(A)=\begin{vmatrix}
+                \alpha & -1 & 0 \\
+                -2 & \alpha & -2 \\
+                0 & -1 & \alpha
+                \end{vmatrix}=\alpha \begin{vmatrix}
+                \alpha & -2 \\
+                -1 & \alpha
+                \end{vmatrix}-\begin{vmatrix}
+                -2 & -2 \\
+                0 & \alpha
+                \end{vmatrix}=\alpha^3-4\alpha.\\
+    \]
+    Por lo tanto, $A$ es invertible si y solo si $\alpha \neq-2$, $\alpha\neq0$ y $\alpha\neq2$.
+    
+    \item Supongamos que $\alpha \in \mathbb{R}-\{-2, 0, 2\}$. Entonces, $A^{-1}$ existe y tenemos:
+    \[
+    A^{-1}=\frac{1}{det(A)}Adj(A)=\frac{1}{\alpha^3-4\alpha}   \begin{pmatrix}
+                \alpha^2-2 & \alpha & 2 \\
+                2\alpha & \alpha^2 & 2\alpha \\
+                2 & \alpha & \alpha^2-2
+            \end{pmatrix}.
+    \]
+    \end{enumerate}
+\end{proof}
+
+\section{El espacio $\mathbb{R}^n$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Se define la distancia entre dos vectores de $\R^n$ por
+    \[
+        \funcion{d}{\R^n \times \R^n}{\R}{(x,y)}{\|x - y\|.}
+    \]
+    Dados $x,y,z\in\R^n$, demuestre que
+    \begin{enumerate}
+        \item 
+        $\text{d}(x,y)\geq 0$.
+        \item
+        $\text{d}(x,y) = 0$ si y sólo si $x=y$.
+        \item
+        $\text{d}(x,y) = \text{d}(y,x)$.
+        \item
+        $\text{d}(x,y) \leq \text{d}(x,z) + \text{d}(z,y)$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+        \item 
+        Por la propiedades de norma tenemos que $\|w\|\geq0$ para todo $w\in\R^n$.
+        
+        Dado que $x-y\in\R^n$, junto con la definición de distancia entre dos vectores aplicada a $(x,y)$, obtenemos
+        \[
+            \text{d}(x,y) = \|x - y\| \geq 0.
+        \]
+        \item
+        Por la propiedades de norma tenemos que $\|w\| = 0$ si y sólo si $w=0$.
+        
+        Supongamos que $\text{d}(x,y)=0$, por la definición de distancia entre dos vectores aplicada a $(x,y)$, obtenemos que 
+        \[
+            \text{d}(x,y) = \|x - y\| = 0,
+        \]
+        si y sólo si $x - y = 0$, es decir, $x=y$.
+        
+        Por lo tanto, se ha mostrado que $\text{d}(x,y) = 0$ si y sólo si $x=y$.
+        \item
+        Por la definición de distancia entre dos vectores y por propiedades de norma, obtenemos el siguiente desarrollo
+        \begin{align*}
+            \text{d}(x,y) &= \|x-y\|\\
+                          &= \|(-1)(y-x)\|\\
+                          &= |-1|\|y-x\|\\
+                          &= \|y-x\|\\
+                          &= \text{d}(y,x).
+        \end{align*}
+        Luego, se ha mostrado que $\text{d}(x,y) =\text{d}(y,x)$.
+        \item 
+        Por la definición de la distancia entre dos vectores aplicada a $(x,y)$, junto con la desigualdad triangular de la norma, obtenemos
+        \begin{align*}
+            \text{d}(x, y) &= \|x-y\|\\
+                           &\leq \|x-z\| + \|z-y\|\\
+                           &\leq \text{d}(x, z) + \text{d}(z,y).
+        \end{align*}
+        Luego, se ha mostrado que $\text{d}(x, y) \leq \text{d}(x, z) + \text{d}(z,y)$.
+    \end{enumerate}
+\end{proof}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sean $C_1 \in \R \setminus \{ 0 \}$ y $C_2 \in \R \setminus \{ 0 \}$, determinar $C_1$ y $C_2$ tales que
+    \[
+    C_1 \begin{pmatrix} 1 \\ 2 \end{pmatrix} + C_2 \begin{pmatrix} 3 \\ -1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}
+    \]
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Multiplicamos por los escalares a los vectores
+    \[
+    \begin{pmatrix} C_1 \\ 2C_1 \end{pmatrix} + \begin{pmatrix} 3C_2 \\ -C_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix},
+    \]
+    ahora, sumamos
+    \[
+    \begin{pmatrix} C_1 + 3C_2 \\ 2C_1 - C_2 \end{pmatrix}  = \begin{pmatrix} 0 \\ 0 \end{pmatrix},
+    \]
+    dos vectores son iguales si sus coordenadas son iguales, es decir,
+    \begin{align*}
+        C_1+3C_2&=0,\\
+        2C_1- C_2&=0.\\
+    \end{align*}
+    Ahora, resolvemos el sistema escribiendo la matriz ampliada asociada y utilizando eliminación Gauss, de donde tenemos que
+    \[
+    \begin{pmatrix}
+    1 & 3 & | & 0 \\ 2 & -1 & | & 0 \\
+    \end{pmatrix}
+    \sim
+    \begin{pmatrix}
+    1 & 3 & | & 0 \\ 0 & -7 & | & 0 \\
+    \end{pmatrix},
+    \]
+    luego, $rang(A)= rang(A|b)= 2$ y es igual al número de incógnitas. Por lo tanto, el sistema tiene una solución trivial, es decir, no es posible encontrar $C_1$ y $C_2$ no nulos, tales que
+    \[
+C_1 \begin{pmatrix} 1 \\ 2 \end{pmatrix} + C_2 \begin{pmatrix} 3 \\ -1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}.
+\]
+\end{proof}
+
+\section{Espacios vectoriales}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Si en $\R^2$ se definen las operaciones
+\[
+(x_1,x_2) + (y_1,y_2) = (x_1+y_1,x_2+y_2) \texty \alpha(x_1,x_2) = (\alpha x_1,x_2)
+\]
+para todo $x,y\in\R^2$ y todo $\alpha\in\R$, ¿es $(\R^2,+,\cdot,\R)$ un espacio vectorial? Indique cuáles son las propiedades de espacio vectorial que se verifican y cuáles no.
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Notemos que la operación «suma» definida en el ejercicio es la suma usual de vectores. Por lo tanto, esta satisface todas las propiedades de la suma. De esta manera, resta verificar las propiedades de del producto:
+    \begin{enumerate}
+    \item \textbf{distributiva del producto I:}
+        sean $x,y\in \R^2$ y sea $\alpha\in \R$ se tiene que
+        \begin{align*}
+            \alpha\cdot (x + y) & = \alpha (x_1+y_1 , x_2 + y_2) \\
+                & = (\alpha x_1 + \alpha y_1 , x_2 + y_2 ) \\
+                & = (\alpha x_1,x_2) + (\alpha y_1,y_2) \\
+                & = \alpha x + \alpha y.
+        \end{align*}
+        Por lo tanto, se satisface la propiedad.
+    \item \textbf{distributiva del producto II:}
+        si la propiedad fuera cierta, entonces sea $x\in \R^2$ y sean $\alpha,\beta\in \R$ se tiene que
+        \[
+            (\alpha+\beta)\cdot x=\alpha\cdot x + \beta\cdot x.
+        \]
+        Así, para $x=(0,1)\in\R^2$ y $\alpha=\beta=1$, se tiene que 
+        \[
+            (1 + 1)(0,1) = 2(0,1) = (0,1);
+        \]
+        pero, por otro lado 
+        \[
+            1 (0,1) + 1(0,1) = (0,1)+(0,1) = (0,2).
+        \]
+        De esta manera, por la propiedad distributiva del producto II, se tendría que 
+        \[
+            (0,1) = (0,2).
+        \]
+        Pero esto no es cierto, por lo tanto la propiedad no se cumple. 
+        
+        % para todo $x\in \R^2$ y todo $\alpha,\beta\in \R$ se tiene que
+        % \begin{align*}
+        %     (\alpha+\beta)\cdot x & = (\alpha+\beta)\cdot (x_1,x_2) \\
+        %         & = ((\alpha+\beta) x_1,x_2) \\
+        %         & = (\alpha x_1 + \beta x_1, x_2)\\
+        %         & = (\alpha x_1,x_2) + (\beta x_1,0) \\
+        %         & = \alpha (x_1,x_2) + \beta (x_1,0) \\
+        %         & = \alpha x + \beta (x_1,0) \\
+        % \end{align*}
+        % Por lo tanto, no se satisface la propiedad \emph{distributiva del producto II}.
+    \item \textbf{asociativa del producto:}
+        sea $x\in \R^2$ y sean $\alpha,\beta\in \R$ se tiene que
+        \begin{align*}
+            (\alpha\beta)\cdot x & = (\alpha\beta)\cdot (x_1,x_2) \\
+                & = ((\alpha\beta) x_1,x_2)\\
+                & = (\alpha \beta x_1, x_2) \\
+                & = \alpha ( \beta x_1,x_2 ).
+        \end{align*}
+        Por lo tanto, se satisface la propiedad.
+    \item \textbf{elemento neutro del producto:}
+        sea $x\in \R^2$ se tiene que
+        \begin{align*}
+            1\cdot x & =1 \cdot (x_1,x_2) \\
+                & = (x_1,x_2) \\
+                & = x.
+        \end{align*}
+        Por lo tanto, se satisface la propiedad.
+    \end{enumerate}
+    De esta manera, como $(\R^2,+,\cdot,\R)$ no cumple la propiedad \emph{distributiva del producto II}, entonces no es un espacio vectorial.
+    % \comentario{Resolver}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Si en $\R^2$ se definen las operaciones
+\[
+(x_1,x_2) + (y_1,y_2) = (x_1+y_1,0) \texty \alpha(x_1,x_2) = (\alpha x_1,0)
+\]
+para todo $x,y\in\R^2$ y todo $\alpha\in\R$, ¿es $(\R^2,+,\cdot,\R)$ un espacio vectorial? Indique cuáles son las propiedades de espacio vectorial que se verifican y cuáles no.
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Para determinar, si $(\R^2,+,\cdot,\R)$ es un espacio vectorial con las operaciones definidas, verifiquemos cada una de las propiedades:
+    \begin{enumerate}
+    \item \textbf{asociativa de la suma:}
+        sean $x,y,z\in \R^2$ se tiene que
+        \begin{align*}
+             (x + y) + z & = ( (x_1,x_2)+(y_1,y_2)) + (z_1,z_2) \\
+             & = (x_1+y_1,0) + (z_1,z_2) \\
+             & = (x_1+y_1+z_1,0) \\
+             & = ((x_1+y_1)+z_1,0) && \mbox{La suma en el campo es asociativa} \\
+             & = (x_1+y_1,0) + (z_1,z_2) \\
+             & = (x_1,x_2) + (y_1,y_2) + (z_1,z_2) \\
+             & = x+y+z.
+        \end{align*}
+        Por lo tanto, se cumple la propiedad. 
+    \item \textbf{conmutativa de la suma:}
+        sean $x,y\in R^2$ se tiene que
+        \begin{align*}
+            x + y & = (x_1,x_2) + (y_1,y_2) \\
+                & = (x_1 + y_1, 0 ) \\
+                & = (y_1 + x_1, 0)  && \mbox{La suma en el campo es conmutativa}\\
+                & = (y_1,y_2) + (x_1,x_2) \\
+                & = y + x.
+        \end{align*}
+        Por lo tanto, se cumple la propiedad.
+    %     \[
+    %         x \oplus y = y \oplus x;
+    %     \]
+    \item \textbf{elemento neutro de la suma:}
+    supongamos que existe un elemento notado $e\in\R^2$ tal que para todo $x\in E$ se tiene que 
+    \[
+        x + e = e + x = x.
+    \]
+    Así, para $x=(0,1)$, se tiene que 
+    \[
+        x + e = (0,1) + (e_1,e_2) = (e_1,0) = (0,1) = x,
+    \]
+    de donde se sigue que 
+    \[
+        0 = 1.
+    \]
+    Pero esto no es posible, por lo tanto no existe un elemento neutro para la suma.
+    %     existe un elemento de $E$, denotado por $0_E$ o simplemente $0$, tal que para todo $x\in E$ se tiene que 
+    %     \[
+    %         x \oplus 0 = 0 \oplus x = x;
+    %     \]
+    \item \textbf{inverso de la suma:}
+        Puesto que no existe un elemento neutro para la suma, por la propiedad anterior, entonces no es posible encontrar un inverso para la suma. 
+    %     para todo $x\in E$, existe un elemento de $E$, denotado por $-x$, tal que
+    %     \[
+    %         x \oplus (-x)= 0;
+    %     \]
+    \item \textbf{distributiva del producto I:}
+        sean $x,y\in \R^2$ y sea $\alpha\in \R$ se tiene que
+        \begin{align*}
+            \alpha (x+y) & = \alpha ((x_1,x_2)+(y_1,y_2)) \\
+            & = \alpha (x_1+y_1,0)\\
+            & = (\alpha(x_1+y_1),0) \\
+            & = (\alpha x_1 + \alpha y_1,0)\\
+            & = (\alpha x_1,0) + (\alpha y_1,0)\\
+            & = \alpha(x_1,x_2) + \alpha (y_1,y_2)\\
+            & = \alpha x + \alpha y.
+        \end{align*}
+        Por lo tanto, se cumple la propiedad
+    %     \[
+    %         \alpha\odot (x \oplus y)=\alpha\odot x + \alpha\odot y
+    %     \]
+    \item \textbf{distributiva del producto II:}
+        sea $x\in \R^2$ y sean $\alpha,\beta\in \R$ se tiene que
+        \begin{align*}
+            (\alpha + \beta) x & = (\alpha + \beta) (x_1,x_2)\\
+            & = ((\alpha + \beta) x_1,0)\\
+            & = (\alpha x_1 + \beta x_1,0)\\
+            & = (\alpha x_1,0) + (\beta x_1,0)\\
+            & = \alpha(x_1,x_2) + \beta (x_1,x_2)\\
+            & = \alpha x + \beta y.
+        \end{align*}
+        Por lo tanto, se cumple la propiedad.
+    %     \[
+    %         (\alpha+\beta)\odot x=\alpha\odot x \oplus \beta\odot x;
+    %     \]
+    \item \textbf{asociativa del producto:}
+        sea $x\in \R^2$ y todo $\alpha,\beta\in \R$ se tiene que
+        \begin{align*}
+            \alpha (\beta x) & = \alpha (\beta (x_1,x_2)) \\
+                & = \alpha (\beta x_1,0)\\
+                & = (\alpha \beta x_1,0)\\
+                & = ((\alpha \beta) x_1,0)\\
+                & = (\alpha \beta)(x_1,x_2)\\
+                & = (\alpha \beta) x.
+        \end{align*}
+        Por lo tanto, se cumple la propiedad. 
+    %     \[
+    %         (\alpha\beta)\odot x=\alpha\odot(\beta\odot x);
+    %     \]
+    \item \textbf{elemento neutro del producto:} supongamos que la propiedad se cumple, así para $x=(0,1)$ notemos que 
+    \[
+        (0,1) = 1(0,1) = (0,0).
+    \]
+    Lo cual no es posible, por lo tanto no se cumple la propiedad del \emph{elemento neutro del producto}.
+    %     para todo $x\in E$ se tiene que
+    %     \[
+    %         1\odot x=x,
+    %     \]
+    %     donde $1\in\K$ es el elemento neutro multiplicativo de $\K$
+    \end{enumerate}
+    % \comentario{Resolver}
+    De esta manera, como $(\R^2,+,\cdot,\R)$ no satisface todas las propiedades requeridas, entonces no es un espacio vectorial. \qedhere
+    
+    %no cumple las propiedades de: \emph{elemento neutro de la suma}, \emph{inverso de la suma} y  \emph{elemento neutro del producto}, entonces no es un espacio vectorial.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}\label{ejer:12}
+    ¿Es $W$ subespacio vectorial del espacio vectorial $(\mathbb{R}^2, + , \cdot, \mathbb{R})$? Siendo:
+\begin{enumerate}
+    \item $W = \{(x_1, x_2) \in \mathbb{R}^2 \,:\, \, 2x_1 + x_2 = 0\}$
+    
+    \item $W = \{(x_1, x_2) \in \mathbb{R}^2 \,:\, \, x_1x_2 = 1\}$
+\end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+% \comentario{Mejorar la redacción y resolver el segundo.}
+    Para demostrar que $W$ es un subespacio vectorial basta probar que $W$ es un subconjunto no vacío, para ello probamos que $0\in W$. Y además, debemos probar que $\alpha u +v\in W$ donde $u,v \in\R^2$ y $\alpha \in\R$.
+
+    Utilicemos esto en cada caso:
+    \begin{enumerate}
+        \item 
+        Para el primer literal:
+        % Para demostrar que es un subespacio vectorial, basta probar que:
+        \begin{enumerate}
+            \item Notemos que $0 = (0,0)$, entonces
+                \[
+                    2 (0) + (0) = 0.
+                \]
+                Por lo tanto, $0\in W$.
+            \item Sea $\alpha \in \R$ y sean $u,v\in\R^2$. Mostremos que que $\alpha u + v \in W$. En efecto, por hipótesis se tiene que
+                \begin{equation}\label{ej:12.1}
+                    2 u_1 + u_2 = 0, \qquad 2 v_1 + v_2 = 0
+                \end{equation}
+                luego,
+                \[
+                    \alpha u + v  = \alpha (u_1,u_2) + (v_1,v_2) \\
+                     = (\alpha u_1 + v_1, \alpha u_2 + v_2).
+                \]
+                de donde, usando \eqref{ej:12.1} se sigue que 
+                \begin{align*}
+                    2(\alpha u_1 + v_1) + (\alpha u_2 + v_2) 
+                    &= \alpha( 2 u_1 + u_2) + (2 v_1 + v_2) \\
+                    &= \alpha( 0 ) + ( 0 ) \\
+                    &= 0.
+                \end{align*}
+                Es decir, $\alpha u + v\in W$, como se quería.
+        \end{enumerate}
+        Por lo tanto, $W$ es subespacio vectorial de $\R^2$. 
+    \item 
+        Para el segundo literal, notemos que 
+        $0 \notin W$,  puesto que como $0 = (0,0)$, entonces
+        \[
+            0\cdot 0 = 0 \neq 1.
+        \]
+        Por lo tanto, $W$ no es un subespacio vectorial de $\R^2$. \qedhere
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    ¿Es $W$ subespacio vectorial del espacio vectorial $(\mathbb{R}^3, + , \cdot, \mathbb{R})$? Siendo:
+\begin{enumerate}
+\item $W = \{(x_1, x_2, x_3) \in \mathbb{R}^3 \,:\, \, |x_1| + |x_2| = x_3\}$
+\item $W = \{(x_1, x_2, x_3) \in \mathbb{R}^3 \,:\, \, x_1 + x_2 \geq x_3\}$
+\item $W = \{(x_1, x_2, x_3) \in \mathbb{R}^3 \,:\, \, x_1^2 = x_2 \}$
+\end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Para la solución del ejercicio, aplicamos el mismo esquema utilizado para el Ejercicio~\ref{ejer:12}.
+
+    \begin{enumerate}
+        \item Tomemos $x=(1,1,2)$ y $\alpha=-1$, notemos que $x\in W$ pues 
+        \[
+            |1|+|1| = 2.
+        \]
+        No obstante, se tiene que 
+        \[
+            \alpha x = -1(1,1,2) = (-1,-1,-2)
+        \]
+        de donde
+        \[
+            |-1|+|-1| = 2 \neq -2.
+        \]
+        Es decir, $\alpha x\notin W$ y por lo tanto $W$ no es un subespacio vectorial.
+        
+        \item Tomemos $x=(1,0,0)$ y $\alpha = -1$, notemos que $x\in W$ pues 
+        \[
+            1 + 0 \geq 0.
+        \]
+        No obstante, se tiene que 
+        \[
+            \alpha x = -1 (1,0,0) = (-1,0,0)
+        \]
+        de donde
+        \[
+            -1 + 0 \not\geq 0.
+        \]
+        Es decir, $\alpha x\notin W$ y por lo tanto $W$ no es un subespacio vectorial.
+    \item 
+        Tomemos $x=(1,1,0)$ y $\alpha=2$, notemos que $x\in W$ pues   
+        \[
+            1^2 = 1.
+        \]
+        No obstante, se tiene que 
+        \[
+            \alpha x = 2(1,1,0) = (2,2,0),
+        \]
+        de donde como 
+        \[
+            2^2 \neq 2,
+        \]
+        entonces $\alpha x\notin W$ y, por lo tanto $W$ no es un subespacio vectorial. \qedhere
+    \end{enumerate}
+
+    % \comentario{Resolver}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    ¿Es $W$ subespacio vectorial del espacio vectorial $(\R_2[x], + , \cdot, \mathbb{R})$? Siendo: 
+    \[W = \{ a + bx + cx^2 \in \R_2[x]\,:\, \, b + c = a - 2 \}.\]
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Para que $W$ sea un subespacio vectorial de $\R_2[x]$, se necesita que $0\in W$, donde el $0$ corresponde al polinomio nulo, es decir, el polinomio cuyos coeficientes son cero. Así, se tendría que $a=b=c=0$ y por lo tanto como
+    \[
+         0 \neq -2,
+    \]
+    entonces $0\notin W$ y así $W$ no es un subespacio vectorial. 
+    % \comentario{Resolver}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En el espacio vectorial $\R^{2}$, sean:
+    \[
+        \begin{array}{cccc}
+            v_1 = \begin{pmatrix} 1\\ 3 \end{pmatrix}, &
+            v_2 = \begin{pmatrix} 2\\ -3 \end{pmatrix} &
+            \text{ y } &
+            v_3 = \begin{pmatrix} 0\\ 2 \end{pmatrix}.
+        \end{array}
+    \]
+    ¿Son los vectores $v_1$, $v_2$ y $v_3$ linealmente independientes?
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Tomemos $\alpha_1, \alpha_2$ y $\alpha_3\in\R$ y planteamos el siguiente sistema lineal homogéneo
+    \[
+        \alpha_1 v_1 + \alpha_2 v_2 + \alpha_3 v_3 = 0_V,
+    \]
+    o equivalentemente
+    \[
+        \begin{array}{ccccccc}
+            \alpha_1 & + & 2\alpha_2 & & & = & 0;\\
+            3\alpha_1 & - & 3\alpha_2 & + & 2\alpha_3& = & 0;
+        \end{array}
+    \]
+    cuya matriz adjunta en forma escalonada por filas es
+    \[
+        \begin{pmatrix}
+            1 & 2 & 0 & | & 0\\
+            0 & -9 & 2 & | & 0
+        \end{pmatrix}.
+    \]
+    Entonces, $\alpha_1 = -2\alpha_2$ y $\alpha_3 = \dfrac{9}{2}\alpha_2$, donde $\alpha_2\in\R$. Escogiendo $\alpha_{2} = 2$, encontramos la solución no trivial $\alpha_{1}=-4$, $\alpha_2=2$ y $\alpha_3 = 9$. Por lo tanto, $v_1$, $v_2$ y $v_3$ son linealmente dependientes.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En el espacio vectorial $\R^{3}$, sean:
+    \[
+        \begin{array}{cccc}
+            v_1 = \begin{pmatrix} 2\\ 2\\ 3 \end{pmatrix}, &
+        v_2 = \begin{pmatrix} -1\\ -2\\ 1 \end{pmatrix} &
+        \text{ y } &
+        v_3 = \begin{pmatrix} 0\\ 1\\ 0 \end{pmatrix}.
+        \end{array}
+    \]
+    ¿Son los vectores $v_1$, $v_2$ y $v_3$ linealmente independientes?
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Tomemos $\alpha_1, \alpha_2$ y $\alpha_3\in\R$ y planteamos el siguiente sistema lineal homogéneo
+    \[
+        \alpha_1 v_1 + \alpha_2 v_2 + \alpha_3 v_3 = 0_V,
+    \]
+    o equivalentemente
+    \[
+        \begin{array}{ccccccc}
+            2\alpha_1 & - & \alpha_2 &  & & = & 0;\\
+            2\alpha_1 & - & 2\alpha_2 & + & \alpha_3& = & 0;\\
+            3\alpha_1 & + & \alpha_2 &  & & = & 0;
+        \end{array}
+    \]
+    cuya matriz adjunta en forma escalonada reducida por filas es
+    \[
+        \begin{pmatrix}
+            1 & 0 & 0 & | & 0\\
+            0 & 1 & 0 & | & 0\\
+            0 & 0 & 1 & | & 0
+        \end{pmatrix}.
+    \]
+    Entonces, el sistema posee solución única, es decir, $\alpha_1 = \alpha_2 = \alpha_3 = 0$. Por lo tanto, $v_1$, $v_2$ y $v_3$ son linealmente independientes.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En el espacio vectorial $\R_2[t]$, sean:
+    \[
+        \begin{array}{cccc}
+            p_1(t) = t^2 + 1, & 
+            p_2(t) = t - 2 &
+            \text{ y } &
+            p_3(t) = t + 3.
+        \end{array}
+    \]
+    ¿Son los vectores $p_1(t)$, $p_2(t)$ y $p_3(t)$ linealmente independientes?
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Tomemos $\alpha_1, \alpha_2$ y $\alpha_3\in\R$ y planteamos la combinación lineal nula
+    \[
+        \alpha_1 p_1(t) + \alpha_2 p_2(t) + \alpha_3 p_3(t) = 0t^2 + 0t + 0,
+    \]
+    a partir de lo cual se tiene que
+    \[
+        \alpha_1(t^2 + 1) + \alpha_2(t - 2) + \alpha_3(t + 3) = 0t^2 + 0t + 0,
+    \]
+    agrupando términos, se obtiene
+    \[
+        \alpha_1t^2 + (\alpha_2 + \alpha_3)t + (\alpha_1 - 2\alpha_2 + 3\alpha_3) = 0t^2 + 0t + 0,
+    \]
+    es decir, se obtiene el sistema lineal homogéneo
+    \[
+        \begin{array}{ccccccc}
+            \alpha_1 &  &  &  & & = & 0;\\
+             &  & \alpha_2 & + & \alpha_3& = & 0;\\
+            \alpha_1 & - & 2\alpha_2 & + & 3\alpha_3& = & 0;
+        \end{array}
+    \]
+    cuya matriz adjunta en forma escalonada reducida por filas es
+    \[
+        \begin{pmatrix}
+            1 & 0 & 0 & | & 0\\
+            0 & 1 & 0 & | & 0\\
+            0 & 0 & 1 & | & 0
+        \end{pmatrix}.
+    \]
+    Entonces, el sistema posee solución única, es decir, $\alpha_1 = \alpha_2 = \alpha_3 = 0$. Por lo tanto, $p_1(t)$, $p_2(t)$ y $p_3(t)$ son linealmente independientes.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    ¿Cuáles de los siguientes conjuntos de vectores generan a $\R^3$?
+\begin{enumerate}
+        \item $S=\{(1, 1, 0), (3, 4, 2)\}$
+        \item $S=\{(1, 1, 0), (0, 1, 0), (2, 2, 2)\}$
+\end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+        \item Sea $(a, b, c) \in \R^3$, queremos examinar si existen $\alpha_1$, $\alpha_2$ $\in \R$ tales que  
+        \[
+        \alpha_{1} (1, 1, 0) + \alpha_{2} (3, 4, 2) =(a, b, c).
+        \]
+        La ecuación anterior conduce al sistema lineal
+        \[
+        \begin{array}{rrrrrrr}
+         \alpha _{1} & + & 3\alpha_{2} & = & a; \\
+         \alpha _{1} & + & 4\alpha_{2} & = & b;\\
+         & & 2\alpha_{2} & = & c;
+         \end{array}
+         \]
+         de donde, resolviendo obtenemos
+         \begin{align*}
+        \begin{pmatrix}
+            1&3&|&a\\
+            1&4&|&b\\
+            0&2&|&c\\
+        \end{pmatrix}
+        & \sim 
+        \begin{pmatrix}
+            1&3&|&a\\
+            0&1&|&-a+b\\
+            0&0&|&2a - 2b +c\\
+        \end{pmatrix},
+        \end{align*}
+        con lo cual, notamos que, si $2a - 2b + c \neq 0$, el sistema no tiene solución. Por lo tanto no existe solución para cualquier elección de $a, b, c$, y se concluye que $S$ no genera a $\R^3$.
+        
+        \item Sea $(a, b, c) \in \R^3$, queremos examinar si existen $\alpha_1$, $\alpha_2$, $\alpha_3$  $\in \R$ tales que  
+        \[
+        \alpha_{1} (1, 1, 0) + \alpha_{2} (0, 1, 0) + \alpha_{3} (2, 2, 2) =(a, b, c).
+        \]
+        La ecuación anterior conduce al sistema lineal
+        \[
+        \begin{array}{rrrrrrr}
+         \alpha _{1} & + & & + & 2\alpha_{3} = & a, \\
+         \alpha _{1} & + &\alpha_{2}& + &2\alpha_{3}= & b,\\
+         & & & &2\alpha_{3}= & c,
+         \end{array}
+         \]
+         de donde, resolviendo obtenemos
+        \begin{align*}
+        \begin{pmatrix}
+            1&0&2&|&a\\
+            1&1&2&|&b\\
+            0&0&2&|&c\\
+        \end{pmatrix}
+        & \sim 
+        \begin{pmatrix}
+            1&0&0&|&a-c\\
+            0&1&0&|&-a+b\\
+            0&0&1&|&\frac{c}{2}\\
+        \end{pmatrix},
+        \end{align*}
+        con lo cual, notamos que, existe solución para cualquier elección de $a, b, c$, y por lo tanto $\R^2 = gen (S)$. \qedhere
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Espacios con producto interno}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En cada espacio vectorial $V$ utilice el proceso de Gram-Schmidt para transformar la base $B$ de $V$ en (a) una base ortogonal; (b) una base ortonormal.
+    \begin{enumerate}
+        \item En $V=\R^{2}$ con $B=\{(1, 2), (-3, 4)\}$.
+        \item En $V=\R^{3}$ con $B=\{(1, 1, 1), (0, 1, 1), (1, 2, 3)\}$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+    \item Sean $u_{1} = (1, 2)$ y $u_{2} = (-3, 4)$, vamos a determinar la base ortogonal $B_{1}=\{v_{1}, v_{2}\}$, para hacerlo utilizamos el proceso de Gram-Schmidt.
+    \begin{itemize}
+        \item Para determinar $v_{1}$: 
+        \[
+            v_{1} = u_{1} = (1, 2).
+        \]
+        \item Para determinar $v_{2}$:
+        \begin{align*}
+            v_{2} &= u_{2} - \dfrac{u_{2} \cdot v_{1}}{v_{1} \cdot v_{1}}v_{1}\\
+                  &= (-3, 4) - \dfrac{(-3, 4) \cdot (1, 2)}{(1, 2) \cdot (1, 2)}(1, 2)\\
+                  &= (-3, 4) - (1, 2)\\
+                  &= (-4, 2).
+        \end{align*}
+    \end{itemize}
+    Vamos a determinar ahora la correspondiente base ortonormal $B_{2}=\{w_{1}, w_{2}\}$. Para esto, notemos que
+    \begin{align*}
+        w_{1} &= \dfrac{1}{\|v_{1}\|}v_{1} = \dfrac{1}{\sqrt{5}}(1, 2).\\
+        w_{2} &= \dfrac{2}{\|v_{2}\|}v_{2} = \dfrac{1}{2\sqrt{5}}(-4, 2).
+    \end{align*}
+    Por lo tanto, $B_{2}=\left\{\left(\dfrac{\sqrt{5}}{5}, \dfrac{2\sqrt{5}}{5}\right), \left(-\dfrac{2\sqrt{5}}{5}, \dfrac{\sqrt{5}}{5}\right)\right\}$.
+    \item Verifique que la base ortogonal es
+    \[
+        B_{1} = \{(1, 1, 1), (-2, 1, 1), (0, -1, 1)\}
+    \]
+    y que la base ortonormal es
+    \[
+        B_{2} = \left\{\left(\dfrac{\sqrt{3}}{3}, \dfrac{\sqrt{3}}{3}, \dfrac{\sqrt{3}}{3}\right), \left(-\dfrac{\sqrt{6}}{3}, \dfrac{\sqrt{6}}{6}, \dfrac{\sqrt{6}}{6}\right), \left(0, -\dfrac{\sqrt{2}}{2}, \dfrac{\sqrt{2}}{2}\right)\right\}. \qedhere
+    \]
+\end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Aplicaciones lineales}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En cada caso, determine el núcleo y la imagen de la aplicación lineal dada:
+    \begin{enumerate}
+        \item $T:\R^3\to\R^2$ dada por $T(x) = (x_1-x_3,2x_2+x_3)$, para todo $x\in\R^3$.
+        \item $T:\R^{2\times 2} \to \R^2$ definida por $T(A)=Ae^{1} - 3Ae^2$, para todo $A\in\R^{2\times 2}$.
+        \item $T:\R_3[x]\to \R$ dada por $T(p(x))=p(0) + p'(0)$, para todo $p(x)\in\R_3[x]$.
+        \item $T:\R^{n\times n}\to \R^{n\times n}$ definida por $T(A)=A-A^\intercal$, para todo $A\in\R^{n\times n}$.
+        \item $T:\R_n[x]\to \R_{n+1}[x]$, dada por
+        \[
+            T(p(x)) = \int_0^x p(t)\; dt,
+        \]
+        para todo $p(x)\in \R_n[x]$.
+        \item $T:\mathcal{C}^1(\R)\to\mathcal{C}(\R)$ definida por $T(f)=f' + \alpha f$, para todo $f\in\mathcal{C}^1(\R)$, siendo $\alpha\in \R$ una constante. (\emph{Sugerencia:} Recuerde que $(e^{\alpha x}f(x))' = e^{\alpha x}(f'(x) + \alpha f(x))$, para todo $x\in\R$.)
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+\begin{enumerate}
+    \item Sea $x\in\R^3$, entonces $x\in\ker(T)$ si y sólo si $(x_1-x_3,2x_2+x_3) = 0$, lo que es equivalente a 
+    \[
+        x_1 - x_3 = 0 \texty 2x_2 + x_3 = 0.
+    \]
+    Al resolver este sistema, podemos concluir que
+    \[
+        \ker(T) = \gen\{(2,-1,2)\}.
+    \]
+    Esto además, implica que $\dim(\ker(T)) = 1$, de donde
+    \[
+        3 = \dim(\R^3) = \dim(\ker(T)) + \dim(\img(T)) = 1 + \dim(\img(T)),
+    \]
+    y así $\dim(\img(T)) = 2$, lo que significa que $\img(T)=\R^2$.
+    
+    \item Dada $A\in\R^{2\times 2}$, tenemos que $A\in\ker(T)$ si y sólo si 
+    \[
+        a_{11}+a_{12} = a_{21} + a_{22} = 0,
+    \]
+    de donde se tiene que
+    \[
+        \ker(T) = \{A=(a_{ij})\in\R^{2\times 2} :  a_{11}+a_{12} = a_{21} + a_{22} = 0\}
+    \]
+    o, equivalentemente,
+    \[
+        \ker(T) = \gen\left\{ \begin{pmatrix}
+                    1 & -1 \\ 0 & 0
+        \end{pmatrix}, \begin{pmatrix}
+                    0 & 0 \\ 1 & -1
+        \end{pmatrix} \right\},
+    \]
+    lo que, en particular, implica que $\dim(\ker(T)) = 2$. Con esto,
+    \[
+        \dim(\img(T)) = \dim(\R^{2\times 2}) - \dim(\ker(T)) = 4 - 2 = 2,
+    \]
+    de modo que $\img(T) = \R^2$.
+    
+    \item Sea $p(x)=a+bx+cx^2+dx^3\in\R_3[x]$, entonces $p(x)\in \ker(T)$ si y sólo si $p(0)+p'(0)=0$, es decir, si y sólo si $a+b=0$. Por ende
+    \[
+        \ker(T) = \{ p(x)=a+bx+cx^2+dx^3\in\R_3[x] : a+b = 0 \}.
+    \]
+    Ahora, notemos que $T(1) = 1$, de modo que $1\in\img(T)$. Con esto,
+    \[
+        \R = \gen\{1\}\subseteq \img(T) \subseteq\R,
+    \]
+    de donde $\img(T) = \R$.
+    
+    \item Sea $A\in\R^{n\times n}$, entonces $A\in\ker(T)$ si y sólo si $A-A^\intercal = 0$, es decir, si y sólo si $A$ es simétrica, por ende
+    \[
+        \ker(T) = \{A\in\R^{n\times n} : A\text{ es simétrica}\}.
+    \]
+    Ahora, notemos que para toda $A\in\R^{n\times n}$ se tiene que
+    \[
+        T(A)^\intercal = (A-A^\intercal)^{\intercal} = A^\intercal - A = -T(A),
+    \]
+    por ende $T(A)$ es antisimétrica. Recíprocamente, si $B\in\R^{n\times n} $ es antisimétrica, tenemos que
+    \[
+        T\left( \frac{1}{2}B \right) =  \frac{1}{2}B -  \frac{1}{2}B^\intercal =  \frac{1}{2}B +  \frac{1}{2}B = B,
+    \]
+    de modo que 
+    \[
+        \img(T) = \{A\in\R^{n\times n} : A \text{ es antisimétrica}\}.
+    \]  
+    
+    \item Sea $p(x) = \dsum_{k=0}^n a_k x^k\in \R_n[x]$, entonces $p(x)\in \ker(T)$ si y sólo si
+    \[
+        \sum_{k=1}^n \frac{a_k}{k+1}x^{k+1} = 0,
+    \]
+    es decir, si y sólo si $a_0 = a_1 = \cdots = a_n = 0$, por ende $\ker(T) = \{0\}$. 
+    
+    Sea $q(x) = \dsum_{k=0}^{n+1} b_k x^k\in \R_{n+1}[x]$, tenemos que $q(x)\in\img(T)$ si y sólo si existe $p(x) = \dsum_{k=0}^n a_k x^k\in \R_n[x]$ tal que
+    \[
+        \sum_{k=0}^{n+1} b_k x^k = \sum_{k=1}^n \frac{a_k}{k+1}x^{k+1},
+    \]
+    de donde se tiene que $q(0) = b_0 = 0$ y $b_k = \dfrac{a_{k-1}}{k}$ si $k\in\{1,\dots,n+1\}$. De este modo,
+    \[
+        \img(T) = \{q(x)\in \R_{n+1}[x] : q(0) = 0\}.
+    \]
+    
+    \item Sea $f\in\mathcal{C}^1(\R)$, entonces $f\in\ker(T)$ si y sólo si $f'+\alpha f = 0$, es decir, si $f'(x) + \alpha f(x) = 0$ para todo $x\in \R$. Entonces, tenemos que
+    \[
+        e^{\alpha x}(f'(x) + \alpha f(x)) = 0,
+    \]
+    es decir,
+    \[
+        (e^{\alpha x}f(x)) ' = 0.
+    \]
+    Esto sucede si y solamente sí existe $c\in\R$ tal que $e^{\alpha x}f(x) = c$, para todo $x\in\R$, es decir, $f(x) = ce^{-\alpha x}$, para todo $x\in\R$. Definamos la función $\varphi:\R\to\R$ mediante $\varphi(x) = e^{-\alpha x}$, de modo que $f=c\varphi$. Con esto,
+    \[
+        \ker(T) = \gen\{\varphi\}.
+    \]
+    
+    Ahora, sea $g\in\mathcal{C}(\R)$. Supongamos que $g\in\img(T)$, entonces existe $f\in\mathcal{C}^1(\R)$ tal que $g = f' + \alpha f$, de modo que, para todo $x\in\R$
+    \[
+        e^{\alpha x}g(x) = (e^{\alpha x}f(x))',
+    \]
+    de donde, por el segundo teorema fundamental del cálculo,
+    \[
+        \int_0^x e^{\alpha t}g(t) \; dt = e^{\alpha x}f(x) - f(0).
+    \]
+    Así, tenemos que si, para todo $x\in\R$,
+    \[
+        f(x) = e^{-\alpha x}\int_0^x e^{\alpha t}g(t) \; dt,
+    \]
+    entonces $f$ es continua y, por el primer teorema fundamental del cálculo,
+    \[
+        T(f)(x) = f'(x) + \alpha f(x) = -\alpha e^{-\alpha x}\int_0^x e^{\alpha t}g(t) \; dt + e^{-\alpha x} e^{\alpha x}g(x) + \alpha \int_0^x e^{\alpha t}g(t) \; dt = g(x),
+    \]
+    de donde $T$ es sobreyectiva, y por ende $\img(T)=\mathcal{C}^{1}(\R)$.
+\end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En cada caso, determinar si las aplicaciones lineales dadas son o no isomorfismos.
+\begin{enumerate}
+    \item $T:\R^4\to \R^{2\times 2}$ dada por 
+    \[
+        T(x) = \begin{pmatrix}
+        x_1 + x_2 & x_2 + x_3\\
+        x_3 + x_4 & x_4 + x_1
+        \end{pmatrix}
+    \]
+    para todo $x\in\R^4$.
+    \item $T:\R_3[x]\to \R^{2\times 2}$ dada por
+    \[
+        T(p(x)) = \begin{pmatrix}
+        p(0) & p'(0) \\
+        p''(0) & p'''(0)
+        \end{pmatrix}.
+    \]
+    \item $T:\R^3 \to \R^3$ dado por $T(x) = x\times e^2$.
+    \item $T:\R^+\to \R$ definida por $T(x)=\ln(x)$, para todo $x\in\R^+$, donde sobre $\R^+$ se considera la estructura de espacio vectorial dada por las operaciones
+    \[
+        x\oplus y = xy \texty \alpha\odot x = x^\alpha,
+    \]
+    para todo $x\in\R^+$ y todo $\alpha\in\R$.
+\end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+        \item Sea $x\in\R^4$, tenemos que $x\in\ker(T)$ si y sólo si $T(x)=0$, es decir,
+        \[
+            \begin{pmatrix}
+            x_1 + x_2 & x_2 + x_3\\
+            x_3 + x_4 & x_4 + x_1
+            \end{pmatrix} = 0,
+        \]
+        o, lo que es equivalente,
+        \[
+            \begin{pmatrix}
+            1 & 1 & 0 & 0\\
+            0 & 1 & 1 & 0\\
+            0 & 0 & 1 & 1\\
+            1 & 0 & 0 & 1 
+            \end{pmatrix} \begin{pmatrix}
+            x_1 \\ x_2 \\ x_3 \\ x_4
+            \end{pmatrix} = \begin{pmatrix}
+            0 \\ 0 \\ 0 \\ 0
+            \end{pmatrix}.
+        \]
+        Dado que
+        \[
+            \begin{vmatrix}
+            1 & 1 & 0 & 0\\
+            0 & 1 & 1 & 0\\
+            0 & 0 & 1 & 1\\
+            1 & 0 & 0 & 1 
+            \end{vmatrix} = 0,
+        \]
+        se sigue que existe $x\neq 0$ tal que $T(x) = 0$, por ende $\ker(T)\neq \{0\}$ y así $T$ no es inyectiva. Consecuentemente, $T$ no es un isomorfismo.
+        
+        \item Sea $p(x)\in\R_3[x]$, entonces $T(p(x))= 0$ si y sólo si
+        \[
+            \begin{pmatrix}
+        p(0) & p'(0) \\
+        p''(0) & p'''(0)
+        \end{pmatrix},
+        \]
+        es decir, si y sólo si 
+        \[
+            p(0) = p'(0) = p''(0) = p'''(0).
+        \]
+        Si $p(x) = a + bx + cx^2 + dx^3$, entonces tenemos que $a = b + 2c = 6d = 0$, de donde se tiene que $\ker(T)=\{0\}$, y así, $T$ es inyectiva. Ahora, dado que
+        \[
+           \dim(\R^{2\times 2}) 4 = \dim(\R^4) = \dim(\ker(T)) + \dim(\img(T)) = \dim(\img(T)),
+        \]
+        se tiene que $\img(T)=\R^{2\times 1}$, o que implica que $T$ es sobreyectiva. Así $T$ es biyectiva y por ende un isomorfismo.
+        
+        \item Dado que $T(e^2) = e^2\times e^2 = 0$, se tiene que $T$ no es inyectiva, y por ende $T$ no es un isomorfismo.
+        \item Sea $x\in\R^+$ Tenemos que $T(x)=0$ si y sólo si $\ln(x)=0$, lo que sucede si y sólo si $x=1$, pero $1$ es el vector nulo del espacio $\R^+$, así $\ker(T)=\{1\}$ y por ende $T$ es inyectiva. Ahora, sea $y\in\R$, entonces $T(e^y) = \ln(e^y) = y$, por ende $\img(T)=\R$, lo que significa que $T$ es sobreyectiva. Como $T$ es biyectiva, $T$ es un isomorfismo.
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Dada la transformación lineal
+    \[
+        \funcion{f}{\R^{2}}{\R^{3}}{(x,y)}{(x-2y,2x+y,x+y).}
+    \]
+    Sean $S$ y $T$ las bases canónicas de $\R^{2}$ y $\R^{3}$, respectivamente. Además, sean 
+    \[
+        S' = \{(1, -1),(0, 1)\}
+    \] 
+    y
+    \[
+        T' = \{(1,1,0), (0,1,1), (1,-1,1)\}
+    \]
+    bases para $\R^{2}$ y $\R^{3}$, respectivamente.
+    \begin{enumerate}
+        \item Determine $[f]_{T,S}$. %$S$ y $T$.
+        \item Determine $[f]_{T',S'}$ a través de la expresión $[f]_{T',S'} = P_{T'\leftarrow T} [f]_{T,S} P_{S\leftarrow S'}$.
+        \item Verifique que se cumple que:
+        \[
+            [f(1,2)]_{T'} = [f]_{T',S'}[(1,2)]_{S'}.
+        \]
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+    \item Notemos que 
+    \[
+        f(1, 0) = (1, 2, 1)
+        \texty
+        f(0, 1) = (-2, 1, 1),
+    \]
+    luego, 
+    \[
+        [f(1, 0)]_{T} = (1, 2, 1)
+        \texty
+        [f(0, 1)]_{T} = (-2, 1, 1),
+    \]
+    por lo cual
+    \[
+        [f]_{T,S} = 
+        \begin{pmatrix}
+            1 & -2\\
+            2 & 1\\
+            1 & 1
+        \end{pmatrix}.
+    \]
+    \item Notemos que 
+    \[
+        P_{S \leftarrow S'} = 
+        \begin{pmatrix}
+            1 & 0\\
+            -1 & 1
+        \end{pmatrix}
+        \texty
+        P_{T' \leftarrow T} = 
+        \begin{pmatrix}
+            2/3 & 1/3 & -1/3\\
+            -1/3 & 1/3 & 2/3\\
+            1/3 & -1/3 & 1/3
+        \end{pmatrix}
+    \]
+    por lo tanto
+    \[
+        [f]_{T',S'} = P_{T'\leftarrow T} [f]_{T,S} P_{S\leftarrow S'} = \begin{pmatrix}
+            2/3 & 1/3 & -1/3\\
+            -1/3 & 1/3 & 2/3\\
+            1/3 & -1/3 & 1/3
+        \end{pmatrix}
+        \begin{pmatrix}
+            1 & -2\\
+            2 & 1\\
+            1 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+            1 & 0\\
+            -1 & 1
+        \end{pmatrix}
+        = 
+        \begin{pmatrix}
+            7/3 & -4/3\\
+            -2/3 & 5/3\\
+            2/3 & -2/3
+        \end{pmatrix}.
+    \]
+    \item Dado que $[(1, 2)]_{S'} = (1, 3)$, tenemos que
+    \[
+        [f(1, 2)]_{T'} = [f]_{T',S'}[(1, 2)]_{S'} = \begin{pmatrix}
+            7/3 & -4/3\\
+            -2/3 & 5/3\\
+            2/3 & -2/3
+        \end{pmatrix}
+        \begin{pmatrix}
+            1\\
+            3
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            -5/3\\
+            13/3\\
+            -4/3
+        \end{pmatrix}.
+    \]
+    Además, se tiene que $f(1, 2) = (-3, 4, 3)$, a partir lo cual:
+    \[
+        [f(1, 2)]_{T'} = 
+        \begin{pmatrix}
+            -5/3\\
+            13/3\\
+            -4/3
+        \end{pmatrix}. \qedhere
+    \]
+\end{enumerate}
+\end{proof}
+
+\section{Valores y vectores propios}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sea 
+    \[
+        A = \begin{pmatrix}
+            1 & 1 \\
+            -2 & 4
+        \end{pmatrix}.
+    \]
+    \begin{enumerate}
+    \item
+        Determine el polinomio característico de $A$.
+    \item
+        Determine lo valores propios de $A$.
+    \item
+        Determine el espacio propio asociado a cada valor propio encontrado.
+    \item
+        Determine una base para cada espacio propio.
+    \item
+        Defina la matriz $P$ formada por los vectores del literal anterior como columnas.
+    \item
+        Calcule $P^{-1}$.
+    \item
+        Defina la matriz diagonal $D$ que tenga en su diagonal los valores propios de $A$.
+    \item
+        Compruebe que $A = P D P^{-1}$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Sea 
+    \[
+        A = \begin{pmatrix}
+            1 & 1 \\
+            -2 & 4
+        \end{pmatrix}.
+    \]
+    \begin{enumerate}
+    \item
+        Determine el polinomio característico de $A$.
+    \item
+        Determine lo valores propios de $A$.
+    \item
+        Determine el espacio propio asociado a cada valor propio encontrado.
+    \item
+        Determine una base para cada espacio propio.
+    \item
+        Defina la matriz $P$ formada por los vectores del literal anterior como columnas.
+    \item
+        Calcule $P^{-1}$.
+    \item
+        Defina la matriz diagonal $D$ que tenga en su diagonal los valores propios de $A$.
+    \item
+        Compruebe que $A = P D P^{-1}$.
+    \end{enumerate}
+\end{proof}
+
+
+\end{document}

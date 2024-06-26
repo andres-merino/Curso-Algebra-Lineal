@@ -1,0 +1,170 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Actualizado en febrero de 2024
+% Funciona con TeXLive 2022
+% Para obtener solo el pdf, compilar con pdfLaTeX. 
+%  latexmk -pdf 01\ Cuestionarios/01\ Matrices.tex -output-directory="01 Cuestionarios"
+% Para obtener el xml compilar con XeLaTeX.
+% latexmk -xelatex 01\ Cuestionarios/01\ Matrices.tex -output-directory="01 Cuestionarios"
+
+% -- Paquetes adicionales
+\usepackage{aleph-moodle}
+\moodleregisternewcommands
+% Todos los comandos nuevos deben ir luego del comando anterior
+\usepackage{aleph-comandos}
+
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos / Bioingeniería}
+\asignatura{Álgebra Lineal}
+\tema{control de lectura: Coordenadas y Cambio de base}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+% -- Otros comandos
+
+
+
+\begin{document}
+
+\encabezado
+
+\vspace*{-8mm}
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Indicaciones}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Se plantean bancos de preguntas orientados a realizar el control de lectura de la sección 4.7 del libro de Larson.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Banco de preguntas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Control - Coordenadas y cambio de base}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multi}[]{Q1}
+    ¿Qué afirmación es verdadera respecto a la representación de coordenadas en $\mathbb{R}^n$?
+    \item* Todo vector $x$ en un espacio vectorial $V$ puede expresarse de manera única como una combinación lineal de vectores en una base $B$.
+    \item Todo vector en $\mathbb{R}^n$ tiene la misma representación de coordenadas en cualquier base.
+    \item Las coordenadas de un vector en $\mathbb{R}^n$ siempre corresponden a sus componentes en la base estándar.
+    \item La representación de coordenadas no depende del orden de los vectores en la base.
+\end{multi}
+
+\begin{multi}[]{Q2}
+    ¿Cuál es la matriz de coordenadas del vector $x = (–2, 1, 3)$ en $\mathbb{R}^3$ con respecto a la base estándar?
+    \item* $\begin{pmatrix} -2 \\ 1 \\ 3 \end{pmatrix}$
+    \item $\begin{pmatrix} 2 \\ 1 \\ 3 \end{pmatrix}$
+    \item $\begin{pmatrix} 1 \\ -2 \\ 3 \end{pmatrix}$
+    \item $\begin{pmatrix} 3 \\ 1 \\ -2 \end{pmatrix}$
+\end{multi}
+
+\begin{multi}[]{Q3}
+    En el proceso de cambio de base, ¿qué representa la matriz $P$ en la ecuación matricial $x_{B} = P x_{B'}$?
+    \item* La matriz de transición de $B'$ a $B$.
+    \item La matriz de coordenadas de $x$ relativa a $B$.
+    \item La matriz de coordenadas de $x$ relativa a $B'$.
+    \item La inversa de la matriz de transición de $B$ a $B'$.
+\end{multi}
+
+\begin{multi}[]{Q4}
+    ¿Qué propiedad tiene la matriz de transición $P$?
+    \item* $P$ es invertible y $P^{-1}$ es la matriz de transición de $B$ a $B'$.
+    \item $P$ no es invertible en la mayoría de los casos.
+    \item $P$ y $P^{-1}$ representan la misma transición de bases.
+    \item $P$ siempre es igual a la matriz identidad independientemente de las bases.
+\end{multi}
+
+\begin{multi}[]{Q5}
+    ¿Qué método se utiliza para encontrar la matriz de transición $P^{-1}$?
+    \item* Eliminación de Gauss-Jordan en la matriz $[B' \; B]$.
+    \item Multiplicación directa de las matrices $B$ y $B'$.
+    \item Suma de las matrices de las bases $B$ y $B'$.
+    \item Inversión de la matriz de coordenadas de $x$.
+\end{multi}
+
+\begin{multi}[]{Q7}
+    ¿Cuál es el propósito del cambio de base en espacios vectoriales?
+    \item* Encontrar las coordenadas de un vector relativas a otra base.
+    \item Cambiar las dimensiones del espacio vectorial.
+    \item Simplificar las operaciones de vectores para cálculos básicos.
+    \item Identificar las bases que no son estándar.
+\end{multi}
+
+\begin{multi}[]{Q8}
+    ¿Cuál es la representación de coordenadas de $p = 3x^3 - 2x^2 + 4$ en $P_3$ con respecto a la base estándar $S = \{1, x, x^2, x^3\}$?
+    \item* $\begin{pmatrix} 4 \\ 0 \\ -2 \\ 3 \end{pmatrix}$
+    \item $\begin{pmatrix} 3 \\ -2 \\ 4 \\ 0 \end{pmatrix}$
+    \item $\begin{pmatrix} 0 \\ 4 \\ -2 \\ 3 \end{pmatrix}$
+    \item $\begin{pmatrix} -2 \\ 3 \\ 4 \\ 0 \end{pmatrix}$
+\end{multi}
+
+\begin{multi}[]{Q9}
+    ¿Cómo se generaliza el concepto de coordenadas para representar vectores en espacios $n$-dimensionales?
+    \item* Permite representar vectores de cualquier espacio n-dimensional usando la notación de $\mathbb{R}^n$.
+    \item Restringe el uso de coordenadas a los espacios vectoriales que son isomorfos a $\mathbb{R}^n$.
+    \item Elimina la necesidad de bases para definir las coordenadas de un vector.
+    \item Solo permite representar vectores en espacios de dimensiones superiores a $\mathbb{R}^3$.
+\end{multi}
+
+\begin{multi}[]{Q10}
+    De acuerdo con el teorema 4.21, ¿cómo se determina la matriz de transición $P^{-1}$ de una base $B$ a otra base $B'$?
+    \item* Mediante la eliminación de Gauss-Jordan aplicada a la matriz $[B' \; B]$.
+    \item Utilizando la multiplicación matricial entre las matrices de las bases $B$ y $B'$.
+    \item Sumando las matrices de las bases $B$ y $B'$.
+    \item Calculando la inversa de la matriz de coordenadas del vector $x$.
+\end{multi}
+
+\begin{multi}[]{Q11}
+    ¿Qué afirmación describe correctamente el proceso de cambio de base de una base no estándar a una base estándar en $\mathbb{R}^n$?
+    \item* La matriz de transición puede ser más sencilla de determinar debido a la estructura de la base estándar.
+    \item Siempre se requiere la inversión de la matriz de coordenadas del vector para completar el cambio de base.
+    \item No es necesario conocer las coordenadas del vector en la base original.
+    \item El cambio de base de una base no estándar a una estándar es matemáticamente imposible.
+\end{multi}
+
+\begin{multi}[]{Q13}
+    ¿Cómo se representa la matriz de coordenadas de un vector en el espacio de polinomios de grado menor o igual a 3?
+    \item* Como un vector en $\mathbb{R}^4$.
+    \item Como un vector en $\mathbb{R}^3$.
+    \item Como una matriz 3x3 en $\mathbb{R}^3$.
+    \item Como un polinomio de grado 3.
+\end{multi}
+
+\begin{multi}[]{Q14}
+    En el contexto de las coordenadas y el cambio de base, ¿qué importancia tiene el orden de los vectores en una base?
+    \item* El orden es crucial porque afecta la representación de las coordenadas del vector.
+    \item El orden de los vectores en una base es irrelevante y no afecta las coordenadas.
+    \item Solo es importante en bases estándar y no en bases no estándar.
+    \item Afecta únicamente la visualización gráfica, pero no las operaciones matemáticas.
+\end{multi}
+
+\begin{multi}[]{Q15}
+    ¿Qué método se utiliza para determinar la matriz de transición $P^{-1}$ de una base $B$ a otra base $B'$, según el Teorema 4.21?
+    \item* Eliminación de Gauss-Jordan en la matriz aumentada $[B' | B]$.
+    \item Factorización LU de la matriz $[B' | B]$.
+    \item Descomposición en valores singulares de la matriz $[B' | B]$.
+    \item Multiplicación directa de las matrices $B$ y $B'$.
+\end{multi}
+
+\begin{multi}[]{Q16}
+    ¿Cuál es la principal ventaja de representar coordenadas en espacios $n$-dimensionales generales, según el texto?
+    \item* Permite la representación de vectores de un espacio $n$-dimensional arbitrario con la misma notación usada en $\mathbb{R}^n$.
+    \item Facilita el cálculo de dimensiones adicionales en espacios $n$-dimensionales.
+    \item Reduce la complejidad computacional de las operaciones vectoriales en dimensiones altas.
+    \item Elimina la necesidad de bases para definir coordenadas en espacios vectoriales.
+\end{multi}
+
+
+\end{quiz}
+
+
+\end{document}

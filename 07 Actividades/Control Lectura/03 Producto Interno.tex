@@ -1,0 +1,240 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Actualizado en febrero de 2024
+% Funciona con TeXLive 2022
+% Para obtener solo el pdf, compilar con pdfLaTeX. 
+%  latexmk -pdf 01\ Cuestionarios/01\ Matrices.tex -output-directory="01 Cuestionarios"
+% Para obtener el xml compilar con XeLaTeX.
+% latexmk -xelatex 01\ Cuestionarios/01\ Matrices.tex -output-directory="01 Cuestionarios"
+
+% -- Paquetes adicionales
+\usepackage{aleph-moodle}
+\moodleregisternewcommands
+% Todos los comandos nuevos deben ir luego del comando anterior
+\usepackage{aleph-comandos}
+
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos / Bioingeniería}
+\asignatura{Álgebra Lineal}
+\tema{Control de lectura: Producto Interno}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+% -- Otros comandos
+
+
+
+\begin{document}
+
+\encabezado
+
+\vspace*{-8mm}
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Indicaciones}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Se plantean bancos de preguntas orientados a realizar el control de lectura de la sección 5.2 del libro de Larson y sección 8.1 del libro de Aranda.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Banco de preguntas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Control - Producto Interno}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multi}[]%     
+    {P1}     
+    ¿Qué propiedad del producto escalar permite afirmar que \(\langle x,y \rangle = \langle y,x \rangle\) para todos los vectores \(x,y\) en el espacio \(E\)?     
+    \item* Simetría     
+    \item Linealidad     
+    \item Positividad     
+    \item Ortogonalidad 
+\end{multi}
+
+\begin{multi}[]%     
+    {P2}     
+    ¿Cuál de las siguientes afirmaciones es verdadera respecto a la propiedad de linealidad del producto escalar?     
+    \item* \(\langle x + y, z \rangle = \langle x, z \rangle + \langle y, z \rangle\) para cualquier \(x, y, z\) en \(E\)     
+    \item \(\langle x, y + z \rangle = \langle x, y \rangle \cdot \langle x, z \rangle\)     
+    \item \(\langle x, y \rangle = \langle x + z, y + z \rangle\)     
+    \item \(\langle x, y \rangle = 0\) siempre que \(x \neq y\) 
+\end{multi}
+
+\begin{multi}[]%     
+    {P3}     
+    Si \(\alpha\) es un escalar real y \(x, y\) son vectores en \(E\), ¿cuál es la correcta expresión del producto escalar involucrando \(\alpha\)?     
+    \item* \(\langle \alpha x, y \rangle = \alpha \langle x, y \rangle\)     
+    \item \(\langle \alpha x, y \rangle = \langle x, \alpha y \rangle\)     
+    \item \(\langle \alpha x, y \rangle = \alpha^2 \langle x, y \rangle\)     
+    \item \(\langle \alpha x, y \rangle = \langle x, y \rangle/\alpha\) 
+\end{multi}
+
+\begin{multi}[]%     
+    {P4}     
+    ¿Qué implica sobre el vector \(x\) si \(\langle x, x \rangle = 0\) en un espacio vectorial euclídeo \(E\)?     
+    \item* \(x\) es el vector nulo     
+    \item \(x\) tiene norma uno     
+    \item \(x\) es ortogonal a sí mismo     
+    \item \(x\) puede ser cualquier vector 
+\end{multi}
+
+\begin{multi}[]%     
+    {P5}     
+    ¿Cuál es una correcta interpretación de la propiedad de positividad del producto escalar?     
+    \item* \(\langle x, x \rangle \geq 0\) para todo \(x\) en \(E\)     
+    \item \(\langle x, y \rangle > 0\) para todo \(x, y\) en \(E\)     
+    \item \(\langle x, y \rangle \geq 0\) sólo si \(x\) y \(y\) son ortogonales     
+    \item \(\langle x, y \rangle = 1\) siempre que \(x\) y \(y\) sean unitarios 
+\end{multi}
+
+\begin{multi}[]%     
+    {P6}     
+    ¿Qué establece la desigualdad de Cauchy-Schwarz en un espacio vectorial euclídeo?     
+    \item* \(-1 \leq \frac{\langle x, y \rangle}{\|x\| \cdot \|y\|} \leq 1\)     
+    \item \(\langle x, y \rangle^2 \leq \|x\|^2 + \|y\|^2\)     
+    \item \(\langle x, y \rangle \leq \|x\| + \|y\|\)     
+    \item \(\|x + y\| \leq \|x\| \|y\|\) 
+\end{multi}
+
+\begin{multi}[]%     
+    {P8}     
+    ¿Qué indica la propiedad de positividad respecto al valor de \(\langle x, x \rangle\) cuando \(x\) es diferente del vector nulo?     
+    \item* \(\langle x, x \rangle > 0\)     
+    \item \(\langle x, x \rangle = 0\)     
+    \item \(\langle x, x \rangle < 0\)     
+    \item \(\langle x, x \rangle\) puede ser cualquier número real 
+\end{multi}
+
+\begin{multi}[]%     
+    {P9}     
+    ¿Cuál de las siguientes es una aplicación del producto escalar en espacios vectoriales euclídeos?     
+    \item* Calcular distancias entre vectores     
+    \item Definir operaciones de suma de vectores     
+    \item Establecer el número máximo de dimensiones de un espacio     
+    \item Determinar la cantidad de vectores en una base 
+\end{multi}
+
+
+\begin{multi}[]%     
+    {P11}     
+    ¿Cuál de las siguientes afirmaciones describe correctamente un producto interno en un espacio vectorial?     
+    \item* Asocia un número real con cada par de vectores cumpliendo ciertos axiomas.     
+    \item Asocia un vector con cada par de vectores cumpliendo ciertos axiomas.     
+    \item Asocia un número complejo con cada par de vectores sin requerimientos adicionales.     
+    \item Asocia un número real con cada vector individual en el espacio. 
+\end{multi}
+
+\begin{multi}[]%     
+    {P12}     
+    ¿Cuál es un ejemplo de un producto interno diferente en \(\mathbb{R}^2\) que no es el producto interno euclidiano estándar?     
+    \item* \(\langle u, v \rangle = u_1v_1 + 2u_2v_2\)     
+    \item \(\langle u, v \rangle = u_1v_1 + u_2v_2\)     
+    \item \(\langle u, v \rangle = u_1^2 + v_1^2\)     
+    \item \(\langle u, v \rangle = u_1v_2 + u_2v_1\) 
+\end{multi}
+
+\begin{multi}[]%     
+    {P13}     
+    En el contexto de productos internos, ¿qué implica el axioma que indica que \(\langle v, v \rangle \geq 0\) para todo vector \(v\)?     
+    \item* El producto interno nunca es negativo.     
+    \item El producto interno es siempre positivo.     
+    \item El producto interno es nulo.     
+    \item El producto interno siempre es igual a 1. 
+\end{multi}
+
+\begin{multi}[]%     
+    {P14}     
+    Si se define un producto interno por la integral de dos funciones, ¿qué propiedad básica de la integral garantiza que \(\langle f, f \rangle \geq 0\) para toda función \(f\) en \(C[a, b]\)?     
+    \item* El cuadrado de una función real no es negativo.     
+    \item La integral de una función siempre es positiva.     
+    \item La integral de una función es independiente de sus límites.     
+    \item El resultado de la integral siempre es una función. 
+\end{multi}
+
+
+\begin{multi}[]%     
+    {P16}     
+    ¿Qué describe la desigualdad de Cauchy-Schwarz en espacios con producto interno?     
+    \item* La magnitud del producto interno de dos vectores no excede el producto de sus normas.     
+    \item La suma de los productos internos de dos vectores es igual a su norma.     
+    \item El producto interno de dos vectores es siempre menor que su suma.     
+    \item El producto interno de dos vectores es directamente proporcional a sus normas. 
+\end{multi}
+
+\begin{multi}[]%     
+    {P17}     
+    ¿Qué indica el teorema de Pitágoras en el contexto de espacios con producto interno?     
+    \item* La suma de los cuadrados de las normas de dos vectores ortogonales es igual a la norma de su suma al cuadrado.     
+    \item La norma de la suma de dos vectores es igual al producto de sus normas.     
+    \item La norma de la suma de dos vectores siempre es menor que la suma de sus normas.     
+    \item La suma de los cuadrados de dos vectores es siempre positiva. 
+\end{multi}
+
+
+\begin{multi}[]%     
+    {P19}     
+    ¿Qué representa la proyección ortogonal de un vector \(u\) sobre un vector \(v\) en espacios con producto interno?     
+    \item* Un múltiplo escalar de \(v\) que es la componente de \(u\) en la dirección de \(v\).     
+    \item La suma de \(u\) y \(v\) que minimiza la distancia a \(u\).     
+    \item Un vector que es ortogonal a \(v\) y paralelo a \(u\).     
+    \item La diferencia entre \(u\) y \(v\) que maximiza la longitud. 
+\end{multi}
+
+\begin{multi}[]%     
+    {P20}     
+    En la definición de norma en espacios con producto interno, ¿cómo se expresa la norma de un vector \(u\)?     
+    \item* \(\sqrt{\langle u, u \rangle}\)     
+    \item \(\langle u, u \rangle\)     
+    \item \(|\langle u, u \rangle|\)     
+    \item \(\langle u, u \rangle^2\) 
+\end{multi}
+
+\begin{multi}[]%     
+    {P21}     
+    ¿Qué caracteriza a un vector unitario en un espacio con producto interno?     
+    \item* Su norma es igual a 1.     
+    \item Su norma es igual a 0.     
+    \item Su norma es mayor que 1.     
+    \item No es ortogonal a ningún otro vector. 
+\end{multi}
+
+\begin{multi}[]%     
+    {P22}     
+    ¿Qué propiedad de los productos internos se verifica al calcular el producto interno de un vector con el vector nulo?     
+    \item* El producto interno de cualquier vector con el vector nulo es 0.     
+    \item El producto interno resulta en el mismo vector.     
+    \item El producto interno es siempre negativo.     
+    \item El producto interno es igual a la norma del vector. 
+\end{multi}
+
+\begin{multi}[]%     
+    {P24}     
+    ¿Cuál de las siguientes opciones describe adecuadamente la desigualdad del triángulo en contextos de producto interno?     
+    \item* La norma de la suma de dos vectores es menor o igual a la suma de sus normas.     
+    \item La norma de la suma de dos vectores es igual a la suma de sus normas.     
+    \item La norma de la suma de dos vectores es siempre mayor que la suma de sus normas.     
+    \item La norma de la suma de dos vectores es siempre menor que la diferencia de sus normas. 
+\end{multi}
+
+\begin{multi}[]%     
+    {P26}     
+    ¿Qué característica importante tiene la matriz de Gram en el contexto de productos internos?     
+    \item* Es simétrica.     
+    \item Es siempre diagonal.     
+    \item Sus elementos son siempre positivos.     
+    \item Es siempre invertible. 
+\end{multi}
+
+\end{quiz}
+
+
+\end{document}

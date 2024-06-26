@@ -1,0 +1,162 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{aleph-comandos}
+\hypersetup{
+    urlcolor=colordef!70,
+}
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos}
+\asignatura{Álgebra lineal}
+\tema{Reto no. 1: Factorización $LU$}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+
+% -- Otros comandos
+
+
+
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Resultado de aprendizaje}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item 
+    Aplica métodos de Álgebra Lineal para resolver sistemas de ecuaciones en contextos variados, demostrando habilidad para seleccionar y emplear el método más adecuado.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Descripción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+La factorización $LU$ es un método fundamental en el Álgebra Lineal para la resolución de sistemas de ecuaciones lineales, que ofrece eficiencia y profundidad en la comprensión de las matrices. Este reto está diseñado para guiarte desde el aprendizaje teórico de la factorización $LU$ hasta su aplicación práctica en la resolución de problemas reales.
+
+\subsection{Parte 1: Investigación}
+
+Vas a investigar qué es la factorización $LU$, sus componentes, y el proceso de cálculo, desarrollando un minitutorial (video) que sirva como guía de aprendizaje.
+
+\begin{itemize}
+\item
+    Define qué es la factorización $LU$ y para qué se utiliza.
+\item
+    Explica las matrices $L$ (lower triangular) y $U$ (upper triangular) y cómo se relacionan con la matriz original A.
+\item
+    Crea un tutorial breve que explique paso a paso cómo realizar una factorización LU, incluyendo ejemplos sencillos.
+\end{itemize}
+
+Para este punto, puedes usar esta referencia: 
+\begin{enumerate}
+    \item Página 107 del libro de Aranda.
+    \item Página 74 del libro de Larson.
+    \item Este \href{https://espanol.libretexts.org/Matematicas/Algebra_lineal/Un_Primer_Curso_de_%C3%81lgebra_Lineal_(Kuttler)/02%3A_Matrices/2.10%3A_Factorizaci%C3%B3n_LU}{enlace}.
+\end{enumerate}
+
+
+\subsection{Parte 2: Aplicación Práctica}
+
+Vas a aplicar la factorización $LU$ para resolver sistemas de ecuaciones lineales en contextos reales, demostrando comprensión y habilidad en el uso de este método.
+
+Debes consultar tres sistemas de ecuaciones, cada uno modelando situaciones en distintos contextos:
+\begin{itemize}
+\item 
+    Ingeniería: Un sistema que modela el equilibrio de fuerzas en una estructura.
+\item 
+    Economía: Un sistema que representa un modelo económico sencillo con variables interdependientes.
+\item 
+    Ciencias Ambientales: Un sistema que describe la distribución de contaminantes en diferentes zonas de un ecosistema.
+\end{itemize}
+
+Una vez planteados los sistemas, debes generar la factorización $LU$ de su matriz ampliada (para esto puedes usar directamente los comandos de Python). Con esto, realiza la solución del sistema.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Producto}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+El producto final de este reto será un documento, redactado en \LaTeX, que constará de dos secciones principales. A continuación, se detallan las instrucciones específicas para cada sección del documento.
+
+\subsection{Parte 1: Investigación y Minitutorial}
+
+\begin{enumerate}
+\item 
+    Título de la Sección: Inicia esta sección con un título claro, por ejemplo, «Introducción a la Factorización $LU$».
+\item 
+    Definición y explicación: Empieza con una breve introducción a qué es la factorización LU y su importancia en el ámbito del Álgebra Lineal. Explica los componentes de la factorización $LU$, las matrices $L$ y $U$, con ejemplos claros. 
+\item 
+    Minitutorial (video): Bajo un nuevo subtítulo «Minitutorial sobre la Factorización $LU$», añade un enlace a un videotutorial que hayas creado como apoyo al contenido escrito. Puedes hacerlo mediante \verb+\href{url}{texto enlace}+. Asegúrate de que el enlace sea accesible para tus revisores.
+\item 
+    Resolución de sistemas con $LU$: Con el subtítulo «Resolución de Sistemas de Ecuaciones», describe cómo se utiliza la factorización $LU$ para resolver sistemas de ecuaciones lineales. Incluye un ejemplo general de aplicación.
+\end{enumerate}
+
+\subsection{Parte 2: Planteamiento y Solución de Problemas}
+
+\begin{enumerate}
+\item 
+    Título de la Sección: Usa el título «Aplicación de la Factorización LU» para marcar el inicio de esta sección.
+\item 
+    Contexto y Problemas: Introduce cada contexto y su respectivo sistema de ecuaciones bajo subsecciones separadas. Describe brevemente el contexto y presenta el sistema de ecuaciones relacionado.
+\item 
+    Soluciones: Para cada problema, desarrolla la solución paso a paso, demostrando cómo aplicaste la factorización $LU$.
+\end{enumerate}
+
+\subsection{Parte de Conclusión}
+   
+   Cierra con una breve conclusión sobre lo aprendido a través del reto, las aplicaciones de la factorización $LU$, y la importancia de este método en el Álgebra Lineal. No olvidar agregar Bibliografía en formato APA.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Rúbrica de evaluación}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item
+    Definición y explicación (7 puntos): Se evaluará la claridad y precisión en la definición de la factorización $LU$ y la explicación de sus componentes.
+\item 
+    Minitutorial (7 puntos): Se valorará la calidad del tutorial para explicar el proceso de factorización LU, incluyendo ejemplos y la utilidad del contenido.
+\item 
+    Resolución de sistemas con $LU$ (7 puntos): Se evaluará la claridad de la explicación de cómo se resuelve un sistema ocupando la factorización $LU$.
+\item 
+    Ejemplos prácticos (8 puntos cada uno): Se evaluará cada ejemplo práctico, descripción de su contexto, su resolución y la interpretación de la solución.
+\item
+    Excelencia (5 puntos), este puntaje es dado únicamente si se tiene el puntaje completo en los otros puntos. Se premiará la creatividad en la presentación del contenido, la originalidad en la elección de ejemplos.    
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Grupos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item
+    Grupo R1-A:\\
+    	ALANIS CRISTHINE CAICEDO ALEJANDRO\\ JUAN SEBASTIÁN QUIJIA LAMIÑA\\ ALAN MATEO TAIPE CURAY
+\item
+    Grupo R1-B:\\
+    	DAVID MATEO ESCOBAR ZAMBRANO\\ GABRIEL MATíAS PIEDRA YACELGA\\ DAVID ALEJANDRO ZAPATA ALCIVAR
+\item
+    Grupo R1-C:\\
+    	CRISTOPHER ALEJANDRO BASTIDAS ALVAREZ\\ YOSLAVA JHESIRE GARóFALO JIMéNEZ\\ NATHALY MELISSA VILLENAS CóRDOVA
+\item
+    Grupo R1-D:\\
+    	GABRIELA ALEJANDRA CáRDENAS GUARQUILA\\ KEVIN GUSTAVO DELGADO CUCHALA\\ MATíAS JOAQUíN PUENTE ARROYO
+\item
+    Grupo R1-E:\\
+    	ALISSON MARISOL MANOSALVAS MORALES\\ PABLO ALFONSO ZAMBRANO REINOSO\\ DIANA VALERIA ZUñIGA CHAVEZ
+\item
+    Grupo R1-F:\\
+    	JUAN SEBASTIAN ANDRADE SALAZAR\\ ANA SALET HIDALGO FLORES\\ EVELYN DAYANA OñA GUALLICHICO
+\end{itemize}
+
+\end{document}

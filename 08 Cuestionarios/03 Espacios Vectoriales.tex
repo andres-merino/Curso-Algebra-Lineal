@@ -1,0 +1,397 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Actualizado en febrero de 2024
+% Funciona con TeXLive 2022
+% Para obtener solo el pdf, compilar con pdfLaTeX. 
+%  latexmk -pdf 01\ Cuestionarios/01\ Matrices.tex -output-directory="01 Cuestionarios"
+% Para obtener el xml compilar con XeLaTeX.
+% latexmk -xelatex 01\ Cuestionarios/01\ Matrices.tex -output-directory="01 Cuestionarios"
+
+% -- Paquetes adicionales
+\usepackage{aleph-moodle}
+\moodleregisternewcommands
+% Todos los comandos nuevos deben ir luego del comando anterior
+\usepackage{aleph-comandos}
+
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos / Bioingeniería}
+\asignatura{Álgebra Lineal}
+\tema{Cuestionario No. 2: Espacios vectoriales y aplicaciones lineales}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+% -- Otros comandos
+
+
+
+\begin{document}
+
+\encabezado
+
+\vspace*{-8mm}
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Indicaciones}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Se plantean bancos de preguntas orientados a evaluar el \textbf{criterio}: «Comprende los conceptos de espacios vectoriales y aplicaciones lineales, incluyendo la base y dimensión, transformaciones lineales y sus propiedades», correspondiente al \textbf{resultado de aprendizaje}: Comprender los conceptos fundamentales del Álgebra Lineal, incluyendo el estudio de matrices, determinantes, sistemas de ecuaciones lineales y espacios vectoriales, destacando su importancia en el análisis y resolución de problemas matemáticos.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Banco de preguntas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Vectores en el plano y en Rn}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rn-01}
+    % - Enunciado
+    ¿Cuáles de los siguientes conjuntos representan una base canónica de \( \mathbb{R}^2 \)?
+    \item* $\{ (1,0), (0,1) \}$
+    \item $\{ (1,1), (0,1) \}$
+    \item $\{ (1,0) \}$
+    \item $\{ (1,1), (-1,-1) \}$
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {Rn-02}
+    % - Enunciado
+    ¿Cuáles de los siguientes conjuntos representan una base canónica de \( \mathbb{R}^3 \)?
+    \item* $\{ (1,0,0), (0,1,0), (0,0,1) \}$
+    \item $\{ (1,1,1), (0,1,1), (0,0,1) \}$
+    \item $\{ (1,0,0), (1,1,0) \}$
+    \item $\{ (1,1,0), (0,1,1), (1,0,1) \}$
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {Rn-03}
+    % - Enunciado
+    Considerando dos vectores \( u \) y \( v \) en \( \mathbb{R}^n \), ¿cuál de las siguientes afirmaciones sobre el producto punto \( u \cdot v \) es correcta?
+    \item* El producto punto es conmutativo, es decir, \( u \cdot v = v \cdot u \).
+    \item El producto punto es anticonmutativo, es decir, \( u \cdot v = -v \cdot u \).
+    \item El producto punto es siempre cero.
+    \item El producto punto depende del orden de los vectores.
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {Rn-04}
+    % - Enunciado
+    ¿Qué relación correcta describe el producto punto de un vector \( u \) en \( \mathbb{R}^n \) consigo mismo?
+    \item* El producto punto \( u \cdot u \) es igual al cuadrado de la norma de \( u \).
+    \item El producto punto \( u \cdot u \) es igual a la norma de \( u \).
+    \item El producto punto \( u \cdot u \) es siempre igual a 1.
+    \item El producto punto \( u \cdot u \) es independiente de la norma de \( u \).
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {Rn-05}
+    % - Enunciado
+    ¿Cuál de los siguientes pares de vectores en \( \mathbb{R}^2 \) es ortogonal?
+    \item* $\{ (2, -2), (1, 1) \}$
+    \item $\{ (1, 2), (-2, 3) \}$
+    \item $\{ (3, -3), (1, -1) \}$
+    \item $\{ (0, 1), (1, 1) \}$
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {Rn-06}
+    % - Enunciado
+    ¿Cuál es la definición correcta de vectores ortogonales en un espacio vectorial?
+    \item* Dos vectores son ortogonales si su producto punto es igual a cero.
+    \item Dos vectores son ortogonales si su suma es igual a cero.
+    \item Dos vectores son ortogonales si son linealmente dependientes.
+    \item Dos vectores son ortogonales si ambos tienen la misma norma.
+\end{multi}
+
+\end{quiz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Subespacios vectoriales}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multi}[]%
+    % - Identificador
+    {EspVec-01}
+    % - Enunciado
+    ¿Cuál de las siguientes opciones describe correctamente un espacio vectorial?
+    \item* Un conjunto de vectores junto con las operaciones de suma y multiplicación por escalares, que cumple con ciertas propiedades.
+    \item Un conjunto de vectores que pueden ser sumados o multiplicados entre sí.
+    \item Un conjunto de vectores que forman un sistema linealmente independiente.
+    \item Un conjunto de vectores donde la suma de cualquier par de vectores siempre resulta en un vector fuera del conjunto original.
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {EspVec-02}
+    % - Enunciado
+    ¿Cuál de las siguientes opciones describe correctamente un subespacio vectorial de un espacio vectorial dado?
+    \item* Un conjunto no vacío de vectores que es cerrado bajo la suma y la multiplicación por escalar.
+    \item Un conjunto de todos los vectores linealmente independientes en un espacio vectorial.
+    \item Cualquier conjunto de vectores que incluya al menos un vector del espacio vectorial mayor.
+    \item Un conjunto de vectores donde cada vector es ortogonal a un vector dado del espacio vectorial mayor.
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {EspVec-03}
+    % - Enunciado
+    ¿Cuál de las siguientes afirmaciones describe correctamente una combinación lineal de vectores?
+    \item* Una combinación lineal de vectores es una expresión de la forma \( a_1v_1 + a_2v_2 + \ldots + a_nv_n \), donde \( v_1, v_2, \ldots, v_n \) son vectores y \( a_1, a_2, \ldots, a_n \) son escalares.
+    \item Una combinación lineal de vectores ocurre cuando todos los vectores involucrados son mutuamente ortogonales.
+    \item Una combinación lineal es cualquier suma de vectores sin incluir multiplicación por escalares.
+    \item Una combinación lineal de vectores se define como la suma de dos vectores que son linealmente independientes.
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {EspVec-04}
+    % - Enunciado
+    ¿Qué es el espacio generado por un conjunto de vectores?
+    \item* Es el conjunto de todas las combinaciones lineales posibles de esos vectores.
+    \item Es el conjunto de todos los vectores que son ortogonales a esos vectores.
+    \item Es el conjunto formado únicamente por los vectores más largos del grupo inicial.
+    \item Es el conjunto que contiene solo los vectores linealmente independientes del grupo inicial.
+\end{multi}
+
+
+\end{quiz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Independencia lineal}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multi}[]%
+    % - Identificador
+    {IndepLin-01}
+    % - Enunciado
+    ¿Cuál de las siguientes afirmaciones es correcta respecto a la independencia lineal de un conjunto de vectores?
+    \item* Un conjunto de vectores es linealmente independiente si la única combinación lineal que produce el vector cero es aquella en la que todos los coeficientes son cero.
+    \item Un conjunto de vectores es linealmente dependiente si todos sus vectores son ortogonales entre sí.
+    \item Un conjunto de vectores es linealmente independiente si se puede expresar cada vector como una combinación lineal de los demás vectores en el conjunto.
+    \item Un conjunto de vectores es linealmente independiente si su número es igual al número de dimensiones del espacio vectorial al que pertenecen.
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {IndepLin-02}
+    % - Enunciado
+    ¿Cuál es la idea intuitiva detrás de la independencia lineal de un conjunto de vectores?
+    \item* Un conjunto de vectores es linealmente independiente si todos apuntan en direcciones diferentes.
+    \item Un conjunto de vectores es linealmente independiente si todos los vectores apuntan en la misma dirección.
+    \item Un conjunto de vectores es linealmente independiente si todos los vectores son de la misma longitud.
+    \item Un conjunto de vectores es linealmente independiente si pueden ser sumados para obtener cualquier vector en el espacio.
+\end{multi}
+
+
+\end{quiz}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Bases}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multi}[]%
+    % - Identificador
+    {BasesEspVec-01}
+    % - Enunciado
+    ¿Cuál de las siguientes afirmaciones describe correctamente una base de un espacio vectorial?
+    \item* Una base es un conjunto de vectores linealmente independientes que genera todo el espacio vectorial.
+    \item Una base es cualquier conjunto de vectores que incluye el vector cero del espacio.
+    \item Una base es un conjunto de vectores donde cada vector es ortogonal a los otros.
+    \item Una base es un conjunto de vectores que son todos mutuamente ortogonales y de la misma longitud.
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {BasesEspVec-02}
+    % - Enunciado
+    Considera el espacio de polinomios \( \mathbb{R}_2[x] \) de grado menor o igual a 2. ¿Cuál de los siguientes conjuntos constituye una base para \( \mathbb{R}_2[x] \)?
+    \item* $\{1, x, x^2\}$
+    \item $\{1, x, 2x, x^2\}$
+    \item $\{x, x^2\}$
+    \item $\{0, x, x^2\}$
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {BasesEspVec-03}
+    % - Enunciado
+    ¿Cuál de estos conjuntos puede ser base de \( \mathbb{R}^2 \)?
+    \item $\{(1, 2)\}$
+    \item* $\{(1, 0), (0, 1), (1, 1)\}$
+    \item $\{(1, 0), (0, 0)\}$
+    \item $\{(1, 1), (1, -1)\}$
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {BasesEspVec-04}
+    % - Enunciado
+    ¿Cuál de estos conjuntos puede ser base del espacio de todas las matrices de 2x2?
+    \item $\left\{ \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \begin{pmatrix} 1 & 0 \\ 1 & 1 \end{pmatrix}, \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \right\}$
+    \item $\left\{ \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix} \right\}$
+    \item $\left\{ \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 \\ 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix} \right\}$
+    \item* $\left\{ \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}, \begin{pmatrix} 2 & 1 \\ 2 & 2 \end{pmatrix}, \begin{pmatrix} 3 & 3 \\ 1 & 1 \end{pmatrix}, \begin{pmatrix} 0 & 0 \\ 1 & 1 \end{pmatrix}, \begin{pmatrix} 3 & 3 \\ 0 & 0 \end{pmatrix} \right\}$
+\end{multi}
+
+\end{quiz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Dimensión}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Identificador
+    {Dimension-01}
+    % - Enunciado
+    ¿Cuál es la dimensión del espacio vectorial \( \mathbb{R}^3 \)?
+    \item 3
+\end{numerical}
+
+\begin{numerical}[tolerance=0]%
+    % - Identificador
+    {Dimension-02}
+    % - Enunciado
+    ¿Cuál es la dimensión del espacio vectorial $\mathbb{R}^{2\times 2}$?
+    \item 4
+\end{numerical}
+
+\begin{numerical}[tolerance=0]%
+    % - Identificador
+    {Dimension-03}
+    % - Enunciado
+    ¿Cuál es la dimensión del espacio vectorial \( \mathbb{R}_2[x] \), que consiste en todos los polinomios de grado menor o igual a 2?
+    \item 3
+\end{numerical}
+
+
+\end{quiz}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Coordenadas y cambio de base}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multi}[]%
+    % - Identificador
+    {CoordVec-01}
+    % - Enunciado
+    ¿Cuál es la definición correcta de un vector de coordenadas respecto a una base dada?
+    \item* El vector de coordenadas de un vector respecto a una base es el conjunto de escalares que, multiplicados por los vectores de la base y sumados, dan como resultado el vector original.
+    \item El vector de coordenadas de un vector respecto a una base es simplemente la suma de los vectores de la base.
+    \item El vector de coordenadas es el mayor vector que puede ser formado usando los vectores de la base.
+    \item El vector de coordenadas de un vector respecto a una base es el vector que resulta de multiplicar cada vector de la base por sí mismo.
+\end{multi}
+
+
+\begin{multi}[]%
+    % - Identificador
+    {CoordVec-01}
+    % - Enunciado
+    Dado el espacio vectorial \( \mathbb{R}^2 \) y la base \( B = \{(1, 1), (-1, 2)\} \), si $[v]_B = \begin{pmatrix}2\\-2\end{pmatrix}$, ¿cuál es el vector $v$?
+    \item* $(4, -2)$
+    \item $(2,-2)$
+    \item $(-4, 2)$
+    \item $(-2,2)$
+\end{multi}
+
+
+\end{quiz}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Espacios con producto interno}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{numerical}[tolerance=0]%
+    % - Identificador
+    {ProdInt-01}
+    % - Enunciado
+    Considera los vectores \( u = (3, -2) \) y \( v = (1, 4) \) en \( \mathbb{R}^2 \). ¿Cuál es el valor del producto interno \( \langle u , v\rangle \)?
+    \item -5
+\end{numerical}
+
+\begin{numerical}[tolerance=0]%
+    % - Identificador
+    {ProdInt-02}
+    % - Enunciado
+     Considera las matrices \( A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix} \) y \( B = \begin{pmatrix} 1 & 0 \\ 2 & 0 \end{pmatrix} \). 
+     ¿Cuál es el valor del producto interno \( \langle A , B\rangle \)?
+    \item 7
+\end{numerical}
+
+\end{quiz}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Aplicaciones lineales}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multi}[]%
+    % - Identificador
+    {ApLin-01}
+    % - Enunciado
+    ¿Qué es el núcleo de una aplicación lineal \( T: V \rightarrow W \) entre dos espacios vectoriales \( V \) y \( W \)?
+    \item* El núcleo de \( T \) es el conjunto de todos los vectores \( v \) en \( V \) tales que \( T(v) = 0 \) en \( W \).
+    \item El núcleo de \( T \) es el conjunto de todas las imágenes \( w \) en \( W \) tales que existe un \( v \) en \( V \) con \( T(v) = w \).
+    \item El núcleo de \( T \) incluye todos los vectores en \( V \) y todas sus imágenes en \( W \).
+    \item El núcleo de \( T \) es el conjunto de todos los escalares que se pueden usar para multiplicar vectores en \( V \) para obtener vectores en \( W \).
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {ApLin-02}
+    % - Enunciado
+    ¿Qué es la imagen de una aplicación lineal \( T: V \rightarrow W \) entre dos espacios vectoriales \( V \) y \( W \)?
+    \item La imagen de \( T \) es el conjunto de todos los vectores \( v \) en \( V \) tales que \( T(v) = 0 \) en \( W \).
+    \item* La imagen de \( T \) es el conjunto de todas las imágenes \( w \) en \( W \) tales que existe un \( v \) en \( V \) con \( T(v) = w \).
+    \item La imagen de \( T \) incluye todos los vectores en \( V \) y todas sus imágenes en \( W \).
+    \item La imagen de \( T \) es el conjunto de todos los escalares que se pueden usar para multiplicar vectores en \( V \) para obtener vectores en \( W \).
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {ApLin-03}
+    % - Enunciado
+    Dada una aplicación lineal \( T: \mathbb{R}^3 \rightarrow \mathbb{R}^2 \), el núcleo de $T$ es un subconjunto de
+    \item* $\mathbb{R}^3$
+    \item $\mathbb{R}^2$
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {ApLin-04}
+    % - Enunciado
+    Dada una aplicación lineal \( T: \mathbb{R}^3 \rightarrow \mathbb{R}^2 \), la imagen de $T$ es un subconjunto de
+    \item $\mathbb{R}^3$
+    \item* $\mathbb{R}^2$
+\end{multi}
+
+\begin{multi}[]%
+    % - Identificador
+    {ApLin-05}
+    % - Enunciado
+    Considera la aplicación lineal \( T: \mathbb{R}^3 \rightarrow \mathbb{R}^2 \) definida por \( T(x, y, z) = (x + y, y-z, z+x) \). ¿Cuál de los siguientes vectores es parte del núcleo de \( T \)?
+    \item $(0, 0, 1)$
+    \item* $(1, -1, -1)$
+    \item $(1, 0, 1)$
+    \item $(-1, -1, -1)$
+\end{multi}
+
+\end{quiz}
+
+\end{document}

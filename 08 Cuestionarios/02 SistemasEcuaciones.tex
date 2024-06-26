@@ -1,0 +1,1429 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Actualizado en febrero de 2024
+% Funciona con TeXLive 2022
+% Para obtener solo el pdf, compilar con pdfLaTeX. 
+%  latexmk -pdf 01\ Cuestionarios/01\ Matrices.tex -output-directory="01 Cuestionarios"
+% Para obtener el xml compilar con XeLaTeX.
+% latexmk -xelatex 01\ Cuestionarios/01\ Matrices.tex -output-directory="01 Cuestionarios"
+
+% -- Paquetes adicionales
+\usepackage{aleph-moodle}
+\moodleregisternewcommands
+% Todos los comandos nuevos deben ir luego del comando anterior
+\usepackage{aleph-comandos}
+
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos / Bioingeniería}
+\asignatura{Álgebra Lineal}
+\tema{Cuestionario No. 1-2: Sistemas de ecuaciones}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+% -- Otros comandos
+
+
+
+\begin{document}
+
+\encabezado
+
+\vspace*{-8mm}
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Indicaciones}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Se plantean bancos de preguntas orientados a evaluar el \textbf{criterio}: «Identifica los elementos de los sistemas de ecuaciones lineales y la clasificación de estos por su tipo de soluciones», correspondiente al \textbf{resultado de aprendizaje}: Comprender los conceptos fundamentales del Álgebra Lineal, incluyendo el estudio de matrices, determinantes, sistemas de ecuaciones lineales y espacios vectoriales, destacando su importancia en el análisis y resolución de problemas matemáticos.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Banco de preguntas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Propiedades Sistemas de Ecuaciones}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {SisEc-DefProp-01}
+    % - Enunciado
+    ¿Cuál de las siguientes afirmaciones es verdadera respecto a un sistema lineal de ecuaciones?
+    \item Si el rango de la matriz de coeficientes es igual al rango de la matriz ampliada, entonces el sistema tiene una única solución.
+    \item Si el rango de la matriz de coeficientes es menor que el rango de la matriz ampliada, entonces el sistema tiene infinitas soluciones.
+    \item Si el rango de la matriz de coeficientes es mayor que el rango de la matriz ampliada, entonces el sistema no tiene solución.
+    \item* Si el rango de la matriz de coeficientes es igual al número de incógnitas y es igual al rango de la matriz ampliada, entonces el sistema tiene solución única.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+\begin{multi}[]%
+    % - Identificador
+    {SisEc-DefProp-02}
+    % - Enunciado
+    ¿Cuál es el rango máximo que puede tener una matriz de coeficientes de un sistema lineal de 4 ecuaciones con 3 incógnitas?
+    \item* 3
+    \item 4
+    \item 2
+    \item 1
+\end{multi}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\begin{multi}[]%
+    % - Identificador
+    {SisEc-DefProp-03}
+    % - Enunciado
+    ¿Cuál de las siguientes afirmaciones es verdadera respecto a un sistema lineal homogéneo?
+    \item* Siempre tiene al menos una solución trivial.
+    \item Siempre tiene una única solución no trivial.
+    \item Siempre tiene infinitas soluciones.
+    \item Nunca tiene solución.
+\end{multi}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+    \begin{multi}[]%
+    % - Identificador
+    {SisEc-DefProp-04}
+    % - Enunciado
+    ¿Cuál de las siguientes afirmaciones es verdadera para un sistema lineal inconsistente?
+    \item Tiene exactamente una solución.
+    \item Tiene al menos una solución.
+    \item Tiene infinitas soluciones.
+    \item* No tiene solución.
+    \end{multi}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\begin{multi}[]%
+    % - Identificador
+    {SisEc-DefProp-05}
+    % - Enunciado
+    ¿Cuál de las siguientes afirmaciones es correcta respecto a la matriz aumentada de un sistema lineal?
+    \item* La última columna corresponde a los términos independientes de las ecuaciones.
+    \item La primera columna corresponde a los términos independientes de las ecuaciones.
+    \item La última columna está compuesta por ceros.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\begin{multi}[]%
+    % - Identificador
+    {SisEc-DefProp-06}
+    % - Enunciado
+    ¿Cuál es la condición necesaria para que un sistema lineal tenga solución única?
+    \item Que el número de ecuaciones sea igual al número de incógnitas.
+    \item Que el número de ecuaciones sea menor que el número de incógnitas.
+    \item* Que el rango de la matriz de coeficientes sea igual al rango de la matriz ampliada y coincida con el número de incógnitas.
+    \item Que el rango de la matriz de coeficientes sea menor que el número de incógnitas.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\begin{multi}[]%
+    % - Identificador
+    {SisEc-DefProp-07}
+    % - Enunciado
+    ¿Cuál de las siguientes afirmaciones es verdadera respecto a un sistema lineal con más incógnitas que ecuaciones?
+    \item Siempre tiene una solución única.
+    \item* Puede tener infinitas soluciones.
+    \item Siempre es inconsistente.
+    \item No tiene solución.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\begin{multi}[]%
+    % - Identificador
+    {SisEc-DefProp-08}
+    % - Enunciado
+    ¿Cuál de las siguientes afirmaciones es verdadera respecto a un sistema lineal homogéneo en el cual el número de incógnitas es mayor que el número de ecuaciones?
+    \item Solamente tiene la solución trivial.
+    \item* Tiene solución no trivial.
+    \item Siempre es inconsistente.
+    \item No tiene solución.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\begin{multi}[]%
+    % - Identificador
+    {SisEc-DefProp-09}
+    % - Enunciado
+    ¿Cuál de las siguientes afirmaciones es verdadera respecto a un sistema lineal consistente?
+    \item Siempre tiene solución única.
+    \item* Siempre tiene solución.
+    \item Siempre tiene infinitas soluciones.
+    \item No tiene solución.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\begin{multi}[]%
+    % - Identificador
+    {SisEc-DefProp-10}
+    % - Enunciado
+    ¿Cuál de las siguientes afirmaciones es verdadera respecto a dos sistemas de ecuaciones lineales?
+    \item Tienen las mismas soluciones si y solo si tienen el mismo número de ecuaciones.
+    \item* Tienen las mismas soluciones si y solo si las matrices aumentadas de los sistemas son equivalentes por filas.
+    \item Tienen las mismas soluciones si y solo si tienen el mismo número de incógnitas.
+    \item Tienen las mismas soluciones si y solo si las matrices de coeficientes de los sistemas son equivalentes por filas.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\begin{multi}[]%
+    % - Identificador
+    {SisEc-DefProp-11}
+    % - Enunciado
+    ¿Cuál de las siguientes afirmaciones es verdadera respecto a un sistema de ecuaciones lineales homogéneo?
+    \item La columna de constantes es no nula.
+    \item* La columna de constantes es nula.
+    \item La columna de incógnitas es nula.
+    \item La columna de incógnitas es no nula.
+\end{multi}
+
+
+\end{quiz}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Soluciones}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Soluciones-01}
+    % - Enunciado
+    ¿Cuál de las siguientes opciones es una solución del sistema de ecuaciones lineales?
+    \[
+        \begin{cases}
+            2x + 3y = 5 \\
+            4x - 2y = 10
+        \end{cases}
+    \]
+    \item $(x, y) = (1, 1)$
+    \item $(x, y) = (2, 1)$
+    \item* $(x, y) = (5/2, 0)$
+\end{multi}
+        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Soluciones-02}
+    % - Enunciado
+    Encuentra la solución del sistema de ecuaciones lineales:
+    \[
+    \begin{cases}
+    3x - 2y = 5 \\
+    6x + 2y = 4
+    \end{cases}
+    \]
+    \item $(x, y) = (2, 1)$
+    \item $(x, y) = (2, -1)$
+    \item* $(x, y) = (1, -1)$
+\end{multi}
+        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Soluciones-03}
+    % - Enunciado
+    Resuelve el siguiente sistema de ecuaciones:
+    \[
+    \begin{cases}
+    4x - 3y = -17 \\
+    2x + 5y = 11
+    \end{cases}
+    \]
+    \item $(x, y) = (3, -1)$
+    \item $(x, y) = (1, 2)$
+    \item* $(x, y) = (-2, 3)$
+\end{multi}
+        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Soluciones-04}
+    % - Enunciado
+    Encuentra la solución del sistema de ecuaciones lineales:
+    \[
+    \begin{cases}
+    2x + y = 5 \\
+    x - 3y = 6
+    \end{cases}
+    \]
+    \item* $(x, y) = (3, -1)$
+    \item $(x, y) = (-1, 3)$
+    \item $(x, y) = (1, -2)$
+\end{multi}
+        
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Soluciones-05}
+    % - Enunciado
+    Resuelve el siguiente sistema de ecuaciones:
+    \[
+    \begin{cases}
+    3x + 2y = 13 \\
+    4x - y = 10
+    \end{cases}
+    \]
+    \item $(x, y) = (2, 1)$
+    \item* $(x, y) = (3, 2)$
+    \item $(x, y) = (1, 2)$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Soluciones-06}
+    % - Enunciado
+    Resuelve el siguiente sistema de ecuaciones:
+    \[
+    \begin{cases}
+    2x + y = 1 \\
+    4x - y = 4
+    \end{cases}
+    \]
+    \item $(x, y) = (2, 1)$
+    \item* $(x, y) = (1, 0)$
+    \item $(x, y) = (1, 2)$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Soluciones-07}
+    % - Enunciado
+    Resuelve el siguiente sistema de ecuaciones:
+    \[
+    \begin{cases}
+    -3x + 7y = 4 \\
+    x - y = 4
+    \end{cases}
+    \]
+    \item $(x, y) = (2, 5)$
+    \item* $(x, y) = (8, 4)$
+    \item $(x, y) = (6, 1)$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Soluciones-08}
+    % - Enunciado
+    Resuelve el siguiente sistema de ecuaciones:
+    \[
+    \begin{cases}
+    -2x + y = -1 \\
+    -x - 2y = 8
+    \end{cases}
+    \]
+    \item $(x, y) = (8, 4)$
+    \item* $(x, y) = (2, 3)$
+    \item $(x, y) = (5 2)$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Soluciones-09}
+    % - Enunciado
+    Resuelve el siguiente sistema de ecuaciones:
+    \[
+    \begin{cases}
+    -x + 2y = 3 \\
+    -2x - y = -4
+    \end{cases}
+    \]
+    \item $(x, y) = (2, 3)$
+    \item* $(x, y) = (1, 2)$
+    \item $(x, y) = (2, 2)$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Soluciones-10}
+    % - Enunciado
+    Resuelve el siguiente sistema de ecuaciones:
+    \[
+    \begin{cases}
+    -2x + y = 3 \\
+    x - y = -4
+    \end{cases}
+    \]
+    \item $(x, y) = (3, 3)$
+    \item* $(x, y) = (1, 5)$
+    \item $(x, y) = (4, 2)$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Soluciones-11}
+    % - Enunciado
+    Resuelve el siguiente sistema de ecuaciones:
+    \[
+    \begin{cases}
+    -2x + 5y = 4 \\
+    -x + y = -1
+    \end{cases}
+    \]
+    \item $(x, y) = (3, 3)$
+    \item* $(x, y) = (3, 2)$
+    \item $(x, y) = (2, 3)$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Soluciones-12}
+    % - Enunciado
+    Resuelve el siguiente sistema de ecuaciones:
+    \[
+    \begin{cases}
+    -x + 5y = 2 \\
+    2x + 5y = 11
+    \end{cases}
+    \]
+    \item $(x, y) = (4, 3)$
+    \item* $(x, y) = (3, 1)$
+    \item $(x, y) = (2, 3)$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Soluciones-13}
+    % - Enunciado
+    Resuelve el siguiente sistema de ecuaciones:
+    \[
+    \begin{cases}
+    x + 5y = 7 \\
+    x + 2y = 4
+    \end{cases}
+    \]
+    \item $(x, y) = (4, 3)$
+    \item* $(x, y) = (2, 1)$
+    \item $(x, y) = (2, 4)$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Soluciones-14}
+    % - Enunciado
+    Resuelve el siguiente sistema de ecuaciones:
+    \[
+    \begin{cases}
+    -2x + 5y = 16 \\
+    -x + 4y = 14
+    \end{cases}
+    \]
+    \item $(x, y) = (4, 3)$
+    \item* $(x, y) = (2, 4)$
+    \item $(x, y) = (2, 1)$
+\end{multi}
+
+\end{quiz}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Conjunto solución}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {ConjuntoSol-01}
+    % - Enunciado
+    Al resolver un sistema de ecuaciones, se obtiene el siguiente sistema equivalente:
+    \[
+        \begin{cases}
+            x + 3y = 5 \\
+            0 = 0
+        \end{cases}
+    \]
+    ¿Cuál es el conjunto solución del sistema de ecuaciones lineales?
+    \item* $\{(5-3t, t) : t\in \mathbb{R}\}$
+    \item $\{(5+3t, t) : t\in \mathbb{R}\}$
+    \item $\{(t, 3t) : t\in \mathbb{R}\}$
+    \item $\{(5, t) : t\in \mathbb{R}\}$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {ConjuntoSol-02}
+    % - Enunciado
+    Al resolver un sistema de ecuaciones, se obtiene el siguiente sistema equivalente:
+    \[
+        \begin{cases}
+            x - 3y = 5 \\
+            0 = 0
+        \end{cases}
+    \]
+    ¿Cuál es el conjunto solución del sistema de ecuaciones lineales?
+    \item $\{(5-3t, t) : t\in \mathbb{R}\}$
+    \item* $\{(5+3t, t) : t\in \mathbb{R}\}$
+    \item $\{(t, -3t) : t\in \mathbb{R}\}$
+    \item $\{(5, t) : t\in \mathbb{R}\}$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {ConjuntoSol-03}
+    % - Enunciado
+    Al resolver un sistema de ecuaciones, se obtiene el siguiente sistema equivalente:
+    \[
+        \begin{cases}
+            2x + 4y = 8 \\
+            0 = 0
+        \end{cases}
+    \]
+    ¿Cuál es el conjunto solución del sistema de ecuaciones lineales?
+    \item $\{(4+2t, t) : t\in \mathbb{R}\}$
+    \item* $\{(4-2t, t) : t\in \mathbb{R}\}$
+    \item $\{(2t, 4t) : t\in \mathbb{R}\}$
+    \item $\{(8, t) : t\in \mathbb{R}\}$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {ConjuntoSol-04}
+    % - Enunciado
+    Al resolver un sistema de ecuaciones, se obtiene el siguiente sistema equivalente:
+    \[
+        \begin{cases}
+            2x - 4y = 8 \\
+            0 = 0
+        \end{cases}
+    \]
+    ¿Cuál es el conjunto solución del sistema de ecuaciones lineales?
+    \item* $\{(4+2t, t) : t\in \mathbb{R}\}$
+    \item $\{(4-2t, t) : t\in \mathbb{R}\}$
+    \item $\{(2t, -4t) : t\in \mathbb{R}\}$
+    \item $\{(8, t) : t\in \mathbb{R}\}$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {ConjuntoSol-05}
+    % - Enunciado
+    Al resolver un sistema de ecuaciones, se obtiene el siguiente sistema equivalente:
+    \[
+        \begin{cases}
+            2x + 3y = 7 \\
+            0 = 0
+        \end{cases}
+    \]
+    ¿Cuál es el conjunto solución del sistema de ecuaciones lineales?
+    \item* $\{\left(\frac{7}{2}-\frac{3}{2}t, t\right) : t\in \mathbb{R}\}$
+    \item $\{\left(\frac{7}{2}+\frac{3}{2}t, t\right) : t\in \mathbb{R}\}$
+    \item $\{\left(2t,3t\right) : t\in \mathbb{R}\}$
+    \item $\{\left(3t, 2t\right) : t\in \mathbb{R}\}$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {ConjuntoSol-06}
+    % - Enunciado
+    Al resolver un sistema de ecuaciones, se obtiene el siguiente sistema equivalente:
+    \[
+        \begin{cases}
+            -x - 5y = -9 \\
+            0 = 0
+        \end{cases}
+    \]
+    ¿Cuál es el conjunto solución del sistema de ecuaciones lineales?
+    \item* $\{(5t-9, t) : t\in \mathbb{R}\}$
+    \item $\{(5t+9, t) : t\in \mathbb{R}\}$
+    \item $\{(t,5t) : t\in \mathbb{R}\}$
+    \item $\{(5t,t) : t\in \mathbb{R}\}$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {ConjuntoSol-07}
+    % - Enunciado
+    Al resolver un sistema de ecuaciones, se obtiene el siguiente sistema equivalente:
+    \[
+        \begin{cases}
+            3x - 2y = 12 \\
+            0 = 0
+        \end{cases}
+    \]
+    ¿Cuál es el conjunto solución del sistema de ecuaciones lineales?
+    \item* $\{(4+\frac{3}{2}t, t) : t\in \mathbb{R}\}$
+    \item $\{(4-\frac{3}{2}t, t) : t\in \mathbb{R}\}$
+    \item $\{(2t,4t) : t\in \mathbb{R}\}$
+    \item $\{(4t,2t) : t\in \mathbb{R}\}$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {ConjuntoSol-08}
+    % - Enunciado
+    Al resolver un sistema de ecuaciones, se obtiene el siguiente sistema equivalente:
+    \[
+        \begin{cases}
+            2x +4y = 6 \\
+            0 = 0
+        \end{cases}
+    \]
+    ¿Cuál es el conjunto solución del sistema de ecuaciones lineales?
+    \item* $\{(3-2t, t) : t\in \mathbb{R}\}$
+    \item $\{(3+2t, t) : t\in \mathbb{R}\}$
+    \item $\{(2t,4t) : t\in \mathbb{R}\}$
+    \item $\{(4t,2t) : t\in \mathbb{R}\}$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {ConjuntoSol-09}
+    % - Enunciado
+    Al resolver un sistema de ecuaciones, se obtiene el siguiente sistema equivalente:
+    \[
+        \begin{cases}
+            2x - 4y = 6 \\
+            0 = 0
+        \end{cases}
+    \]
+    ¿Cuál es el conjunto solución del sistema de ecuaciones lineales?
+    \item* $\{(3+2t, t) : t\in \mathbb{R}\}$
+    \item $\{(3-2t, t) : t\in \mathbb{R}\}$
+    \item $\{(2t,4t) : t\in \mathbb{R}\}$
+    \item $\{(4,2t) : t\in \mathbb{R}\}$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {ConjuntoSol-10}
+    % - Enunciado
+    Al resolver un sistema de ecuaciones, se obtiene el siguiente sistema equivalente:
+    \[
+        \begin{cases}
+            6x + 5y = 2 \\
+            0 = 0
+        \end{cases}
+    \]
+    ¿Cuál es el conjunto solución del sistema de ecuaciones lineales?
+    \item* $\{(\frac{1}{3}-\frac{5}{6}t, t) : t\in \mathbb{R}\}$
+    \item $\{(\frac{1}{3}+\frac{5}{6}t, t) : t\in \mathbb{R}\}$
+    \item $\{(6t,5t) : t\in \mathbb{R}\}$
+    \item $\{(5t,6t) : t\in \mathbb{R}\}$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {ConjuntoSol-11}
+    % - Enunciado
+    Al resolver un sistema de ecuaciones, se obtiene el siguiente sistema equivalente:
+    \[
+        \begin{cases}
+            6x - 5y = 2 \\
+            0 = 0
+        \end{cases}
+    \]
+    ¿Cuál es el conjunto solución del sistema de ecuaciones lineales?
+    \item* $\{(\frac{1}{3}+\frac{5}{6}t, t) : t\in \mathbb{R}\}$
+    \item $\{(\frac{1}{3}-\frac{5}{6}t, t) : t\in \mathbb{R}\}$
+    \item $\{(6t,5t) : t\in \mathbb{R}\}$
+    \item $\{(5t,6t) : t\in \mathbb{R}\}$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {ConjuntoSol-12}
+    % - Enunciado
+    Al resolver un sistema de ecuaciones, se obtiene el siguiente sistema equivalente:
+    \[
+        \begin{cases}
+            3x + 2y = 2 \\
+            0 = 0
+        \end{cases}
+    \]
+    ¿Cuál es el conjunto solución del sistema de ecuaciones lineales?
+    \item* $\{(\frac{2}{3}-\frac{2}{3}t, t) : t\in \mathbb{R}\}$
+    \item $\{(\frac{2}{3}+\frac{2}{3}t, t) : t\in \mathbb{R}\}$
+    \item $\{(3t,2t) : t\in \mathbb{R}\}$
+    \item $\{(2t,3t) : t\in \mathbb{R}\}$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {ConjuntoSol-13}
+    % - Enunciado
+    Al resolver un sistema de ecuaciones, se obtiene el siguiente sistema equivalente:
+    \[
+        \begin{cases}
+            3x - 2y = 2 \\
+            0 = 0
+        \end{cases}
+    \]
+    ¿Cuál es el conjunto solución del sistema de ecuaciones lineales?
+    \item* $\{(\frac{2}{3}+\frac{2}{3}t, t) : t\in \mathbb{R}\}$
+    \item $\{(\frac{2}{3}-\frac{2}{3}t, t) : t\in \mathbb{R}\}$
+    \item $\{(3t,2t) : t\in \mathbb{R}\}$
+    \item $\{(2t,3t) : t\in \mathbb{R}\}$
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {ConjuntoSol-14}
+    % - Enunciado
+    Al resolver un sistema de ecuaciones, se obtiene el siguiente sistema equivalente:
+    \[
+        \begin{cases}
+            3x - 6y = 2 \\
+            0 = 0
+        \end{cases}
+    \]
+    ¿Cuál es el conjunto solución del sistema de ecuaciones lineales?
+    \item* $\{(\frac{2}{3}+2t, t) : t\in \mathbb{R}\}$
+    \item $\{(\frac{2}{3}-2t, t) : t\in \mathbb{R}\}$
+    \item $\{(3t,2t) : t\in \mathbb{R}\}$
+    \item $\{(2t,3t) : t\in \mathbb{R}\}$
+\end{multi}
+\end{quiz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Rouché–Frobenius 01}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-01-01}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 3 incógnitas, si el rango de la matriz de coeficientes es 3 y el rango de la matriz ampliada es 3, ¿cuál de las siguientes afirmaciones es verdadera?
+    \item* El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-01-02}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 3 incógnitas, si el rango de la matriz de coeficientes es 3 y el rango de la matriz ampliada es 4, ¿cuál de las siguientes afirmaciones es verdadera?
+    \item El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item* El sistema no tiene solución.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-01-03}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 4 incógnitas, si el rango de la matriz de coeficientes es 3 y el rango de la matriz ampliada es 3, ¿cuál de las siguientes afirmaciones es verdadera?
+    \item El sistema tiene solución única.
+    \item* El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Sistemas-Lineales-01-04}
+    % - Enunciado
+    Para un sistema lineal de ecuaciones con 3 incógnitas, si el rango de la matriz de coeficientes es 2 y el rango de la matriz ampliada es 2, ¿cuál de las siguientes afirmaciones es verdadera?
+    \item El sistema tiene solución única.
+    \item* El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+\end{multi}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Sistemas-Lineales-01-04}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones con 2 incógnitas, si el rango de la matriz de coeficientes es 2 y el rango de la matriz ampliada es 1, ¿cuál de las siguientes afirmaciones es correcta?
+    \item El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item* El sistema no tiene solución.
+\end{multi}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Sistemas-Lineales-01-05}
+    % - Enunciado
+    Para un sistema lineal de ecuaciones con 3 incógnitas, si el rango de la matriz de coeficientes es 3 y el rango de la matriz ampliada es 2, ¿cuál de las siguientes afirmaciones es verdadera?
+    \item* El sistema no tiene solución.
+    \item El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+\end{multi}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{multi}[]%
+    % - Identificador
+    {Sistemas-Lineales-01-06}
+    % - Enunciado
+    Para un sistema lineal de ecuaciones con 3 incógnitas, si el rango de la matriz de coeficientes es 3 y el rango de la matriz ampliada es 3, ¿qué se puede afirmar sobre el sistema?
+    \item* El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+    \end{multi}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Sistemas-Lineales-01-07}
+    % - Enunciado
+    Para un sistema lineal de ecuaciones con 3 incógnitas, si el rango de la matriz de coeficientes es 1 y el rango de la matriz ampliada es 1, ¿cuál de las siguientes afirmaciones es verdadera?
+    \item El sistema tiene solución única.
+    \item* El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Sistemas-Lineales-01-08}
+    % - Enunciado
+    Para un sistema lineal de ecuaciones con 3 incógnitas, si el rango de la matriz de coeficientes es 1 y el rango de la matriz ampliada es 2, ¿cuál de las siguientes afirmaciones es verdadera?
+    \item El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item* El sistema no tiene solución.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Sistemas-Lineales-01-09}
+    % - Enunciado
+    Para un sistema lineal de ecuaciones con 5 incógnitas, si el rango de la matriz de coeficientes es 4 y el rango de la matriz ampliada es 4, ¿cuál de las siguientes afirmaciones es verdadera?
+    \item El sistema tiene solución única.
+    \item* El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Sistemas-Lineales-01-10}
+    % - Enunciado
+    Para un sistema lineal de ecuaciones con 5 incógnitas, si el rango de la matriz de coeficientes es 4 y el rango de la matriz ampliada es 3, ¿cuál de las siguientes afirmaciones es verdadera?
+    \item El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item* El sistema no tiene solución.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Sistemas-Lineales-01-11}
+    % - Enunciado
+    Para un sistema lineal de ecuaciones con 6 incógnitas, si el rango de la matriz de coeficientes es 6 y el rango de la matriz ampliada es 6, ¿cuál de las siguientes afirmaciones es verdadera?
+    \item* El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Sistemas-Lineales-01-12}
+    % - Enunciado
+    Para un sistema lineal de ecuaciones con 4 incógnitas, si el rango de la matriz de coeficientes es 2 y el rango de la matriz ampliada es 2, ¿cuál de las siguientes afirmaciones es verdadera?
+    \item El sistema tiene solución única.
+    \item* El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Sistemas-Lineales-01-13}
+    % - Enunciado
+    Para un sistema lineal de ecuaciones con 7 incógnitas, si el rango de la matriz de coeficientes es 7 y el rango de la matriz ampliada es 7, ¿cuál de las siguientes afirmaciones es verdadera?
+    \item* El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Sistemas-Lineales-01-14}
+    % - Enunciado
+    Para un sistema lineal de ecuaciones con 4 incógnitas, si el rango de la matriz de coeficientes es 5 y el rango de la matriz ampliada es 5, ¿cuál de las siguientes afirmaciones es verdadera?
+    \item* El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+\end{multi}
+
+
+\end{quiz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Rouché–Frobenius 02}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-02-01}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 3 incógnitas, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 0 & 0 & | & 3 \\
+    0 & 1 & 0 & | & 2 \\
+    0 & 0 & 1 & | & 1
+    \end{pmatrix}
+    \]
+    entonces, se tiene que:
+    \item* El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+    \item No se puede determinar la naturaleza del sistema.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-02-02}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 3 incógnitas, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 0 & 0 & | & 3 \\
+    0 & 1 & 0 & | & 2 \\
+    0 & 0 & 0 & | & 1
+    \end{pmatrix}
+    \]
+    entonces, se tiene que:
+    \item El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item* El sistema no tiene solución.
+    \item No se puede determinar la naturaleza del sistema.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-02-03}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 3 incógnitas, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 0 & 0 & | & 3 \\
+    0 & 1 & 0 & | & 2 \\
+    0 & 0 & 0 & | & 0
+    \end{pmatrix}
+    \]
+    entonces, se tiene que:
+    \item El sistema tiene solución única.
+    \item* El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+    \item No se puede determinar la naturaleza del sistema.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-02-04}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 3 incógnitas, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 0 & 0 & | & 3 \\
+    0 & 0 & 0 & | & -2 \\
+    0 & 0 & 0 & | & 0
+    \end{pmatrix}
+    \]
+    entonces, se tiene que:
+    \item El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item* El sistema no tiene solución.
+    \item No se puede determinar la naturaleza del sistema.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-02-05}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 3 incógnitas, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 0 & 0 & | & 3 \\
+    0 & 1 & 0 & | & 2 \\
+    0 & 0 & 0 & | & 1
+    \end{pmatrix}
+    \]
+    entonces, se tiene que:
+    \item El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item* El sistema no tiene solución.
+    \item No se puede determinar la naturaleza del sistema.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-02-06}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 3 incógnitas, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 0 & 0 & | & 3 \\
+    0 & 1 & 0 & | & 2 \\
+    0 & 0 & 0 & | & 0
+    \end{pmatrix}
+    \]
+    entonces, se tiene que:
+    \item El sistema tiene solución única.
+    \item* El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+    \item No se puede determinar la naturaleza del sistema.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-02-07}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 3 incógnitas, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 0 & 0 & | & 3 \\
+    0 & 0 & 0 & | & 2 \\
+    0 & 0 & 0 & | & 0
+    \end{pmatrix}
+    \]
+    entonces, se tiene que:
+    \item El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item* El sistema no tiene solución.
+    \item No se puede determinar la naturaleza del sistema.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-02-08}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 3 incógnitas, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 2 & 2 & | & 3 \\
+    0 & 1 & 2 & | & 2 \\
+    0 & 0 & 1 & | & 1 \\
+    0 & 0 & 0 & | & 0
+    \end{pmatrix}
+    \]
+    entonces, se tiene que:
+    \item* El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+    \item No se puede determinar la naturaleza del sistema.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-02-09}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 4 incógnitas, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 2 & 2 & 0 & | & 3 \\
+    0 & 1 & 2 & 0 & | & 2 \\
+    0 & 0 & 1 & 0 & | & 1 \\
+    0 & 0 & 0 & 0 & | & 0
+    \end{pmatrix}
+    \]
+    entonces, se tiene que:
+    \item El sistema tiene solución única.
+    \item* El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+    \item No se puede determinar la naturaleza del sistema.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-02-10}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 4 incógnitas, si su matriz ampliada es equivalente por filas a
+    \[
+    \begin{pmatrix}
+    1 & 2 & 2 & 0 & | & 3 \\
+    0 & 1 & 2 & 0 & | & 2 \\
+    0 & 0 & 1 & 0 & | & 1 \\
+    0 & 0 & 0 & 1 & | & 0
+    \end{pmatrix}
+    \]
+    entonces, se tiene que:
+    \item* El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+    \item No se puede determinar la naturaleza del sistema.
+\end{multi}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-02-10}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 4 incógnitas, si su matriz ampliada es equivalente por filas a
+    \[
+    \begin{pmatrix}
+    1 & 2 & 2 & 0 & | & 3 \\
+    0 & 1 & 2 & 0 & | & 2 \\
+    0 & 0 & 0 & 0 & | & 1 \\
+    0 & 0 & 0 & 0 & | & 0
+    \end{pmatrix}
+    \]
+    entonces, se tiene que:
+    \item El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item* El sistema no tiene solución.
+    \item No se puede determinar la naturaleza del sistema.
+\end{multi}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-02-11}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 4 incógnitas, si su matriz ampliada es equivalente por filas a
+    \[
+    \begin{pmatrix}
+    1 & 0 & 2 & 0 & | & 3 \\
+    0 & 0 & 4 & 0 & | & 2 \\
+    0 & 0 & 0 & 0 & | & 4 \\
+    0 & 0 & 0 & 0 & | & 0
+    \end{pmatrix}
+    \]
+    entonces, se tiene que:
+    \item El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item* El sistema no tiene solución.
+    \item No se puede determinar la naturaleza del sistema.
+\end{multi}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-02-12}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 3 incógnitas, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 2 & 2 & | & 3 \\
+    0 & 1 & 2 & | & 2 \\
+    0 & 0 & 0 & | & 2 \\
+    0 & 0 & 0 & | & 0
+    \end{pmatrix}
+    \]
+    entonces, se tiene que:
+    \item El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item* El sistema no tiene solución.
+    \item No se puede determinar la naturaleza del sistema.
+\end{multi}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-02-13}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 3 incógnitas, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 2 & 0 & | & 3 \\
+    0 & 1 & 0 & | & 2 \\
+    0 & 0 & 0 & | & 0 \\
+    0 & 0 & 0 & | & 0
+    \end{pmatrix}
+    \]
+    entonces, se tiene que:
+    \item El sistema tiene solución única.
+    \item* El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+    \item No se puede determinar la naturaleza del sistema.
+\end{multi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[]%
+    % - Identificador
+    {Rouché–Frobenius-02-14}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones de 3 incógnitas, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 2 & 0 & | & 3 \\
+    0 & 1 & 0 & | & 2 \\
+    0 & 0 & 1 & | & 1 \\
+    0 & 0 & 0 & | & 0
+    \end{pmatrix}
+    \]
+    entonces, se tiene que:
+    \item* El sistema tiene solución única.
+    \item El sistema tiene infinitas soluciones.
+    \item El sistema no tiene solución.
+    \item No se puede determinar la naturaleza del sistema.
+\end{multi}
+
+\end{quiz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Sistema paramétrico}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Identificador
+    {SisParametrico-01}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 0 & 0 & | & 3 \\
+    0 & 1 & 0 & | & 2 \\
+    0 & 0 & \beta & | & 1
+    \end{pmatrix}
+    \]
+    entonces, ¿cuál debe ser el valor de $\beta$ para que el sistema no tenga solución?
+    \item 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Identificador
+    {SisParametrico-02}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 0 & 0 & | & 3 \\
+    0 & 1 & 0 & | & 2 \\
+    0 & 0 & 4-2\beta & | & 1
+    \end{pmatrix}
+    \]
+    entonces, ¿cuál debe ser el valor de $\beta$ para que el sistema no tenga solución?
+    \item 2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Identificador
+    {SisParametrico-03}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 0 & 0 & | & 4 \\
+    0 & 1 & 0 & | & -1 \\
+    0 & 0 & \alpha + 2 & | & 3
+    \end{pmatrix}
+    \]
+    entonces, ¿cuál debe ser el valor de $\alpha$ para que el sistema no tenga solución?
+    \item -2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Identificador
+    {SisParametrico-04}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 0 & 0 & | & -2 \\
+    0 & 1 & 0 & | & 5 \\
+    0 & 0 & 0 & | & 2\beta+5
+    \end{pmatrix}
+    \]
+    entonces, ¿cuál debe ser el valor de $\beta$ para que el sistema tenga solución?
+    \item -2.5
+\end{numerical}
+
+\begin{numerical}[tolerance=0.01]%
+    % - Identificador
+    {SisParametrico-05}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 4 & 0 & | & 3 \\
+    0 & 2 & 1 & | & 2 \\
+    0 & 0 & 2\beta-3 & | & 0
+    \end{pmatrix}
+    \]
+    entonces, ¿cuál debe ser el valor de $\beta$ para que el sistema no tenga solución?
+    \item 1.5
+\end{numerical}
+
+\begin{numerical}[tolerance=0.01]%
+    % - Identificador
+    {SisParametrico-06}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 3 & 0 & | & 1 \\
+    0 & 4 & 1 & | & -2 \\
+    0 & 0 & 2-4\beta & | & 4
+    \end{pmatrix}
+    \]
+    entonces, ¿cuál debe ser el valor de $\beta$ para que el sistema no tenga solución?
+    \item 0.5
+\end{numerical}
+
+\begin{numerical}[tolerance=0.01]%
+    % - Identificador
+    {SisParametrico-07}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 0 & 4 & | & 3 \\
+    0 & 1 & 2 & | & 5 \\
+    0 & 0 & 0 & | & 5\alpha-1
+    \end{pmatrix}
+    \]
+    entonces, ¿cuál debe ser el valor de $\alpha$ para que el sistema tenga solución?
+    \item 0.2
+\end{numerical}
+
+\begin{numerical}[tolerance=0.01]%
+    % - Identificador
+    {SisParametrico-08}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 5 & 0 & | & 2 \\
+    0 & 5 & 1 & | & 3 \\
+    0 & 0 & 0 & | & 8+4\alpha
+    \end{pmatrix}
+    \]
+    entonces, ¿cuál debe ser el valor de $\alpha$ para que el sistema tenga solución?
+    \item -2
+\end{numerical}
+
+\begin{numerical}[tolerance=0.01]%
+    % - Identificador
+    {SisParametrico-09}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 0 & 5 & | & 4 \\
+    0 & 1 & 2 & | & -3 \\
+    0 & 0 & 6-2\alpha & | & 0
+    \end{pmatrix}
+    \]
+    entonces, ¿cuál debe ser el valor de $\alpha$ para que el sistema no tenga solución?
+    \item 3
+\end{numerical}
+
+\begin{numerical}[tolerance=0.01]%
+    % - Identificador
+    {SisParametrico-10}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 0 & 0 & | & 3 \\
+    0 & 7 & 1 & | & 2 \\
+    0 & 0 & 0 & | & 6+2\alpha
+    \end{pmatrix}
+    \]
+    entonces, ¿cuál debe ser el valor de $\alpha$ para que el sistema tenga solución?
+    \item -3
+\end{numerical}
+
+\begin{numerical}[tolerance=0.01]%
+    % - Identificador
+    {SisParametrico-11}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 5 & 0 & | & 2 \\
+    0 & 5 & 1 & | & 3 \\
+    0 & 0 & 0 & | & 7+21\alpha
+    \end{pmatrix}
+    \]
+    entonces, ¿cuál debe ser el valor de $\alpha$ para que el sistema tenga solución?
+    \item -0.33
+\end{numerical}
+
+\begin{numerical}[tolerance=0.01]%
+    % - Identificador
+    {SisParametrico-12}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 5 & 0 & | & 2 \\
+    0 & 5 & 1 & | & 3 \\
+    0 & 0 & 14 & | & 7+21\alpha
+    \end{pmatrix}
+    \]
+    entonces, ¿cuál debe ser el valor de $\alpha$ para que el sistema tenga solución?
+    \item 0.33
+\end{numerical}
+
+\begin{numerical}[tolerance=0.01]%
+    % - Identificador
+    {SisParametrico-13}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones, si su matriz ampliada es equivalente por filas a 
+    \[
+    \begin{pmatrix}
+    1 & 5 & 0 & | & 2 \\
+    0 & 5 & 1 & | & 3 \\
+    0 & 0 & 2 & | & 3+8\alpha
+    \end{pmatrix}
+    \]
+    entonces, ¿cuál debe ser el valor de $\alpha$ para que el sistema tenga solución?
+    \item -0.125
+\end{numerical}
+
+\begin{numerical}[tolerance=0.01]%
+    % - Identificador
+    {SisParametrico-14}
+    % - Enunciado
+    Dado un sistema lineal de ecuaciones, si su matriz ampliada es equivalente por filas a 
+    \[ 
+    \begin{pmatrix}
+    1 & 5 & 0 & | & 2 \\
+    0 & 5 & 1 & | & 3 \\
+    0 & 0 & 4 & | & 3+4\alpha
+    \end{pmatrix}
+    \]
+    entonces, ¿cuál debe ser el valor de $\alpha$ para que el sistema tenga solución?
+    \item 0.25
+\end{numerical}
+\end{quiz}
+
+\end{document}

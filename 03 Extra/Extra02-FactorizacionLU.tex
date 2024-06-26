@@ -1,0 +1,233 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{systeme}
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos}
+\asignatura{Álgebra lineal}
+\tema{Material extra no. 2: Factorización de LU}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+% -- Comandos adicionales
+\setlist[enumerate]{label=\roman*.}
+
+\begin{document}
+
+\encabezado
+
+\begin{ejer}
+    Determinar, si existe, una factorización $LU$ de la matrix
+    \[
+        A = 
+        \begin{pmatrix}
+             2 &  1 & 1\\
+             4 & -6 & 0\\
+            -2 &  7 & 2
+        \end{pmatrix}.
+    \]
+\end{ejer}
+
+\begin{proof}[Solución]
+    Empecemos determinando una matriz triangula superior $U$ que sea equivalente por filas a $A$ y en la cual solo utilicemos el múltiplo de una fila más otra 
+    \begin{align*}
+        \begin{pmatrix}
+             2 &  1 & 1\\
+             4 & -6 & 0\\
+            -2 &  7 & 2
+        \end{pmatrix}
+        & \sim 
+        \begin{pmatrix}
+             2 &  1 & 1\\
+             0 & -8 & -2\\
+            -2 &  7 & 2
+        \end{pmatrix}
+        && -2F_1\leftrightarrow F_2\\
+        & \sim 
+        \begin{pmatrix}
+             2 &  1 & 1\\
+             0 & -8 & -2\\
+             0 &  8 & 3
+        \end{pmatrix}
+        && 1F_1+F_3\to F_3\\
+        & \sim 
+        \begin{pmatrix}
+             2 &  1 & 1\\
+             0 & -8 & -2\\
+             0 &  0 & 1
+        \end{pmatrix}
+        && 1F_2 + F_3 \to F_3
+    \end{align*}
+
+    Las matrices elementales correspondientes a las operaciones por filas realizadas son
+    \[
+        E_1 = 
+        \begin{pmatrix}
+             1 &  0 & 0\\
+            -2 &  1 & 0\\
+             0 &  0 & 1
+        \end{pmatrix},
+        \qquad
+        E_2 = 
+        \begin{pmatrix}
+             1 &  0 & 0\\
+             0 &  1 & 0\\
+             1 &  0 & 1
+        \end{pmatrix}
+        \texty
+        E_3 = 
+        \begin{pmatrix}
+             1 &  0 & 0\\
+             0 &  1 & 0\\
+             0 &  1 & 1
+        \end{pmatrix}.
+    \]
+    Con esto, tenemos que
+    \[
+        U = E_3E_2E_1 A,
+    \]
+    así, podemos tomar
+    \[
+        L = (E_3E_2E_1)^{-1} = E_1^{-1}E_2^{-1}E_3^{-1} = 
+        \begin{pmatrix}
+             1 &  0 & 0\\
+             2 &  1 & 0\\
+            -1 & -1 & 1
+        \end{pmatrix}.
+    \]
+    Con lo cual, obtenemos
+    \[
+        A = 
+        \begin{pmatrix}
+             2 &  1 & 1\\
+             4 & -6 & 0\\
+            -2 &  7 & 2
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+             1 &  0 & 0\\
+             2 &  1 & 0\\
+            -1 & -1 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+             2 &  1 & 1\\
+             0 & -8 & -2\\
+             0 &  0 & 1
+        \end{pmatrix}
+        = LU.\qedhere
+    \]
+\end{proof}
+
+
+\begin{advertencia}
+    Notemos que las entradas de la matriz $L$ son los inversos aditivos de los múltiplos que fueron utilizados para ``eliminar'' las entradas bajo la diagonal correspondientes.
+\end{advertencia}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Dado el sistema de ecuaciones lineales:
+    \[
+        \begin{pmatrix}
+             2 &  1 & 1\\
+             4 & -6 & 0\\
+            -2 &  7 & 2
+        \end{pmatrix}
+        \begin{pmatrix}
+            x_1 \\ x_2 \\ x_3
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            5 \\ -2 \\ 9
+        \end{pmatrix}
+    \]
+    determinar su solución utilizando factorización $LU$.
+\end{ejer}
+
+\begin{proof}[Solución]
+    Tenemos que las matrices
+    \[
+        A = \begin{pmatrix}
+            0&-1&3\\1&1&1\\1&-1&-1
+        \end{pmatrix},
+        \qquad
+        x = \begin{pmatrix}
+            x_1 \\ x_2\\ x_3
+        \end{pmatrix}.
+        \texty
+        b = \begin{pmatrix}
+            5 \\ -2 \\ 9
+        \end{pmatrix}.
+    \]
+    Así, el sistema en forma matricial es
+    \[
+        Ax = b.
+    \]
+    Dado que $A$ tiene factorización $LU$ con
+    \[
+        L = 
+        \begin{pmatrix}
+             1 &  0 & 0\\
+             2 &  1 & 0\\
+            -1 & -1 & 1
+        \end{pmatrix}
+        \texty
+        U = 
+        \begin{pmatrix}
+             2 &  1 & 1\\
+             0 & -8 & -2\\
+             0 &  0 & 1
+        \end{pmatrix},
+    \]
+    resolvamos el sistema
+    \[
+        Ly = b,
+    \]
+    cuya matriz ampliada es
+    \[
+        \begin{pmatrix}
+             1 &  0 & 0 & | & 5 \\
+             2 &  1 & 0 & | & -2\\
+            -1 & -1 & 1 & | & 9
+        \end{pmatrix}.
+    \]
+   Podemos resolver este sistema utilizando sustitución progresiva y obtenemos
+    \[
+        y =
+        \begin{pmatrix}
+            5 \\ -12 \\ 2
+        \end{pmatrix}.
+    \]
+    Ahora, resolvemos el sistema
+    \[
+        Ux = y
+    \]
+    cuya matriz ampliada es
+    \[
+        \begin{pmatrix}
+             2 &  1 & 1 & | & 5 \\
+            0  & -8 &-2 & | & -12\\
+             0 &  0 & 1 & | & 2
+        \end{pmatrix}.
+    \]
+   Podemos resolver este sistema utilizando sustitución regresiva y obtenemos
+    \[
+        x =
+        \begin{pmatrix}
+            1 \\ 1 \\ 2
+        \end{pmatrix}.\qedhere
+    \]
+\end{proof}
+
+
+
+\end{document}

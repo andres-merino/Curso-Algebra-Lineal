@@ -1,0 +1,35 @@
+% Caga del paquete
+\usepackage{listings}
+
+% Definición de color y ambiente
+\definecolor{colcod}{RGB}{174,218,255}
+\newtcolorbox{pycodigo}
+    {icono=\faKeyboardO,color=colcod,
+     postit,top=-2mm,bottom=-2mm}
+
+% Estilo para python
+\lstloadlanguages{Python}
+% Configuración de estilo
+\lstset{
+    language=Python,
+    basicstyle=\scriptsize\ttfamily,
+    numberstyle=\color{gray},
+    stringstyle=\color[HTML]{933797},
+    commentstyle=\color[HTML]{228B22}\ttfamily,
+    emph={[2]from,import,pass,return}, emphstyle={[2]\color[HTML]{DD52F0}},
+    emph={[3]range}, emphstyle={[3]\color[HTML]{D17032}},
+    emph={[4]for,in,def}, emphstyle={[4]\color{blue}},
+    showstringspaces=false,
+    breaklines=true,
+    prebreak=\mbox{{\color{gray}\tiny$\searrow$}},
+    numbers=left,
+    xleftmargin=25pt,
+    inputencoding=utf8,
+    extendedchars=true,
+    literate=   {á}{{\'a}}1
+                {é}{{\'e}}1 
+                {í}{{\'i}}1 
+                {ó}{{\'o}}1 
+                {ú}{{\'u}}1 
+                {ñ}{{\~n}}1,
+}

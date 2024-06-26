@@ -1,0 +1,2647 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos}
+\asignatura{Álgebra lineal}
+\tema{Resumen}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+
+% -- Comandos adicionales
+\setlist[enumerate]{label=\roman*.}
+% \input{codigo-python}
+
+\begin{document}
+
+\encabezado
+
+\vspace*{-10mm}
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Matrices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En este curso, tomaremos:
+\begin{itemize}
+    \item
+        $n,m\in \N$ con $n>0$ y $m>0$;
+    \item 
+        $I = \{ 1, 2, \ldots, m\}$ y $J =  \{1, 2 , \ldots, n \}$; y
+    \item 
+        $\K$ un cuerpo o campo (es decir, cualquier conjunto que cumpla con los axiomas de cuerpo), puede ser $\Q$, $\R$ o $\C$.
+\end{itemize}
+
+\begin{defi}[Matriz]
+    Una matriz sobre un cuerpo $\mathbb{K}$ es una función 
+    \[
+        \funcion{A}{I\times J}{\mathbb{K}}
+        {(i,j)}{A(i,j)=a_{ij},}
+    \]
+    la cual se representa por
+    \[
+        A = 
+        \begin{pmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\ 
+        a_{21} & a_{22} & \cdots & a_{2n} \\ 
+        \vdots & \vdots & \ddots & \vdots\\ 
+        a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{pmatrix}.
+    \]
+    Con esto, se dice que $A$ es de orden $m \times n$ y que tiene $m$ filas y $n$ columnas. Al conjunto de todas las matrices de orden $m \times n$ sobre el campo $\mathbb{K}$ se denota por $\Mat[\K]{m}{n}$.
+\end{defi}
+
+% Una manera para trabajar con matrices en Python, es utilizando la librería \texttt{sympy}, con la siguiente línea de comandos:
+
+% \begin{pycodigo}
+% \begin{lstlisting}[language=Python]
+% from sympy import *
+% \end{lstlisting}
+% \end{pycodigo}
+
+% Con esto, podemos almacenar y visualizar una matriz de la siguiente manera:
+
+% \begin{pycodigo}
+% \begin{lstlisting}[language=Python]
+% A = Matrix([[1,2,3], [4,5,6],[-1,0,2]])
+% A
+% \end{lstlisting}
+% \end{pycodigo}
+
+
+\begin{advertencia}
+    Dada una matriz $A$, esta se la representa también por $A=(a_{ij})$.
+\end{advertencia}
+
+\begin{advertencia}
+    Otras notaciones usuales para el conjunto de la matrices, que se puede encontrar en la literatura, son $\M_{m\times n}$, $M_{m\times n}$, $\M_{mn}$ o $M_{mn}$.
+\end{advertencia}
+
+\begin{defi}[Filas y columnas]
+    Sean $A\in\Mat[\K]{m}{n}$, $i\in I$ y $j\in J$. A la matriz
+    \[
+        \begin{pmatrix}
+        a_{1j} \\ 
+        a_{2j} \\ 
+        \vdots \\ 
+        a_{mj} 
+        \end{pmatrix}
+    \]
+    se la llama la $j$-ésima columna de $A$ y a la matriz
+    \[
+        \begin{pmatrix}
+        a_{i1}& a_{i2}&\cdots& a_{in}
+        \end{pmatrix}
+    \]
+    se la llama la $i$-ésima fila de $A$.
+\end{defi}
+
+\begin{prop}[Igualdad de matrices]
+    Sean $A \in \Mat[\K]{m}{n}$ y $B \in \Mat[\K]{p}{q}$. Se dice que las $A$ y $B$ son iguales, y se representa por $A=B$, si:
+    \begin{itemize}
+    \item 
+        $m=p$ y $n=q$; y
+    \item 
+        $a_{ij}=b_{ij}$ para todo $i\in I$ y $j \in J$.
+    \end{itemize}
+\end{prop}
+
+\begin{defi}[Vectores]
+    El conjunto $\K^n$ es:
+    \[
+        \K^n=\underbrace{\K\times\K\times\cdots\times\K}_{n\text{ veces}},
+    \]
+    es decir,
+    \[
+        \K^n=\{(a_1,a_2,\ldots,a_n):a_i\in\K\text{ para todo }i \in J\}.
+    \]
+\end{defi}
+
+\begin{advertencia}
+    Por notación, si $a\in\K^n$, se asumirá $a=(a_1,a_2,\ldots,a_n)$.
+\end{advertencia}
+
+\begin{advertencia}
+    Podemos identificar cada elemento de $\K^n$ con una matriz de $\Mat[\K]{n}{1}$ de la siguiente manera: si
+    \[
+        a = (a_1,a_2,\ldots,a_n) \in \K^n,
+    \]
+    entonces, visto como matriz es
+    \[
+        a = 
+        \begin{pmatrix}
+            a_1\\a_2\\
+            \vdots\\a_n
+        \end{pmatrix}
+        \in \Mat[\K]{n}{1}.
+    \]
+\end{advertencia}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Operaciones de matrices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Suma de matrices]
+    Sean $A, B \in \Mat[\K]{m}{n}$. La suma de las matrices $A$ y $B$ es la matriz $C\in \Mat[\K]{m}{n}$ tal que:
+    \[ 
+        c_{ij} = a_{ij} + b_{ij}
+    \]
+    para todo $i \in I$ y $j \in J$. A esta matriz se la denota por $A+B$.
+\end{defi}
+
+\begin{advertencia}
+    Con esto, tenemos que $(a_{ij})+(b_{ij})=(a_{ij} + b_{ij})$.
+\end{advertencia}
+
+\begin{defi}[Multiplicación por un escalar]
+    Sea $A\in \Mat[\K]{m}{n}$ y $\alpha \in \mathbb{K}$. El producto del escalar $\alpha$ por la matriz $A$ es la matriz $B\in \Mat[\K]{m}{n}$ tal que:
+    \[ 
+        b_{ij} = \alpha a_{ij}
+    \]
+    para todo $i \in I$ y $j \in J$. A esta matriz se la denota por $\alpha A$.
+\end{defi}
+
+\begin{advertencia}
+    Con esto, tenemos que $\alpha (a_{ij}) =(\alpha a_{ij})$.
+\end{advertencia}
+
+\begin{defi}[Transpuesta de una matriz]
+    Sea $A \in \Mat[\K]{m}{n}$. La matriz transpuesta de $A$ es la matriz $B\in \Mat[\K]{n}{m}$ tal que: 
+    \[
+        (b_{ij}) = (a_{ji})
+    \]
+    para todo $i\in I$ y $j \in J$. A esta matriz se la denota por $A^\intercal$.
+\end{defi}
+
+\begin{advertencia}
+    Con esto, tenemos que si $A\in \Mat[\K]{m}{n}$, entonces $A^\intercal\in \Mat[\K]{n}{m}$ y $(a_{ij})^\intercal =(a_{ji})$.
+\end{advertencia}
+
+\begin{teo}
+    Sean $A,B,C\in\Mat[\K]{m}{n}$. Se tiene que
+    \begin{itemize}
+    \item 
+        $A + B = B + A$.
+    \item 
+        $A + (B+C) = (A + B)+C$.
+    \item 
+        Existe una única matriz $0$ de orden $m \times n$ tal que 
+        \[ 
+            A + 0 =  A 
+        \]
+        para cualquier matriz $A$ de orden $m \times n$. La matriz $0$ se denomina neutro aditivo de orden $m \times n$, también llamada la matriz nula.
+    \item 
+        Para cada matriz $A$ de orden $m \times n$, existe una única matriz, denotada por $-A$, de orden $m \times n$ tal que:
+        \[
+            A + (-A) = 0.
+        \]
+        A la matriz $-A$ se la denomina el inverso aditivo $A$.
+    \end{itemize}
+\end{teo}
+
+\begin{teo}
+    Sean $\alpha,\beta \in \K$ y $A,B\in\Mat[\K]{m}{n}$. Se tiene que
+    \begin{itemize}
+    \item 
+        $\alpha(\beta A) = (\alpha\beta)A$;
+    \item 
+        $(\alpha+\beta)A = \alpha A + \beta A$; y
+    \item 
+        $\alpha(A+B) = \alpha A + \alpha B$.
+    \end{itemize}
+\end{teo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Multiplicación de matrices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En esta sección consideramos  $p,q\in \N$ con $p>0$ y $q>0$.
+
+
+% \begin{defi}[Producto punto]
+%     Sean $a, b \in \K^n$ donde, se define el producto punto o el producto interno de $a$ y $b$ por
+%     \[ 
+%         a \cdot b = \sum_{j=1}^n a_j b_j
+%         = a_1 b_1 + a_2 b_2 + \cdots + a_n b_n.
+%     \]
+% \end{defi}
+
+\begin{defi}[Multiplicación de matrices]
+    Sean $A \in \Mat[\K]{m}{n}$ y $B \in \Mat[\K]{n}{p}$, el producto de las matrices $A$ y $B$ es la matriz $C \in \Mat[\K]{m}{p}$ tal que
+    \begin{align*}
+        c_{ij} & = a_{i1}b_{1j} + a_{i2} b_{2j} + \cdots + a_{1p}b_{pj} \\
+               & = \sum_{k=1}^p a_{ik} b_{kj}
+    \end{align*}
+    para todo $i \in I$ y $j \in J$. A esta matriz se la denota por $AB$.
+\end{defi}
+
+
+
+\begin{teo}
+    Sean $A, B\in \mathbb{K}^{m \times n}$, $C,D\in \mathbb{K}^{n \times p}$, $E\in \mathbb{K}^{p \times q}$ y $\alpha \in\K$. Se tiene que
+    \begin{itemize}
+    \item 
+        $A(DE) = (AD)E$;
+    \item 
+        $A(C+D) = AC + AD$; 
+    \item 
+        $(A+B)C = AC + BC$; 
+    
+    \item 
+        $A(\alpha C) = \alpha (AC) = (\alpha A) C$.
+    \end{itemize}
+\end{teo}
+
+\begin{advertencia}
+    En general, $AB\neq BA$.
+\end{advertencia}
+
+\begin{defi}[Matriz cuadrada]
+    Si $A$ es un elemento de $\K^{n \times n}$, se dice que $A$ es una matriz cuadrada de orden $n$. 
+\end{defi}
+
+\begin{defi}[Matriz identidad de orden $n$]
+    Se define la matriz identidad de orden $n$ al elemento $A$ de $\K^{n \times n}$ tal que
+    \[
+        a_{ij} =
+            \begin{cases}
+            1 & \text{si } i=j, \\
+            0 & \text{si } i \neq j,
+            \end{cases}
+    \]
+    para todo $i,j\in I$. A esta matriz se la denota por $I_n$.
+\end{defi} 
+
+\begin{prop}
+    Sea $A\in\Mat[\K]{m}{n}$ se tiene que
+    \[ 
+        I_m A = A I_n = A.
+    \]
+\end{prop}
+
+\begin{defi}
+    Sean $A \in \mathbb{K}^{n \times n}$ y $r\in\N$. Se define $A$ a la potencia $r$ por
+    \begin{itemize}
+    \item 
+        $A^0 = I_n$; y
+    \item 
+        $A^{r+1} = A^rA$.
+    \end{itemize}
+\end{defi}
+
+\begin{teo}
+    Sean $A \in \mathbb{K}^{n \times n}$ y $r,s\in\N$. Se tiene que
+    \begin{itemize}
+    \item 
+        $A^r A^s = A^{r+s}$; y 
+    \item 
+        $(A^r)^s = A^{rs}$.
+    \end{itemize}
+\end{teo}
+
+\begin{advertencia}
+    Note que en general $(AB)^r \neq A^r B^r$.
+\end{advertencia}
+
+
+\begin{teo}
+    Sean $\alpha \in \mathbb{K}$, $A,B\in\mathbb{K}^{m \times n}$ y  $C\in\mathbb{K}^{n \times p}$. Se tiene que
+    \begin{itemize}
+    \item 
+        $\left(A^\intercal\right)^\intercal = A$;
+    \item 
+        $(A+B)^\intercal = A^\intercal + B^\intercal$;
+    \item 
+        $(AC)^\intercal = C^\intercal A^\intercal$;
+    \item 
+        $(\alpha A)^\intercal = \alpha A^\intercal$.
+    \end{itemize}
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Tipos de matrices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Matriz diagonal]
+    Sea $A\in \mathbb{K}^{n \times n}$. Se dice que $A$ es una matriz diagonal si verifica que:
+    \[ 
+        a_{ij} = 0
+    \]
+    para todo $i\in I$ y $j\in J$ con $i\neq j$.
+\end{defi}
+
+\begin{defi}[Matriz escalar]
+    Sea $A\in \mathbb{K}^{n \times n}$. Se dice que $A$ es una matriz escalar si es una matriz diagonal que verifica:
+    \[ 
+        a_{ii} = \alpha
+    \]
+    para todo $i\in I$, con $\alpha\in\K$.
+\end{defi}
+
+\begin{defi}[Matriz simétrica]
+    Sea $A\in \mathbb{K}^{n \times n}$. Se dice que $A$ es simétrica si $A^\intercal = A$.
+\end{defi}
+
+\begin{defi}[Matriz antisimétrica]
+    Sea $A\in \mathbb{K}^{n \times n}$. Se dice que $A$ es simétrica si $A^\intercal = -A$.
+\end{defi}
+
+\begin{defi}[Matriz triangular]
+    Sea $A\in \mathbb{K}^{n \times n}$. Se dice que $A$ es
+    \begin{itemize}
+    \item 
+        una matriz triangular superior si $a_{ij} = 0 $ para todo $i>j$ con $i,j \in J$; y
+    \item 
+        una matriz triangular inferior si $a_{ij} = 0 $ para todo $i<j$ con $i,j \in J$.
+    \end{itemize}
+\end{defi}
+
+\begin{defi}[Matriz nilpotente]
+    Sea $A\in \mathbb{K}^{n \times n}$ y $r \in \N$. Se dice que $A$ es nilpotente de orden $r$ si $r$ es el menor entero positivo tal que
+    \[ 
+        A^r = 0.
+    \]
+\end{defi}
+
+\begin{defi}[Matriz idempotente]
+    Sea $A\in \mathbb{K}^{n \times n}$. Se dice que $A$ es una matriz idempotente si $A^2 = A$.
+\end{defi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Soluciones de sistemas de ecuaciones lineales}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{defi}[Matriz aumentada]
+    Dado un sistema de ecuaciones lineales de $m$ ecuaciones lineales en las cuales figuran $n$ incógnitas:
+    \begin{align*}
+        a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n &= b_1,\\
+        a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n &= b_2,\\
+            & \hspace{2mm} \vdots\\
+        a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n &= b_m.
+    \end{align*}
+    donde $a_{ij}\in\R$ y $b_i\in \R$ con $i\in I$ y $j\in J$. A la matriz
+    \[
+        A=\begin{pmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n}\\
+        a_{21} & a_{22} & \cdots & a_{2n}\\
+        \vdots & \vdots & \ddots & \vdots\\
+        a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{pmatrix}
+    \]
+    se la llama matriz de coeficientes del sistema y a 
+    \[
+        b=\begin{pmatrix}
+        b_1 \\ b_2 \\ \vdots \\ b_m
+        \end{pmatrix}
+        \texty
+        x=\begin{pmatrix}
+        x_1 \\ x_2 \\ \vdots \\ x_n
+        \end{pmatrix}
+    \]
+    se las llama columnas de constantes y de incógnitas, respectivamente.
+\end{defi}
+
+\begin{advertencia}
+    Bajo estas definiciones, dado un sistema de ecuaciones lineales, se dice que
+    \[
+        Ax=b
+    \]
+    es la representación matricial del sistema de ecuaciones.
+\end{advertencia}
+
+\begin{defi}[Matriz ampliada]
+    Sean $A\in\Mat[\K]{m}{n}$ y $B\in\Mat[\K]{m}{p}$, se define la matriz ampliada de $A$ y $B$ al elemento de $\Mat[\K]{m}{(m+p)}$ dado por:
+    \[
+        \begin{pmatrix}
+        a_{11}&a_{12}&\cdots&a_{1n}&|&b_{11}&b_{12}&\cdots&b_{1p}\\
+        a_{21}&a_{22}&\cdots&a_{2n}&|&b_{21}&b_{22}&\cdots&b_{2p}\\
+        \vdots&\vdots&\ddots&\vdots&|&\vdots&\vdots&\ddots&\vdots\\
+        a_{m1}&a_{m2}&\cdots&a_{mn}&|&b_{m1}&b_{m2}&\cdots&b_{mp}
+        \end{pmatrix}
+    \]
+    y se la denota por $(A|B)$.
+\end{defi}
+
+\begin{defi}
+    Dado el sistema de ecuaciones lineales en forma matricial
+    \[
+        Ax=b
+    \]
+    con $A\in \Mat[\K]{m}{n}$ y $b\in\K^m$, se dice que 
+    \[
+        (A|b)
+    \]
+    es la matriz ampliada asociada al sistema.
+\end{defi}
+
+\begin{defi}[Matriz escalonada reducida por filas]
+    Se dice que una matriz está en forma escalonada reducida por filas cuando satisface las siguientes propiedades:
+    \begin{enumerate}
+    \item 
+        Todas las filas que constan de ceros, si las hay, están en la parte inferior de la matriz. 
+    \item 
+        La primera entrada distinta de cero de la fila, al leer de izquierda a derecha, es un $1$. Esta entrada se denomina entrada principal o uno principal de su fila. 
+    \item 
+        Para cada fila que no consta sólo de ceros, el uno principal aparece a la derecha y abajo de cualquier uno principal en las filas que le preceden. 
+    \item 
+        Si una columna contiene un uno principal, el resto de las entradas de dicha columna son iguales a cero. 
+    \end{enumerate}
+    Se dice que una matriz está en forma escalonada por filas si satisface las primeras tres propiedades . 
+\end{defi}
+
+\begin{defi}[Operaciones elementales de fila]
+    Dada una matriz $A\in\K^{m \times n}$, una operación elemental por filas sobre $A$ es una de las siguientes:
+    \begin{itemize}
+    \item   
+        \textbf{Intercambio de filas:} dados $i\in I$ y $j\in J$, intercambiar la fila $i$ por la fila $j$, denotado por
+        \[
+            F_i \leftrightarrow F_j,
+        \]
+        es reemplazar la fila
+        \[
+            \begin{pmatrix}a_{i1}&a_{i2}&\ldots& a_{in}\end{pmatrix}
+        \]
+        por la fila
+        \[
+            \begin{pmatrix}a_{j1}&a_{j2}&\ldots& a_{jn}\end{pmatrix}
+        \]
+        y viceversa.
+    \item 
+        \textbf{Multiplicar una fila por un escalar:} dados $i\in I$ y $\alpha\in \K$, con $\alpha\neq 0$, multiplicar la fila $i$ por $\alpha$, denotado por
+        \[
+            \alpha F_i \rightarrow F_i,
+        \]
+        es reemplazar la fila
+        \[
+            \begin{pmatrix}a_{i1}&a_{i2}&\ldots& a_{in}\end{pmatrix}
+        \]
+        por 
+        \[
+            \begin{pmatrix}\alpha a_{i1}&\alpha a_{i2}&\ldots&\alpha a_{in}\end{pmatrix}.
+        \]
+    \item 
+        \textbf{Sumar un múltiplo de una fila con otra:} dados $i,j\in I$ y $\alpha\in \K$, multiplicar la fila $i$ por $\alpha$ y sumarlo a la fila $j$, denotado por
+        \[
+            \alpha F_i + F_j\rightarrow F_j,
+        \]
+        es reemplazar la fila
+        \[
+            \begin{pmatrix}a_{j1}&a_{j2}&\ldots& a_{jn}\end{pmatrix}
+        \]
+        por 
+        \[
+            \begin{pmatrix}\alpha a_{i1} + a_{j1}&\alpha a_{i2} + a_{j2}&\ldots&\alpha a_{in} + a_{jn}\end{pmatrix}.
+        \]
+\end{itemize}
+\end{defi}
+
+\begin{defi}[Matriz elemental]
+    Dada una operación elemental por fila, se llama matriz elemental correspondiente a la operación al resultado de aplicar dicha operación a la matriz identidad.
+\end{defi}
+
+\begin{teo}
+    Sean $E\in \Mat[\K]{n}{n}$ una matriz elemental y $A\in\Mat[\K]{n}{m}$, el resultado aplicar la operación por filas correspondiente a $E$ a la matriz $A$ es $EA$.
+\end{teo}
+
+\begin{defi}[Equivalente por filas]
+    Sean $A,B\in \Mat[\K]{m}{n}$, se dice que la matriz $A$ es equivalente por filas a una matriz $B$, denotado por $A\sim B$, si $B$ se puede obtener al aplicar a la matriz $A$ una sucesión de operaciones elementales por fila.
+\end{defi}
+
+\begin{teo}
+    Toda matriz $A\in\Mat[\K]{m}{n}$ es equivalente por filas a una única matriz en forma escalonada reducida por filas. 
+\end{teo}
+
+\begin{advertencia}
+    El proceso para obtener una matriz escalonada reducida por filas a partir de una matriz cualquiera se conoce como eliminación de Gauss-Jordan.
+\end{advertencia}
+
+\begin{defi}
+    Sean $A\in\Mat[\K]{m}{n}$ y $B\in\Mat[\K]{m}{n}$ la única matriz escalonada reducida por filas equivalente a $A$. El rango de $A$, denotado por $\rang(A)$, es el número de filas no nulas que tiene la matriz $B$.  
+\end{defi}
+
+\begin{prop}
+    Sean $A, B\in\Mat[\K]{m}{n}$. Se tiene que si $A\sim B$, entonces 
+    \[
+        \rang(A) = \rang(B).
+    \]
+\end{prop}
+
+\begin{prop}
+    Sean $A\in\Mat[\K]{m}{n}$. Se tiene que si $A$ es una matriz escalonada, entonces $\rang(A)$ es el número de filas no nulas que tiene $A$.
+\end{prop}
+
+\subsection{Resolución de sistemas lineales}
+
+\begin{teo}
+    Sean $A,C\in \Mat[\K]{m}{n}$ y $b,d\in \K^m$, se tiene que los sistemas de ecuaciones lineales
+    \[
+        Ax=b
+        \texty
+        Cx=d
+    \]
+    tienen las mismas soluciones si y solo si
+    \[
+        (A|b)\sim (C|d),
+    \]
+    es decir, si las matrices aumentadas de los sistemas son equivalentes por filas. 
+\end{teo}
+
+
+\begin{defi}
+    Sean $A\in \Mat[\K]{m}{n}$ y $b\in \K^m$, dado el sistema de ecuaciones lineales
+    \[
+        Ax=b,
+    \]
+    se dice que
+    \begin{itemize}
+    \item
+        el sistema es \textbf{inconsistente} si no tiene solución;
+    \item
+        el sistema es \textbf{consistente} si tiene solución.
+    \end{itemize}
+\end{defi}
+
+\begin{teo}
+    Sean $A\in \Mat[\K]{m}{n}$ y $b\in \K^m$, dado el sistema de ecuaciones lineales
+    \[
+        Ax=b,
+    \]
+    se tiene una y solo una de las siguientes
+    \begin{itemize}
+    \item
+        el sistema es inconsistente;
+    \item
+        el sistema es consistente y tiene una única solución; o
+    \item
+        el sistema es consistente y tiene infinitas soluciones.
+    \end{itemize}
+\end{teo}
+
+
+\begin{teo}[Teorema de Rouché–Frobenius]
+    Sean $A\in \Mat[\K]{m}{n}$ y $b\in \K^m$, dado el sistema de ecuaciones lineales
+    \[
+        Ax=b,
+    \]
+    se tiene que
+    \begin{itemize}
+    \item
+        el sistema es consistente si y solo si $\rang(A)=\rang(A|b)$;
+    \item
+        en caso de que el sistema sea consistente, la solución es única si y solo si $\rang(A)=n$.
+    \end{itemize}
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Sistemas homogéneos}
+
+\begin{defi}[Sistema homogéneo]
+    Sea $A\in \Mat[\K]{m}{n}$ al sistema
+    \[ 
+        Ax = 0
+    \]
+    se lo denomina sistema de ecuaciones lineales homogéneo.
+\end{defi}
+
+\begin{defi}
+    Sea $A\in \Mat[\K]{m}{n}$, dado el sistema homogéneo
+    \[ 
+        Ax = 0,
+    \]
+    entonces
+    \begin{itemize}
+    \item 
+        a $x = 0$ se la llama la solución trivial del sistema;
+    \item 
+        a $x \neq 0$ tal que $Ax=0$ se la llama una solución no trivial. 
+    \end{itemize}
+\end{defi}
+
+\begin{teo}
+    Un sistema homogéneo de $m$ ecuaciones con $n$ incógnitas siempre tiene una solución no trivial si $m<n$, es decir, si el número de incógnitas es mayor que el número de ecuaciones. 
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Inversa de una matriz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}
+    Sea $A\in \Mat[\K]{n}{n}$ es no singular o invertible si existe una matriz $B\in \Mat[\K]{n}{n}$ tal que 
+    \[
+        AB = BA = I_n.
+    \]
+    A la matriz $B$ se la denomina inversa de $A$ y se la denota por $A^{-1}$. Si no existe tal matriz, entonces se dice que $A$ es singular o no invertible. 
+\end{defi}
+
+\begin{teo}
+    Si una matriz tiene inversa, la inversa es única. 
+\end{teo}
+
+\begin{teo}
+    Sea $A\in \Mat[\K]{n}{n}$. 
+    \begin{itemize}
+    \item 
+        Si $A$ es una matriz no singular, entonces $A^{-1}$ es no singular y 
+        \[ 
+            (A^{-1})^{-1} = A.
+        \]
+    \item 
+        Si $A$ y $B$ son matrices no singulares, entonces $AB$ es no singular y 
+        \[ 
+            (AB)^{-1} = B^{-1}A^{-1}.
+        \]
+    \item 
+        Si $A$ es una matriz no singular, entonces
+        \[
+            {(A^\intercal)}^{-1} = {(A^{-1})}^\intercal.
+        \]
+    \end{itemize}
+\end{teo}
+
+\begin{teo}
+    Sean $p\in\N^*$ y $A_1, A_2, \ldots, A_p \in \Mat[\K]{n}{n}$ matrices no singulares. Se tiene que $A_1 A_2 \cdots A_p$ es no singular y 
+    \[
+        (A_1 A_2 \cdots A_p)^{-1} = A_p^{-1} A_{p-1}^{-1} \cdots A_1^{-1}.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $A, B \in \Mat[\K]{n}{n}$. Se tiene que si $AB=I_n$, entonces $BA=I_n$.
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$, se tiene que $A$ es no singular si y solo si es equivalente por filas a $I_n$. Es más
+    \[
+        (A|I_n) \sim (I_n|A^{-1}).
+    \]
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$, el sistema homogéneo 
+    \[
+        Ax = 0
+    \]
+    tiene una solución no trivial si y solo si $A$ es singular. 
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. Se tiene que $A$ es no singular si y solo si el sistema lineal $Ax=b$ tiene una solución única para cada vector $b \in \K^{n}$.
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$, se tienen que las siguientes son equivalentes:
+    \begin{enumerate}
+    \item 
+        $A$ es no singular;
+    \item 
+        el sistema $Ax=0$ solamente tiene la solución trivial;
+    \item 
+        $A$ es equivalente por filas a $I_n$;
+    \item 
+        $\rang(A)=n$; y 
+    \item 
+        el sistema lineal $Ax=b$ tiene una solución única para cada vector $b \in \K^{n}$. 
+    \end{enumerate}
+\end{teo}
+
+\section{Aplicaciones de sistemas de ecuaciones}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Factorización LU}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Sea matriz $U\in\Mat[\K]{n}{n}$ una matriz triangular superior y cuyas entradas en la diagonal sean distintas de $0$, dado $b\in\K^n$, el sistema 
+\[
+    Ux = b,
+\]
+cuya matriz ampliada es
+\[
+    \begin{pmatrix}
+        u_{11} & u_{12} & u_{13} & \cdots & u_{1n} & | & b_1 \\
+        0      & u_{22} & u_{23} & \cdots & u_{2n} & | & b_2 \\
+        0      & 0      & u_{33} & \cdots & u_{3n} & | & b_3 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots & | & \vdots \\
+        0      & 0      & 0      & \cdots & u_{nn} & | & b_n 
+    \end{pmatrix},
+\]
+se puede resolver por \emph{sustitución regresiva}, obteniendo que la solución del sistema es
+\[
+    x_n = \frac{b_n}{u_{nn}}
+    \texty
+    x_k = \dfrac{b_k - \displaystyle\sum_{j=k+1}^n u_{kj}x_j}{u_{kk}},
+\]
+para $k=n-1,\ldots,1$.
+
+De manera análoga, Sea matriz $L\in\Mat[\K]{n}{n}$ una matriz triangular inferior y cuyas entradas en la diagonal sean distintas de $0$, dado $b\in\K^n$, el sistema 
+\[
+    Lx = b,
+\]
+cuya matriz ampliada es
+\[
+    \begin{pmatrix}
+        l_{11} & 0      & 0      & \cdots & 0      & | & b_1 \\
+        l_{21} & l_{22} & 0      & \cdots & 0      & | & b_2 \\
+        l_{31} & l_{32} & l_{33} & \cdots & 0      & | & b_3 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots & | & \vdots \\
+        l_{n1} & l_{n2} & l_{n3} & \cdots & l_{nn} & | & b_n 
+    \end{pmatrix},
+\]
+se puede resolver por \emph{sustitución progresiva}, obteniendo que la solución del sistema es
+\[
+    x_1 = \frac{b_1}{l_{nn}}
+    \texty
+    x_k = \dfrac{b_k - \displaystyle\sum_{j=1}^{k-1} u_{kj}x_j}{u_{kk}},
+\]
+para $k=2,\ldots,n$.
+
+Finalmente, si $A \in \Mat[\K]{n}{n}$ se puede escribir como el producto de una matriz triangular inferior $L$, un una matriz triangular superior $U$, es decir, 
+\[
+    A = LU,
+\]
+entonces se dice que $A$ tiene una factorización $LU$, y dado $b\in\K^n$, se tiene que el sistema
+\[
+    Ax=b
+\]
+equivale al sistema
+\[
+    L(Ux) = b,
+\]
+con esto, podríamos resolver el sistema inicial, resolviendo los sistemas
+\[
+    Ly = b
+    \texty
+    Ux = y.
+\]
+
+
+\begin{teo}[Factorización LU]
+    Sean $A\in \Mat[\K]{n}{n}$ una matriz tal que sea equivalente por filas a una matriz $U\in \Mat[\K]{n}{n}$ triangular superior, entonces se tiene que
+    \[
+        U = E_{m}\cdots E_2 E_1 A,
+    \]
+    donde $E_k$, para $k=1,\ldots,m$, son las matrices elementales correspondientes a las operaciones por filas. Si no se ha utilizado intercambio de filas y únicamente se han eliminado los elementos bajo la diagonal, entonces
+    \[
+        L = E_{1}^{-1} E_2^{-1} \cdots E_m^{-1}
+    \]
+    es una matriz triangular inferior y se tiene que $A=LU$.
+\end{teo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mínimos cuadrados}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Problema de la recta de mínimos cuadrados]
+    En $\R^2$, dados $n$ puntos $(x_1,y_1)$, $(x_2,y_2)$, \ldots, $(x_n,y_n)$, se plantea encontrar la ecuación de la recta que minimice la suma de los cuadrados de las distancias verticales de los puntos a la recta, es decir, se busca la pendiente $m$ y el intercepto $b$ de una recta que minimice la función definida por
+    \[
+        L(b,m)=\sum_{k=1}^n(y_k-mx_k-b)^2.
+    \]
+    A la recta de pendiente $m$ e intercepto $b$ que minimizan la función anterior se la llama recta de mínimos cuadrados.
+\end{defi}
+
+\begin{teo}
+    Dados los puntos $(x_1,y_1)$, $(x_2,y_2)$, \ldots, $(x_n,y_n)$, definimos
+    \[
+        y = \begin{pmatrix}
+            y_1 \\ y_2 \\ \vdots \\ y_n
+        \end{pmatrix},
+        \qquad
+        A = \begin{pmatrix}
+            1 & x_1 \\ 1 & x_2 \\ \vdots & \vdots \\ 1 & x_n
+        \end{pmatrix}
+        \texty
+        u = \begin{pmatrix}
+            b \\ m
+        \end{pmatrix}.
+    \]
+    Se tiene que el problema de la recta de mínimos cuadrados es equivalente a resolver el sistema
+    \[
+        A^\intercal A u = A^\intercal y.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sea $A\in\Mat{m}{n}$ tal que $\rang(A)=n$, entonces, $A^\intercal A$ es no singular.
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Determinantes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En esta sección tomaremos $n\in \N$, con $n>0$, e $I = \{ 1, 2, \ldots, n\}$.
+
+\begin{defi}[Menor]
+    Sean $A\in \Mat[\K]{n}{n}$ e $i,j\in I$. A la matriz de $\Mat[\K]{(n-1)}{(n-1)}$ que se obtiene eliminar la fila $i$ y la columna $j$ de $A$ se la llama el menor $ij$ de $A$, denotado por $A_{ij}$.
+\end{defi}
+
+\begin{advertencia}
+    En la literatura se puede encontrar la notación de $M_{ij}$ para el menor de $ij$ de $A$.
+\end{advertencia}
+
+\begin{defi}[Menor principal]
+    Sean $A\in \Mat[\K]{n}{n}$ y $k\in I$. A la matriz de $\Mat[\K]{k}{k}$ que se obtiene eliminar las $n-k$ últimas filas y columnas de $A$, se la llama el menor principal $k$ de $A$, denotado por $M_{k}$.
+\end{defi}
+
+\begin{advertencia}
+    En la literatura se puede encontrar la notación de $A_{k}$ para el menor principal $k$ de $A$.
+\end{advertencia}
+
+
+\begin{defi}[Determinantes] 
+    Sea $A\in \Mat[\K]{n}{n}$ se define el determinante de $A$, denotado por $\det(A)$ (o por $|A|$), de manera inductiva, como sigue:
+    \begin{itemize}
+    \item 
+        Si $n=1$ y $A=(a_{11})$, entonces $\det(A) = a_{11}$.
+    \item
+        Si $n>1$, entonces
+        \begin{align*}
+            \det(A) 
+            & = \sum_{k=1}^n a_{1k}(-1)^{1+k}\det(A_{1k})\\
+            & = a_{11}\det(A_{11}) - a_{12}\det(A_{12}) 
+            + \ldots +  (-1)^{1+n} a_{1n}\det(A_{1n}).
+        \end{align*}
+    \end{itemize}
+\end{defi}
+
+Ejemplos:
+\begin{itemize}
+\item 
+    Sea $A$ una matriz de orden $2 \times 2$ de la forma
+    \[ 
+        A=
+        \begin{pmatrix}
+         a_{11} & a_{12}\\
+         a_{21} & a_{22}
+        \end{pmatrix},
+    \]
+    se tiene que
+    \[
+        A_{11} = (a_{22})
+        \texty
+        A_{12} = (a_{21}),
+    \]
+    por lo tanto
+    \[
+        \det(A_{11}) = a_{11}
+        \texty
+        \det(A_{12}) = a_{12},
+    \]
+    de esta forma,
+    \[
+        \det(A) = a_{11}\det(A_{11}) - a_{12}\det(A_{12})
+            = a_{11}a_{22} - a_{12}a_{21},
+    \]
+    es decir,
+    \[
+        \det(A) = \begin{vmatrix}
+        a_{22} & a_{23} \\
+        a_{32} & a_{33}
+        \end{vmatrix}
+        = a_{11}a_{22} - a_{12}a_{21}.
+    \]
+\item Sea $A$ una matriz de orden $3 \times 3$ de la forma
+         \[ A=
+        \begin{pmatrix}
+         a_{11} & a_{12} & a_{13}\\
+         a_{21} & a_{22} & a_{23}\\
+         a_{31} & a_{32} & a_{33}\\
+        \end{pmatrix}
+        \]
+        \noindent el determinante de la matriz $A$ está dado por:
+        \[
+        \det(A) = a_{11}
+        \begin{vmatrix}
+        a_{22} & a_{23} \\
+        a_{32} & a_{33}
+        \end{vmatrix} - a_{12}
+        \begin{vmatrix}
+        a_{21} & a_{23} \\
+        a_{31} & a_{33} \\
+        \end{vmatrix}+ a_{13}
+        \begin{vmatrix}
+        a_{21} & a_{22} \\
+        a_{31} & a_{32}
+        \end{vmatrix}.
+        \]
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Propiedades de los determinantes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. Si una fila o columna de $A$ contiene solo ceros, entonces $\det (A) =0$.
+\end{teo}
+
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$ una matriz triangular superior o triangular inferior, entonces
+    \[
+        \det(A) = a_{11}a_{22} \cdots a_{nn},
+    \]
+    es decir, el determinante de una matriz triangular es el producto de los elementos de su diagonal principal.
+\end{teo}
+
+
+\begin{teo}
+    Sea $E\in\Mat[\K]{n}{n}$ una matriz elemental, $i,j\in I$ y $\alpha\in\K$, con $\alpha\neq 0$. Se tiene que
+    \begin{itemize}
+    \item   
+        si la operación es $F_i \leftrightarrow F_j$, entonces $\det(E) = - 1$;
+    \item 
+        si la operación es $\alpha F_i \rightarrow F_i$, entonces $\det(E) = \alpha$; y
+    \item 
+        si la operación es $\alpha F_i + F_j\rightarrow F_j$, entonces $\det(E) = 1$.
+    \end{itemize}
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. El determinante de una matriz $A$ y de su transpuesta son iguales, es decir, 
+    \[
+        \det(A^\intercal) = \det(A).
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $A, B\in \Mat[\K]{n}{n}$, se tiene que:
+    \[
+        \det(AB) = \det(A)\det(B).
+    \]
+\end{teo}
+
+
+\begin{teo}
+    Sean $A, B \in \Mat[\K]{n}{n}$. Si la matriz $B$ se obtiene intercambiando dos filas o columnas de $A$ entonces
+    \[  
+        \det(B) = - \det(A).
+    \]
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. Si dos filas o columnas de $A$ son iguales, entonces 
+    \[
+        \det(A) = 0
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $A, B \in \Mat[\K]{n}{n}$. Si $B$ se obtiene al multiplicar una fila o columna de $A$ por un escalar $\alpha \in \K$, entonces
+    \[
+        \det(B) = \alpha \det(A).
+    \]
+\end{teo}
+
+
+\begin{teo}
+    Sean $A\in \Mat[\K]{n}{n}$ y $\alpha \in\K$. Se tiene que
+    \[
+        \det(\alpha A) = \alpha^n \det(A).
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $A, B \in \Mat[\K]{n}{n}$, $\alpha\in\K$ e $i,j\in I$, con $i\neq j$. Si $B$ se obtiene al aplicar una operación de fila $\alpha F_i + F_j \to F_j$, entonces 
+    \[
+        \det(B) = \det(A).
+    \]
+\end{teo}
+ 
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. Si $A$ es no singular, entonces $\det(A) \neq 0$ y 
+    \[
+        \det(A^{-1}) = \dfrac{1}{\det(A)}.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $A, B, C \in \Mat[\K]{n}{n}$ y $j\in I$ tales que $A$, $B$ y $C$ difieran únicamente en la columna $j$. Si la columna $j$ de $C$ es el resultado de sumar las columnas $j$ de $A$ y $B$, entonces 
+    \[
+        \det(C) = \det(A) + \det(B).
+    \]
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Cofactores}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Cofactores]
+    Sean $A\in \Mat[\K]{n}{n}$ e $i,j\in I$. El cofactor $ij$ de $A$, denotado $C_{ij}$, está dado por
+    \[
+        C_{ij} = (-1)^{i+j} \det (A_{ij})
+    \]
+     donde $A_{ij}$ es el menor $ij$ de $A$.
+\end{defi}
+
+\begin{advertencia}
+    En la literatura, también se suele llamar menor al determinante de $A_{ij}$ en lugar de a la matriz, como lo haremos en este texto. Además, al cofactor, se lo suele denotar por $A_{ij}$.
+\end{advertencia}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. Se tiene que para todo $i\in I$,
+    \[
+        \det(A) 
+        = \sum_{k=1}^n a_{ik}C_{ik} 
+        = a_{i1}C_{i1} + a_{i2}C_{i2} + \ldots + a_{in}C_{in}
+    \]
+    y
+    \[
+        \det(A) 
+        = \sum_{k=1}^n a_{ki}C_{ki} 
+        = a_{1i}C_{1i} + a_{2i}C_{2i} + \ldots + a_{ni}C_{ni}.
+    \]
+    El lado derecho de las igualdades toma el nombre de expansión por cofactores del determinante de $A$.
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Más sobre la inversa de una matriz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Matriz de cofactores]
+    Sea $A \in \Mat[\K]{n}{n}$. La matriz de cofactores de $A$, que se denota por $\cof(A)$, es la matriz de $\Mat[\K]{n}{n}$ que está formada por los cofactores de $A$, es decir, 
+    \[
+        \cof(A) = (C_{ij}) = 
+        \begin{pmatrix}
+          C_{11} & C_{12} & \cdots & C_{1n} \\
+          C_{21} & C_{22} & \cdots & C_{2n} \\
+          \vdots & \vdots & \ddots &\vdots  \\
+          C_{n1} & C_{n2} & \cdots & C_{nn}
+        \end{pmatrix}.
+    \]
+\end{defi}
+
+
+\begin{defi}
+    Sea $A \in \Mat[\K]{n}{n}$. La matriz adjunta de $A$, que se denota por $\adj(A)$, es la matriz de $\Mat[\K]{n}{n}$ que está formada por la transpuesta de la matriz de los cofactores de $A$, es decir, 
+    \[
+        \adj(A) = \cof(A)^\intercal.
+    \]
+\end{defi}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$, entonces
+    \[
+        A (\adj(A)) = (\adj(A))A = \det(A)I_n.
+    \]
+\end{teo}
+
+\begin{cor}
+    Sea $A \in \Mat[\K]{n}{n}$. Si $\det(A) \neq 0$, entonces $A$ es invertible y
+    \[
+        A^{-1} = \dfrac{1}{\det(A)} \adj(A).
+    \]
+\end{cor}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. Una matriz $A$ es no singular si y sólo si $\det(A) \neq 0$.
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. El sistema homogéneo $Ax = 0$ tiene una solución no trivial si y sólo si $\det(A) = 0$.
+\end{teo}
+
+\begin{teo}
+    Sean $A \in \Mat[\K]{n}{n}$ y $b\in\K^n$. El sistema $Ax = b$ tiene una solución única si y sólo si $\det(A) \neq 0$ y su solución es
+    \[
+        A^{-1}b.
+    \]
+\end{teo}
+
+\begin{teo}[Equivalencias no singulares]
+    
+    Sea $A \in \Mat[\K]{n}{n}$, se tienen que las siguientes son equivalentes:
+    \begin{enumerate}
+    \item 
+        $A$ es no singular;
+    \item 
+        el sistema $Ax=0$ tiene solamente la solución trivial;
+    \item 
+        $A$ es equivalente por filas a $I_n$;
+    \item 
+        $\rang(A)=n$; 
+    \item 
+        el sistema lineal $Ax=b$ tiene una solución única para cada vector $b \in \K^{n}$; y
+    \item 
+        $\det(A) \neq 0$.
+    \end{enumerate}
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{El espacio $\R^n$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En esta sección, consideramos $n\in\N$ con $n\geq 1$.
+
+\begin{defi}[El conjunto $\R^n$]
+    El conjunto $\R^n$ es
+    \[
+        \R^n=\underbrace{\R\times\R\times\cdots\times\R}_{n\text{ veces}},
+    \]
+    es decir
+    \[
+        \R^n=\{(x_1,x_2,\ldots,x_n):x_i\in\R\text{ para todo }i=1,2,\ldots,n\}.
+    \]
+\end{defi}
+
+\begin{advertencia}
+    Recordemos que, por notación, si $y\in\R^n$, se asumirá $y=(y_1,y_2,\ldots,y_n)$.
+\end{advertencia}
+
+\begin{advertencia}
+    Recordemos que podemos identificar cada elemento de $\R^n$ con una matriz de $\Mat{n}{1}$ de la siguiente manera: si
+    \[
+        a = (a_1,a_2,\ldots,a_n) \in \R^n,
+    \]
+    entonces, visto como matriz es
+    \[
+        a = 
+        \begin{pmatrix}
+            a_1\\a_2\\
+            \vdots\\a_n
+        \end{pmatrix}
+        \in \Mat{n}{1}.
+    \]
+\end{advertencia}
+
+\begin{teo}
+    En $\R^n$ se cumplen las siguientes propiedades:
+    \begin{enumerate}
+    \item \textbf{asociativa de la suma:}
+        para todo $x,y,z\in \R^n$ se tiene que
+        \[
+            (x + y) + z = x + (y + z);
+        \]
+    \item \textbf{conmutativa de la suma:}
+        para todo $x,y\in \R^n$ se tiene que
+        \[
+            x + y = y + x;
+        \]
+    \item \textbf{elemento neutro de la suma:}
+        existe un elemento de $\R^n$, denotado por $0$, tal que para todo $x\in \R^n$ se tiene que 
+        \[
+            x + 0 = 0 + x = x;
+        \]
+    \item \textbf{inverso de la suma:}
+        para todo $x\in\R^n$, existe un elemento de $\R^n$, denotado por $-x$, tal que
+        \[
+            x + (-x)= 0;
+        \]
+    \item \textbf{distributiva del producto I:}
+        para todo $x,y\in\R^n$ y todo $\alpha\in \R$ se tiene que
+        \[
+            \alpha (x + y)=\alpha x + \alpha y
+        \]
+    \item \textbf{distributiva del producto II:}
+        para todo $x\in\R^n$ y todo $\alpha,\beta\in \R$ se tiene que
+        \[
+            (\alpha+\beta) x=\alpha x + \beta x;
+        \]
+    \item \textbf{asociativa del producto:}
+        para todo $x\in\R^n$ y todo $\alpha,\beta\in \R$ se tiene que
+        \[
+            (\alpha\beta) x=\alpha(\beta x);
+        \]
+    \item \textbf{elemento neutro del producto:}
+        para todo $x\in\R^n$ se tiene que
+        \[
+            1 x=x.
+        \]
+    \end{enumerate}
+\end{teo}
+
+\begin{defi}[Base canónica]
+    En $\R^n$, el conjunto $\{e^1,e^2,\ldots,e^n\}\subset\R^n$, definidos por 
+    \[
+        e^i_j=
+        \begin{cases}
+            0& \text{si }i\neq j,\\
+            1& \text{si }i= j,
+        \end{cases}
+    \]
+    para todo $i,j\in\{1,2,\ldots,n\}$, se lo denomina \emph{base canónica} de $\R^n$.
+\end{defi}
+
+\begin{teo}
+    Sea $x\in\R^n$, se tiene que existen únicos
+    \[
+        \alpha_1,\alpha_2,\ldots,\alpha_n\in\R
+    \]
+    tales que
+    \[
+        x = \alpha_1e^1 + \alpha_2 e^2 + \cdots + \alpha_n e^n.
+    \]
+\end{teo}
+
+\begin{defi}[Producto punto]
+    La función 
+    \[
+        \funcion{\cdot}{\R^n\times \R^n}{\R}
+        {(x,y)}{\sum_{i=1}^n x_iy_i}
+    \]
+    se denomina producto punto de $\R^n$ o producto interno de $\R^n$.
+\end{defi}
+
+\begin{teo}[Propiedades del producto punto]
+    Sean $x,y,z\in \R^n$ y $\alpha\in\R$, se tiene que
+    \begin{itemize}
+    \item
+        $x\cdot x \geq 0$;
+    \item
+        $x\cdot x = 0$ si y solo si $x=0$;
+    \item
+        $x \cdot y = y \cdot x$;
+    \item 
+        $(x + y)\cdot z = (x\cdot z) + (y\cdot z)$; y
+    \item
+        $(\alpha x)\cdot y = x\cdot(\alpha y) = \alpha(x\cdot y)$.
+    \end{itemize}
+\end{teo}
+
+\begin{defi}[Norma]
+    La función
+    \[
+        \funcion{\|\cdot\|}{\R^n}{\R}
+        {x}{\sqrt{x\cdot x}}
+    \]
+   se la llama la norma de $\R^n$. Para $x\in\R^n$ a $\|x\|$ se le llama norma, módulo o longitud de $x$.
+\end{defi}
+
+
+
+
+
+\begin{teo}[Desigualdad de Cauchy-Schwarz]
+    Para todo $x,y\in\R^n$,
+    \[
+        |x\cdot y|\leq \|x\|\,\|y\|.
+    \]
+\end{teo}
+
+\begin{teo}[Propiedades de la norma]
+    Sean $x,y\in \R^n$ y $\alpha\in\R$, se tiene que
+    \begin{itemize}
+    \item
+        $\|x\| \geq 0$;
+    \item
+        $\|x\| = 0$ si y solo si $x=0$;
+    \item 
+        $\|\alpha x\| = |\alpha|\|x\|$; y
+    \item
+        $\|x + y\| \leq \|x\|+\|y\|$
+    \end{itemize}
+\end{teo}
+
+\begin{advertencia}
+    Dados $x,y\in\R^n$, se define la distancia entre $x$ y $y$ por $\|x-y\|$.
+\end{advertencia}
+
+\begin{defi}[Vector unitario]
+    Dado $x\in\R^n$, se dice que $x$ es un vector unitario si $\|x\|=1$.
+\end{defi}
+
+    
+
+\begin{defi}[Ángulo entre vectores]
+    Sean $x,y\in\R^n$, ambos diferentes de 0, se define el ángulo entre estos vectores por
+    \[
+       \theta =  \arccos\left( \frac{x\cdot y}{\|x\|\,\|y\|} \right).
+    \]
+\end{defi}
+
+\begin{defi}
+    Sean $x,y\in\R^n$, se dice que 
+    \begin{itemize}
+    \item 
+        son ortogonales si $x\cdot y =0$;
+    \item
+        son paralelos si $|x\cdot y| = \|x\|\,\|y\|$; y
+    \item
+        tienen la misma dirección si $x\cdot y = \|x\|\,\|y\|$.
+    \end{itemize}
+\end{defi}
+
+\begin{teo}
+    Sean $x,y\in\R^n$ tal que $y\neq 0$. Si $x$ y $y$ son paralelos, entonces existe $\alpha\in\R$ tal que $x=\alpha y$.
+\end{teo}
+
+\begin{defi}[Proyección ortogonal]
+    Sean $x,y\in\R^n$, con $y\neq 0$, la proyección ortogonal de $x$ sobre $y$ es
+    \[
+        \proy_y(x) = \frac{x\cdot y}{\|y\|^2} y
+    \]
+    y la componente normal de $x$ respecto a $y$ es
+    \[
+        \norm_y(x) = x - \proy_y(x).
+    \]
+\end{defi}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Geometría de $\R^n$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En esta sección, a menos que se indique lo contrario, asumiremos $n\in\N$ con $n\geq 2$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Puntos de $\R^n$]
+    Se llama punto de $\R^n$ a cualquier elemento de $\R^n$. 
+\end{defi}
+
+
+\begin{defi}[Recta de $\R^n$]
+    Dados $a,b\in\R^n$, con $b\neq0$, la recta que pasa por $a$ con dirección $b$ es el conjunto
+    \[
+        L(a;b)=\{a+t b:t\in\R\}.
+    \]
+\end{defi}
+
+\begin{proof}[Ejemplo]
+    En $\R^2$, tenemos la recta que pasa por $(1,-2)$ con dirección $(3,2)$ es
+    \begin{align*}
+        L((1,-2);(3,2)) 
+            & = \{(1,-2)+t(3,2):t \in\R\} \\
+            & = \{(1+3t ,-2+2t ): t \in\R\} \\
+            & = \{(x,y)\in\R^2: x = 1+3t ,\ y=-2+2t ,\ t \in\R\} \\
+            & = \{(x,y)\in\R^2: 2x-3y=4\}
+    \end{align*}
+    Con esto, tenemos que la recta está definida por
+    \begin{align*}
+        x& = 1+3t ,\\
+        y& = -2+2t ,
+    \end{align*}
+    con $t \in \R$; a esta se la llama la ecuación paramétrica de la recta. Por otro lado, también tenemos que la recta está definida por 
+    \[
+        2x-3y=4
+    \]
+    con $(x,y)\in\R^2$; a esta se la llama la ecuación cartesiana de la recta.
+\end{proof}
+
+\begin{defi}[Plano de $\R^n$]
+    Dados $a,b,c\in\R^n$, con $b$ y $c$ no paralelos y diferentes de $0$, el plano que pasa por $a$ con dirección $b$ y $c$ es el conjunto
+    \[
+        P(a;b,c)=\{a+s  b+t c:s ,t \in\R\}.
+    \]
+\end{defi}
+
+\begin{proof}[Ejemplo]
+    En $\R^3$, tenemos la recta que pasa por $(1,-2,-1)$ con direcciones $(3,2,1)$ y $(1,0,2)$ es
+    \begin{align*}
+        L&((1,-2,-1);(3,2,1),(1,0,2)) \\
+            & = \{(1,-2,-1)+s (3,2,1) + t (1,0,2) :s ,t \in\R\} \\
+            & = \{(1+3s +t ,-2+2s ,-1+s +2t ): s ,t \in\R\} \\
+            & = \{(x,y,z)\in\R^3: x = 1+3s +t ,\ y=-2+2s ,\ z=-1+s +2t ,\ s ,t \in\R\} \\
+            & = \{(x,y,z)\in\R^3: 4x-5y-2z=8\}
+    \end{align*}
+    Con esto, tenemos que la recta está definida por
+    \begin{align*}
+        x& = 1+3s +t ,\\
+        y& = -2+2s ,\\
+        z& = -1+s +2t 
+    \end{align*}
+    con $s ,t \in \R$; a esta se la llama la ecuación paramétrica del plano. Por otro lado, también tenemos que la recta está definida por 
+    \[
+        4x-5y-2z=8
+    \]
+    con $(x,y,z)\in\R^3$; a esta se la llama la ecuación cartesiana de la recta.
+\end{proof}
+
+\begin{advertencia}
+    Podemos pasar de la ecuación paramétrica a la ecuación cartesiana si, al verlas como un sistema de ecuaciones en sus parámetros, analizamos cuándo el sistema es consistente.
+    
+    Además, podemos pasar de la ecuación cartesiana a la ecuación paramétrica si, al verla como un sistema de ecuaciones, resolvemos el sistema.
+\end{advertencia}
+
+\begin{advertencia}
+    En $\R^2$, dados dos puntos $(x_1,y_1),(x_2,y_2)\in\R^2$, la ecuación cartesiana de la recta que pasa por estos dos puntos es
+    \[
+        \begin{vmatrix}
+            x & y & 1\\
+            x_1 & y_1 & 1\\
+            x_2 & y_2 & 1
+        \end{vmatrix}
+        = 0,
+    \]
+    para $(x,y)\in\R^2$.
+\end{advertencia}
+
+\begin{advertencia}
+    En $\R^3$, dados tres puntos $(x_1,y_1,z_1),(x_2,y_2,z_2),(x_3,y_3,z_3)\in\R^3$, la ecuación cartesiana del plano que pasa por estos tres puntos es
+    \[
+        \begin{vmatrix}
+            x & y & z & 1\\
+            x_1 & y_1 & z_1 & 1\\
+            x_2 & y_2 & z_2 & 1\\
+            x_3 & y_3 & z_3 & 1
+        \end{vmatrix}
+        = 0,
+    \]
+    para $(x,y,z)\in\R^3$.
+\end{advertencia}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Espacios vectoriales}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Espacio Vectorial]
+    Dados un campo $\K$, un conjunto no vacío $E$ y dos operaciones
+    \[
+        \funcion{\oplus}{E\times E}{E}{(x,y)}{x\oplus y,}
+        \texty
+        \funcion{\odot}{\K\times E}{E}{(\alpha,x)}{\alpha\odot x}
+    \]
+    llamadas suma y producto, respectivamente; se dice que $(E,\oplus,\odot,\K)$ es un espacio vectorial si cumplen las siguientes propiedades
+    \begin{enumerate}
+    \item \textbf{asociativa de la suma:}
+        para todo $x,y,z\in E$ se tiene que
+        \[
+            (x \oplus y) \oplus z = x \oplus (y \oplus z);
+        \]
+    \item \textbf{conmutativa de la suma:}
+        para todo $x,y\in E$ se tiene que
+        \[
+            x \oplus y = y \oplus x;
+        \]
+    \item \textbf{elemento neutro de la suma:}
+        existe un elemento de $E$, denotado por $0_E$ o simplemente $0$, tal que para todo $x\in E$ se tiene que 
+        \[
+            x \oplus 0 = 0 \oplus x = x;
+        \]
+    \item \textbf{inverso de la suma:}
+        para todo $x\in E$, existe un elemento de $E$, denotado por $-x$, tal que
+        \[
+            x \oplus (-x)= 0;
+        \]
+    \item \textbf{distributiva del producto I:}
+        para todo $x,y\in E$ y todo $\alpha\in \K$ se tiene que
+        \[
+            \alpha\odot (x \oplus y)=\alpha\odot x + \alpha\odot y
+        \]
+    \item \textbf{distributiva del producto II:}
+        para todo $x\in E$ y todo $\alpha,\beta\in \K$ se tiene que
+        \[
+            (\alpha+\beta)\odot x=\alpha\odot x \oplus \beta\odot x;
+        \]
+    \item \textbf{asociativa del producto:}
+        para todo $x\in E$ y todo $\alpha,\beta\in \K$ se tiene que
+        \[
+            (\alpha\beta)\odot x=\alpha\odot(\beta\odot x);
+        \]
+    \item \textbf{elemento neutro del producto:}
+        para todo $x\in E$ se tiene que
+        \[
+            1\odot x=x,
+        \]
+        donde $1\in\K$ es el elemento neutro multiplicativo de $\K$
+    \end{enumerate}
+\end{defi}
+
+\begin{advertencia}
+    Utilizamos los símbolos $\oplus$ y $\odot$ para enfatizar el hecho de que, en general, las operaciones definidas no son la suma y el producto estándar que utilizamos. Si no existe riesgo de confusión, utilizaremos la notación
+    \[
+        x\oplus y = x+y
+        \texty
+        \alpha \odot x = \alpha x
+    \]
+    y diremos que el espacio vectorial es $(E,+,\cdot,\K)$, es más, en caso de que no exista ambigüedad en las operaciones utilizadas se dirá simplemente que $E$ es un espacio vectorial.
+\end{advertencia}
+
+\begin{teo}
+    Los siguientes conjuntos son espacios vectoriales en el campo $\R$:
+    \begin{itemize}
+    \item
+        $\R^n$, con $n\in \N^*$;
+    \item
+        $\Mat[\R]{m}{n}$, con $m,n\in \N^*$;
+    \item
+        $\mathcal{F}(I)=\{\func{f}{I}{\R}: f\text{ es una función}\}$, con $I\subseteq \R$.
+    % \item
+    %     $\mathcal{C}(I)=\{\func{f}{I}{\R}: f\text{ es continua en }I\}$, con $I\subseteq \R$.
+    % \item
+    %     $\mathcal{C}^k(I)=\{\func{f}{I}{\R}: f\text{ es $k$ veces derivable en }I\text{ y }f^{k}\in\mathcal{C}^k(I)\}$, con $I\subseteq \R$.
+    \item
+        $\R_n[x]$ el conjunto de todos los polinomio de grado menor igual que $n$ en la variable $x$, con $n\in \N$;
+    \end{itemize}
+\end{teo}
+
+\begin{teo}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial, se tiene que para todo $u \in E$ y todo $\alpha \in \K$, se tiene que
+    \begin{enumerate}
+        \item $0u = 0$;
+        \item $\alpha 0 = 0$;
+        \item si $\alpha u=0$ entonces $\alpha  = 0$ o $u = 0$;
+        \item $(-1) u = -u$.
+    \end{enumerate}
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Subespacios}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Subespacio Vectorial]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial y $W \subset E$ un conjunto no vacío de $E$. Si $W$ es un espacio vectorial con respecto a las operaciones de $E$, entonces se dice que $W$ es un subespacio de $E$.
+\end{defi}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $W$ un subconjunto no vacío de $E$. Entonces $W$ es un subespacio de $E$ si y sólo si se cumplen las siguientes condiciones:
+    \begin{itemize}
+    \item 
+        si $u,v \in W$, entonces $u + v \in W$; u
+    \item 
+        si $\alpha \in \K$ y $u \in W$, entonces $\alpha u \in W$.
+    \end{itemize}
+\end{teo}
+
+\begin{defi}[Combinación lineal]
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial, $k\in\N^*$ y $v_1, v_2, \ldots, v_k \in E$. Se dice que un vector $v \in E$ es una combinación lineal de 
+    $v_1, v_2, \ldots, v_k$ si 
+    \[
+        v = \alpha_1 v_1 + \alpha_2 v_2 + \cdots + \alpha_k v_k
+    \]
+    para algunos $\alpha_1, \alpha_2, \ldots, \alpha_k \in \K$.
+\end{defi}
+
+\begin{defi}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S = \{v_1, v_2, \ldots, v_k\} \subset E$. Al conjunto conjunto de todos los vectores en $E$ que son combinaciones lineales de los vectores de $S$ se lo llama cápsula de $S$ y se denota por $\spn(S)$, es decir
+    \[
+        \spn(S) = \{\alpha_1 v_1 + \alpha_2 v_2 + \cdots + \alpha_k v_k:\alpha_1, \alpha_2, \ldots, \alpha_k \in \K\}.
+    \]
+\end{defi}
+
+\begin{advertencia}
+    A este conjunto también se lo conoce como \emph{clausura lineal} y su notación viene de su nombre en inglés, \emph{linear span}. También se utiliza la notación $\langle S\rangle$.
+\end{advertencia}
+
+\begin{teo}
+   Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S\subset E$. Se tiene que $\spn(S)$ es un subespacio vectorial de $E$.
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Conjunto generador}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S\subseteq E$. Al subespacio vectorial más pequeño que contiene a $S$ (es decir, la intersección de todos los subespacios que contienen a $S$) se lo denomina espacio generado por $S$ y se denota por $\gen(S)$.
+\end{defi}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S\subseteq E$. Se tiene que
+    \[
+        \spn(S)=\gen(S).
+    \]
+\end{teo}
+
+
+\begin{defi}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S=\{v_1,v_2,\ldots,v_k\}\subseteq E$. Se dice que $S$ genera el espacio vectorial $E$ si cada vector en $E$ es una combinación lineal de los elementos de $S$, es decir, si para todo $v\in E$, existen $\alpha_1, \alpha_2, \ldots, \alpha_k\in K$ tales que
+    \[
+        v = \alpha_1v_1+ \alpha_2v_2+ \cdots+ \alpha_k v_k.
+    \]
+\end{defi}
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S=\{v_1,v_2,\ldots,v_k\}\subseteq E$. Se tiene que $S$ genera el espacio vectorial $E$ si y solo si
+    \[
+        E = \gen(S) = \spn(S).
+    \]
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Independencia lineal}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S=\{v_1,v_2,\ldots,v_k\}\subseteq E$. Se dice que $S$ es un conjunto linealmente dependiente si existen $\alpha_1, \alpha_2, \ldots, \alpha_k \in \K$, no todos iguales a cero, tales que:
+    \[
+        \alpha_1 v_1 + \alpha_2 v_2 + \cdots + \alpha_k v_k = 0
+    \]
+    en caso contrario, se dice que $S$ es un conjunto linealmente independiente. 
+\end{defi}
+
+\begin{advertencia}
+    De esta definición, se tiene que $\{v_1,v_2,\ldots,v_k\}$ es linealmente independiente si y solo si
+    \[
+        \alpha_1 v_1 + \alpha_2 v_2 + \cdots + \alpha_k v_k = 0
+    \]
+    implica que
+    \[
+        \alpha_1 = \alpha_2 = \cdots = \alpha_k = 0.
+    \]
+\end{advertencia}
+
+\begin{advertencia}
+    Se puede extender esta definición para conjuntos infinitos diciendo que $S$ es linealmente independiente si todo subconjunto finito de $S$ es linealmente independiente.
+\end{advertencia}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S\subseteq E$. Si $0\in S$, entonces $S$ es linealmente dependiente.
+\end{teo}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S=\{v_1,v_2,\ldots,v_k\}\subseteq E$. Se tiene que $S$ es un conjunto linealmente dependiente si y sólo si alguno de los vectores $v_j\in S$ es una combinación lineal de otros elementos de $S$.
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Bases}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $B\subseteq E$. Se dice que $B$ es una base de $E$ si 
+    \begin{itemize}
+        \item $B$ genera a $E$ y 
+        \item $B$ es linealmente independiente. 
+    \end{itemize}
+\end{defi}
+
+
+\begin{teo}[Base canónica de $\R^n$]
+    En $\R^n$, el conjunto $\{e^1,e^2,\ldots,e^n\}\subset\R^n$, definidos por 
+    \[
+        e^i_j=
+        \begin{cases}
+            0& \text{si }i\neq j,\\
+            1& \text{si }i= j,
+        \end{cases}
+    \]
+    para todo $i,j\in\{1,2,\ldots,n\}$, es una base de $\R^n$.
+\end{teo}
+
+\begin{teo}[Base canónica de {$\R_n[x]$}]
+    En $\R_n[x]$, el conjunto $\{1,x,\ldots,x^{n-1},x^n\}$ es una base de $\R_n[x]$. A esta base se la denomina la base canónica de $\R_n[x]$.
+\end{teo}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $B\subseteq E$ una base de $E$. Se tiene que todo elemento de $E$ se puede escribir, de manera única, como combinación lineal de elementos de $B$.
+\end{teo}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $B\subseteq E$. Se tiene que si todo elemento de $E$ se puede escribir, de manera única, como combinación lineal de elementos de $B$, entonces $B$ es una base de $E$.
+\end{teo}
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S\subseteq E$ un conjunto que genera a $E$. Se tiene que algún subconjunto de $S$ es base de $E$.
+\end{teo}
+
+
+\begin{teo}
+    Todo espacio vectorial tiene una base.
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Dimensión}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $B\subseteq E$ una base de $E$. Si $S\subseteq E$ es un conjunto linealmente independiente, entonces 
+    \[
+        |S|\leq |B|.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $B\subseteq E$ una base de $E$. Si $S\subseteq E$ es un conjunto que genera a $E$, entonces 
+    \[
+        |B|\leq |S|.
+    \]
+\end{teo}
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $B,T\subseteq E$ bases de $E$. Se tiene que
+    \[
+        |B|=|T|.
+    \]
+\end{teo}
+
+\begin{defi}[Dimensión]
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $B\subseteq E$ una base de $E$. Se define la dimensión de $E$, denotado por $\dim(E)$, por la cantidad de elementos de $B$.
+\end{defi}
+
+\begin{teo}
+    Se tiene que
+    \begin{itemize}
+    \item
+        $\dim(\R^n)=n$, con $n\in \N^*$;
+    \item
+        $\dim(\Mat[\R]{m}{n})=mn$, con $m,n\in \N^*$;
+    \item
+        $\dim(\R_n[x])=n+1$, con $n\in \N$;
+    \item
+        $\dim(\{0\}) = 0$.
+    \end{itemize}
+\end{teo}
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S\subseteq E$ un conjunto linealmente independiente. Se tiene que existe una base $B$ de $E$ que contiene a $S$.
+\end{teo}
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial, $B\subseteq E$ y $n\in\N^*$ tal que $\dim(E)=n$ y $|B|=n$. Se tiene que
+    \begin{itemize}
+    \item
+        si $B$ es linealmente independiente, entonces $B$ es una base de $E$.
+    \item
+        si $B$ genera a $E$, entonces $B$ es una base de $E$.
+    \end{itemize}
+\end{teo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Componentes y Cambio de base}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En esta sección, asumiremos $n\in\N^*$.
+
+\begin{defi}[Base ordenada]
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $B\subseteq E$ una base de $E$. Si numeramos los vectores de $B$, obteniendo
+    \[
+        B = \{v_1,v_2,\ldots,v_n\},
+    \]
+    se la llama una base ordenada.
+\end{defi}
+
+\begin{defi}[Vector de componentes]
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y 
+    \[
+        B = \{v_1,v_2,\ldots,v_n\}\subseteq E
+    \]
+    una base ordenada. Para $u\in E$, se define el vector de componentes de $u$ por
+    \[
+        [u]_B = \begin{pmatrix}
+            \alpha_1\\\alpha_2\\\vdots\\\alpha_n
+        \end{pmatrix}
+    \]
+    donde $\alpha_1,\alpha_2,\ldots,\alpha_n\in\K$ son tales que
+    \[
+        u = \alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_n v_n.
+    \]
+\end{defi}
+
+\begin{advertencia}
+    En la literatura, también se puede encontrar la definición anterior bajo el nombre de vector de coordenadas.
+\end{advertencia}
+
+\begin{defi}[Matriz de cambio de base]
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial tal que $\dim(E)=n$ y $S,T\subseteq E$ bases ordenadas de $E$. Se llama matriz de cambio de base $T$ a $S$ a la única matriz de $\Mat[\K]{n}{n}$, denotada por $P_{S\gets T}$, que cumple que
+    \[
+        [v]_S = P_{S\gets T} [v]_T
+    \]
+    para todo $v\in E$.
+\end{defi}
+
+\begin{advertencia}
+    En la literatura, también se puede encontrar la definición anterior bajo el nombre de matriz de transición.
+\end{advertencia}
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial tal que $\dim(E)=n$, $S,T\subseteq E$ bases ordenadas de $E$ y $P_{S\gets T}$ la matriz de cambio de base $T$ a $S$. Se tiene que $P_{S\gets T}$ es no singular y
+    \[
+        (P_{S\gets T})^{-1} = P_{T\gets S}.
+    \]
+\end{teo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Espacios con producto interno
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Espacios con producto interno}
+
+\begin{defi}[Producto interno]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial. Un producto interno sobre $E$ es una función
+    \[
+        \funcion{\langle \cdot, \cdot \rangle}{E\times E}{\K}{(u,v)}{\langle u, v \rangle}
+    \]
+    tales que cumple:
+    \begin{enumerate}
+        \item 
+            $\langle v, v \rangle \geq 0$ para todo $ v \in E$;
+        \item 
+            $\langle v,v \rangle = 0$ si y solo si $ v = 0$;
+        \item 
+            $\langle u + v, w \rangle = \langle u,w \rangle + \langle v,w\rangle $ para todo $u,v,w \in E$;
+        \item
+            $\langle \alpha v,w \rangle = \alpha \langle v,w \rangle$ para todo $v,w \in E$ y $\alpha\in\K$.
+        \item
+            $\langle v,w \rangle = \overline{\langle w, v \rangle}$ para todo $v,w \in E$.
+    \end{enumerate}
+\end{defi}
+
+
+\begin{advertencia}
+    Otra notación para el producto interno es
+    \[
+        \langle u , v \rangle
+        = (u|v).
+    \]
+\end{advertencia}
+
+\begin{advertencia}
+    En caso de tratarse de un espacio vectorial sobre el campo de los números reales, la propiedad 5 se transforma en
+    \begin{enumerate}[start=5]
+        \item
+            $\langle v,w \rangle = \langle w, v \rangle$ para todo $v,w \in E$.
+    \end{enumerate}
+\end{advertencia}
+
+
+\begin{advertencia}
+    Se puede demostrar utilizando la propiedad 4 que
+    \begin{itemize}
+        \item
+            si $v = 0$, entonces $\langle v,v \rangle = 0$;
+    \end{itemize}
+    por lo cual, podríamos cambiar la propiedad 2 por
+    \begin{enumerate}[start=2]
+        \item
+            si $\langle v,v \rangle = 0$, entonces $ v = 0$
+    \end{enumerate}
+\end{advertencia}
+
+
+Si se define un producto interno sobre un espacio vectorial $E$, a este se lo denomina espacio con producto interno o pre-Hilbertiano. 
+
+\begin{teo}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno $\langle \cdot, \cdot \rangle$, entonces:
+    \begin{enumerate}
+        \item 
+            Para todo $u,v,w \in E$ 
+            \[\langle u, v+w\rangle = \langle u,v\rangle + \langle u, w \rangle.\]
+        \item 
+            Para todo $u,v \in E$ y $\alpha \in \K$
+            \[\langle u, \alpha v\rangle =  \overline{\alpha}\langle u,v\rangle.\]
+        \item
+            Para todo $u\in E$ 
+            \[\langle u, 0 \rangle =  \langle 0, u \rangle  = 0.\]
+    \end{enumerate}
+\end{teo}
+
+\begin{advertencia}
+    En caso de tratarse de un espacio vectorial sobre el campo de los números reales, la propiedad 2 se transforma en
+    \begin{enumerate}[start=2]
+        \item
+            Para todo $u,v \in E$ y $\alpha \in \K$
+            \[\langle u, \alpha v\rangle =  \alpha\langle u,v\rangle\]
+    \end{enumerate}
+\end{advertencia}
+
+\subsection{Productos internos usuales}
+
+\begin{enumerate}
+    \item En $(\R^n,+, \cdot, \R)$, para $x,y\in \R^n$:
+    \[
+        \langle x, y \rangle = \sum_{k=1}^n x_k y_k.
+    \]
+    
+    \item En $(\C^n,+, \cdot, \C)$, para $x,y\in \C^n$:
+    \[
+        \langle x, y \rangle = \sum_{k=1}^n x_k \overline{y_k}.
+    \]
+    
+    \item En $(\R_n[x],+, \cdot, \R)$, para $p(x),q(x)\in \R_n[x]$, si 
+    \[  
+        p(x) = a_0 + a_1x + \cdots + a_nx^n
+        \texty
+        q(x) = b_0 + b_1x + \cdots + b_nx^n
+    \]
+    entonces
+    \[
+        \langle p(x), q(x) \rangle = \sum_{k=0}^n a_k b_k.
+    \]
+    
+    \item En $(\Mat[\K]{m}{n},+, \cdot, \R)$, para $A,B\in \Mat[\K]{m}{n}$:
+    \[
+        \langle A, B \rangle = \tr(AB^\intercal).
+    \]
+    
+    \item En $(\mathcal{C}([a,b]),+, \cdot, \R)$, para $f,g\in \mathcal{C}([a,b])$:
+    \[
+        \langle f, g \rangle = \int_a^b f(x) g(x) dx.
+    \]
+    \end{enumerate}
+
+\begin{defi}
+Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno y suponga que $u, v \in E$.
+Entonces:
+\begin{enumerate}
+    \item $u$ y $v$ son ortogonales si $\langle u, v \rangle = 0$.
+    \item La norma de $u$, denotada por $\|u \|$, está dada por
+    \[
+        \| u\| = \sqrt{\langle u, u \rangle}
+    \]
+\end{enumerate}
+\end{defi}
+
+\begin{defi}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno. La distancia en el espacio se define por
+    \[
+        \funcion{d}{E\times E}{\R}{(u,v)}{\| u - v\|.}
+    \]
+\end{defi}
+
+
+\begin{teo}[Vectores ortogonales]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno. Para  $u,v\in E$, se dice que son ortogonales si
+    \[
+        \langle u , v \rangle = 0.
+    \]
+\end{teo}
+
+
+\begin{teo}[Teorema de Pitágoras]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno.
+    Si $u,v$ son vectores ortogonales de $E$, entonces
+    \[
+        \| u + v \|^2 = \|u\|^2 + \|v\|^2.
+    \]
+\end{teo}
+
+\begin{teo}[Desigualdad de Cauchy-Schwartz]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno.
+    Para todo $u,v\in E$ se cumple que
+    \[
+        | \langle u , v \rangle | \leq \|u\|  \|v\|.
+    \]
+\end{teo}
+
+\begin{teo}[Desigualdad triangular]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno.
+    Para todo $u,v\in E$ se cumple que
+    \[
+        \| u + v \| \leq \|u\| + \|v\|.
+    \]
+\end{teo}
+
+
+\begin{defi}[Conjunto ortogonal]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno y
+    \[C=\{v_1, v_2, \ldots, v_n\}\subseteq E.\] Se dice que $C$ es un conjunto ortogonal en $E$ si
+    \[
+        \langle v_i, v_j \rangle = 0
+    \]
+    para todo $i \neq j$.
+\end{defi}
+
+\begin{defi}[Conjunto ortonormal]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno y
+    \[C = \{v_1, v_2, \ldots, v_n\} \subseteq E.\] Se dice que $C$ es un conjunto ortonormal en $E$ si es ortogonal y 
+    \[
+        \| v_k\| =  1
+    \]
+    para todo $k \in \{1, \ldots, n\}$.
+\end{defi}
+
+
+\begin{teo}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno. Si $C \subseteq E$ es un conjunto ortogonal de vectores no nulos, entonces es linealmente independiente.
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bases ortogonales
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A partir de aquí, siempre consideraremos espacios vectoriales provistos con un producto interno.
+
+
+\subsection{Bases ortogonales}
+
+\begin{defi}[Base ortogonal (ortonormal)]
+    En un espacio vectorial, una base ortogonal (ortonormal) es una base cuyos vectores forman un conjunto ortogonal (ortonormal). 
+\end{defi}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $\{u_1, u_2, \ldots, u_n\}$ una base ortogonal para $E$. Se tiene que, para $v \in E$,
+    \[
+        v = \alpha_1 u_1 + \alpha_2 u_2 +\cdots + \alpha_n u_n
+    \]
+    donde
+    \[
+        c_k = \dfrac{\langle v, u_k \rangle}{\langle u_k, u_k \rangle}
+    \]
+    para todo $k \in \{1, 2, \ldots, n\}$.
+\end{teo}
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $\{u_1, u_2, \ldots, u_n\}$ una base ortonormal para $E$. Se tiene que, para $v \in E$,
+    \[
+        v = \alpha_1 u_1 + \alpha_2 u_2 +\cdots + \alpha_n u_n
+    \]
+    donde
+    \[
+        c_k = \langle v, u_k \rangle 
+    \]
+    para todo $k \in \{1, 2, \ldots, n\}$.
+\end{teo}
+
+
+\begin{teo}[Proceso de Gram-Schmidt]
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $\{u_1, u_2, \ldots, u_n\}$ un conjunto linealmente independiente de $E$. Definamos
+    \begin{enumerate}
+    \item 
+        $v_1 = u_1$ y
+    \item
+        $\displaystyle v_k = 
+            u_k 
+            - \sum_{i=1}^{k-1} \dfrac{\langle u_k, v_i\rangle}{\langle v_i,v_i\rangle} v_i$, para $k=2,\ldots,n$.
+    \end{enumerate}
+    Se tiene que el conjunto
+    \[
+        \{v_1, v_2, \ldots, v_n\}
+    \]
+    es un conjunto ortogonal. Además, si definimos
+    \[
+        w_k = \dfrac{v_k}{\|v_k\|}
+    \]
+    para $k=1,\ldots,n$, se tiene que el conjunto
+    \[
+        \{w_1, w_2, \ldots, w_n\}
+    \]
+    es un conjunto ortonormal.
+\end{teo}
+
+
+\begin{teo}
+    Todo espacio vectorial de dimensión finita tiene una base ortogonal y una base ortonormal.
+\end{teo}
+
+
+\begin{ejem}
+    Considere la base $S = \{u_1, u_2, u_3\}$ de $\R^3$, donde 
+    \[
+        u_1 = (1,1,0), \qquad u_2 = (0, 1,1), \qquad u_3 = (1,0,1)
+    \]
+    mediante el proceso de Gram-Schmidt, se obtiene la base ortonormal $T=\{w_1, w_2, w_2\}$ para $\R^3$ donde
+    \[
+        w_1 = \left(\dfrac{1}{\sqrt{2}},\dfrac{1}{\sqrt{2}},0\right), \qquad
+        w_2 = \left(-\dfrac{1}{\sqrt{6}},\dfrac{1}{\sqrt{6}},
+        \dfrac{2}{\sqrt{6}}\right), \qquad
+        w_3 = \left(\dfrac{1}{\sqrt{3}},-\dfrac{1}{\sqrt{3}},
+        \dfrac{1}{\sqrt{3}}\right)
+    \]
+\end{ejem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 13
+%% Complemento ortogonal
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Complemento ortogonal}
+
+A partir de aquí, siempre consideraremos espacios vectoriales provistos con un producto interno.
+
+\begin{defi}[Complemeto ortogonal]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial y
+    $H \subset E$. El complemento ortogonal de $H$, denotado por $H^\perp$, se define por:
+    \[
+        H^\perp = \{ x \in E: \langle x, h \rangle = 0, \text{ para todo } h \in H\}.
+    \]
+\end{defi}
+
+\begin{teo}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial y
+    $H$ subespacio vectorial de $H$, entonces:
+    \begin{enumerate}
+        \item $H^\perp$ es un subespacio vectorial de $E$.
+        \item $H \cap H^\perp = \{0\}$.
+        \item Si $\dim(E) = n$, entonces $\dim(H^\perp) = n - \dim(H)$
+    \end{enumerate}
+\end{teo}
+
+
+\begin{teo}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial de dimensión finita, $W$ un subespacio vectorial de $E$, entonces 
+    \[
+    E = W \oplus W^\perp.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial de dimensión finita, $W$ un subespacio vectorial de $E$, entonces 
+    \[
+    \left(W^\perp\right)^\perp =  W.
+    \]
+\end{teo}
+
+\begin{defi}[Proyección ortogonal]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial y
+    $H$ un subespacio vectorial de $E$, con base ortogonal $\{u_1, u_2, \ldots, u_n \}$. Para $v \in E$, la proyección ortogonal de $v$ sobre $H$, denotado por $\proy_H v$, se define por:
+    \[
+       \proy_H( v) = 
+       \dfrac{\langle v,u_1 \rangle}{\langle u_1, u_1 \rangle}u_1 +
+       \dfrac{\langle v,u_2 \rangle}{\langle u_2, u_2 \rangle}u_2 +
+       \cdots +
+       \dfrac{\langle v,u_n \rangle}{\langle u_n, u_n \rangle}u_n,
+    \]
+    donde $\proy_H (v) \in H$.
+\end{defi}
+
+
+\begin{teo}[Teorema de la proyección]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial de dimensión finita, $H$ un subespacio vectorial de $E$ y $v \in E$. Se tiene que
+    \[
+        v = \proy_H( v) + \proy_{H^\perp}( v).
+    \]
+\end{teo}
+
+\begin{teo}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial de dimensión finita, $H$ un subespacio vectorial de $E$ y $v \in E$. Se tiene que el vector en $H$ más cercano a $v$ es $\proy_H(v)$, es decir,
+    \[
+    \|v-w\| \quad \text{ es mínima cuando } \quad w = \proy_W(v).
+    \]
+\end{teo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 14
+%% Aplicaciones lineales
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Aplicaciones lineales}
+
+\begin{defi}[Aplicación lineal]
+    Sean $(E,+_1,\cdot_1,\K)$ y $(F,+_2,\cdot_2,\K)$ espacios vectoriales. A una función $\func{T}{E}{F}$ se la llama una aplicación lineal (transformación lineal) si satisface que para todo $\alpha \in \K$, y todo $u,v \in E$ se cumple
+    \begin{enumerate}
+    \item 
+        $T(u +_1 v) = T(u) +_2 T(v)\quad$ y
+    \item 
+        $T(\alpha \cdot_1 v ) = \alpha \cdot_2 T(v)$.
+    \end{enumerate}
+\end{defi}
+
+En adelante, consideraremos $(E,+_1,\cdot_1,\K)$ y $(F,+_2,\cdot_2,\K)$ espacios vectoriales. Notaremos por $\mathcal{L}(E,F)$ el espacio de las aplicaciones lineales de $E$ en $F$.
+
+\begin{advertencia}
+    En caso de que no exista riesgo de ambigüedad, dado $T \in \mathcal{L}(E,F)$, se denotará
+    \begin{enumerate}
+    \item 
+        $T(u + v) = T(u) + T(v)\quad$ y
+    \item 
+        $T(\alpha v ) = \alpha T(v)$,
+    \end{enumerate}
+    para $\alpha \in \K$ y $u,v \in E$.
+\end{advertencia}
+    
+\begin{teo}
+     Sea $T \in \mathcal{L}(E,F)$. Para todo $u,v, v_1, v_2, \ldots, v_n \in E$ y $\alpha_1, \alpha_2, \ldots, \alpha_n \in \K$
+     \begin{enumerate}
+         \item $T(0_E) = 0_F$;
+         \item $T(u-v) = T(u) - T(v)$: y
+         \item $T\left(\displaystyle \sum_{k=1}^n \alpha_k v_k \right)= 
+         \displaystyle \sum_{k=1}^n \alpha_k T\left(v_k \right)$.
+     \end{enumerate}
+\end{teo}
+
+\subsection{Ejemplos de transformaciones lineales}
+\begin{enumerate}
+\item 
+    Transformación nula, \[\funcion{T}{F}{F}{v}{0.}\]
+\item 
+    Transformación identidad, \[\funcion{T}{F}{F}{v}{v.}\]
+\item 
+    \[
+        \funcion{T}{\R^3}{\R^2}
+            {(x,y,z)}{(x, y).}
+    \]
+\item 
+    \[
+        \funcion{T}{\R^2}{\R^3}
+            {(x,y)}{(x, y,0).}
+    \]
+\item 
+    \[
+        \funcion{T}{\R^3}{\R^3}
+            {(x,y,z)}{(x+y, y + z,x).}
+    \]
+\item 
+    \[
+        \funcion{T}{\R^2}{\Mat{2}{2}}
+            {(x,y)}{\begin{pmatrix}x& 0\\ 0 &y\end{pmatrix}.}
+    \]
+\item 
+    \[
+        \funcion{T}{\R^3}{\R_2[t]}
+            {(x,y,z)}{x+(x-y)t + zt^2.}
+    \]
+\end{enumerate}
+
+
+
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$. Si $\{u_1,u_2,\ldots,u_n\}$ es una base de $E$, entonces $T$ está completamente determinada por
+    \[
+        \{T(u_1),T(u_2),\ldots,T(u_n)\}.
+    \]
+    Es decir, si se conoce el valor de $\{T(u_1),T(u_2),\ldots,T(u_n)\}$, entonces se conoce $T(u)$ para todo $u\in E$.
+\end{teo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 14
+%% Núcleo e imagen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Núcleo e imagen}
+
+\begin{defi}[Núcleo e imagen de una aplicación lineal]
+    Sea $T \in \mathcal{L}(E,F)$.
+    \begin{enumerate}
+    \item 
+        El núcleo de $T$, denotado por $\ker(T)$, está definida por:
+        \[
+            \ker(T) = \{v \in E: T(v) = 0\}.
+        \]
+    \item 
+        La imagen de $T$, denotada por $\img(T)$, está definida por:
+        \[
+            \img(T) = \{ w \in F: w = T(v) \text{ para algún } v \in E\}.
+        \]
+    \end{enumerate}
+\end{defi}
+
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$, entonces
+    \begin{enumerate}
+    \item 
+        $\ker(T)$ es un subespacio vectorial de $E$.
+    \item 
+        $\img(T)$ es un subespacio vectorial de $F$.
+    \end{enumerate}
+\end{teo}
+    
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$. Se tiene que $T$ es inyectiva si y solo si $\ker(T)=\{0\}$.
+\end{teo}
+
+\begin{defi}[Nulidad y rango de una aplicación lineal]
+    Sea $T \in \mathcal{L}(E,F)$.
+    \begin{enumerate}
+    \item 
+        Se llama nulidad de $T$ a $\dim(\ker(T))$.
+    \item 
+        Se llama rango de $T$ a $\dim(\img(T))$.
+    \end{enumerate}
+\end{defi}
+
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$ con $E$ un espacio de dimensión finita. Se tiene que
+    \[
+        \dim(E) = \dim(\ker(T)) +  \dim(\img(T)).
+    \]
+\end{teo}   
+
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$ con $E$ un espacio de dimensión finita. Si $\dim(E)=\dim(F)$, entonces se tiene que la siguientes son equivalentes
+    \begin{itemize}
+        \item $T$ es inyectiva,
+        \item $T$ es sobreyectiva.
+    \end{itemize}
+\end{teo}   
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 14
+%% Aplicaciones lineales
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Propiedades de aplicaciones lineales}
+
+\begin{teo}
+    Se tiene que $\mathcal{L}(E,F)$ es un espacio vectorial.
+\end{teo}
+
+
+\begin{teo}
+    Sean $T_1,T_2 \in \mathcal{L}(E,F)$ y $B= \{v_1, v_2, \ldots, v_n\}$ una base para $E$. Si
+    \[
+        T_1(v_i) = T_2(v_i)
+    \]
+    para todo $i \in \{1, 2, \ldots, n\}$, entonces se tiene que $T_1(v)=T_2(v)$, para todo $v\in E$, es decir, 
+    \[
+        T_1 = T_2.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $B= \{v_1, v_2, \ldots, v_n\}$ una base para $E$ y $w_1, w_2, \ldots, w_n\in F$. Se tiene que existe una única transformación lineal $T \in \mathcal{L}(E,F)$ tal que
+    \[
+        T(v_i) = w_i
+    \]
+    para todo $i\in \{1, 2, \ldots, n\}$.
+\end{teo}
+
+
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$. Supongamos que $\dim(E) = n$ y $\dim(F) = m$, se tiene que:
+    \begin{enumerate}
+        \item si $n > m$, entonces $T$ no es inyectiva; y
+        \item si $m > n$, entonces $T$ no es sobreyectiva.
+    \end{enumerate}
+\end{teo} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Isomorfismos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{defi}[Isomorfismo]
+    Sea $T \in \mathcal{L}(E,F)$. Se dice que $T$ es un isomorfismo de $E$ en $F$ si $T$ es biyectiva.
+\end{defi}
+
+\begin{defi}[Espacios isomorfos]
+    Sean $(E,+,\cdot,\K)$ y $(F,+,\cdot,\K)$. Se dice que $E$ y $F$ son isomorfos si existe un isomorfismo $T$ de $E$ en $F$, se lo denota por $E \cong F$.
+\end{defi}
+
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$ un isomorfismo, se tiene que
+    \begin{enumerate}
+    \item 
+        si $\{v_1, v_2, \ldots, v_n\}$ genera a $E$, entonces 
+        \[
+            \{T(v_1), T(v_2), \ldots, T(v_n)\}
+        \]
+        genera a $F$;
+    \item 
+        si $\{v_1, v_2, \ldots, v_n\}$ son linealmente independientes en $E$, entonces 
+        \[
+            \{T(v_1), T(v_2), \ldots, T(v_n)\}
+        \] 
+        es linealmente independientes en $F$;
+    \item 
+        si $\{v_1, v_2, \ldots, v_n\}$ es base de $E$, entonces
+        \[
+            \{T(v_1), T(v_2), \ldots, T(v_n)\}
+        \]
+        es base de $F$; 
+    \item 
+        si $E$ es de dimensión finita, entonces $F$ es de dimensión finita y 
+        \[
+            \dim(E) = \dim(F).
+        \]
+    \end{enumerate}
+\end{teo} 
+
+\begin{teo}
+    Sean $(E,+,\cdot,\R)$ y $(F,+,\cdot,\R)$ espacios de dimensión finita tales que $\dim(E) = \dim(F)$, entonces $E \cong F$.
+\end{teo}
+
+\begin{teo}
+    Se tiene que
+    \begin{enumerate}
+        \item $\Mat{m}{n} \cong \R^{mn}$, con $m,n\in\N^*$;
+        \item $P_n[x] \cong \R^{n+1}$, con $n\in\N^*$.
+    \end{enumerate}
+\end{teo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 14
+%% Matriz asociada
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Matriz asociada}
+
+En adelante, consideraremos $E$ y $F$ espacios vectoriales de dimensión finita tales que $\dim(E)=n$ y $\dim(F)=m$.
+
+\begin{defi}
+    Sean $T \in \mathcal{L}(E,F)$ y $B$, $D$ bases para $E$ y $F$, respectivamente. Se tiene que existe una única matriz de $\Mat[\K]{m}{n}$, denotada por $[T]_{D,B}$, tal que
+    \[
+        [T(v)]_{D} = [T]_{D,B} [v]_{B}
+    \]
+    para todo $v\in E$. A esta matriz se la llama matriz asociada a la aplicación lineal $T$.
+\end{defi}
+
+
+\begin{teo}
+    Sean $T \in \mathcal{L}(E,F)$ y 
+    \[
+        B = \{v_1,v_2,\ldots,v_n\}
+        \texty
+        D = \{u_1,u_2,\ldots,u_m\}
+    \]
+    bases para $E$ y $F$, respectivamente. Se tiene que las columnas de la matriz $[T]$ son los vectores de coordenadas de $T(v_j)$ en la base $D$, para $j\in\{1,2,\ldots,n\}$, es decir
+    \[
+        [T]_{D,B} = \begin{pmatrix}
+            [T(v_1)]_D & [T(v_2)]_D & \cdots & [T(v_n)]_D
+        \end{pmatrix}.
+    \]
+\end{teo}
+
+\begin{advertencia}
+    En caso de no existir riesgo de confusión en las bases que se utiliza, se nota simplemente $[T]$ a la matriz asociada a la aplicación lineal $T$. 
+\end{advertencia}
+
+
+Se pueden ver ejemplos del procedimiento para encontrar una matriz asociada a una aplicación lineal entre las páginas 522 y 527 del libro de Kolman.
+
+
+\begin{teo}
+    Sean $I \in \mathcal{L}(E,E)$ la aplicación identidad y $B,D$ dos bases para $E$, considerando $B$ para el conjunto de salida y $D$ para el conjunto de llegada. Se tiene que
+    \[
+        [I]_{D,B} = P_{D\leftarrow B}.
+    \]
+\end{teo}
+
+
+
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$. Se tiene que $T$ es biyectiva si y solo si $[T]$ es invertible.
+\end{teo}
+
+
+
+\begin{teo}
+    Sean $T_1 \in \mathcal{L}(E,F)$ y $T_2\in\mathcal{L}(F,G)$, con $G$ un espacio vectorial de dimensión finita. Se tiene que
+    \[
+        [T_2\circ T_1] = [T_2][T_1].
+    \]
+\end{teo}
+
+
+\begin{teo}
+    Sea $T\in \mathcal{L}(E,F)$ una aplicación lineal invertible. Se tiene que
+    \[
+        [T^{-1}] = [T]^{-1}.
+    \]
+\end{teo}
+
+
+\begin{teo}
+    Se tiene que $\mathcal{L}(E,F)$ es isomorfo a $\Mat[\K]{m}{n}$, es decir
+    \[
+        \mathcal{L}(E,F)
+        \cong
+        \Mat[\K]{m}{n}.
+    \]
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 14
+%% Valores y vectores propios
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Valores y vectores propios}
+
+\begin{defi}
+    Sea $A\in \Mat[\K]{n}{n}$, se tiene que $\lambda\in \K$ es un valor propio de $A$ si existe $v\in \R^n$, con $v\neq 0$, tal que
+    \[
+        Av = \lambda v,
+    \]
+    además, $v$ es un vector propio de $A$ asociado al valor propio $\lambda$.
+\end{defi}
+
+
+\begin{teo}
+   Sean $A\in \Mat[\K]{n}{n}$ y $\lambda \in \K$. Se tiene que $\lambda$ es un valor propio de $A$ si y solo si
+   \[
+        \det(A - \lambda I) = 0,
+   \]
+   donde $I$ es la matriz identidad.
+\end{teo}
+
+\begin{teo}
+    Los valores propios de una matriz triangular son los elementos de la diagonal de la matriz. 
+\end{teo}
+
+
+\begin{defi}
+    Sea $A\in \Mat[\K]{n}{n}$. Al polinomio
+    \[
+        p_A(\lambda) = \det(A - \lambda I)
+    \]
+    se lo denomina polinomio característico de $A$.
+\end{defi}
+
+
+\begin{teo}[Teorema de Cayley–Hamilton]
+    Sea $A\in \Mat[\K]{n}{n}$ y $p_A(\lambda)$ su polinomio característico. Se tiene que
+    \[
+        p_A(A) = 0.
+    \]
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 14
+%% Aplicaciones lineales
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Valores y vectores propios de aplicaciones lineales}
+
+\begin{defi}
+     Sean $T \in \mathcal{L}(E,E)$ y $\lambda \in\K$. Se dice que $\lambda$ es un valor propio de $T$ si existe $v\in E$, con $v\neq 0$, tal que
+     \[
+        T(v) = \lambda v.
+     \]
+     A este vector $v$ se lo llama vector propio de $T$ asociado al valor propio $\lambda$.
+\end{defi}
+
+\begin{advertencia}
+    Note que, por definición, el vector $0$ no puede ser un vector propio asociado a una aplicación lineal.
+\end{advertencia}
+
+\begin{teo}
+    Sean $T \in \mathcal{L}(E,E)$ y $\lambda \in\K$ un valor propio de $T$. Se tiene que el conjunto
+    \[
+        E_\lambda = \{ v\in E : T(v) = \lambda v\} 
+    \]
+    es un subespacio vectorial de $E$. Se lo denomina el espacio propio de $T$ asociado al valor propio $\lambda$.
+\end{teo}
+
+
+\begin{teo}
+    Sean $T \in \mathcal{L}(E,E)$ y $\lambda_1, \lambda_2, \ldots, \lambda_m$ valores propios de $T$ distintos entre sí. Si tomamos $v_1, v_2, \ldots, v_m$ vectores propios asociados a los valores propios $\lambda_1, \lambda_2, \ldots, \lambda_m$, respectivamente, se tiene que $\{v_1, v_2, \ldots, v_n\}$ es un conjunto linealmente independiente. 
+\end{teo}
+
+
+En adelante, consideraremos a $E$ como un espacio vectorial de dimensión finita.
+
+\begin{defi}
+     Sea $T \in \mathcal{L}(E,E)$. Se denomina espectro de $T$ al conjunto de todos los valores propios de $T$.
+\end{defi}
+
+
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,E)$. Se tiene 
+    \begin{enumerate}
+    \item
+        $\lambda\in\K$ es un valor propio de $T$ si y solo si es un valor propio de $[T]$; y
+    \item
+        $v\in E$ es un vector propio de $T$ si y solo si $[v]$ es un vector propio de $[T]$.
+    \end{enumerate}
+\end{teo}
+
+
+\begin{advertencia}
+    De este resultado, se sigue que, para determinar los valores, vectores y espacios propios de un operador lineal, basta determinar los valores, vectores y espacios propios de una matriz.
+\end{advertencia}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 14
+%% Diagonalización de matrices
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Diagonalización de Matrices}
+
+\begin{defi}
+    Sean $A,B\in \Mat[\K]{n}{n}$. Se dice que $A$ es semejante a $B$ si existe una matriz invertible $P\in \Mat[\K]{n}{n}$ tal que
+    \[
+        A = P^{-1} B P.
+    \]
+\end{defi}
+
+
+\begin{teo}
+    Sean $A,B,C\in \Mat[\K]{n}{n}$. Se tiene que
+    \begin{enumerate}
+    \item 
+        $A$ es semejante a $A$.
+    \item
+        Si $A$ es semejante a $B$, entonces $B$ es semejante a $A$.
+    \item
+        Si $A$ es semejante a $B$ y $B$ es semejante a $C$, entonces $A$ es semejante a $C$.
+    \end{enumerate}
+\end{teo}
+
+\begin{defi}
+    Sea $A\in \Mat[\K]{n}{n}$, se dice que $A$ es diagonalizable si $A$ es semejante a una matriz diagonal. Es decir, si existe una matriz invertible $P\in \Mat[\K]{n}{n}$ y una matriz diagonal $D\in \Mat[\K]{n}{n}$ tal que
+    \[
+        A = P^{-1} D P.
+    \]
+\end{defi}
+
+\begin{teo}
+    Sean $A,B\in \Mat[\K]{n}{n}$. Si $A$ y $B$ son semejantes, entonces $A$ y $B$ tienen los mismos valores propios, es decir, tienen el mismo espectro.
+\end{teo}
+
+\begin{teo}
+    Sea $A\in \Mat[\K]{n}{n}$. Se tiene que $A$ es diagonalizable si y solo si tiene $n$ vectores propios linealmente independientes.
+\end{teo}
+
+\begin{teo}
+    Sea $A\in \Mat[\K]{n}{n}$. Si $A$ tiene $n$ valores propios distintos entre sí, entonces $A$ es diagonalizable.
+\end{teo}
+
+\begin{teo}
+    Sea $A\in \Mat[\K]{n}{n}$. Si $A$ es diagonalizable, entonces tomando $D$ la matriz diagonal formada por los valores propios de $A$, y $P$ la matriz cuyas columnas son los vectores propios de $A$, se tiene que
+    \[
+        A = P^{-1} D P.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sea $A\in \Mat[\K]{n}{n}$. Si $A$ es simétrica, entonces $A$ todos sus valores propios son reales; además, $A$ es diagonalizable.
+\end{teo}
+
+\begin{defi}
+    Sea $A\in \Mat[\K]{n}{n}$. Se dice que $A$ es ortogonal si $A^\intercal = A^{-1}$.
+\end{defi}
+
+
+\begin{teo}
+    Sea $A\in \Mat[\K]{n}{n}$. Si $A$ es simétrica, y $D,P\in \Mat[\K]{n}{n}$ son tales que
+    \[
+        A = P^{-1} D P,
+    \]
+    entonces $P$ es ortogonal.
+\end{teo}
+
+
+\end{document}

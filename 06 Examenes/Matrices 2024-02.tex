@@ -1,0 +1,285 @@
+\documentclass[11pt,respuestas,a4]{aleph-examen}
+% \documentclass[11pt,a4]{aleph-examen}
+
+% -- Paquetes extra
+\usepackage{aleph-comandos}
+\usepackage{systeme}
+\input{formato_ipynb}
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos}
+\asignatura{Álgebra lineal}
+\tema{Examen no. 1-1: Matrices}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+
+\begin{document}
+
+\encabezado
+
+\section*{Indicaciones}
+\begin{itemize}[leftmargin=*]
+\item 
+    En esta actividad se evalúa si el estudiante resuelve operaciones con matrices, incluyendo productos y cálculo de inversas; además del cálculo de determinantes de matrices y su significado en el contexto del Álgebra Lineal.
+\item 
+    Los ejercicios deben ser resueltos «a mano», sin ayuda de resúmenes o asistentes computacionales.
+\item
+    Las resoluciones de los ejercicios deben ser entregadas en hojas de forma física al docente. No importa el orden de resolución de los ejercicios.
+\item
+    Se encuentra prohibido el uso de cualquier otra fuente de información durante todo el examen.
+\item
+    En caso de considerar que existe un error en la pregunta o que esta se encuentra mal planteada, se debe indicar cuál es el error y justificarlo.
+\item
+    Todas las soluciones deben estar correctamente redactadas y explicadas.
+\item 
+    Se asignarán 4 puntos de excelencia si, a más de tener las soluciones correctas, el examen se destaca por su orden y escritura.
+\end{itemize}
+
+\section*{Ejercicios}
+
+\begin{preguntas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    Dada la siguiente matriz
+    \[
+        A=\begin{pmatrix}
+                2 & 4 & -4 \\
+                -3 & -2 & 1 \\
+                2 & 2 & 3 \\
+        \end{pmatrix},
+    \]
+    realice las siguientes operaciones elementales por filas de forma consecutiva:
+    \begin{itemize}
+        \item $\frac{1}{2}F_1\rightarrow F_1$ \puntaje{1.5}
+        \item $3F_1+F_2\rightarrow F_2$ \puntaje{1.5}
+        \item $-F_1+F_3\rightarrow F_3$ \puntaje{1.5}
+        \item $2F_2+F_1\rightarrow F_3$ \puntaje{1.5}
+    \end{itemize}
+
+\begin{respuesta}
+    \begin{itemize}
+    \item 
+        $\frac{1}{2}F_1\rightarrow F_1$:
+        \[
+            \begin{pmatrix}1 & 2 & -2\\-3 & 2 & 3\\2 & -2 & 1\end{pmatrix}
+        \]
+    \item 
+        $3F_1+F_2\rightarrow F_2$:
+        \[
+            \begin{pmatrix}1 & 2 & -2\\3 & 10 & -11\\2 & -2 & 1\end{pmatrix}
+        \]
+    \item 
+        $-F_1+F_3\rightarrow F_3$:
+        \[
+            \begin{pmatrix}1 & 2 & -2\\-4 & 0 & 5\\1 & 0 & 3\end{pmatrix}
+        \]
+    \item
+        $2F_2+F_1\rightarrow F_3$: esta no es una operación elemental por filas válida.\qedhere
+    \end{itemize}
+\end{respuesta}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    Considere $k\in \R$ y las siguientes matrices:
+    \[
+    	M=\begin{pmatrix}
+    	  	k & 2 & 0\\ 1 & -1 & 2k
+    	  	\end{pmatrix}
+    	\qquad\text{y}\qquad
+    	N=\begin{pmatrix}
+    	  	0 & -2\\
+                k & 1\\
+                2 & 3\\
+    	  \end{pmatrix},
+    \]
+    determine para qué valores de $k$ el producto $MN$ tiene inversa.\puntaje{10}
+
+\begin{respuesta}
+    Primero, calculemos el producto de las matrices; así, notemos que 
+    \[
+        MN = \begin{pmatrix}
+            2k & -2k+2 \\
+            3k & 6k-3
+        \end{pmatrix}.
+    \]
+    Luego, como la matriz $MN$ tiene inversa si y solo si su determinante es distinto de cero; entonces, como 
+    \[
+        \det(MN) = \begin{vmatrix}
+            2k & -2k+2 \\
+            3k & 6k-3
+        \end{vmatrix} = -12k+18k^2.
+    \]
+    Por lo tanto, se tiene que para $k\in\R\setminus\left\{0,\dfrac{2}{3}\right\}$, la matriz $MN$ tiene inversa. 
+\end{respuesta}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    Considere $\alpha\in \R$ y la siguiente matriz:
+    \[
+    	A=\begin{pmatrix}
+    	  1 & 2 & 3\alpha \\
+            4 & -2 & 2\alpha \\
+            0 & 2 & -4 \\
+    	\end{pmatrix},
+    \]
+    Calcula el determinante de $A$ realizando expansión por cofactores a la tercera fila.\puntaje{10}
+
+\begin{respuesta}
+    Aplicando la expansión por cofactores a la tercera fila, se tiene que
+    \[
+        \det(A) = + (0) \begin{vmatrix}
+            2 & 3\alpha \\
+            -2 & 2\alpha
+        \end{vmatrix} - (2) \begin{vmatrix}
+            1 & 3\alpha \\
+            4 & 2\alpha
+        \end{vmatrix} + (-4)\begin{vmatrix}  
+            1 & 2 \\
+            4 & -2
+        \end{vmatrix}.
+    \]
+    Resolviendo los determinantes, se obtiene que
+    \[
+        \det(A) = 20\alpha + 40. \qedhere
+    \]
+\end{respuesta}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    Calcule, usando reducción por filas, la inversa de la siguiente matriz:\puntaje{10}
+    \[
+    	A=\begin{pmatrix}
+    	  1 & 2 & 3 \\
+            4 & -2 & 2 \\
+            0 & 0 & -1 \\
+    	\end{pmatrix}.
+    \]
+
+\begin{respuesta}
+    Para saber si es posible calcular la inversa de la matriz, primero se debe calcular el determinante de la misma. Así, se tiene que
+    \[
+        \det(A) = -1\begin{vmatrix}
+            1 & 2 \\
+            4 & -2    
+        \end{vmatrix} = 10.
+    \]
+    Por lo tanto, la matriz $A$ tiene inversa y se tiene que
+    \[
+        (A|I_3)\sim (I_3|A^{-1}).
+    \]
+    Entonces, notando que 
+    \[
+        (A|I_3) = \begin{pmatrix}
+            1 & 2 & 3 & | & 1 & 0 & 0 \\
+            4 & -2 & 2 & | & 0 & 1 & 0 \\
+            0 & 0 & -1 & | & 0 & 0 & 1
+        \end{pmatrix},    
+    \]
+    y aplicando operaciones de filas, se tiene que
+    \begin{align*}
+        \begin{pmatrix}
+            1 & 2 & 3 & | & 1 & 0 & 0 \\
+            4 & -2 & 2 & | & 0 & 1 & 0 \\
+            0 & 0 & -1 & | & 0 & 0 & 1
+        \end{pmatrix} & \sim \begin{pmatrix}
+            1 & 2 & 3 & | & 1 & 0 & 0 \\
+            1 & -\frac{1}{2} & \frac{1}{2} & | & 0 & \frac{1}{4} & 0 \\
+            0 & 0 & -1 & | & 0 & 0 & 1
+        \end{pmatrix} && \frac{1}{4} F_2 \rightarrow F_2 \\
+        & \sim \begin{pmatrix}
+            1 & 2 & 3 & | & 1 & 0 & 0 \\
+            0 & -\frac{5}{2} & -\frac{5}{2} & | & -1 & \frac{1}{4} & 0 \\
+            0 & 0 & -1 & | & 0 & 0 & 1
+        \end{pmatrix} && - F_1 + F_2 \rightarrow F_2 \\
+        & \sim \begin{pmatrix}
+            1 & 2 & 3 & | & 1 & 0 & 0 \\
+            0 & 1 & 1 & | & \frac{2}{5} & -\frac{1}{10} & 0 \\
+            0 & 0 & -1 & | & 0 & 0 & 1
+        \end{pmatrix} && -\frac{2}{5} F_2 \rightarrow F_2 \\
+        & \sim \begin{pmatrix}
+            1 & 0 & 1 & | & \frac{1}{5} & \frac{1}{5} & 0 \\
+            0 & 1 & 1 & | & \frac{2}{5} & -\frac{1}{10} & 0 \\
+            0 & 0 & -1 & | & 0 & 0 & 1
+        \end{pmatrix} && - 2F_2 + F_1 \rightarrow F_1 \\
+        & \sim \begin{pmatrix}
+            1 & 0 & 0 & | & \frac{1}{5} & \frac{1}{5} & 1 \\
+            0 & 1 & 1 & | & \frac{2}{5} & -\frac{1}{10} & 0 \\
+            0 & 0 & -1 & | & 0 & 0 & 1
+        \end{pmatrix} &&  F_3 + F_1 \rightarrow F_1 \\
+        & \sim \begin{pmatrix}
+            1 & 0 & 0 & | & \frac{1}{5} & \frac{1}{5} & 1 \\
+            0 & 1 & 0 & | & \frac{2}{5} & -\frac{1}{10} & 1 \\
+            0 & 0 & -1 & | & 0 & 0 & 1
+        \end{pmatrix} && F_3 + F_2 \rightarrow F_2 \\
+        & \sim \begin{pmatrix}
+            1 & 0 & 0 & | & \frac{1}{5} & \frac{1}{5} & 1 \\
+            0 & 1 & 0 & | & \frac{2}{5} & -\frac{1}{10} & 1 \\
+            0 & 0 & 1 & | & 0 & 0 & -1
+        \end{pmatrix} && - F_3 \rightarrow F_3,
+    \end{align*}
+    y, por lo tanto
+    \[
+        A^{-1} = \begin{pmatrix}
+            \frac{1}{5} & \frac{1}{5} & 1 \\
+            \frac{2}{5} & -\frac{1}{10} & 1 \\
+            0 & 0 & -1
+        \end{pmatrix}.    \qedhere
+    \]
+
+\end{respuesta}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    Determine si existen valores de $\alpha\in\R$ y $\beta\in\R$ tales que las matrices $A$ y $B$ conmutan, donde
+    \[
+    A = \begin{pmatrix}
+        \alpha & 1 \\
+        1 & 0
+    \end{pmatrix} \texty B = \begin{pmatrix}
+        1 & \beta \\
+        0 & 1+\beta
+    \end{pmatrix}.
+    \]
+    En caso de existir, determínelos.\puntaje{10}
+
+\begin{respuesta}
+    Tenemos que 
+    \[
+        AB = \begin{pmatrix}
+            \alpha & 1 + \beta + \alpha\beta \\
+            1 & \beta
+        \end{pmatrix} \texty BA = \begin{pmatrix}
+            \alpha+\beta & 1 \\
+            1+\beta & 0
+        \end{pmatrix},
+    \]
+    de donde se tiene que 
+    \begin{align*}
+        \alpha &= \alpha + \beta, \\
+        1 + \beta + \alpha\beta &= 1, \\
+        1 &= 1 + \beta, \\
+        \beta &= 0.
+    \end{align*}
+    Observamos entonces que la única posibilidad es que $\beta = 0$ y en tal caso, todas las ecuaciones anteriores se verifican. Por ende, para $\beta=0$ y para todo $\alpha\in\R$, las matrices $A$ y $B$ conmutan.
+\end{respuesta}
+
+\end{preguntas}
+
+\end{document}

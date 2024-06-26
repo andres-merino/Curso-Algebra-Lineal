@@ -1,0 +1,718 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos}
+\asignatura{Álgebra lineal}
+\tema{Python no. 1: Matrices y sistemas de ecuaciones}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+
+% -- Comandos adicionales
+\setlist[enumerate]{label=\roman*.}
+\input{formato_ipynb}
+
+\begin{document}
+
+\encabezado
+
+\vspace*{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Matrices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Una manera para trabajar con matrices en Python, es utilizando la librería \texttt{sympy}, con la siguiente línea de comandos:
+
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+from sympy import *
+    \end{lstlisting}\end{ipynbcodigo}
+\end{pycodigo}
+
+Con esto, podemos almacenar y visualizar una matriz de la siguiente manera:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+A = Matrix([[1, 2, 3], [4, 5, 6], [-1, 0, 2]])
+display(A)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+        $\displaystyle \left[\begin{matrix}1 & 2 & 3\\4 & 5 & 6\\-1 & 0 & 2\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+    
+Cuando se quiera visualizar un único objeto, basta con escribir sunombre al final de la celda:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+A
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+        $\displaystyle \left[\begin{matrix}1 & 2 & 3\\4 & 5 & 6\\-1 & 0 & 2\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+    
+Para obtener un elemento de la matriz realizamos lo siguiente:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Entrada de la primera fila y primera columna
+A[0, 0]
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+        $1$
+    \end{ipynbsalida}
+    %
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Entrada de la segunda fila y primera columna
+A[1, 0]
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+        $4$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+Para obtener una fila o columna de una matriz realizamos lo siguiente:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Primera fila
+A[0, :]
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+        $\displaystyle \left[\begin{matrix}1 & 2 & 3\end{matrix}\right]$
+    \end{ipynbsalida}
+    %
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Segunda fila
+A[1, :]
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+        $\displaystyle \left[\begin{matrix}4 & 5 & 6\end{matrix}\right]$
+    \end{ipynbsalida}
+    %
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Primera columna
+A[:, 0]
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+        $\displaystyle \left[\begin{matrix}1\\4\\-1\end{matrix}\right]$
+    \end{ipynbsalida}
+    %
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Segunda columna
+A[:, 1]
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+        $\displaystyle \left[\begin{matrix}2\\5\\0\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+Otra forma válida es:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Primera fila
+A.row(0)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+        $\displaystyle \left[\begin{matrix}1 & 2 & 3\end{matrix}\right]$
+    \end{ipynbsalida}
+    %
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Segunda columna
+A.col(1)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+        $\displaystyle \left[\begin{matrix}2\\5\\0\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+Para comparar la igualdad entre dos matrices, podemos usar el operador \texttt{==}:
+
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Definimos las matrices
+A = Matrix([[1, 0], [0, 1]])
+print("A:")
+display(A)
+B = Matrix([[1, 2], [3, 4]])
+print("B:")
+display(B)
+C = Matrix([[1, 2]])
+print("C:")
+display(C)
+# Comparamos las matrices
+print("Es A igual a B: ", A == B)
+print("Es B igual a C: ", B == C)
+print("Es A igual a A: ", A == A)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+    \begin{Verbatim}
+A:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}1 & 0\\0 & 1\end{matrix}\right]$
+    \begin{Verbatim}
+B:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}1 & 2\\3 & 4\end{matrix}\right]$
+    \begin{Verbatim}
+C:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}1 & 2\end{matrix}\right]$
+    \begin{Verbatim}
+Es A igual a B:  False
+Es B igual a C:  False
+Es A igual a A:  True
+    \end{Verbatim}
+    \end{ipynbsalida}
+\end{pycodigo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Operaciones de matrices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Podemos realizar las distintas operaciones de matrices de la siguiente manera:
+
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Suma de matrices
+A+B
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+        $\displaystyle \left[\begin{matrix}2 & 2\\3 & 5\end{matrix}\right]$
+    \end{ipynbsalida}
+    %
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Multiplicación por un escalar
+2*B
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+        $\displaystyle \left[\begin{matrix}2 & 4\\6 & 8\end{matrix}\right]$
+    \end{ipynbsalida}
+    %
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Transpuesta
+B.T
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+        $\displaystyle \left[\begin{matrix}1 & 3\\2 & 4\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Multiplicación de matrices}
+
+Definamos algunas matrices:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+A = Matrix([[1, 2, 3], [3, 2, 1], [1, -1, 0]])
+print("A:")
+display(A)
+B = Matrix([[1, 0, 2], [2, 1, 0], [0, 1, 0]])
+print("B:")
+display(B)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+    \begin{Verbatim}
+A:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}1 & 2 & 3\\3 & 2 & 1\\1 & -1 & 0\end{matrix}\right]$
+    \begin{Verbatim}
+B:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}1 & 0 & 2\\2 & 1 & 0\\0 & 1 & 0\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+La multiplicación es:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+A*B
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+        $\displaystyle \left[\begin{matrix}5 & 5 & 2\\7 & 3 & 6\\-1 & -1 & 2\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+
+Podemos elevar una matriz a un exponente con el operador \texttt{**}:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+print('A^0:')
+display(A**0)
+print('A^1:')
+display(A**1)
+print('A^2:')
+display(A**2)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+    \begin{Verbatim}
+A^0:
+    \end{Verbatim}
+
+    $\displaystyle \left[\begin{matrix}1 & 0 & 0\\0 & 1 & 0\\0 & 0 & 1\end{matrix}\right]$
+
+    
+    \begin{Verbatim}
+A^1:
+    \end{Verbatim}
+
+    $\displaystyle \left[\begin{matrix}1 & 2 & 3\\3 & 2 & 1\\1 & -1 & 0\end{matrix}\right]$
+
+    
+    \begin{Verbatim}
+A^2:
+    \end{Verbatim}
+
+    $\displaystyle \left[\begin{matrix}10 & 3 & 5\\10 & 9 & 11\\-2 & 0 & 2\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+ 
+\section{Tipos de matrices}\label{tipos-de-matrices}
+
+Podemos obtener las dimensiones de una matriz con el siguiente código:
+
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Definimos las matrices
+A = Matrix([[1, 0, 1], [0, 1, 1]])
+print("A:")
+display(A)
+print("Las dimensiones de A son:", A.shape)
+print("El número de filas de A es:", A.shape[0])
+print("El número de columnas de A es:", A.shape[1])
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+    \begin{Verbatim}
+A:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}1 & 0 & 1\\0 & 1 & 1\end{matrix}\right]$
+    \begin{Verbatim}
+Las dimensiones de A son: (2, 3)
+El número de filas de A es: 2
+El número de columnas de A es: 3
+    \end{Verbatim}
+    \end{ipynbsalida}
+\end{pycodigo}
+
+Ahora, veamos cómo crear algunas matrices especiales:
+\begin{itemize}
+\item
+    Matriz diagonal:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+diag(1, 2, 3)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+$\displaystyle \left[\begin{matrix}1 & 0 & 0\\0 & 2 & 0\\0 & 0 & 3\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+\item
+    Matriz identidad:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+eye(4)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+$\displaystyle \left[\begin{matrix}1 & 0 & 0 & 0\\0 & 1 & 0 & 0\\0 & 0 & 1 & 0\\0 & 0 & 0 & 1\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+\item
+    Matriz nula:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+zeros(2, 4)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+$\displaystyle \left[\begin{matrix}0 & 0 & 0 & 0\\0 & 0 & 0 & 0\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+\item
+    Matriz formada de unos:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+ones(4, 2)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+$\displaystyle \left[\begin{matrix}1 & 1\\1 & 1\\1 & 1\\1 & 1\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sistemas de ecuaciones}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ Podemos generar una matriz ampliada de la siguiente manera:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Defino las matrices
+A = Matrix([[1, 2, 3], [3, 2, 1], [1, -1, 0]])
+print("A:")
+display(A)
+B = Matrix([[1, 0, 2], [2, 1, 0], [0, 1, 0]])
+print("B:")
+display(B)
+# Genero la matriz ampliada
+print("(A|B):")
+Matrix(BlockMatrix([A, B]))
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+    \begin{Verbatim}
+A:
+    \end{Verbatim}
+$\displaystyle \left[\begin{matrix}1 & 2 & 3\\3 & 2 & 1\\1 & -1 & 0\end{matrix}\right]$
+    \begin{Verbatim}
+B:
+    \end{Verbatim}
+$\displaystyle \left[\begin{matrix}1 & 0 & 2\\2 & 1 & 0\\0 & 1 & 0\end{matrix}\right]$
+
+    \begin{Verbatim}
+(A|B):
+    \end{Verbatim}
+$\displaystyle \left[\begin{matrix}1 & 2 & 3 & 1 & 0 & 2\\3 & 2 & 1 & 2 & 1 & 0\\1 & -1 & 0 & 0 & 1 & 0\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Operaciones por filas}
+
+\begin{itemize}
+\item
+    Intercambio de filas:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Imprimo la matriz original
+print("A:")
+display(A)
+# Operación de filas
+print("Intercambio la fila 0 con la 2:")
+A.elementary_row_op('n<->m', row1=0, row2=2)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+    \begin{Verbatim}
+A:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}1 & 2 & 3\\3 & 2 & 1\\1 & -1 & 0\end{matrix}\right]$
+    \begin{Verbatim}
+Intercambio la fila 0 con la 2:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}1 & -1 & 0\\3 & 2 & 1\\1 & 2 & 3\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+\item
+    Multiplicar una fila por un escalar:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Imprimo la matriz original
+print("A:")
+display(A)
+# Operación de filas
+print("Multiplico por 3 la fila 2:")
+A.elementary_row_op('n->kn', k=3, row=2)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+    \begin{Verbatim}
+A:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}1 & 2 & 3\\3 & 2 & 1\\1 & -1 & 0\end{matrix}\right]$
+    \begin{Verbatim}
+Multiplico por 3 la fila 2:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}1 & 2 & 3\\3 & 2 & 1\\3 & -3 & 0\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+\item
+    Sumar un múltiplo de una fila con otra:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Imprimo la matriz original
+print("A:")
+display(A)
+# Operación de filas
+print("Multiplico por 3 la fila 0 y la sumo a la fila 2:")
+A.elementary_row_op('n->n+km', k=3, row1=2, row2=0)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+    \begin{Verbatim}
+A:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}1 & -2 & 1\\2 & 0 & -4\\3 & 1 & -2\end{matrix}\right]$
+    \begin{Verbatim}
+Multiplico por 3 la fila 0 y la sumo a la fila 2:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}1 & -2 & 1\\2 & 0 & -4\\6 & -5 & 1\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Ejemplo de Gauss-Jordan}
+
+En caso de cometer algún error en uno de los pasos, deberá compilarse todas las celdas desde este punto.
+
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Defino la matriz
+A = Matrix([[1, -2, 1], [2, 0, -4], [3, 1, -2]])
+print("A:")
+display(A)
+# Guardo la matriz en una temporal
+temp = A
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+    \begin{Verbatim}
+A:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}1 & -2 & 1\\2 & 0 & -4\\3 & 1 & -2\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+
+\begin{itemize}
+\item
+    Primer paso: Multiplico por \(-2\) la primera fila y lo sumo a la segunda.
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+temp = temp.elementary_row_op('n->n+km', k=-2, row1=1, row2=0)
+display(temp)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+$\displaystyle \left[\begin{matrix}1 & -2 & 1\\0 & 4 & -6\\3 & 1 & -2\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+\item
+    Segundo paso: Multiplico por \(-3\) la primera fila y lo sumo a la tercera.
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+temp = temp.elementary_row_op('n->n+km', k=-3, row1=2, row2=0)
+display(temp)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+$\displaystyle \left[\begin{matrix}1 & -2 & 1\\0 & 4 & -6\\0 & 7 & -5\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+\item
+    Tercer paso: multiplico por \(\frac{1}{4}\) la segunda fila.
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+temp = temp.elementary_row_op('n->kn', k=1/4, row=1)
+display(temp)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+$\displaystyle \left[\begin{matrix}1 & -2 & 1\\0 & 1.0 & -1.5\\0 & 7 & -5\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+\item
+    Cuarto paso: Multiplico por \(-7\) la segunda fila y lo sumo a la tercera.
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+temp = temp.elementary_row_op('n->n+km', k=-7, row1=2, row2=1)
+display(temp)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+$\displaystyle \left[\begin{matrix}1 & -2 & 1\\0 & 1.0 & -1.5\\0 & 0 & 5.5\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+\item
+    Quinto paso: Multiplico por \(\frac{1}{5.5}\) la tercera fila.
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+temp = temp.elementary_row_op('n->kn', k=1/5.5, row=2)
+display(temp)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+$\displaystyle \left[\begin{matrix}1 & -2 & 1\\0 & 1.0 & -1.5\\0 & 0 & 1.0\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Funciones para reducir una matriz}
+
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Defino la matriz
+A = Matrix([[1, -2, 1], [2, 0, -4], [3, 1, -2]])
+print("A:")
+display(A)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+    \begin{Verbatim}
+A:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}1 & -2 & 1\\2 & 0 & -4\\3 & 1 & -2\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+    
+\begin{itemize}
+\item
+    Forma escalonada sin unos principales.
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+A.echelon_form()
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+$\displaystyle \left[\begin{matrix}1 & -2 & 1\\0 & 4 & -6\\0 & 0 & 22\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+\item
+    Forma escalonada reducida por fila.
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+A.rref(pivots=False)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+$\displaystyle \left[\begin{matrix}1 & 0 & 0\\0 & 1 & 0\\0 & 0 & 1\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+\item
+    Rango de una matriz.
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+A.rank()
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+\begin{Verbatim}
+3
+\end{Verbatim}
+    \end{ipynbsalida}
+\end{pycodigo}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Resolución de sistemas de ecuaciones}
+
+Consideremos el sistema de ecuaciones \(Ax=b\), donde 
+\[
+    A = \begin{pmatrix}1 & 2 & 1\\0 & 1 & 2\\2 & 4 & 0\end{pmatrix}
+    \quad\text{y}\quad
+    b=\begin{pmatrix}7\\12\\4\end{pmatrix}.
+\]
+Podemos resolverlo con el comando \texttt{solve} de la siguiente manera:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Defino las matrices
+A = Matrix([[1, 2, 1], [0, 1, 2], [2, 4, 0]])
+b = Matrix([7, 12, 4])
+# Solución
+A.solve(b)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+$\displaystyle \left[\begin{matrix}-2\\2\\5\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+Sin embargo, si el sistema no tiene solución única, nos dará un error. En estos casos, podemos utilizar \texttt{gauss\_jordan\_solve}:
+
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Solución
+sol, par = A.gauss_jordan_solve(b)
+sol
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+$\displaystyle \left[\begin{matrix}-2\\2\\5\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+Este comando, a más de determinar la solución, presenta los parámetros que esta tendrá en el caso de no tener solución única. Para esto, consideremos el sistema de ecuaciones \(Ax=b\), con 
+\[
+    A=\begin{pmatrix}1 & 2 & 1 & 1\\1 & 2 & 2 & -1\\2 & 4 & 0 & 6\end{pmatrix}
+    \quad\text{y}\quad
+    b=\begin{pmatrix}7\\12\\4\end{pmatrix}.
+\]
+
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+# Definimos la matrices
+A = Matrix([[1, 2, 1, 1], [1, 2, 2, -1], [2, 4, 0, 6]])
+b = Matrix([7, 12, 4])
+# Solución
+sol, par = A.gauss_jordan_solve(b)
+print("Solución:")
+display(sol)
+print("Parámetros:")
+display(par)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+    \begin{Verbatim}
+Solución:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}- 2 \tau_{0} - 3 \tau_{1} + 2\\\tau_{0}\\2 \tau_{1} + 5\\\tau_{1}\end{matrix}\right]$
+    \begin{Verbatim}
+Parámetros:
+    \end{Verbatim}
+    $\displaystyle \left[\begin{matrix}\tau_{0}\\\tau_{1}\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+
+
+    
+
+
+
+\end{document}

@@ -1,0 +1,230 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Actualizado en febrero de 2024
+% Funciona con TeXLive 2022
+% Para obtener solo el pdf, compilar con pdfLaTeX. 
+%  latexmk -pdf 01\ Cuestionarios/01\ Matrices.tex -output-directory="01 Cuestionarios"
+% Para obtener el xml compilar con XeLaTeX.
+% latexmk -xelatex 01\ Cuestionarios/01\ Matrices.tex -output-directory="01 Cuestionarios"
+
+% -- Paquetes adicionales
+\usepackage{aleph-moodle}
+\moodleregisternewcommands
+% Todos los comandos nuevos deben ir luego del comando anterior
+\usepackage{aleph-comandos}
+
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos / Bioingeniería}
+\asignatura{Álgebra Lineal}
+\tema{Control de lectura: Propiedades de las Aplicaciones Lineales}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+% -- Otros comandos
+
+
+
+\begin{document}
+
+\encabezado
+
+\vspace*{-8mm}
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Indicaciones}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Se plantean bancos de preguntas orientados a realizar el control de lectura de la sección 6.2 del libro de Larson y sección 5.3 del libro de Aranda.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Banco de preguntas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Control - Propiedades Aplicacion Lineal}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multi}[]%
+    {P2}     
+    ¿Cuál de las siguientes afirmaciones sobre la operación suma de aplicaciones lineales es correcta?     
+    \item* Si \( f \) y \( g \) son aplicaciones lineales de \( V \) en \( W \), entonces \( (f + g)(v) = f(v) + g(v) \)     
+    \item Si \( f \) y \( g \) son aplicaciones lineales de \( V \) en \( W \), entonces \( (f + g)(v) = f(g(v)) \)     
+    \item Si \( f \) y \( g \) son aplicaciones lineales de \( V \) en \( W \), entonces \( (f + g)(v) = fg(v) \)     
+    \item Si \( f \) y \( g \) son aplicaciones lineales de \( V \) en \( W \), entonces \( (f + g)(v) = f(v) - g(v) \)
+\end{multi}
+
+\begin{multi}[]%
+    {P3}     
+    ¿Cuál es el resultado de la composición \( g \circ f \) si \( f \) y \( g \) son aplicaciones lineales entre los espacios indicados y sus matrices son \( A \) y \( B \), respectivamente?     
+    \item* La matriz de \( g \circ f \) es \( BA \)     
+    \item La matriz de \( g \circ f \) es \( AB \)     
+    \item La matriz de \( g \circ f \) es \( A + B \)     
+    \item La matriz de \( g \circ f \) es \( A - B \)
+\end{multi}
+
+\begin{multi}[]%
+    {P4}     
+    ¿Qué característica debe tener una aplicación lineal para que sea invertible?     
+    \item* La aplicación debe ser biyectiva     
+    \item La aplicación debe ser solo inyectiva     
+    \item La aplicación debe ser solo sobreyectiva     
+    \item Ninguna de las anteriores es necesaria
+\end{multi}
+
+\begin{multi}[]%
+    {P5}     
+    ¿Cuál es la propiedad de la inversa de una aplicación lineal?     
+    \item* \( f^{-1}(\alpha x + \beta y) = \alpha f^{-1}(x) + \beta f^{-1}(y) \)     
+    \item \( f^{-1}(\alpha x + \beta y) = \alpha f(x) + \beta f(y) \)     
+    \item \( f^{-1}(\alpha x + \beta y) = f(\alpha x + \beta y) \)     
+    \item \( f^{-1}(\alpha x + \beta y) = f^{-1}(\alpha) + f^{-1}(\beta) \)
+\end{multi}
+
+\begin{multi}[]%
+    {P6}     
+    Si \( A \) es la matriz asociada a la aplicación biyectiva \( f : V \rightarrow W \), ¿cuál es la matriz asociada a la inversa de \( f \)?     
+    \item* \( A^{-1} \)     
+    \item \( A^{T} \)
+    \item \( 2A \)     
+    \item \( A^2 \)
+\end{multi}
+
+
+\begin{multi}[]%
+    {P7}     
+    ¿Qué conjunto se denomina kernel de una transformación lineal \(T: V \rightarrow W\)?     
+    \item* El conjunto de todos los vectores en \(V\) que son mapeados al vector cero en \(W\)     
+    \item El conjunto de todos los vectores en \(W\) que son mapeados al vector cero en \(V\)     
+    \item El conjunto de todos los vectores en \(V\) que son mapeados a ellos mismos en \(W\)     
+    \item El conjunto de todas las transformaciones posibles de \(V\) a \(W\)
+\end{multi}
+
+\begin{multi}[]%
+    {P8}     
+    ¿Cuál de las siguientes afirmaciones sobre el rango de una transformación lineal \(T: V \rightarrow W\) es correcta?     
+    \item* El rango de \(T\) es un subespacio de \(W\)     
+    \item El rango de \(T\) es un subespacio de \(V\)     
+    \item El rango de \(T\) incluye todos los vectores de \(V\)     
+    \item El rango de \(T\) es siempre igual a la dimensión de \(V\)
+\end{multi}
+
+\begin{multi}[]%
+    {P9}     
+    ¿Bajo qué condición una transformación lineal \(T: V \rightarrow W\) es inyectiva?     
+    \item* \(T\) es uno a uno si y solo si el kernel de \(T\) contiene únicamente el vector cero     
+    \item \(T\) es uno a uno si el kernel de \(T\) incluye al menos un vector diferente de cero     
+    \item \(T\) es uno a uno si su rango es igual al dominio \(V\)     
+    \item \(T\) es uno a uno si cada vector en \(V\) tiene una preimagen única en \(W\)
+\end{multi}
+
+\begin{multi}[]%
+    {P10}     
+    ¿Cuál es la relación entre la dimensión del dominio \(V\) y la suma de las dimensiones de la imagen y el kernel de una transformación lineal \(T: V \rightarrow W\)?     
+    \item* La dimensión del dominio es igual a la suma de las dimensiones de la imagen y el kernel     
+    \item La dimensión del dominio es mayor que la suma de las dimensiones de la imagen y el kernel     
+    \item La dimensión del dominio es menor que la suma de las dimensiones de la imagen y el kernel     
+    \item No existe relación entre la dimensión del dominio y la suma de las dimensiones de la imagen y el kernel
+\end{multi}
+
+\begin{multi}[]%
+    {P11}     
+    Si una transformación lineal \(T: V \rightarrow W\) es un isomorfismo, ¿qué se puede afirmar sobre las dimensiones de \(V\) y \(W\)?     
+    \item* \(V\) y \(W\) tienen la misma dimensión     
+    \item \(V\) tiene una dimensión mayor que \(W\)     
+    \item \(W\) tiene una dimensión mayor que \(V\)     
+    \item Las dimensiones de \(V\) y \(W\) no están relacionadas
+\end{multi}
+
+\begin{multi}[]%
+    {P12}     
+    ¿Qué es una transformación lineal en el contexto de álgebra lineal?     
+    \item* Una función que toma un vector y devuelve otro, manteniendo líneas rectas y el origen fijo.     
+    \item Una función que convierte vectores en matrices.     
+    \item Una operación que siempre curva las líneas y mueve el origen.     
+    \item Una transformación que convierte matrices en vectores.
+\end{multi}
+
+\begin{multi}[]%
+    {P13}     
+    ¿Cómo se visualiza una transformación lineal?     
+    \item* Imaginando los puntos de una cuadrícula infinita moviéndose hacia nuevos puntos sin cambiar su paralelismo o distancia relativa.     
+    \item Pensando en vectores como flechas que apuntan de un espacio a otro.     
+    \item Visualizando cómo los vectores se curvan y el espacio se distorsiona.     
+    \item Considerando solo los vectores que se mueven hacia la derecha o hacia arriba.
+\end{multi}
+
+\begin{multi}[]%
+    {P14}     
+    ¿Qué característica clave debe cumplir una transformación para ser considerada lineal?     
+    \item* Las líneas de la cuadrícula deben permanecer paralelas y a la misma distancia unas de otras.     
+    \item Todas las líneas deben converger en el origen.     
+    \item Las líneas rectas deben convertirse en curvas.     
+    \item El origen debe desplazarse a una nueva posición.
+\end{multi}
+
+\begin{multi}[]%
+    {P15}     
+    ¿Cómo se pueden describir numéricamente las transformaciones lineales?     
+    \item* A través de las coordenadas de los vectores de la base después de la transformación, organizadas en una matriz.     
+    \item Usando una serie de funciones trigonométricas para calcular las nuevas posiciones.     
+    \item Mediante el cálculo diferencial de cada componente del vector.     
+    \item Con un conjunto de ecuaciones diferenciales que describen el movimiento de cada punto.
+\end{multi}
+
+\begin{multi}[]%
+    {P16}     
+    ¿Cuál es un método para pensar en el producto de matrices?     
+    \item* Como la combinación lineal de los vectores de la base transformados, donde cada columna de la matriz representa el resultado de aplicar la transformación a cada vector de la base.     
+    \item Memorizar las reglas de multiplicación de matrices sin entender el significado subyacente.     
+    \item Visualizando el producto de matrices como una serie de operaciones aritméticas sin relación geométrica.     
+    \item Ignorando las propiedades espaciales y concentrándose solo en los cálculos numéricos.
+\end{multi}
+
+\begin{multi}[]%
+    {P17}     
+    ¿Por qué se suele trabajar principalmente en dos dimensiones?     
+    \item* Porque es más fácil visualizar y entender los conceptos en dos dimensiones antes de extenderlos a dimensiones superiores.     
+    \item Porque las transformaciones en dos dimensiones son más complejas y requieren mayor atención.     
+    \item Porque las matrices en dos dimensiones son más fáciles de calcular que en tres dimensiones.     
+    \item Porque las transformaciones en dos dimensiones son menos útiles en aplicaciones prácticas.
+\end{multi}
+
+\begin{multi}[]%
+    {P18}     
+    ¿Cómo se puede visualizar una transformación que maneja vectores tridimensionales?     
+    \item* Moviendo puntos en un espacio tridimensional de manera que las líneas de las cuadrículas se mantengan paralelas y el origen fijo.     
+    \item Utilizando simulaciones computacionales que generan imágenes en 4D.     
+    \item Ignorando las dimensiones y enfocándose solo en los cambios de magnitud de los vectores.     
+    \item Representando cada vector como un punto en un plano bidimensional.
+\end{multi}
+
+\begin{multi}[]%
+    {P19}     
+    ¿Cómo se describen completamente las transformaciones tridimensionales?     
+    \item* Especificando a dónde van a parar los tres vectores de la base unitaria y organizando estas coordenadas en una matriz de tres por tres.     
+    \item Definiendo la orientación y longitud de cada vector después de la transformación.     
+    \item Calculando el producto cruz de cada vector con los vectores unitarios estándar.     
+    \item Usando una serie de transformaciones lineales en dos dimensiones.
+\end{multi}
+
+\begin{multi}[]%
+    {P21}     
+    ¿Por qué son importantes las matrices de tres dimensiones en campos como el diseño gráfico computacional y la robótica?     
+    \item* Porque permiten describir transformaciones complejas como rotaciones en tres dimensiones de manera más comprensible y descomponible.     
+    \item Porque simplifican las ecuaciones necesarias para renderizar gráficos en tres dimensiones.     
+    \item Porque reducen el costo computacional al trabajar con grandes volúmenes de datos.     
+    \item Porque permiten una mayor precisión en la modelación de fenómenos físicos en simulaciones.
+\end{multi}
+
+
+\end{quiz}
+
+
+\end{document}

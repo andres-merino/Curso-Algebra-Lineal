@@ -1,0 +1,500 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Actualizado en febrero de 2024
+% Funciona con TeXLive 2022
+% Para obtener solo el pdf, compilar con pdfLaTeX. 
+%  latexmk -pdf 01\ Cuestionarios/01\ Matrices.tex -output-directory="01 Cuestionarios"
+% Para obtener el xml compilar con XeLaTeX.
+% latexmk -xelatex 01\ Cuestionarios/01\ Matrices.tex -output-directory="01 Cuestionarios"
+
+% -- Paquetes adicionales
+\usepackage{aleph-moodle}
+\moodleregisternewcommands
+% Todos los comandos nuevos deben ir luego del comando anterior
+\usepackage{aleph-comandos}
+\usepackage{listings}
+
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos / Bioingeniería}
+\asignatura{Álgebra Lineal}
+\tema{Cuestionario: Valores propios de matrices de $2\times 2$}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+% -- Otros comandos
+\newcommand{\Bin}{\text{Bin}}
+\decimalpoint
+
+\begin{document}
+
+\encabezado
+
+\vspace*{-8mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Indicaciones}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Se plantean preguntas para calcular ciertas probabilidades de una variable aleatoria binomial.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% No editar nada de aquí en adelante
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Se utilizó la siguiente pregunta base:
+\begin{lstlisting}[breaklines]
+
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - [[id]]}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    [[a1]] & [[a2]] \\
+    [[a3]] & [[a4]]
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio mas grande. En caso de ser un numero complejo, tome en cuenta solo la parte real.
+    \item[] [[N(re(max(list(Matrix([ [a1,a2],[a3,a4] ]).eigenvals().keys()), key=lambda x: re(x))),4)]]
+\end{numerical}
+
+\end{lstlisting}
+\noindent
+Con los siguientes parámetros:
+\begin{itemize}
+	\item $a1 \in \{-2, -1, 0, 1, 2\}$
+	\item $a2 \in \{-2, -1, 1, 2\}$
+	\item $a3 \in \{-2, -1, 1, 2\}$
+	\item $a4 \in \{-2, -1, 0, 1, 2\}$
+
+\end{itemize}
+En total, se plantean 25 preguntas.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Banco de preguntas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Valores propios 2 por 2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 1}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    1 & 1 \\
+    1 & 0
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 1.618
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 2}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    -2 & -2 \\
+    2 & -1
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] -1.500
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 3}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    0 & 1 \\
+    2 & 2
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 2.732
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 4}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    1 & -2 \\
+    -1 & 0
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 2.000
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 5}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    1 & 1 \\
+    2 & -2
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 1.562
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 6}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    -2 & -2 \\
+    -1 & 0
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 0.7320
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 7}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    -1 & -1 \\
+    -1 & -2
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] -0.3820
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 8}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    0 & 2 \\
+    2 & -1
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 1.562
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 9}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    1 & -2 \\
+    1 & -1
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 10}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    -1 & 2 \\
+    -2 & 0
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] -0.5000
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 11}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    2 & -2 \\
+    1 & 2
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 2.000
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 12}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    -1 & -2 \\
+    -2 & 0
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 1.562
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 13}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    -2 & -2 \\
+    2 & 0
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] -1.000
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 14}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    1 & -1 \\
+    -1 & -1
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 1.414
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 15}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    1 & -2 \\
+    1 & -2
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 16}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    0 & -2 \\
+    -1 & 0
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 1.414
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 17}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    -2 & -1 \\
+    2 & 1
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 18}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    -1 & 1 \\
+    -1 & 0
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] -0.5000
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 19}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    2 & 2 \\
+    -2 & -1
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 0.5000
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 20}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    0 & -1 \\
+    -2 & 2
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 2.732
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 21}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    -2 & -1 \\
+    -2 & 0
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 0.7320
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 22}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    0 & 1 \\
+    2 & -2
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 0.7320
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 23}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    -2 & 2 \\
+    1 & -1
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 24}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    1 & 2 \\
+    -1 & 1
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 1.000
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 25}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    0 & -1 \\
+    -2 & -1
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 1.000
+\end{numerical}
+
+
+
+
+\end{quiz}
+
+
+
+
+\end{document}

@@ -1,0 +1,1396 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Actualizado en febrero de 2024
+% Funciona con TeXLive 2022
+% Para obtener solo el pdf, compilar con pdfLaTeX. 
+%  latexmk -pdf 01\ Cuestionarios/01\ Matrices.tex -output-directory="01 Cuestionarios"
+% Para obtener el xml compilar con XeLaTeX.
+% latexmk -xelatex 01\ Cuestionarios/01\ Matrices.tex -output-directory="01 Cuestionarios"
+
+% -- Paquetes adicionales
+\usepackage{aleph-moodle}
+\moodleregisternewcommands
+% Todos los comandos nuevos deben ir luego del comando anterior
+\usepackage{aleph-comandos}
+
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos / Bioingeniería}
+\asignatura{Álgebra Lineal}
+\tema{Cuestionario: Determinantes de matrices de $2\times 2$}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+% -- Otros comandos
+
+
+
+\begin{document}
+
+\encabezado
+
+\vspace*{-8mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Indicaciones}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Se plantean preguntas para evaluar si el estudiante puede calcula el determinante de una matriz de $2 \times 2$. Para cada pregunta, se presenta una matriz de $2 \times 2$ con coeficientes enteros aleatorios en el rango de $-2$ a $2$. Se pide al estudiante calcular el determinante de la matriz.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% No editar nada de aquí en adelante
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Se utilizó la siguiente pregunta base:
+% \begin{quiz}{Pregunta base}
+
+% \begin{numerical}[tolerance=0]%
+%     % - Indentificador
+%     {Det Mat 2x2 - [[id]]}
+%     % - Enunciado
+%     El determinante de la matriz
+%     \[
+%         A = \begin{pmatrix} [[a]] & [[b]] \\ [[c]] & [[d]] \end{pmatrix}
+%     \]
+%     es:
+%     \item[] [[a*d - b*c]]
+% \end{numerical}
+
+% \end{quiz}
+\noindent
+Con los siguientes parámetros:
+\begin{itemize}
+	\item $a \in \{-2, -1, 1, 2\}$
+	\item $b \in \{-2, -1, 1, 2\}$
+	\item $c \in \{-2, -1, 1, 2\}$
+	\item $d \in \{-2, -1, 1, 2\}$
+
+\end{itemize}
+En total, se plantean 100 preguntas.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Banco de preguntas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{quiz}{Det Mat 2x2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 1}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & -1 \\ -2 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 2}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 1 \\ 2 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] -1
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 3}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 2 \\ 1 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] -4
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 4}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & -1 \\ -2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 5}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & -2 \\ -2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] -8
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 6}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 2 \\ -1 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 6
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 7}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 2 \\ -1 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] 1
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 8}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & -1 \\ -2 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] -6
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 9}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 2 \\ 2 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] -3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 10}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & -1 \\ -2 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 11}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & -2 \\ -1 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] -4
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 12}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & 1 \\ -1 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] 3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 13}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & -2 \\ 2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] 8
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 14}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 1 \\ 1 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] 1
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 15}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & -2 \\ 1 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 6
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 16}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & -2 \\ -1 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] -3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 17}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & 2 \\ -1 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] 6
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 18}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & -1 \\ -2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] -4
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 19}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & -1 \\ -2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] -6
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 20}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 2 \\ 2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] -8
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 21}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] -3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 22}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & -1 \\ 2 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 4
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 23}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & -2 \\ 1 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] -2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 24}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 1 \\ 1 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] -3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 25}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & -1 \\ 2 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] -2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 26}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 1 \\ -2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] -2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 27}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & -1 \\ 1 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] 2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 28}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & -1 \\ 1 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 29}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 1 \\ -2 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] 3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 30}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & 1 \\ 1 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] -5
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 31}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & -2 \\ 1 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 4
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 32}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & -1 \\ -2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] 2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 33}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & 1 \\ 2 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] -4
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 34}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & -2 \\ -2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] -6
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 35}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 2 \\ -1 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 4
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 36}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 1 \\ 2 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 37}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & 1 \\ 2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 38}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & -2 \\ 2 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] 5
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 39}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] -2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 40}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] 1
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 41}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 1 \\ -2 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 42}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & -1 \\ 2 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 43}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & -2 \\ -1 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] -6
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 44}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 2 \\ 2 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] -2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 45}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 2 \\ -2 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 6
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 46}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & -1 \\ 2 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] 1
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 47}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 1 \\ -2 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 4
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 48}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & 1 \\ 1 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] -3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 49}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & -1 \\ -1 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] -2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 50}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & -2 \\ -2 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] -2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 51}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 2 \\ 2 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 52}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & -1 \\ -1 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] 3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 53}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 2 \\ -2 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] 6
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 54}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & -1 \\ 1 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] 3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 55}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & -2 \\ 1 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] 1
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 56}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & -1 \\ 2 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] 3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 57}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & -2 \\ -1 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] -4
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 58}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & -1 \\ -1 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] -5
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 59}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & -1 \\ -2 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 60}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 61}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & -2 \\ 2 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 62}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 2 \\ -2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] 2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 63}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 1 \\ 2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] -4
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 64}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 2 \\ 1 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 65}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & 2 \\ 2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 66}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & 2 \\ -1 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] -2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 67}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & 2 \\ -2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] 8
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 68}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & 1 \\ 2 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 69}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & -2 \\ -2 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] -6
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 70}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 1 \\ 1 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 71}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 2 \\ 1 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 72}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 1 \\ 1 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 73}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & -2 \\ -1 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 74}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & -2 \\ 1 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] 4
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 75}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & 2 \\ -2 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] 2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 76}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 2 \\ 2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] -6
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 77}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 2 & -2 \\ 1 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] 4
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 78}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & -1 \\ 1 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] 3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 79}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & 1 \\ 1 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] -3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 80}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & -1 \\ -2 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] -4
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 81}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & -2 \\ 1 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 82}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & -1 \\ -1 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 83}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 1 \\ -1 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] -1
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 84}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 1 \\ -2 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] 1
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 85}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & -1 \\ -2 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] -3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 86}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & -1 \\ 2 & 2 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 87}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & -1 \\ 1 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] 0
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 88}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} 1 & 1 \\ 2 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] -3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 89}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & -1 \\ 2 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 6
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 90}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & -1 \\ 1 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 5
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 91}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 2 \\ -2 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] 5
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 92}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 1 \\ 1 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] -3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 93}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 2 \\ -2 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 8
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 94}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & -1 \\ 1 & -1 \end{pmatrix}
+    \]
+    es:
+    \item[] 2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 95}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 1 \\ 2 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] -3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 96}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 1 \\ 1 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] -2
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 97}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & 2 \\ -2 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] 3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 98}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 2 \\ 2 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] -6
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 99}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -1 & -2 \\ -1 & 1 \end{pmatrix}
+    \]
+    es:
+    \item[] -3
+\end{numerical}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0]%
+    % - Indentificador
+    {Det Mat 2x2 - 100}
+    % - Enunciado
+    El determinante de la matriz
+    \[
+        A = \begin{pmatrix} -2 & 1 \\ -1 & -2 \end{pmatrix}
+    \]
+    es:
+    \item[] 5
+\end{numerical}
+
+
+
+
+\end{quiz}
+
+
+
+
+\end{document}

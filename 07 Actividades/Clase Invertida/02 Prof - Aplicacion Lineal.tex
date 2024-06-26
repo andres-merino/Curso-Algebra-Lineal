@@ -1,0 +1,140 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{aleph-moodle}
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de Datos}
+\asignatura{Álgebra lineal}
+\tema{Clase invertida no. 2: Aplicaciones Lineales}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+% -- Comandos adicionales
+\begin{document}
+
+\encabezado
+
+\vspace*{-10mm}
+\section*{Introducción}
+
+\begin{itemize}
+    \item \textbf{Tema:} Aplicaciones Lineales
+    \item \textbf{Resultado de Aprendizaje:} Determina si una función es aplicación lineal o no.
+\end{itemize}
+
+\section{Lección en casa}
+
+\subsection{Adquisición de concepto}
+
+Para la adquisición del concepto, se solicitará al estudiante interactuar con ChatGPT mediante la siguiente serie de \textit{prompts} específicos:
+
+\begin{enumerate}[label=\textit{Prompt \arabic*.},leftmargin=2.1cm]
+     \item Vas a ser mi profesor de la asignatura de Álgebra Lineal, te iré dando indicaciones y me irás explicando de manera formal y luego de manera intuitiva los conceptos. Vas a tener mucho cuidado al escribir la parte matemática para que se visualice bien. Sé divertido. ¿Entendido?
+        \item ¿Qué es una Aplicación Lineal?
+        \item ¿Cómo se comprueba si una función es una aplicación lineal? No me des un ejemplo aún.
+        \item Dame un ejemplo concreto en R2.
+        \item Dame un ejemplo de algo que no sea aplicación lineal.
+        \item Dame un ejemplo de aplicación lineal de R2 a R3.
+        \item Dame un ejemplo de aplicación lineal de matrices de 2 por 2 a R3.
+        \item Dame un ejemplo de aplicación lineal de R3 a matrices de 2 por 2.
+        \item Plantéame dos funciones, una que sí sea aplicación lineal y otra que no, pero no me digas cuál es para ver si comprendí el concepto.
+\end{enumerate}
+
+\subsection{Personalización de la actividad}
+
+Se la consigue solicitando al estudiante continuar la interacción hasta que sienta que ha asimilado el concepto.
+
+\subsection{Solventación de dudas}
+
+En caso de tener dudas sobre el tema, se solicitará al estudiante interactuar con sus compañeros de clase para solventarlas.
+
+\subsection{Micro-tarea}
+
+Para realizar un seguimiento de la actividad, se solicitará al estudiante copiar el enlace del chat como evidencia del proceso. Adicionalmente, se le pedirá realizar el cuestionario del aula virtual. El cuestionario se encuentra detallado en el Anexo.
+
+\section{Tareas en clase}
+
+\subsection{Visión conjunta}
+
+Se muestra la relación entre las actividades realizadas en casa y las tareas a realizar en clase. De manera específica, se analizarán las utilidades de trabajar con aplicaciones lineales.
+
+\subsection{Retroalimentación}
+
+Se brinda retroalimentación a los estudiantes sobre las respuestas dadas en la micro-tarea.
+
+\subsection{Actividad de aplicación}
+
+Se solicitará a los estudiantes resolver los siguientes ejercicios:
+\begin{enumerate}
+    \item 
+        Determina si la siguiente función es una aplicación lineal:
+        \[
+            \funcion{T}{\R^2}{\R^2}{(x,y)}{(x+y, x-y).}
+        \]
+    \item 
+        Determina si la siguiente función es una aplicación lineal:
+        \[
+            \funcion{T}{\R^2}{\R^2}{(x,y)}{(x^2, y^2).}
+        \]
+    \item 
+        Determina si la siguiente función es una aplicación lineal:
+        \[
+            \funcion{T}{\R^2}{\R^3}{(x,y)}{(x+y, x-y, y-x).}
+        \]
+\end{enumerate}
+
+\subsection{Micro-evaluación}
+
+Se aplicará la siguiente evaluación no sumativa:
+
+% \begin{ejer}
+    Determina si la siguiente función es una aplicación lineal:
+    \[
+        \funcion{T}{\R^{2\times 2}}{\R^2}{\begin{pmatrix} a & b \\ c & d \end{pmatrix}}{(a+b, c+d).}
+    \]
+% \end{ejer}
+
+\section*{Anexo}
+
+
+\begin{quiz}{Clase Invertida Aplicacion Lineal}
+    
+\begin{essay}[response format=text, response field lines=5]%
+    % - Identificador
+    {ClaseInvertida-Chat}
+    % - Enunciado
+    Copia el enlace del chat con ChatGPT como evidencia de la actividad realizada en casa.
+    \item Acceder al enlace.
+\end{essay}
+
+\begin{essay}[response format=text, response field lines=5]%
+    % - Identificador
+    {ClaseInvertida-Sol}
+    % - Enunciado
+    En caso de que algún compañero te haya ayudado a resolver tus dudas, indica aquí quién o quienes te ayudaron.
+    \item Solo para registro.
+\end{essay}
+
+\begin{essay}[response format=text, response field lines=5]%
+    % - Identificador
+    {ClaseInvertida-Dudas}
+    % - Enunciado
+    ¿Qué dudas tienes sobre determinar si una función es o no una aplicación lineal?
+    \item Solo para registro.
+\end{essay}
+
+
+
+\end{quiz}
+
+
+\end{document}

@@ -1,0 +1,194 @@
+% \documentclass[11pt,respuestas,a4]{aleph-examen}
+\documentclass[12pt,a4]{aleph-examen}
+
+% -- Paquetes extra
+\usepackage{aleph-comandos}
+\usepackage{booktabs}
+\usepackage{systeme}
+\usepackage{booktabs}
+\usepackage{multicol}
+
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos}
+\asignatura{Álgebra lineal}
+\tema{Examen no. 1-2: Sistemas de ecuaciones}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+
+\begin{document}
+
+\encabezado
+
+\section*{Indicaciones}
+\begin{itemize}[leftmargin=*]
+\item 
+    En esta actividad se evalúa si el estudiante aplica diferentes métodos para resolver sistemas de ecuaciones lineales, como el método de eliminación de Gauss y técnicas matriciales.
+\item 
+    Las resoluciones de los ejercicios deben ser entregadas en un archivo \texttt{.ipynb} mediante el aula virtual.
+\item
+    Para el desarrollo se podrán utilizar los resúmenes que constan en el aula virtual.
+\item
+    Se encuentra prohibido el uso de cualquier otra fuente de información durante todo el examen (incluye los ejercicios resueltos del aula virtual).
+\item
+    En caso de considerar que existe un error en la pregunta o que esta se encuentra mal planteada, se debe indicar cuál es el error y justificarlo.
+\item
+    Todas las soluciones deben estar correctamente redactadas y explicadas.
+\item 
+    Se debe utilizar el formato proporcionado, trabajando en VSCode (no en Google Colab) y utilizando Markdown para la redacción de las respuestas. No se deben agregar celdas adicionales, salvo que se indique lo contrario.
+\item 
+    Se asignarán 4 puntos de excelencia si, a más de tener las soluciones correctas, el examen se destaca por su orden y escritura.
+\end{itemize}
+
+\section*{Ejercicios}
+
+\begin{preguntas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Rangos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item 
+    Considere el sistema lineal de ecuaciones:
+    \[
+        \systeme{x+5y-4z=0{,}, x-2y+z=0{,}, 3x+y-2z=0{.}}
+    \]
+    \begin{enumerate}
+        \item Calcule el rango de la matriz de coeficientes y el de la matriz ampliada. Con esto, determine la naturaleza del sistema.\puntaje{5}
+        \item Determine la forma escalonada reducida por filas de la matriz ampliada.\puntaje{3}
+        \item Escriba la solución del sistema (si el sistema tiene infinitas soluciones, escribir de forma paramétrica y el conjunto solución).\puntaje{5}
+    \end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Inversa
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item 
+    Considere el sistema lineal de ecuaciones:
+    \[
+        \systeme{x+y+4 z=2, 3x+4y+2z=4, 2x+3y-z=1}
+    \]
+    \begin{enumerate}
+        \item Calcule el determinante de la matriz de coeficientes. ¿Esta matriz tiene inversa?\puntaje{5}
+        \item Calcule la inversa de la matriz de coeficientes.\puntaje{3}
+        \item Utilice la inversa de la matriz de coeficientes para calcular la solución del sistema.\puntaje{5}
+    \end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item Sean $r,s \in \R$. Considere el sistema lineal de ecuaciones:\puntaje{20}
+    \[
+        \systeme[xyzw]{x + z = r{,}, 
+        y + 2w = 0{,}, 
+        x + 2z + 2w = 0{,}, 
+        -y + 4z + sw =2{.}}
+    \]
+    Utilizando la eliminación de Gauss-Jordan (indicando lo que realiza paso a paso), determine los valores de $r$ y $s$ tales que el sistema
+    \begin{itemize}
+        \item tiene una única solución,
+        \item tiene infinitas soluciones, y
+        \item no tiene solución.
+    \end{itemize}
+    Recuerde que, para definir una variable simbólica en Python, se utiliza, por ejemplo:\linebreak \verb+r = Symbol("r")+.
+
+\begin{respuesta}
+    Definimos la matriz ampliada:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+r = Symbol("r")
+s = Symbol("s")
+print("Matriz ampliada:")
+Ampl = Matrix([[1, 0, 1, 0, r], [0, 1, 0, 2, 0], [1, 0, 2, 2, 0], [0, -1, 4, s, 2]])
+display(Ampl)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+    \begin{Verbatim}[commandchars=\\\{\}]
+Matriz ampliada:
+    \end{Verbatim}
+
+    $\displaystyle \left[\begin{matrix}1 & 0 & 1 & 0 & r\\0 & 1 & 0 & 2 & 0\\1 & 0 & 2 & 2 & 0\\0 & -1 & 4 & s & 2\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+    
+Tenemos listo el segundo \(1\) principal, procedemos a hacer \(0\) el
+resto de elementos de la segunda columna, para esto, tenemos la
+siguiente operación:
+\begin{itemize}
+    \item \(1F_2+F_4\to F_4\).
+\end{itemize}
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+Ampl = Ampl.elementary_row_op("n->n+km", k=-1, row1=2, row2=0)
+display(Ampl)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+    $\displaystyle \left[\begin{matrix}1 & 0 & 1 & 0 & r\\0 & 1 & 0 & 2 & 0\\0 & 0 & 1 & 2 & - r\\0 & -1 & 4 & s & 2\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+Tenemos listo el segundo \(1\) principal, procedemos a hacer \(0\) el
+resto de elementos de la segunda columna, para esto, tenemos la
+siguiente operación: 
+\begin{itemize}
+    \item \(1F_2+F_4\to F_4\).
+\end{itemize}
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+Ampl = Ampl.elementary_row_op("n->n+km", k=1, row1=3, row2=1)
+display(Ampl)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+    $\displaystyle \left[\begin{matrix}1 & 0 & 1 & 0 & r\\0 & 1 & 0 & 2 & 0\\0 & 0 & 1 & 2 & - r\\0 & 0 & 4 & s + 2 & 2\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+Tenemos listo el tercer \(1\) principal, procedemos a hacer \(0\) el
+resto de elementos de la tercera columna, para esto, tenemos la
+siguiente operación: 
+\begin{itemize}
+    \item \(-1F_3+F_1\to F_1\),
+    \item \(-4F_3+F_4\to F_4\).
+\end{itemize}
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+Ampl = Ampl.elementary_row_op("n->n+km", k=-1, row1=0, row2=2)
+Ampl = Ampl.elementary_row_op("n->n+km", k=-4, row1=3, row2=2)
+display(Ampl)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+    $\displaystyle \left[\begin{matrix}1 & 0 & 0 & -2 & 2 r\\0 & 1 & 0 & 2 & 0\\0 & 0 & 1 & 2 & - r\\0 & 0 & 0 & s - 6 & 4 r + 2\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+Con esto tenemos varios casos:
+
+\begin{itemize}
+\item
+  Si \(s-6=0\) y \(4r+2=0\), el sistema sería consistente, pero se
+  tendría infinitas soluciones; es decir, el sistema tiene infinitas
+  soluciones cuando \(s=6\) y \(r=-1/2\).
+\item
+  Si \(s-6=0\) y \(4r+2\neq 0\), el sistema sería inconsistente; es
+  decir, el sistema no tiene solución cuando \(s=6\) y \(r\neq -1/2\).
+\item
+  Si \(s-6\neq 0\), el sistema sería consistente y tendría solución
+  única; es decir, el sistema tiene única solución cuando \(s\neq 6\).\qedhere
+\end{itemize}
+
+\end{respuesta}
+
+
+
+\end{preguntas}
+
+\end{document}

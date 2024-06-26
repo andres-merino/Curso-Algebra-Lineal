@@ -1,0 +1,167 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{aleph-moodle}
+\hypersetup{urlcolor=blue}
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de Datos}
+\asignatura{Álgebra lineal}
+\tema{Clase invertida no. 3: Valores Propios}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+% -- Comandos adicionales
+\begin{document}
+
+\encabezado
+
+\vspace*{-10mm}
+\section*{Introducción}
+
+\begin{itemize}
+    \item \textbf{Tema:} Valores propios
+    \item \textbf{Resultado de Aprendizaje:} Calcula valores propios de matrices.
+\end{itemize}
+
+\section{Lección en casa}
+
+\subsection{Adquisición de concepto}
+
+Para la adquisición del concepto, se solicitará al estudiante interactuar con ChatGPT y la visualización de video, siguiendo los siguientes pasos:
+
+\begin{enumerate}[leftmargin=*,label=\arabic*.]
+    \item Interactuar con ChatGPT mediante los siguientes \textit{prompts}, leyendo detenidamente el \textit{prompt} y su respuesta:
+    \begin{enumerate}[label=\textit{Prompt \arabic*.},leftmargin=2.1cm]
+        \item Vas a ser mi profesor de la asignatura de Álgebra Lineal, te iré dando indicaciones y me irás explicando de manera formal lo que te pida. Vas a tener mucho cuidado al escribir la parte matemática para que se visualice bien. Sé divertido. ¿Entendido?
+        \item ¿Cómo se calcula un valor propio de una matriz? No me des un ejemplo numérico aún.
+        \item Dame un ejemplo del cálculo de valores propios con una matriz de 2 por 2.
+    \end{enumerate}
+    \item Visualiza el siguiente video: \href{https://youtu.be/HET8XcIX-n4?si=t4lUbTmWaPOTbtAM}{Obteniendo los valores propios de una matriz de 2$\times$2}.
+    \item Continúa la interacción con ChatGPT mediante los siguientes \textit{prompts}, leyendo detenidamente el \textit{prompt} y su respuesta:
+    \begin{enumerate}[label=\textit{Prompt \arabic*.},leftmargin=2.1cm,start=4]
+        \item Dame un ejemplo del cálculo de valores propios con una matriz de 3 por 3, que el ejemplo sea en una matriz triangular. Realízalo paso a paso con el cálculo de determinante.
+        \item Plantéame un ejercicio de cálculo de valores propios en matrices de 2 por 2.
+    \end{enumerate}
+    \item Visualiza el video: \href{https://youtu.be/Gx0PaWI9eYo?si=oTPRSIfeEopspelW}{Vectores propios y valores propios}.
+    \item Continúa la interacción con ChatGPT con las preguntas sobre el video que acabas de ver.
+    \item Realiza el cuestionario del aula virtual.
+\end{enumerate}
+
+\subsection{Personalización de la actividad}
+
+Se la consigue solicitando al estudiante continuar la interacción hasta que sienta que ha asimilado el concepto.
+
+\subsection{Solventación de dudas}
+
+En caso de tener dudas sobre el tema, se solicitará al estudiante interactuar con GhatGPT.
+
+\subsection{Micro-tarea}
+
+Para realizar un seguimiento de la actividad, se solicitará al estudiante copiar el enlace del chat como evidencia del proceso. Adicionalmente, se le pedirá realizar el cuestionario del aula virtual. El cuestionario se encuentra detallado en el Anexo.
+
+\section{Tareas en clase}
+
+\subsection{Visión conjunta}
+
+Se muestra la relación entre las actividades realizadas en casa y las tareas a realizar en clase. De manera específica, se plantea el cálculo de vectores propios.
+
+\subsection{Retroalimentación}
+
+Se brinda retroalimentación a los estudiantes sobre las respuestas dadas en la micro-tarea.
+
+\subsection{Actividad de aplicación}
+
+Se solicitará a los estudiantes resolver los siguientes ejercicios:
+\begin{enumerate}
+    \item 
+        Determina los valores propios de
+        \[
+            \begin{pmatrix}
+                1 & 2 \\ -4 & 4
+            \end{pmatrix}.
+        \]
+    \item 
+        Determina los valores propios de
+        \[
+            \begin{pmatrix}
+                1 & 2 & 3 \\ -4 & 4 & -4 \\ 0 & 1 & 0
+            \end{pmatrix}.
+        \]
+    \item 
+        Determina los valores propios de
+        \[
+            \begin{pmatrix}
+                1 & 2 & 3 & 4 \\ -4 & 4 & -4 & 4 \\ 0 & 1 & 0 & 1 \\ 1 & 1 & 1 & 1
+            \end{pmatrix}.
+        \]
+\end{enumerate}
+
+\subsection{Micro-evaluación}
+
+No cuenta con microevaluación
+
+\section*{Anexo}
+
+\begin{quiz}{Valores propios}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{numerical}[tolerance=0.01]%
+    % - Indentificador
+    {Valores propios 2 por 2 - 1}
+    % - Enunciado
+    Determine los valores propios de la matriz
+    \[
+    A = \begin{pmatrix}
+    1 & 1 \\
+    1 & 0
+    \end{pmatrix}.
+    \]
+    Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real.
+    \item[] 1.618
+\end{numerical}
+
+\end{quiz}
+
+Se plantea un cuestionario de 50 preguntas de este tipo.
+
+\begin{quiz}{Clase Invertida Valores propios}
+    
+\begin{essay}[response format=text, response field lines=5]%
+    % - Identificador
+    {ClaseInvertida-Chat}
+    % - Enunciado
+    Copia el enlace del chat con ChatGPT como evidencia de la actividad realizada en casa.
+    \item Acceder al enlace.
+\end{essay}
+
+\begin{essay}[response format=text, response field lines=5]%
+    % - Identificador
+    {ClaseInvertida-Sol}
+    % - Enunciado
+    ¿Alguna pregunta que ChatGPT no te supo responder?
+    \item Solo para registro.
+\end{essay}
+
+\begin{essay}[response format=text, response field lines=5]%
+    % - Identificador
+    {ClaseInvertida-Dudas}
+    % - Enunciado
+    ¿Qué dudas tienes sobre calcular los valores propios de una matrix?
+    \item Solo para registro.
+\end{essay}
+
+
+
+\end{quiz}
+
+
+\end{document}

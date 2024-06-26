@@ -1,0 +1,436 @@
+% \documentclass[11pt,respuestas,a4]{aleph-examen}
+\documentclass[11pt,a5]{aleph-examen}
+
+% -- Paquetes extra
+\usepackage{aleph-comandos}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{systeme}
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos}
+\asignatura{Álgebra lineal}
+\tema{Examen no. 2: Espacios Vectoriales}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+
+\begin{document}
+
+\encabezado
+
+\section*{Ejercicios}
+
+\begin{preguntas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Independencia lineal
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    En $\R^4$, determine el conjunto generado por:
+    \[
+        S = \big\{
+            (1,0,1,0),\ 
+            (2,1,2,0),\  
+            (1,1, 1,1)\big\}.
+    \]
+    Escriba el conjunto en función de sus restricciones.\puntaje{10}
+
+
+\begin{respuesta}
+    Tomemos $(w,x,y,z)\in\R^4$ tal que
+    \begin{align*}
+        (w,x,y,z) 
+        & = a(1,0,1,0) + b(2,1,2,0) + c(1,1,1,1)\\
+        & = (a+2b+c,\ b+c,\ a+2b+c,\ c).
+    \end{align*}
+    Obtenemos el sistema
+    \[
+        \systeme[abc]{
+            a+2b+c = w{,},
+            b+c = x{,},
+            a+2b+c = y{,},
+            c = z{.}
+        }
+    \]
+    Planteamos la matriz ampliada y realizamos reducción por filas:
+    \[
+        \begin{pmatrix}
+            1 & 2 & 1 & | & w\\
+            0 & 1 & 1 & | & x\\
+            1 & 2 & 1 & | & y\\
+            0 & 0 & 1 & | & z
+        \end{pmatrix}
+        \sim
+        \begin{pmatrix}
+            1 & 2 & 1 & | & w\\
+            0 & 1 & 1 & | & x\\
+            0 & 0 & 1 & | & z\\
+            0 & 0 & 0 & | & - w + y
+        \end{pmatrix}.
+    \]
+    Este sistema tiene solución si y solo si $-w + y = 0$. Por lo tanto, el conjunto generado por $S$ es
+    \[
+        \{
+            (w,x,y,z)\in\R^4 : -w + y = 0
+        \}.\qedhere
+    \]
+\end{respuesta}
+
+\item
+    En $\R^3$, para $\alpha \in \R$, se toma el conjunto
+    \[
+        S = \big\{
+            (1,0,1),\ 
+            (2\alpha,1,2),\  
+            (1, \alpha, 1)\big\}.
+    \]
+    ¿Para qué valores de $\alpha$ se tiene que $S$ es un conjunto linealmente independiente?\puntaje{10}
+
+
+\begin{respuesta}
+    Tomemos $a,b,c,d\in\R$ tales que
+    \[
+        a(1,0,1) + b(2\alpha,1,2) + c(1,\alpha,1) = (0,0,0),
+    \]
+    operando, se tiene que
+    \[ 
+        (a + 2\alpha b + c, b + \alpha c, a + 2b + c) = (0,0,0).
+    \]
+    Con esto, se obtiene el sistema
+    \[
+        \systeme[abc]{
+            a + 2\alpha b + c = 0{,},
+            b + \alpha c = 0{,},
+            a + 2b + c = 0{.}
+        }
+    \]
+    Para que el conjunto sea linealmente independiente se necesita que el sistema tenga solución única, para esto, planteamos la matriz ampliada y realizamos reducción por filas
+    \[
+        \begin{pmatrix}
+            1 & 2\alpha & 1 & | & 0\\
+            0 & 1 & \alpha & | & 0\\
+            1 & 2 & 1 & | & 0
+        \end{pmatrix}
+        \sim
+        \begin{pmatrix}
+            1 & 2\alpha & 1 & | & 0\\
+            0 & 1 & \alpha & | & 0\\
+            0 & 0 & 2\alpha^2 -2\alpha & | & 0
+        \end{pmatrix}
+    \]
+    Tenemos que el sistema tiene solución única, si y solo si 
+    \[
+        2\alpha^2 - 2\alpha = 0,
+    \]
+    es decir
+    \[
+        \alpha = 0 \texto \alpha = 1.
+    \]
+    Con esto, se obtiene que $S$ es linealmente independiente para todo $\alpha$ en $\R\setminus\{0,1\}$.
+\end{respuesta}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Subespacios vectoriales y base
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    En $\R^{2\times2}$, se define el conjunto
+    \[
+        F = \left\{ \begin{pmatrix} a & b\\ c & d \end{pmatrix} : a-b+c=0\ \land\ b+2d=0 \right\}.
+    \]
+    \begin{enumerate}
+    \item
+        Determine una base para $F$.\puntaje{12}
+    \item
+        ¿Cuál es la dimensión de $F$?\puntaje{3}
+    \end{enumerate}
+
+\begin{respuesta}\hspace{0pt}
+    \begin{enumerate}
+    \item 
+        Para la matriz
+        \[
+            \begin{pmatrix}
+                0 & 0 \\
+                0 & 0 
+            \end{pmatrix}    
+        \],
+        se tiene que
+        \[
+            0 - 0 = 0 \texty 0+2(0)= 0,
+        \]
+        por lo tanto, $0\in F$.
+        
+        Ahora, tomemos 
+        \[
+            A=\begin{pmatrix}
+                a_{11} & a_{12} \\
+                a_{21} & a_{22}
+            \end{pmatrix}
+            \texty
+            B\begin{pmatrix}
+                b_{11} & b_{12} \\
+                b_{21} & b_{22}
+            \end{pmatrix}
+        \]
+        en $F$. Tenemos que
+        \[
+            a_{11}-a_{21}=0,\qquad a_{12} + 2a_{22}=0
+            \texty
+            b_{11}-b_{21}=0,\qquad b_{12} + 2b_{22}=0
+        \]
+        Calculemos: 
+        \[
+            A + B = \begin{pmatrix}
+                a_{11} & a_{12} \\
+                a_{21} & a_{22}
+            \end{pmatrix} + \begin{pmatrix}
+                b_{11} & b_{12} \\
+                b_{21} & b_{22}
+            \end{pmatrix}  = \begin{pmatrix}
+                 a_{11} + b_{11} &  a_{12} + b_{12} \\
+                 a_{21} + b_{21} &  a_{22} + b_{22}
+            \end{pmatrix}.
+        \]
+        Con esto, tenemos
+        \[
+            a_{11}+b_{11} -( a_{21}+b_{21} )  = (a_{11}-a_{21}) + (b_{11} - b_{21}) =  0
+        \]
+        y
+        \[
+            a_{12} + b_{12} + 2(a_{22} + b_{22}) =  (a_{12} + 2a_{22}) + (b_{12} + 2b_{22}) = 0.
+        \]
+        Por lo tanto, se sigue que $A + B \in F$.
+
+        Finalmente, tomemos $\alpha\in \R$, vamos a probar que $\alpha A+B \in F$. Notemos que 
+        \[
+            \alpha A = \alpha \begin{pmatrix}
+                a_{11} & a_{12} \\
+                a_{21} & a_{22}
+            \end{pmatrix}  = \begin{pmatrix}
+                \alpha a_{11} & \alpha a_{12} \\
+                \alpha a_{21} & \alpha a_{22} 
+            \end{pmatrix};
+        \]
+        entonces
+        \[
+            \alpha a_{11} - \alpha a_{21}  = \alpha (a_{11}-a_{21})  =  \alpha(0) = 0
+        \]
+        y
+        \[
+            \alpha a_{12} + 2\alpha a_{22} = \alpha (a_{12} + 2a_{22})  = \alpha(0) = 0.
+        \]
+        Por lo tanto, se sigue que $\alpha A \in F$, es decir, $F$ es un subespacio vectorial de $\R^{2\times 2}$.
+    \item 
+        Tomemos un elemento $\begin{pmatrix}
+                a_{11} & a_{12} \\
+                a_{21} & a_{22}
+        \end{pmatrix}$ arbitrario de $F$, se tiene que
+        \[
+            a_{11} - a_{21} = 0 \texty a_{12} + 2a_{22} = 0,
+        \]
+        es decir, se tiene que 
+        \[
+            a_{11} =  a_{21} \texty a_{12} = -2 a_{22}.
+        \]
+        De esta manera, se tiene que 
+        \[
+            \begin{pmatrix}
+                a_{21} & -2 a_{22} \\
+                a_{21} & a_{22}
+            \end{pmatrix} = \begin{pmatrix}
+                a_{21} & 0 \\
+                a_{21} & 0
+            \end{pmatrix} + \begin{pmatrix}
+                0 & -2a_{22}\\
+                0 & a_{22}
+            \end{pmatrix} = a_{21} \begin{pmatrix}
+                1 & 0 \\
+                1 & 0 
+            \end{pmatrix} + a_{22} \begin{pmatrix}
+                0 & -2 \\
+                0 & 1
+            \end{pmatrix}.
+        \]
+        De esta manera, una posible base para $F$ está dada por 
+        \[
+            \left\{ \begin{pmatrix}
+                1 & 0 \\
+                1 & 0 
+            \end{pmatrix},\begin{pmatrix}
+                0 & -2 \\
+                0 & 1
+            \end{pmatrix} \right\},
+        \]
+        pues este conjunto genera a $F$. Debemos comprobar que es linealmente independiente, para esto, tomemos $\alpha_1$ y $\alpha_2$ números reales tales que:
+        \begin{align*}
+            \alpha_1\begin{pmatrix}
+                1 & 0 \\
+                1 & 0 
+            \end{pmatrix}+\alpha_2\begin{pmatrix}
+                0 & -2 \\
+                0 & 1
+            \end{pmatrix}
+            = \begin{pmatrix}
+                0 & 0 \\
+                0 & 0
+            \end{pmatrix}
+        \end{align*}
+        se sigue que $\alpha_1=\alpha_2=0$, por lo tanto, es linealmente independiente. Así, el conjunto es una base para $F$
+    \item 
+        Por el literal anterior, se concluye que la dimensión de $F$ es $2$. \qedhere
+\end{enumerate}
+\end{respuesta}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Suma de espacios
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    Sea $T: \mathbb{R}^3 \to \mathbb{R}^1$ una aplicación dada por $T(x,y,z) = (x+2y,\ 3x+4z)$.    \begin{enumerate}
+    \item 
+        Sin realizar ningún cálculo, indique si esta aplicación podría ser inyectiva o si podría ser sobreyectiva.\puntaje{3}
+    \item 
+        Calcule el núcleo de la aplicación. \puntaje{5}
+    \item 
+        Determine la imagen de la aplicación. \puntaje{5}
+    \item 
+        Con lo calculado en los puntos anteriores conteste: ¿La aplicación en inyectiva? ¿Es sobreyectiva? ¿Es isomorfismo? \puntaje{2}
+    \end{enumerate}
+
+\begin{respuesta}
+\begin{enumerate}[leftmargin=*]
+\item 
+    Tomemos dos vectores $(x_1,y_1)$ y $(x_2,y_2)$ y un escalar $\lambda$. Calculemos:
+    \begin{align*}
+        T\big((x_1,y_1)&+(x_2,y_2)\big)\\
+        &=
+        T\big((x_1+x_2,y_1+y_2)\big)
+        \\
+        &=
+        \big((x_1+x_2)+2(y_1+y_2),\ 3(x_1+x_2)+4(y_1+y_2),\ (x_1+x_2)-(y_1+y_2)\big)
+        \\
+        &=
+        \big(x_1+2y_1+x_2+2y_2,\ 3x_1+4y_1+3x_2+4y_2,\ x_1-x_2+y_1-y_2\big)
+    \end{align*}
+    \begin{align*}
+        T\big((x_1,y_1)\big)& + T\big((x_2,y_2)\big)\\
+        &=
+        \big(x_1+2y_1,\ 3x_1+4y_1,\ x_1-y_1\big) + \big(x_2+2y_2,\ 3x_2+4y_2,\ x_2-y_2\big)
+        \\
+        &=
+        \big(x_1+2y_1+x_2+2y_2,\ 3x_1+4y_1+3x_2+4y_2,\ x_1-x_2+y_1-y_2\big)
+    \end{align*}
+    Como ambos resultados son iguales, la aplicación cumple la primera propiedad de aplicación lineal. Ahora, calculemos:
+    \begin{align*}
+        T\big(\lambda(x_1,y_1)\big)
+        &=
+        T\big((\lambda x_1,\lambda y_1)\big)
+        \\
+        &=
+        \big((\lambda x_1)+2(\lambda y_1),\ 3(\lambda x_1)+4(\lambda y_1),\ (\lambda x_1)-(\lambda y_1)\big)
+        \\
+        &=
+        \big(\lambda x_1+2\lambda y_1,\ 3\lambda x_1+4\lambda y_1,\ \lambda x_1-\lambda y_1\big);
+    \end{align*}
+    \begin{align*}
+        \lambda T\big((x_1,y_1)\big)
+        &=
+        \lambda\big((x_1+2y_1,\ 3x_1+4y_1,\ x_1-y_1)\big)
+        \\
+        &=
+        \big(\lambda(x_1+2y_1),\ \lambda(3x_1+4y_1),\ \lambda(x_1-y_1)\big) \\
+        &=
+        \big(\lambda x_1+2\lambda y_1,\ 3\lambda x_1+4\lambda y_1,\ \lambda x_1-\lambda y_1\big);
+    \end{align*}
+    Como ambos resultados son iguales, la aplicación cumple la segunda propiedad de aplicación lineal. Por lo tanto, $T$ es una aplicación lineal.
+\item
+    La aplicación no puede ser sobreyectiva dado que $\dim(\R^3)=3$ es mayor que $\dim(\R^2)=2$. Por otro lado, la aplicación sí podría ser inyectiva.
+\item
+    Tomemos un vector $(x,y)$ tal que $T(x,y)=(0,0,0)$. Entonces:
+    \[
+        T(x,y)=(x+2y,\ 3x+4y,\ x-y)=(0,0,0).
+    \]
+    y tenemos el sistema
+    \[
+        \systeme{
+            x+2y = 0,
+            3x+4y = 0,
+            x-y = 0.
+        }
+    \]
+    cuya matriz ampliada es
+    \[
+        \begin{pmatrix}
+            1 & 2 &|& 0\\
+            3 & 4 &|& 0\\
+            1 & -1 &|& 0
+        \end{pmatrix}
+        \sim
+        \begin{pmatrix}
+            1 & 0 & |& 0\\
+            0 & 1 & |& 0\\
+            0 & 0 & |& 0
+        \end{pmatrix}
+    \]
+    Obtenemos las ecuaciones
+    \[
+        \systeme{
+            x=0,
+            y=0
+        }
+    \]
+    y por lo tanto, el núcleo de la aplicación es
+    \[
+        \ker(T)=\{(0,0)\}.
+    \]
+\item
+    Tomemos un vector $(a,b,c)\in\R^3$. Entonces, existe un vector $(x,y)\in\R^2$ tal que $T(x,y)=(x+2y,3x+4y,x-y)=(a,b,c)$. Es decir, tenemos el sistema
+    \[
+        \systeme{
+            x+2y = a,
+            3x+4y = b,
+            x-y = c.
+        }
+    \]
+    cuya matriz ampliada es
+    \[
+        \begin{pmatrix}
+            1 & 2 &|& a\\
+            3 & 4 &|& b\\
+            1 & -1 &|& c
+        \end{pmatrix}
+        \sim
+        \begin{pmatrix}
+            1 & 0 & | & \frac{1}{3}(a+2c) \\
+            0 & 1 & | & \frac{1}{4}(b-a+2c) \\
+            0 & 0 & | & -\frac{5a}{4}+\frac{b}{4}+\frac{c}{2}
+        \end{pmatrix}
+    \]
+    Obtenemos las ecuaciones
+    \[
+        \systeme{
+            x=\frac{1}{3}(a+2c),
+            y= \frac{1}{4}(b-a+2c),
+            0=-\frac{5a}{4}+\frac{b}{4}+\frac{c}{2}
+        }    
+    \]
+    Dado que este sistema no siempre tiene solución, se tiene que $\img(T)\subsetneq\R^2$.
+\item
+    Como el núcleo de la aplicación es igual a $\{(0,0,0)\}$, la aplicación es inyectiva. Por otro lado, como la imagen de la aplicación es un subconjunto propio de $\R^3$ , la aplicación no es sobreyectiva. Con esto, tenemos que la aplicación no es biyectiva, por lo que no es un isomorfismo.\qedhere
+\end{enumerate} 
+\end{respuesta}
+
+
+
+\end{preguntas}
+
+
+\end{document}

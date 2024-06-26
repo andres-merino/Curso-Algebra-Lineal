@@ -1,0 +1,180 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos}
+\asignatura{Álgebra lineal}
+\tema{Python no. 3: Cofactores, Vectores en el plano y $R^n$}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+
+% -- Comandos adicionales
+\setlist[enumerate]{label=\roman*.}
+\input{formato_ipynb}
+
+\begin{document}
+
+\encabezado
+
+\vspace*{-10mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cofactores}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Podemos calcular los cofactores de una matriz con el método \texttt{cofactor}:
+
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+A = Matrix([[1, 2, 3], [4, 5, 6], [-1, 0, 2]])
+print("Matriz A:")
+display(A)
+print("Cofactor 1 2 de A:")
+display(A.cofactor(0,1))
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+    \begin{Verbatim}[commandchars=\\\{\}]
+Matriz A:
+    \end{Verbatim}
+
+    $\displaystyle \left[\begin{matrix}1 & 2 & 3\\4 & 5 & 6\\-1 & 0 & 2\end{matrix}\right]$
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+Cofactor 1 2 de A:
+    \end{Verbatim}
+
+    $\displaystyle -14$
+    \end{ipynbsalida}
+\end{pycodigo}
+    
+Si queremos la matriz de cofactores, usamos el método \texttt{cofactor\_matrix}:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+print("Matriz de cofactores de A:")
+display(A.cofactor_matrix())
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+    \begin{Verbatim}[commandchars=\\\{\}]
+Matriz de cofactores de A:
+    \end{Verbatim}
+
+    $\displaystyle \left[\begin{matrix}10 & -14 & 5\\-4 & 5 & -2\\-3 & 6 & -3\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+Finalmente, la matriz adjunta se obtiene con el método \texttt{adjugate}:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+print("Matriz de adjunta de A:")
+display(A.adjugate())
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+    \begin{Verbatim}[commandchars=\\\{\}]
+Matriz de adjunta de A:
+    \end{Verbatim}
+
+    $\displaystyle \left[\begin{matrix}10 & -4 & -3\\-14 & 5 & 6\\5 & -2 & -3\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{El espacio $\mathbb{R}^n$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Podemos generar vectores como matrices de una columna:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+x = Matrix([1, 2, 3])
+print("El vector x:")
+display(x)
+y = Matrix([-1, 0, 2])
+print("El vector y:")
+display(y)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+    \begin{Verbatim}[commandchars=\\\{\}]
+El vector x:
+    \end{Verbatim}
+
+    $\displaystyle \left[\begin{matrix}1\\2\\3\end{matrix}\right]$
+
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+El vector y:
+    \end{Verbatim}
+
+    $\displaystyle \left[\begin{matrix}-1\\0\\2\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+Para calcular el producto punto entre dos vectores, tenemos el método \texttt{dot}:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+x.dot(y)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}[2mm]
+$\displaystyle 5$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+Para la norma, podemos usar el método \texttt{norm}:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+x.norm()
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+$\displaystyle \sqrt{14}$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+Finalmente, para el producto cruz, tenemos el método \texttt{cross}:
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+x.cross(y)
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+$\displaystyle \left[\begin{matrix}4\\-5\\2\end{matrix}\right]$
+    \end{ipynbsalida}
+\end{pycodigo}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+\begin{pycodigo}
+    \begin{ipynbcodigo}\begin{lstlisting}[language=Python]
+Codigo
+    \end{lstlisting}\end{ipynbcodigo}
+    %
+    \begin{ipynbsalida}
+Salida
+    \end{ipynbsalida}
+\end{pycodigo}

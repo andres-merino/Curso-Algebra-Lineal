@@ -1,0 +1,161 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{aleph-moodle}
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de Datos}
+\asignatura{Álgebra lineal}
+\tema{Clase invertida no. 1: Independencia Lineal}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+% -- Comandos adicionales
+\begin{document}
+
+\encabezado
+
+\vspace*{-10mm}
+\section*{Introducción}
+
+\begin{itemize}
+    \item \textbf{Tema:} Independencia Lineal
+    \item \textbf{Resultado de Aprendizaje:} Determina si un conjunto de vectores el linealmente independiente.
+\end{itemize}
+
+\section{Lección en casa}
+
+\subsection{Adquisición de concepto}
+
+Para la adquisición del concepto, se solicitará al estudiante interactuar con ChatGPT mediante la siguiente serie de \textit{prompts} específicos:
+
+\begin{enumerate}[label=\textit{Prompt \arabic*.},leftmargin=2.1cm]
+    \item Vas a ser mi profesor de la asignatura de Álgebra Lineal, te iré dando indicaciones y me irás explicando de manera formal y luego de manera intuitiva los conceptos. Vas a tener mucho cuidado al escribir la parte matemática para que se visualice bien. Sé amable. ¿Entendido?
+    \item Dado un espacio vectorial E y un conjunto de vectores, ¿qué significa que sea linealmente independientes?
+    \item ¿Cómo se determina si un conjunto de vectores es linealmente independiente? Explícame paso a paso. No me des un ejemplo aún.
+    \item Explícame cómo se determina que estos dos vectores son linealmente independientes: (1,2), (2,1). 
+    \item Explícame cómo se determina que estos dos vectores no son linealmente independientes: (1,2), (2,4). 
+    \item Ahora, dame un ejemplo con vectores de R3.
+    \item Ahora dame un ejemplo en matrices de 2 por 2.
+    \item Ahora, dame un ejemplo en polinomios de grado 2.
+    \item Plantéame dos ejercicios donde debo determinar si un conjunto de vectores es linealmente independiente o no.
+    \item Evalúame para determinar si he comprendido. Escríbeme una pregunta de opción múltiple y te daré la respuesta, luego me darás retroalimentación.
+\end{enumerate}
+
+\subsection{Personalización de la actividad}
+
+Se la consigue solicitando al estudiante continuar la interacción hasta que sienta que ha asimilado el concepto.
+
+\subsection{Solventación de dudas}
+
+En caso de tener dudas sobre el tema, se solicitará al estudiante interactuar con sus compañeros de clase para solventarlas.
+
+\subsection{Micro-tarea}
+
+Para realizar un seguimiento de la actividad, se solicitará al estudiante copiar el enlace del chat como evidencia del proceso. Adicionalmente, se le pedirá realizar el cuestionario del aula virtual. El cuestionario se encuentra detallado en el Anexo.
+
+\section{Tareas en clase}
+
+\subsection{Visión conjunta}
+
+Se muestra la relación entre las actividades realizadas en casa y las tareas a realizar en clase. De manera específica, cómo al relacionar este concepto con el de Generación, se obtiene el concepto de Base de un Espacio Vectorial.
+
+\subsection{Retroalimentación}
+
+Se brinda retroalimentación a los estudiantes sobre las respuestas dadas en la micro-tarea.
+
+\subsection{Actividad de aplicación}
+
+Se solicitará a los estudiantes resolver los siguientes ejercicios:
+\begin{enumerate}
+    \item 
+        Determina si el conjunto de vectores $\{ (2,-1,-1) , (2,1,-2), (-2, -5, 4) \}$ es linealmente independiente.
+    \item 
+        Determina si el conjunto de vectores 
+        \[
+            \left\{ 
+                \begin{pmatrix}
+                    1 & 0 \\
+                    0 & 1
+                \end{pmatrix},
+                \begin{pmatrix}
+                    0 & 1 \\
+                    1 & 0
+                \end{pmatrix},
+                \begin{pmatrix}
+                    1 & 1 \\
+                    1 & 1
+                \end{pmatrix}
+            \right\}
+        \]
+    \item 
+        Determina si el conjunto de polinomios $\{ x + 2, x^2 + 1, x^2 +2x + 5 \}$ es linealmente independiente.
+\end{enumerate}
+
+\subsection{Micro-evaluación}
+
+Se aplicará la siguiente evaluación no sumativa:
+
+% \begin{ejer}
+    Determina si el conjunto de vectores $\{ (2,-1,-1) , (2,1,-2), (-2, -5, 4) \}$ es linealmente independiente.
+% \end{ejer}
+
+\section*{Anexo}
+
+\begin{quiz}{Independencia Lineal}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multi}[numbering = none, shuffle = false]%
+    % - Indentificador
+    {Independencia Lineal - F-1}
+    % - Enunciado
+    El conjunto de vectores $\{ (2,-1,-1) , (2,1,-2), (-2, -5, 4) \}$ es linealmente independiente.
+    \item[] Verdadero 
+    \item[]* Falso
+\end{multi}
+
+\end{quiz}
+
+Se plantea un cuestionario de 50 preguntas de este tipo.
+
+
+\begin{quiz}{Clase Invertida Independencia}
+    
+\begin{essay}[response format=text, response field lines=5]%
+    % - Identificador
+    {ClaseInvertida-Chat}
+    % - Enunciado
+    Copia el enlace del chat con ChatGPT como evidencia de la actividad realizada en casa.
+    \item Acceder al enlace.
+\end{essay}
+
+\begin{essay}[response format=text, response field lines=5]%
+    % - Identificador
+    {ClaseInvertida-Sol}
+    % - Enunciado
+    En caso de que algún compañero te haya ayudado a resolver tus dudas, indica aquí quién o quienes te ayudaron.
+    \item Solo para registro.
+\end{essay}
+
+\begin{essay}[response format=text, response field lines=5]%
+    % - Identificador
+    {ClaseInvertida-Dudas}
+    % - Enunciado
+    ¿Qué dudas tienes sobre el concepto de Independencia Lineal?
+    \item Solo para registro.
+\end{essay}
+
+
+
+\end{quiz}
+
+
+\end{document}

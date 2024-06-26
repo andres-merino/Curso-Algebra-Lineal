@@ -1,0 +1,531 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{systeme}
+
+% -- Datos 
+\institucion{Escuela de Ciencias Físicas y Matemática}
+\carrera{Ciencia de datos}
+\asignatura{Álgebra lineal}
+\tema{Material extra no. 3: Cómputo de bases}
+\autor{Andrés Merino}
+\fecha{Semestre 2024-1}
+
+\logouno[0.14\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{0030A1}
+\definecolor{colordef}{HTML}{0030A1}
+\fuente{montserrat}
+
+% -- Comandos adicionales
+\setlist[enumerate]{label=\roman*.}
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En $\R^2$, consideremos la siguiente base ordenada
+    \[
+        T = \{(1,0),(-1,1)\}.
+    \]
+    Determine $[(1,1)]_T$.
+\end{ejer}
+
+
+\begin{proof}[Solución]
+    Llamemos
+    \[
+        v_1 = (1,0)\texty
+        v_2 = (-1,1),
+    \]
+    con esto se tiene que
+    \[
+        T = \{v_1,v_2\}.
+    \]
+    Para determinar $[(1,1)]_T$, debemos determinar $\alpha_1,\alpha_2\in\R$ tal que 
+    \begin{align*}
+        (1,1) & = \alpha_1 v_1+\alpha_2 v_2 \\
+        & = \alpha_1 (1,0)+\alpha_2(-1,1)\\
+        & = (\alpha_1-\alpha_2,\alpha_2),
+    \end{align*}
+    es decir, debemos debemos determinar $\alpha_1,\alpha_2\in\R$ que sean solución del sistema
+    \[
+        \systeme[\alpha_1\alpha_2]{
+        \alpha_1 - \alpha_2 = 1{,},
+        \alpha_2 = 1{.}
+        }
+    \]
+    Resolviendo el sistema tenemos que
+    \[
+        \alpha_1 = 2,\texty
+        \alpha_2 = 1,
+    \]
+    por lo tanto
+    \[
+        [x]_T 
+        = \begin{pmatrix} \alpha_1\\ \alpha_2 \end{pmatrix}
+        = \begin{pmatrix} 2\\ 1  \end{pmatrix}.\qedhere
+    \]
+\end{proof}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En $\R^2$, consideremos las siguientes bases ordenadas
+    \[
+        S = \{(1,1),(0,1)\}
+        \texty
+        T = \{(1,0),(-1,1)\}.
+    \]
+    Determine la matriz de cambio de base $P_{T \leftarrow S}$.
+\end{ejer}
+
+\begin{proof}[Solución]
+    Llamemos
+    \begin{gather*}
+        u_1 = (1,1),\qquad
+        u_2 = (0,1)\\
+        v_1 = (1,0)\texty
+        v_2 = (-1,1),
+    \end{gather*}
+    con esto se tiene que
+    \[
+        S = \{u_1,u_2\}
+        \texty
+        T = \{v_1,v_2\}.
+    \]
+    Dado que la dimensión de $\R^2$ es $2$, buscamos una matriz de $\Mat{2}{2}$ tal que
+    \[
+        [x]_T = P_{T \leftarrow S} [x]_S
+    \]
+    para todo $x\in \R^2$. Vamos a utilizar los elementos de la base de $S$ para determinar $P_{T \leftarrow S}$. Notemos que
+    \[
+        [u_1]_S = \begin{pmatrix} 1\\ 0  \end{pmatrix},
+        \texty
+        [u_2]_S = \begin{pmatrix} 0\\ 1  \end{pmatrix}
+    \]
+    (esto siempre ocurre con los elementos de la base). Con esto, si
+    \[
+        P_{T \leftarrow S} = 
+        \begin{pmatrix}a & b \\ c & d \end{pmatrix},
+    \]
+    tenemos que
+    \[
+        [u_1]_T = P_{T \leftarrow S} [u_1]_S
+        =\begin{pmatrix}a & b \\ c & d \end{pmatrix} 
+        \begin{pmatrix} 1\\ 0  \end{pmatrix}
+        = \begin{pmatrix} a\\ c  \end{pmatrix}
+    \]
+    y
+    \[
+        [u_2]_T = P_{T \leftarrow S} [u_2]_S
+        =\begin{pmatrix}a & b \\ c & d \end{pmatrix} 
+        \begin{pmatrix} 0\\ 1  \end{pmatrix}
+        = \begin{pmatrix} b\\ d  \end{pmatrix},
+    \]
+    es decir, la primera columna de $P_{T \leftarrow S}$ es $[u_1]_T$ y la segunda columna de $P_{T \leftarrow S}$ es $[u_2]_T$, por lo tanto, basta calcular
+    \[
+        [u_1]_T
+        \texty
+        [u_2]_T.
+    \]
+    Tal como se realizó en el ejercicio anterior, debemos determinar $\alpha_1,\alpha_2,\beta_1,\beta_2\in\R$ que sean solución de los sistemas
+    \[
+        \systeme[\alpha_1\alpha_2]{
+        \alpha_1 - \alpha_2 = 1{,},
+        \alpha_2 = 1{,}
+        }
+        \texty
+        \systeme[\beta_1\beta_2]{
+        \beta_1 - \beta_2 = 0{,},
+        \beta_2 = 1{.}
+        }
+    \]
+    Resolviendo los sistemas, tenemos que
+    \[
+        \alpha_1 = 2,\qquad
+        \alpha_2 = 1,\qquad
+        \beta_1 = 1\texty
+        \beta_2 = 1
+    \]
+    por lo tanto
+    \[
+        [u_1]_T 
+        = \begin{pmatrix} \alpha_1\\ \alpha_2 \end{pmatrix}
+        = \begin{pmatrix} 2\\ 1  \end{pmatrix}
+        \texty
+        [u_1]_T 
+        = \begin{pmatrix} \beta_1\\ \beta_2 \end{pmatrix}
+        = \begin{pmatrix} 1\\ 1  \end{pmatrix},
+    \]
+    así, se obtiene que
+    \[
+         P_{T \leftarrow S} = 
+         \begin{pmatrix} 2 & 1\\ 1 & 1 \end{pmatrix}.\qedhere
+    \]
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{advertencia}
+    Notemos que el razonamiento realizado en el ejercicio anterior se cumple de manera general, es decir, dado un espacio vectorial y dos bases ordenadas de este:
+    \[
+        S = \{u_1,u_2,\ldots,u_n\}
+        \texty
+        T = \{v_1,v_2,\ldots,v_n\},
+    \]
+    se tiene que, para $j=1,\ldots,n$, la $j$-ésima columna de la matriz $P_{T\leftarrow S}$ es $[u_j]_T$, así,
+    \[
+        P_{T\leftarrow S} = 
+        \begin{pmatrix}
+        [u_1]_T & [u_2]_T & \ldots & [u_n]_T
+        \end{pmatrix}.
+    \]
+\end{advertencia}
+
+\begin{advertencia}
+    Notemos que los sistemas de ecuaciones resueltos en el ejercicio anterior son similares, esto también pasa de manera general, así, podemos plantear todos los sistemas y resolverlos simultáneamente como se muestra en el siguiente ejercicios.
+\end{advertencia}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En $\R^3$, consideremos las siguientes bases ordenadas
+    \[
+        S = \{(1,1,0),(0,1,1),(0,1,0)\}
+        \texty
+        T = \{(1,0,1),(0,1,0),(0,1,1)\}.
+    \]
+    \begin{enumerate}
+    \item 
+        Dado el vector $x = (-1,2,0)$, determine $[x]_S$.
+    \item
+        Determine la matriz de cambio de base $P_{T \leftarrow S}$.
+    \item
+        Con los literales anteriores, calcule $[x]_T$.
+    \item
+        Compruebe el resultado anterior utilizando la definición de $[x]_T$.
+    \end{enumerate} 
+\end{ejer}
+
+\begin{proof}[Solución]
+Llamemos
+\begin{gather*}
+    u_1 = (1,1,0),\qquad
+    u_2 = (0,1,1),\qquad
+    u_3 = (0,1,0)\\
+    v_1 = (1,0,1)\qquad
+    v_2 = (0,1,0)\texty
+    v_3 = (0,1,1),
+\end{gather*}
+con esto se tiene que
+\[
+    S = \{u_1,u_2,u_3\}
+    \texty
+    T = \{v_1,v_2,v_3\}.
+\]
+\begin{enumerate}[leftmargin=*]
+\item 
+    Para determinar $[x]_S$, debemos determinar $\alpha_1,\alpha_2,\alpha_3\in\R$ tal que 
+    \begin{align*}
+        x = (-1,2,0) & = \alpha_1 u_1+\alpha_2u_2+\alpha_3u_3 \\
+        & = \alpha_1 (1,1,0)+\alpha_2(0,1,1)+\alpha_3(0,1,0)\\
+        & = (\alpha_1,\alpha_1+\alpha_2+\alpha_3,\alpha_2),
+    \end{align*}
+    es decir, debemos debemos determinar $\alpha_1,\alpha_2,\alpha_3\in\R$ que sean solución del sistema
+    \[
+        \systeme[\alpha_1\alpha_2\alpha_3]{
+        \alpha_1 = -1{,},
+        \alpha_1+\alpha_2+\alpha_3 = 2{,},
+        \alpha_2 = 0{.}
+        }
+    \]
+    Resolviendo el sistema tenemos que
+    \[
+        \alpha_1 = -1,\qquad
+        \alpha_2 = 0\texty
+        \alpha_3 = 3,
+    \]
+    por lo tanto
+    \[
+        [x]_S 
+        = \begin{pmatrix} \alpha_1\\ \alpha_2 \\ \alpha_3 \end{pmatrix}
+        = \begin{pmatrix} -1\\ 0 \\ 3 \end{pmatrix}.
+    \]
+\item
+    Tenemos que la matriz de cambio de base es 
+    \[
+        P_{T\leftarrow S} = 
+        \begin{pmatrix}
+        [u_1]_T & [u_2]_T & [u_3]_T
+        \end{pmatrix},
+    \]
+    por lo cual, debemos encontrar $[u_1]_T$, $[u_2]_T$ y $[u_3]_T$, por lo tanto, debemos determinar escalares tales que
+    \begin{align*}
+        u_1 = (1,1,0) 
+        & = \beta_1 v_1+\beta_2v_2+\beta_3v_3 \\
+        & = \beta_1 (1,0,1) +\beta_2(0,1,0) +\beta_3(0,1,1)\\
+        & = (\beta_1,\beta_2+\beta_3,\beta_1+\beta_3),
+    \end{align*}
+    \begin{align*}
+        u_2 = (0,1,1) 
+        & = \gamma_1 v_1+\gamma_2v_2+\gamma_3v_3 \\
+        & = \gamma_1 (1,0,1) +\gamma_2(0,1,0) +\gamma_3(0,1,1)\\
+        & = (\gamma_1,\gamma_2+\gamma_3,\gamma_1+\gamma_3),
+    \end{align*}
+    \begin{align*}
+        u_3 = (0,1,0) 
+        & = \delta_1 v_1+\delta_2v_2+\delta_3v_3 \\
+        & = \delta_1 (1,0,1) +\delta_2(0,1,0) +\delta_3(0,1,1)\\
+        & = (\delta_1,\delta_2+\delta_3,\delta_1+\delta_3),
+    \end{align*}
+    es decir, se deben resolver los sistemas
+    \[
+        \systeme[\beta_1\beta_2\beta_3]{
+        \beta_1 = 1{,},
+        \beta_2+\beta_3 = 1{,},
+        \beta_1+\beta_3 = 0{,}
+        }
+        \qquad
+        \systeme[\gamma_1\gamma_2\gamma_3]{
+        \gamma_1 = 0{,},
+        \gamma_2+\gamma_3 = 1{,},
+        \gamma_1+\gamma_3 = 1{,}
+        }
+        \texty
+        \systeme[\delta_1\delta_2\delta_3]{
+        \delta_1 = 0{,},
+        \delta_2+\delta_3 = 1{,},
+        \delta_1+\delta_3 = 0{.}
+        }
+    \]
+    Podemos colocar estos tres sistemas en una matriz ampliada
+    \[
+        \begin{pmatrix}
+            1 & 0 & 0 & | & 1 & | & 0 & | & 0\\
+            0 & 1 & 1 & | & 1 & | & 1 & | & 1\\
+            1 & 0 & 1 & | & 0 & | & 1 & | & 0
+        \end{pmatrix}.
+    \]
+    Realizando reducción por filas tenemos que
+    \[
+        \begin{pmatrix}
+            1 & 0 & 0 & | & 1 & | & 0 & | & 0\\
+            0 & 1 & 1 & | & 1 & | & 1 & | & 1\\
+            1 & 0 & 1 & | & 0 & | & 1 & | & 0
+        \end{pmatrix}
+        \sim
+        \begin{pmatrix}
+            1 & 0 & 0 & | &  1 & | & 0 & | & 0\\
+            0 & 1 & 0 & | &  2 & | & 0 & | & 1\\
+            0 & 0 & 1 & | & -1 & | & 1 & | & 0
+        \end{pmatrix}.
+    \]
+    De donde obtenemos que
+    \[
+        [u_1]_T
+        = \begin{pmatrix}
+            1\\2\\-1
+        \end{pmatrix},
+        \qquad
+        [u_2]_T
+        = \begin{pmatrix}
+            0\\0\\1
+        \end{pmatrix}
+        \texty
+        [u_3]_T
+        = \begin{pmatrix}
+            0\\1\\0
+        \end{pmatrix}.
+    \]
+    Con esto, tenemos que
+    \[
+        P_{T\leftarrow S} = 
+        \begin{pmatrix}
+        [u_1]_T & [u_2]_T & [u_3]_T
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+             1 & 0 & 0\\
+             2 & 0 & 1\\
+            -1 & 1 & 0
+        \end{pmatrix}.
+    \]
+\item
+    Tenemos que
+    \[
+        [x]_T = P_{T\leftarrow S} [x]_S
+        =
+        \begin{pmatrix}
+             1 & 0 & 0\\
+             2 & 0 & 1\\
+            -1 & 1 & 0
+        \end{pmatrix}
+        \begin{pmatrix} -1\\ 0 \\ 3 \end{pmatrix}
+        =
+        \begin{pmatrix} -1\\ 1 \\ 1 \end{pmatrix}.
+    \]
+\item
+    Para comprobar el resultado anterior utilizando la definición, debe ser verdad que
+    \[
+        x = -1v_1 + 1v_2 + 1v_3,
+    \]
+    por lo tanto, calculemos el lado derecho:
+    \begin{align*}
+        -1v_1 + 1v_2 + 1v_3
+        & = -1(1,0,1) + 1(0,1,0) + 1(0,1,1)\\
+        & = (-1,2,1)\\
+        & = x,
+    \end{align*}
+    por lo tanto, queda comprobado.\qedhere
+\end{enumerate}
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En $\R_2[t]$, consideremos las siguientes bases ordenadas
+    \[
+        S = \{t^2+1,2t,2\}
+        \texty
+        T = \{t^2-1,t^2+t,t\}.
+    \]
+    Determine la matriz de cambio de base $P_{T \leftarrow S}$.
+\end{ejer}
+
+
+\begin{proof}[Solución]
+    Llamemos
+    \begin{gather*}
+        p_1(t) = t^2+1,\qquad
+        p_2(t) = 2t,\qquad
+        p_3(t) = 2\\
+        q_1(t) = t^2-1\qquad
+        q_2(t) = t^2+t\texty
+        q_3(t) = t,
+    \end{gather*}
+    con esto se tiene que
+    \[
+        S = \{p_1(t),p_1(t),p_1(t)\}
+        \texty
+        T = \{q_1(t),q_1(t),q_1(t)\}.
+    \]
+    Tenemos que la matriz de cambio de base es 
+    \[
+        P_{T\leftarrow S} = 
+        \begin{pmatrix}
+        [p_1(t)]_T & [p_2(t)]_T & [p_3(t)]_T
+        \end{pmatrix},
+    \]
+    por lo cual, debemos encontrar $[p_1(t)]_T$, $[p_2(t)]_T$ y $[p_3(t)]_T$, por lo tanto, debemos determinar escalares tales que
+    \begin{align*}
+        p_1(t) = t^2+1
+        & = \alpha_1 q_1(t)+\alpha_2q_2(t)+\alpha_3q_3(t) \\
+        & = \alpha_1 (t^2-1) +\alpha_2(t^2+t) +\alpha_3(2)\\
+        & = (\alpha_1+\alpha_2)t^2+\alpha_2 t+(2\alpha_3-\alpha_1),
+    \end{align*}
+    \begin{align*}
+        p_2(t) = 2t
+        & = \beta_1 q_1(t)+\beta_2q_2(t)+\beta_3q_3(t) \\
+        & = \beta_1 (t^2-1) +\beta_2(t^2+t) +\beta_3(2)\\
+        & = (\beta_1+\beta_2)t^2+\beta_2 t+(2\beta_3-\beta_1),
+    \end{align*}
+    \begin{align*}
+        p_3(t) = 2
+        & = \gamma_1 q_1(t)+\gamma_2q_2(t)+\gamma_3q_3(t) \\
+        & = \gamma_1 (t^2-1) +\gamma_2(t^2+t) +\gamma_3(2)\\
+        & = (\gamma_1+\gamma_2)t^2+\gamma_2 t+(2\gamma_3-\gamma_1),
+    \end{align*}
+    es decir, se deben resolver los sistemas
+    \[
+        \systeme[\alpha_1\alpha_2\alpha_3]{
+        \alpha_1 + \alpha_2 = 1{,},
+        \alpha_2 = 0{,},
+        -\alpha_1+2\alpha_3 = 1{,}
+        }
+        \qquad
+        \systeme[\beta_1\beta_2\beta_3]{
+        \beta_1 + \beta_2 = 0{,},
+        \beta_2 = 2{,},
+        -\beta_1+2\beta_3 = 0{,}
+        }
+        \texty
+        \systeme[\gamma_1\gamma_2\gamma_3]{
+        \gamma_1 + \gamma_2 = 0{,},
+        \gamma_2 = 0{,},
+        -\gamma_1+2\gamma_3 = 2{,}
+        }
+    \]
+    Podemos colocar estos tres sistemas en una matriz ampliada
+    \[
+        \begin{pmatrix}
+             1 & 1 & 0 & | & 1 & | & 0 & | & 0\\
+             0 & 1 & 0 & | & 0 & | & 2 & | & 0\\
+            -1 & 0 & 2 & | & 1 & | & 0 & | & 2
+        \end{pmatrix}.
+    \]
+    Realizando reducción por filas tenemos que
+    \[
+        \begin{pmatrix}
+             1 & 1 & 0 & | & 1 & | & 0 & | & 0\\
+             0 & 1 & 0 & | & 0 & | & 2 & | & 0\\
+            -1 & 0 & 2 & | & 1 & | & 0 & | & 2
+        \end{pmatrix}
+        \sim
+        \begin{pmatrix}
+            1 & 0 & 0 & | & -2 & | & -1 & | & -1\\
+            0 & 1 & 0 & | &  2 & | &  1 & | & 1\\
+            0 & 0 & 1 & | & -1 & | &  0 & | & \frac 1 2
+        \end{pmatrix}.
+    \]
+    De donde obtenemos que
+    \[
+        [p_1(t)]_T
+        = \begin{pmatrix}
+            -2\\2\\-1
+        \end{pmatrix},
+        \qquad
+        [p_2(t)]_T
+        = \begin{pmatrix}
+            -1\\1\\0
+        \end{pmatrix}
+        \texty
+        [p_3(t)]_T
+        = \begin{pmatrix}
+            -1\\1\\\frac 1 2
+        \end{pmatrix}.
+    \]
+    Con esto, tenemos que
+    \[
+        P_{T\leftarrow S} = 
+        \begin{pmatrix}
+        [p_1(t)]_T & [p_2(t)]_T & [p_3(t)]_T
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+             -2 & -1 &  -1\\
+              2 &  1 &  1\\
+             -1 &  0 &  \frac 1 2
+        \end{pmatrix}.
+        \qedhere
+    \]
+\end{proof}
+
+
+
+
+\end{document}
