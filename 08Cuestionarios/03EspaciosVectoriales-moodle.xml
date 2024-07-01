@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was generated on 2024-07-01 by XeLaTeX -->
+<!-- running on *NIX with the package moodle v0.9 -->
+
+<quiz>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Vectores en el plano y en Rn</text>
+  </category>
+</question>
+ 
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Rn-01]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuáles de los siguientes conjuntos representan una base canónica de \( \mathbb {R}^2 \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\{ (1,0), (0,1) \}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{ (1,1), (0,1) \}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{ (1,0) \}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{ (1,1), (-1,-1) \}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Rn-02]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuáles de los siguientes conjuntos representan una base canónica de \( \mathbb {R}^3 \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\{ (1,0,0), (0,1,0), (0,0,1) \}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{ (1,1,1), (0,1,1), (0,0,1) \}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{ (1,0,0), (1,1,0) \}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{ (1,1,0), (0,1,1), (1,0,1) \}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Rn-03]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Considerando dos vectores \( u \) y \( v \) en \( \mathbb {R}^n \), ¿cuál de las siguientes afirmaciones sobre el producto punto \( u \cdot v \) es correcta? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>El producto punto es conmutativo, es decir, \( u \cdot v = v \cdot u \).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El producto punto es anticonmutativo, es decir, \( u \cdot v = -v \cdot u \).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El producto punto es siempre cero.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El producto punto depende del orden de los vectores.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Rn-04]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué relación correcta describe el producto punto de un vector \( u \) en \( \mathbb {R}^n \) consigo mismo? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>El producto punto \( u \cdot u \) es igual al cuadrado de la norma de \( u \).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El producto punto \( u \cdot u \) es igual a la norma de \( u \).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El producto punto \( u \cdot u \) es siempre igual a 1.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El producto punto \( u \cdot u \) es independiente de la norma de \( u \).</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Rn-05]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de los siguientes pares de vectores en \( \mathbb {R}^2 \) es ortogonal? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\{ (2, -2), (1, 1) \}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{ (1, 2), (-2, 3) \}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{ (3, -3), (1, -1) \}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{ (0, 1), (1, 1) \}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Rn-06]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la definición correcta de vectores ortogonales en un espacio vectorial? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Dos vectores son ortogonales si su producto punto es igual a cero.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Dos vectores son ortogonales si su suma es igual a cero.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Dos vectores son ortogonales si son linealmente dependientes.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Dos vectores son ortogonales si ambos tienen la misma norma.</p>]]></text>
+  </answer>
+</question>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Subespacios vectoriales</text>
+  </category>
+</question>
+ 
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[EspVec-01]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de las siguientes opciones describe correctamente un espacio vectorial? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Un conjunto de vectores junto con las operaciones de suma y multiplicación por escalares, que cumple con ciertas propiedades.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Un conjunto de vectores que pueden ser sumados o multiplicados entre sí.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Un conjunto de vectores que forman un sistema linealmente independiente.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Un conjunto de vectores donde la suma de cualquier par de vectores siempre resulta en un vector fuera del conjunto original.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[EspVec-02]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de las siguientes opciones describe correctamente un subespacio vectorial de un espacio vectorial dado? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Un conjunto no vacío de vectores que es cerrado bajo la suma y la multiplicación por escalar.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Un conjunto de todos los vectores linealmente independientes en un espacio vectorial.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Cualquier conjunto de vectores que incluya al menos un vector del espacio vectorial mayor.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Un conjunto de vectores donde cada vector es ortogonal a un vector dado del espacio vectorial mayor.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[EspVec-03]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de las siguientes afirmaciones describe correctamente una combinación lineal de vectores? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Una combinación lineal de vectores es una expresión de la forma \( a_1v_1 + a_2v_2 + \ldots+ a_nv_n \), donde \( v_1, v_2, \ldots, v_n \) son vectores y \( a_1, a_2, \ldots, a_n \) son escalares.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Una combinación lineal de vectores ocurre cuando todos los vectores involucrados son mutuamente ortogonales.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Una combinación lineal es cualquier suma de vectores sin incluir multiplicación por escalares.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Una combinación lineal de vectores se define como la suma de dos vectores que son linealmente independientes.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[EspVec-04]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué es el espacio generado por un conjunto de vectores? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Es el conjunto de todas las combinaciones lineales posibles de esos vectores.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Es el conjunto de todos los vectores que son ortogonales a esos vectores.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Es el conjunto formado únicamente por los vectores más largos del grupo inicial.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Es el conjunto que contiene solo los vectores linealmente independientes del grupo inicial.</p>]]></text>
+  </answer>
+</question>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Independencia lineal</text>
+  </category>
+</question>
+ 
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[IndepLin-01]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de las siguientes afirmaciones es correcta respecto a la independencia lineal de un conjunto de vectores? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Un conjunto de vectores es linealmente independiente si la única combinación lineal que produce el vector cero es aquella en la que todos los coeficientes son cero.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Un conjunto de vectores es linealmente dependiente si todos sus vectores son ortogonales entre sí.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Un conjunto de vectores es linealmente independiente si se puede expresar cada vector como una combinación lineal de los demás vectores en el conjunto.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Un conjunto de vectores es linealmente independiente si su número es igual al número de dimensiones del espacio vectorial al que pertenecen.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[IndepLin-02]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la idea intuitiva detrás de la independencia lineal de un conjunto de vectores? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Un conjunto de vectores es linealmente independiente si todos apuntan en direcciones diferentes.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Un conjunto de vectores es linealmente independiente si todos los vectores apuntan en la misma dirección.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Un conjunto de vectores es linealmente independiente si todos los vectores son de la misma longitud.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Un conjunto de vectores es linealmente independiente si pueden ser sumados para obtener cualquier vector en el espacio.</p>]]></text>
+  </answer>
+</question>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Bases</text>
+  </category>
+</question>
+ 
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[BasesEspVec-01]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de las siguientes afirmaciones describe correctamente una base de un espacio vectorial? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Una base es un conjunto de vectores linealmente independientes que genera todo el espacio vectorial.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Una base es cualquier conjunto de vectores que incluye el vector cero del espacio.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Una base es un conjunto de vectores donde cada vector es ortogonal a los otros.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Una base es un conjunto de vectores que son todos mutuamente ortogonales y de la misma longitud.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[BasesEspVec-02]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Considera el espacio de polinomios \( \mathbb {R}_2[x] \) de grado menor o igual a 2. ¿Cuál de los siguientes conjuntos constituye una base para \( \mathbb {R}_2[x] \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\{1, x, x^2\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{1, x, 2x, x^2\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{x, x^2\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{0, x, x^2\}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[BasesEspVec-03]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de estos conjuntos puede ser base de \( \mathbb {R}^2 \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(1, 2)\}\)</p>]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\{(1, 0), (0, 1), (1, 1)\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(1, 0), (0, 0)\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(1, 1), (1, -1)\}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[BasesEspVec-04]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de estos conjuntos puede ser base del espacio de todas las matrices de 2x2? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\left \{ \begin {pmatrix} 1 & 0 \\ 0 & 1 \end {pmatrix}, \begin {pmatrix} 1 & 0 \\ 1 & 1 \end {pmatrix}, \begin {pmatrix} 1 & 1 \\ 0 & 1 \end {pmatrix} \right \}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\left \{ \begin {pmatrix} 1 & 0 \\ 0 & 0 \end {pmatrix}, \begin {pmatrix} 0 & 1 \\ 0 & 0 \end {pmatrix}, \begin {pmatrix} 0 & 0 \\ 1 & 0 \end {pmatrix}, \begin {pmatrix} 0 & 0 \\ 0 & 1 \end {pmatrix} \right \}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\left \{ \begin {pmatrix} 1 & 0 \\ 0 & 0 \end {pmatrix}, \begin {pmatrix} 0 & 1 \\ 0 & 0 \end {pmatrix}, \begin {pmatrix} 0 & 0 \\ 0 & 0 \end {pmatrix}, \begin {pmatrix} 0 & 0 \\ 1 & 0 \end {pmatrix} \right \}\)</p>]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\left \{ \begin {pmatrix} 1 & 1 \\ 1 & 1 \end {pmatrix}, \begin {pmatrix} 2 & 1 \\ 2 & 2 \end {pmatrix}, \begin {pmatrix} 3 & 3 \\ 1 & 1 \end {pmatrix}, \begin {pmatrix} 0 & 0 \\ 1 & 1 \end {pmatrix}, \begin {pmatrix} 3 & 3 \\ 0 & 0 \end {pmatrix} \right \}\)</p>]]></text>
+  </answer>
+</question>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Dimensión</text>
+  </category>
+</question>
+ 
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Dimension-01]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la dimensión del espacio vectorial \( \mathbb {R}^3 \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>3</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Dimension-02]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la dimensión del espacio vectorial \(\mathbb {R}^{2\times 2}\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>4</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Dimension-03]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la dimensión del espacio vectorial \( \mathbb {R}_2[x] \), que consiste en todos los polinomios de grado menor o igual a 2? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>3</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Coordenadas y cambio de base</text>
+  </category>
+</question>
+ 
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[CoordVec-01]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la definición correcta de un vector de coordenadas respecto a una base dada? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>El vector de coordenadas de un vector respecto a una base es el conjunto de escalares que, multiplicados por los vectores de la base y sumados, dan como resultado el vector original.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El vector de coordenadas de un vector respecto a una base es simplemente la suma de los vectores de la base.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El vector de coordenadas es el mayor vector que puede ser formado usando los vectores de la base.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El vector de coordenadas de un vector respecto a una base es el vector que resulta de multiplicar cada vector de la base por sí mismo.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[CoordVec-01]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Dado el espacio vectorial \( \mathbb {R}^2 \) y la base \( B = \{(1, 1), (-1, 2)\} \), si \([v]_B = \begin {pmatrix}2\\-2\end {pmatrix}\), ¿cuál es el vector \(v\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\((4, -2)\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\((2,-2)\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\((-4, 2)\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\((-2,2)\)</p>]]></text>
+  </answer>
+</question>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Espacios con producto interno</text>
+  </category>
+</question>
+ 
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[ProdInt-01]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Considera los vectores \( u = (3, -2) \) y \( v = (1, 4) \) en \( \mathbb {R}^2 \). ¿Cuál es el valor del producto interno \( \langle u , v\rangle \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-5</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[ProdInt-02]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Considera las matrices \( A = \begin {pmatrix} 1 & 2 \\ 3 & 4 \end {pmatrix} \) y \( B = \begin {pmatrix} 1 & 0 \\ 2 & 0 \end {pmatrix} \). ¿Cuál es el valor del producto interno \( \langle A , B\rangle \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>7</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Aplicaciones lineales</text>
+  </category>
+</question>
+ 
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[ApLin-01]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué es el núcleo de una aplicación lineal \( T: V \rightarrow W \) entre dos espacios vectoriales \( V \) y \( W \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>El núcleo de \( T \) es el conjunto de todos los vectores \( v \) en \( V \) tales que \( T(v) = 0 \) en \( W \).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El núcleo de \( T \) es el conjunto de todas las imágenes \( w \) en \( W \) tales que existe un \( v \) en \( V \) con \( T(v) = w \).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El núcleo de \( T \) incluye todos los vectores en \( V \) y todas sus imágenes en \( W \).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El núcleo de \( T \) es el conjunto de todos los escalares que se pueden usar para multiplicar vectores en \( V \) para obtener vectores en \( W \).</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[ApLin-02]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué es la imagen de una aplicación lineal \( T: V \rightarrow W \) entre dos espacios vectoriales \( V \) y \( W \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La imagen de \( T \) es el conjunto de todos los vectores \( v \) en \( V \) tales que \( T(v) = 0 \) en \( W \).</p>]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>La imagen de \( T \) es el conjunto de todas las imágenes \( w \) en \( W \) tales que existe un \( v \) en \( V \) con \( T(v) = w \).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La imagen de \( T \) incluye todos los vectores en \( V \) y todas sus imágenes en \( W \).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La imagen de \( T \) es el conjunto de todos los escalares que se pueden usar para multiplicar vectores en \( V \) para obtener vectores en \( W \).</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[ApLin-03]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Dada una aplicación lineal \( T: \mathbb {R}^3 \rightarrow \mathbb {R}^2 \), el núcleo de \(T\) es un subconjunto de </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\mathbb {R}^3\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\mathbb {R}^2\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[ApLin-04]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Dada una aplicación lineal \( T: \mathbb {R}^3 \rightarrow \mathbb {R}^2 \), la imagen de \(T\) es un subconjunto de </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\mathbb {R}^3\)</p>]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\mathbb {R}^2\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[ApLin-05]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Considera la aplicación lineal \( T: \mathbb {R}^3 \rightarrow \mathbb {R}^2 \) definida por \( T(x, y, z) = (x + y, y-z, z+x) \). ¿Cuál de los siguientes vectores es parte del núcleo de \( T \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\((0, 0, 1)\)</p>]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\((1, -1, -1)\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\((1, 0, 1)\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\((-1, -1, -1)\)</p>]]></text>
+  </answer>
+</question>
+ 
+</quiz>

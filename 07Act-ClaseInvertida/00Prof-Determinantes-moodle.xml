@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was generated on 2024-07-01 by XeLaTeX -->
+<!-- running on *NIX with the package moodle v0.9 -->
+
+<quiz>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Cálculo de Determinantes 2 por 2</text>
+  </category>
+</question>
+ 
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[DeterminantesCalc-01]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Calcular el determinante de la matriz \[ A = \begin {pmatrix} 1 & -4\\ 4 & 5 \end {pmatrix} \] </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>21</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[DeterminantesCalc-03]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Calcular el determinante de la matriz \[ C = \begin {pmatrix} 2 & 3\\ 4 & 1 \end {pmatrix} \] </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-10</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[DeterminantesCalc-04]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Calcular el determinante de la matriz \[ D = \begin {pmatrix} -1 & 2\\ 3 & -4 \end {pmatrix} \] </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-10</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[DeterminantesCalc-05]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Calcular el determinante de la matriz \[ E = \begin {pmatrix} 5 & -2\\ 1 & 3 \end {pmatrix} \] </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>17</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[DeterminantesCalc-06]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Calcular el determinante de la matriz \[ F = \begin {pmatrix} 0 & 1\\ -3 & 2 \end {pmatrix} \] </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>3</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[DeterminantesCalc-07]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Calcular el determinante de la matriz \[ G = \begin {pmatrix} 2 & 0\\ -1 & 3 \end {pmatrix} \] </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>6</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Cálculo de Determinantes 3 por 3</text>
+  </category>
+</question>
+ 
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[DeterminantesCalc-08]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Calcular el determinante de la matriz \[ B = \begin {pmatrix} 2 & -1 & 3\\ 0 & 4 & 5\\ 1 & 2 & 3 \end {pmatrix} \] </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>42</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[DeterminantesCalc-09]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Calcular el determinante de la matriz \[ C = \begin {pmatrix} 1 & 2 & 0\\ -4 & 1 & 2\\ 0 & 0 & 1 \end {pmatrix} \] </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>9</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[DeterminantesCalc-10]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Calcular el determinante de la matriz \[ D = \begin {pmatrix} 1 & 2 & 3\\ 4 & 5 & 6\\ 7 & 8 & 9 \end {pmatrix} \] </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[DeterminantesCalc-11]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Calcular el determinante de la matriz \[ E = \begin {pmatrix} 1 & 5 & -1\\ 0 & 2 & 0\\ 0 & 0 & 1 \end {pmatrix} \] </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[DeterminantesCalc-12]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Calcular el determinante de la matriz \[ F = \begin {pmatrix} 1 & 2 & 2\\ 0 & 5 & 0\\ 0 & 0 & -1 \end {pmatrix} \] </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-15</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[DeterminantesCalc-13]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Calcular el determinante de la matriz \[ G = \begin {pmatrix} 1 & 2 & 4\\ 0 & 1 & 0\\ 0 & 0 & 3 \end {pmatrix} \] </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>3</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Clase Invertida Determinantes</text>
+  </category>
+</question>
+ 
+<question type="essay">
+  <name format="html">
+    <text><![CDATA[ClaseInvertida-Chat]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Copia el enlace del chat con ChatGPT como evidencia de la actividad realizada en casa. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <responserequired>0</responserequired>
+  <responseformat>plain</responseformat>
+  <responsefieldlines>5</responsefieldlines>
+  <attachments>0</attachments>
+  <attachmentsrequired>0</attachmentsrequired>
+  <graderinfo format="html"><text><![CDATA[
+    Acceder al enlace.
+  ]]></text></graderinfo>
+  <responsetemplate format="html"><text/></responsetemplate>
+</question>
+<question type="essay">
+  <name format="html">
+    <text><![CDATA[ClaseInvertida-Sol]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En caso de que algún compañero te haya ayudado a resolver tus dudas, indica aquí quién o quienes te ayudaron. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <responserequired>0</responserequired>
+  <responseformat>plain</responseformat>
+  <responsefieldlines>5</responsefieldlines>
+  <attachments>0</attachments>
+  <attachmentsrequired>0</attachmentsrequired>
+  <graderinfo format="html"><text><![CDATA[
+    Solo para registro.
+  ]]></text></graderinfo>
+  <responsetemplate format="html"><text/></responsetemplate>
+</question>
+<question type="essay">
+  <name format="html">
+    <text><![CDATA[ClaseInvertida-Dudas]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué dudas tuviste sobre el cálculo de determinantes? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <responserequired>0</responserequired>
+  <responseformat>plain</responseformat>
+  <responsefieldlines>5</responsefieldlines>
+  <attachments>0</attachments>
+  <attachmentsrequired>0</attachmentsrequired>
+  <graderinfo format="html"><text><![CDATA[
+    Solo para registro.
+  ]]></text></graderinfo>
+  <responsetemplate format="html"><text/></responsetemplate>
+</question>
+ 
+</quiz>

@@ -1,0 +1,1637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was generated on 2024-07-01 by XeLaTeX -->
+<!-- running on *NIX with the package moodle v0.9 -->
+
+<quiz>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Pregunta base</text>
+  </category>
+</question>
+ 
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - [[id]]]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} [[a11]] & [[a12]] & [[a13]] \\ [[a21]] & [[a22]] & [[a23]] \\ [[a31]] & [[a32]] & [[a33]] \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>[[det(Matrix([ [a11, a12, a13], [a21, a22, a23], [a31, a32, a33] ]))]]</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Det Mat 3x3</text>
+  </category>
+</question>
+ 
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 1]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & -1 & 0 \\ -2 & -2 & 1 \\ 0 & 1 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>6</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 2]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & -1 & 0 \\ 1 & 2 & 1 \\ 0 & -1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-3</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 3]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 2 & 0 \\ -1 & 2 & -2 \\ 0 & -1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-16</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 4]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & -2 & 0 \\ -1 & 2 & 1 \\ 0 & -1 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-8</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 5]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & 1 & 0 \\ 1 & -1 & 1 \\ 0 & -2 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 6]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 1 & 0 \\ 2 & -2 & 2 \\ 0 & -1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>10</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 7]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 2 & 0 \\ 1 & 2 & 1 \\ 0 & -2 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>6</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 8]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & -2 & 0 \\ 2 & 1 & -2 \\ 0 & -1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-7</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 9]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & -1 & 0 \\ -2 & 1 & -2 \\ 0 & -2 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 10]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & -1 & 0 \\ -2 & -1 & 1 \\ 0 & -1 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 11]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 2 & 0 \\ 1 & 1 & 2 \\ 0 & 1 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-4</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 12]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & 1 & 0 \\ -1 & 2 & 2 \\ 0 & -1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-4</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 13]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & 1 & 0 \\ -1 & 1 & 2 \\ 0 & 2 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>9</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 14]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & 2 & 0 \\ 2 & 2 & 2 \\ 0 & 2 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-8</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 15]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & 2 & 0 \\ 1 & -2 & 2 \\ 0 & 1 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-6</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 16]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & -1 & 0 \\ -1 & 1 & 2 \\ 0 & -1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 17]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & -1 & 0 \\ -1 & 2 & -2 \\ 0 & 2 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>14</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 18]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & -2 & 0 \\ -1 & 2 & -2 \\ 0 & -2 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>12</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 19]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & 2 & 0 \\ -1 & -1 & 2 \\ 0 & -2 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>6</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 20]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & -2 & 0 \\ -2 & 2 & -1 \\ 0 & 1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 21]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & -1 & 0 \\ -1 & 2 & 1 \\ 0 & 1 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>4</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 22]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & -1 & 0 \\ -2 & -1 & -2 \\ 0 & 2 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>7</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 23]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & -2 & 0 \\ -1 & 1 & -1 \\ 0 & -2 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-4</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 24]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 1 & 0 \\ 1 & -1 & 2 \\ 0 & 1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-1</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 25]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & -1 & 0 \\ 1 & -1 & -1 \\ 0 & 1 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>3</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 26]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & -1 & 0 \\ 1 & 2 & -2 \\ 0 & 2 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 27]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & 2 & 0 \\ 1 & -1 & 1 \\ 0 & 1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 28]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & -2 & 0 \\ -1 & -2 & -2 \\ 0 & -1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 29]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 1 & 0 \\ 1 & -1 & 2 \\ 0 & 2 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 30]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & 2 & 0 \\ 1 & 1 & 1 \\ 0 & -1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>5</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 31]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 1 & 0 \\ -2 & -1 & -2 \\ 0 & -1 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-4</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 32]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & -2 & 0 \\ -2 & -2 & -2 \\ 0 & -1 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-20</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 33]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & -1 & 0 \\ -1 & 1 & 1 \\ 0 & 1 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-1</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 34]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & -2 & 0 \\ -2 & 1 & -2 \\ 0 & -1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>16</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 35]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & 2 & 0 \\ 1 & -2 & 1 \\ 0 & 1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 36]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & -2 & 0 \\ -1 & -2 & 1 \\ 0 & -1 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-1</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 37]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & 1 & 0 \\ -2 & 2 & 2 \\ 0 & -1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 38]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & -1 & 0 \\ 1 & 2 & -2 \\ 0 & -1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-8</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 39]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & 2 & 0 \\ 1 & 2 & -1 \\ 0 & 2 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 40]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & 2 & 0 \\ 1 & 1 & 2 \\ 0 & 2 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 41]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & 1 & 0 \\ -2 & -2 & 2 \\ 0 & 2 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-4</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 42]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 1 & 0 \\ -1 & 1 & 1 \\ 0 & 2 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-1</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 43]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & -1 & 0 \\ 2 & 2 & -2 \\ 0 & 2 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>20</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 44]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 2 & 0 \\ -2 & -2 & 1 \\ 0 & 1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 45]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & 1 & 0 \\ -2 & -1 & -1 \\ 0 & -2 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 46]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & 1 & 0 \\ -1 & 1 & -2 \\ 0 & 2 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>8</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 47]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & -1 & 0 \\ -2 & -2 & -2 \\ 0 & -1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 48]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & 2 & 0 \\ -2 & 1 & 2 \\ 0 & -1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-5</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 49]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & -1 & 0 \\ -2 & 2 & -1 \\ 0 & 1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 50]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & 2 & 0 \\ 1 & 1 & -2 \\ 0 & -2 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 51]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & -1 & 0 \\ -2 & 1 & 2 \\ 0 & 1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>8</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 52]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & -1 & 0 \\ -2 & -2 & -1 \\ 0 & -2 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 53]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 2 & 0 \\ 2 & 1 & -1 \\ 0 & -2 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 54]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & -1 & 0 \\ 1 & 1 & -2 \\ 0 & 2 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 55]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & 1 & 0 \\ -1 & -2 & 2 \\ 0 & 1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-6</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 56]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & 1 & 0 \\ 1 & -1 & -1 \\ 0 & 2 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-6</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 57]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & -2 & 0 \\ 2 & -2 & 1 \\ 0 & 1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-11</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 58]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & -2 & 0 \\ -1 & -2 & 2 \\ 0 & -1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>16</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 59]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & 2 & 0 \\ 2 & 2 & 1 \\ 0 & -1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>5</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 60]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & 2 & 0 \\ 1 & -1 & 2 \\ 0 & -1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-4</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 61]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & 2 & 0 \\ -2 & -1 & -1 \\ 0 & 2 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-10</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 62]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 1 & 0 \\ -2 & 1 & -2 \\ 0 & -1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-12</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 63]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & -1 & 0 \\ -1 & -1 & -2 \\ 0 & 1 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 64]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & 1 & 0 \\ -2 & -1 & 2 \\ 0 & -2 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-10</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 65]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & 2 & 0 \\ -2 & 1 & 1 \\ 0 & -2 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-3</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 66]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & -1 & 0 \\ 2 & -1 & 2 \\ 0 & -1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>4</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 67]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & -1 & 0 \\ -1 & -2 & -2 \\ 0 & -2 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 68]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 1 & 0 \\ -1 & -2 & -2 \\ 0 & 1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>7</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 69]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & 2 & 0 \\ 2 & -1 & 1 \\ 0 & 1 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-5</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 70]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & -2 & 0 \\ 2 & -2 & 1 \\ 0 & 1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-3</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 71]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & -2 & 0 \\ 1 & -1 & -1 \\ 0 & 2 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 72]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & -1 & 0 \\ 1 & 2 & -1 \\ 0 & -1 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-1</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 73]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & 2 & 0 \\ 2 & -1 & -2 \\ 0 & 1 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-8</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 74]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & -2 & 0 \\ 1 & -2 & 1 \\ 0 & 2 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 75]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 1 & 0 \\ 1 & -1 & -1 \\ 0 & -1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 76]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & -1 & 0 \\ 1 & 1 & 2 \\ 0 & 1 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 77]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & -1 & 0 \\ -1 & -2 & -1 \\ 0 & 2 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-4</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 78]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & -1 & 0 \\ 1 & -1 & -2 \\ 0 & 2 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 79]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & -1 & 0 \\ 1 & 1 & -2 \\ 0 & 1 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 80]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 2 & 0 \\ -1 & -1 & 2 \\ 0 & -1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>4</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 81]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & 2 & 0 \\ -2 & -1 & 2 \\ 0 & 2 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-7</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 82]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & 1 & 0 \\ -1 & 2 & 2 \\ 0 & 2 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-7</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 83]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & -1 & 0 \\ 2 & 1 & 1 \\ 0 & -1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-6</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 84]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & 2 & 0 \\ -2 & 1 & 1 \\ 0 & -2 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-5</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 85]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & -2 & 0 \\ -2 & 1 & 1 \\ 0 & -1 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>10</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 86]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & -1 & 0 \\ -1 & 1 & -1 \\ 0 & -1 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-4</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 87]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & 1 & 0 \\ 1 & -1 & 2 \\ 0 & -2 & 2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 88]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & 1 & 0 \\ -2 & 2 & 1 \\ 0 & -2 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>6</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 89]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & 2 & 0 \\ 2 & -2 & -2 \\ 0 & 2 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-6</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 90]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -2 & 1 & 0 \\ 1 & -2 & 2 \\ 0 & 1 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>7</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 91]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & -2 & 0 \\ -1 & 1 & -2 \\ 0 & -2 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-3</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 92]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 1 & 0 \\ -1 & -1 & -1 \\ 0 & 1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>3</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 93]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & -2 & 0 \\ 2 & 2 & -1 \\ 0 & -2 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-20</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 94]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & -1 & 0 \\ -2 & -1 & -2 \\ 0 & -2 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>6</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 95]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & -2 & 0 \\ -1 & 2 & 2 \\ 0 & 2 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-6</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 96]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 2 & 0 \\ 2 & -1 & 2 \\ 0 & -1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>10</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 97]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} -1 & 2 & 0 \\ 1 & 2 & 1 \\ 0 & -1 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-5</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 98]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 1 & -2 & 0 \\ 1 & 2 & -2 \\ 0 & -1 & 1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 99]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 2 & 0 \\ -1 & 2 & -2 \\ 0 & -1 & -1 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-10</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Det Mat 3x3 - 100]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} 2 & 2 & 0 \\ 2 & 2 & 2 \\ 0 & 2 & -2 \end {pmatrix} \] es: </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-8</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+ 
+</quiz>

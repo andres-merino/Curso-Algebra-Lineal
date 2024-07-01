@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was generated on 2024-07-01 by XeLaTeX -->
+<!-- running on *NIX with the package moodle v0.9 -->
+
+<quiz>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Clase Invertida Aplicacion Lineal</text>
+  </category>
+</question>
+ 
+<question type="essay">
+  <name format="html">
+    <text><![CDATA[ClaseInvertida-Chat]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Copia el enlace del chat con ChatGPT como evidencia de la actividad realizada en casa. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <responserequired>0</responserequired>
+  <responseformat>plain</responseformat>
+  <responsefieldlines>5</responsefieldlines>
+  <attachments>0</attachments>
+  <attachmentsrequired>0</attachmentsrequired>
+  <graderinfo format="html"><text><![CDATA[
+    Acceder al enlace.
+  ]]></text></graderinfo>
+  <responsetemplate format="html"><text/></responsetemplate>
+</question>
+<question type="essay">
+  <name format="html">
+    <text><![CDATA[ClaseInvertida-Sol]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En caso de que algún compañero te haya ayudado a resolver tus dudas, indica aquí quién o quienes te ayudaron. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <responserequired>0</responserequired>
+  <responseformat>plain</responseformat>
+  <responsefieldlines>5</responsefieldlines>
+  <attachments>0</attachments>
+  <attachmentsrequired>0</attachmentsrequired>
+  <graderinfo format="html"><text><![CDATA[
+    Solo para registro.
+  ]]></text></graderinfo>
+  <responsetemplate format="html"><text/></responsetemplate>
+</question>
+<question type="essay">
+  <name format="html">
+    <text><![CDATA[ClaseInvertida-Dudas]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué dudas tienes sobre determinar si una función es o no una aplicación lineal? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <responserequired>0</responserequired>
+  <responseformat>plain</responseformat>
+  <responsefieldlines>5</responsefieldlines>
+  <attachments>0</attachments>
+  <attachmentsrequired>0</attachmentsrequired>
+  <graderinfo format="html"><text><![CDATA[
+    Solo para registro.
+  ]]></text></graderinfo>
+  <responsetemplate format="html"><text/></responsetemplate>
+</question>
+ 
+</quiz>

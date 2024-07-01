@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was generated on 2024-07-01 by XeLaTeX -->
+<!-- running on *NIX with the package moodle v0.9 -->
+
+<quiz>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Control - Coordenadas y cambio de base</text>
+  </category>
+</question>
+ 
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Q1]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué afirmación es verdadera respecto a la representación de coordenadas en \(\mathbb {R}^n\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Todo vector \(x\) en un espacio vectorial \(V\) puede expresarse de manera única como una combinación lineal de vectores en una base \(B\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Todo vector en \(\mathbb {R}^n\) tiene la misma representación de coordenadas en cualquier base.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Las coordenadas de un vector en \(\mathbb {R}^n\) siempre corresponden a sus componentes en la base estándar.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La representación de coordenadas no depende del orden de los vectores en la base.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Q2]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la matriz de coordenadas del vector \(x = (–2, 1, 3)\) en \(\mathbb {R}^3\) con respecto a la base estándar? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix} -2 \\ 1 \\ 3 \end {pmatrix}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix} 2 \\ 1 \\ 3 \end {pmatrix}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix} 1 \\ -2 \\ 3 \end {pmatrix}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix} 3 \\ 1 \\ -2 \end {pmatrix}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Q3]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En el proceso de cambio de base, ¿qué representa la matriz \(P\) en la ecuación matricial \(x_{B} = P x_{B&rsquo;}\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>La matriz de transición de \(B&rsquo;\) a \(B\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La matriz de coordenadas de \(x\) relativa a \(B\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La matriz de coordenadas de \(x\) relativa a \(B&rsquo;\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La inversa de la matriz de transición de \(B\) a \(B&rsquo;\).</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Q4]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué propiedad tiene la matriz de transición \(P\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(P\) es invertible y \(P^{-1}\) es la matriz de transición de \(B\) a \(B&rsquo;\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(P\) no es invertible en la mayoría de los casos.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(P\) y \(P^{-1}\) representan la misma transición de bases.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(P\) siempre es igual a la matriz identidad independientemente de las bases.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Q5]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué método se utiliza para encontrar la matriz de transición \(P^{-1}\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Eliminación de Gauss-Jordan en la matriz \([B&rsquo; \; B]\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Multiplicación directa de las matrices \(B\) y \(B&rsquo;\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Suma de las matrices de las bases \(B\) y \(B&rsquo;\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Inversión de la matriz de coordenadas de \(x\).</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Q7]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es el propósito del cambio de base en espacios vectoriales? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Encontrar las coordenadas de un vector relativas a otra base.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Cambiar las dimensiones del espacio vectorial.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Simplificar las operaciones de vectores para cálculos básicos.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Identificar las bases que no son estándar.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Q8]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la representación de coordenadas de \(p = 3x^3 - 2x^2 + 4\) en \(P_3\) con respecto a la base estándar \(S = \{1, x, x^2, x^3\}\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix} 4 \\ 0 \\ -2 \\ 3 \end {pmatrix}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix} 3 \\ -2 \\ 4 \\ 0 \end {pmatrix}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix} 0 \\ 4 \\ -2 \\ 3 \end {pmatrix}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix} -2 \\ 3 \\ 4 \\ 0 \end {pmatrix}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Q9]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cómo se generaliza el concepto de coordenadas para representar vectores en espacios \(n\)-dimensionales? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Permite representar vectores de cualquier espacio n-dimensional usando la notación de \(\mathbb {R}^n\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Restringe el uso de coordenadas a los espacios vectoriales que son isomorfos a \(\mathbb {R}^n\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Elimina la necesidad de bases para definir las coordenadas de un vector.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Solo permite representar vectores en espacios de dimensiones superiores a \(\mathbb {R}^3\).</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Q10]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>De acuerdo con el teorema 4.21, ¿cómo se determina la matriz de transición \(P^{-1}\) de una base \(B\) a otra base \(B&rsquo;\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Mediante la eliminación de Gauss-Jordan aplicada a la matriz \([B&rsquo; \; B]\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Utilizando la multiplicación matricial entre las matrices de las bases \(B\) y \(B&rsquo;\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Sumando las matrices de las bases \(B\) y \(B&rsquo;\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Calculando la inversa de la matriz de coordenadas del vector \(x\).</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Q11]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué afirmación describe correctamente el proceso de cambio de base de una base no estándar a una base estándar en \(\mathbb {R}^n\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>La matriz de transición puede ser más sencilla de determinar debido a la estructura de la base estándar.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Siempre se requiere la inversión de la matriz de coordenadas del vector para completar el cambio de base.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>No es necesario conocer las coordenadas del vector en la base original.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El cambio de base de una base no estándar a una estándar es matemáticamente imposible.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Q13]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cómo se representa la matriz de coordenadas de un vector en el espacio de polinomios de grado menor o igual a 3? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Como un vector en \(\mathbb {R}^4\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Como un vector en \(\mathbb {R}^3\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Como una matriz 3x3 en \(\mathbb {R}^3\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Como un polinomio de grado 3.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Q14]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En el contexto de las coordenadas y el cambio de base, ¿qué importancia tiene el orden de los vectores en una base? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>El orden es crucial porque afecta la representación de las coordenadas del vector.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El orden de los vectores en una base es irrelevante y no afecta las coordenadas.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Solo es importante en bases estándar y no en bases no estándar.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Afecta únicamente la visualización gráfica, pero no las operaciones matemáticas.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Q15]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué método se utiliza para determinar la matriz de transición \(P^{-1}\) de una base \(B\) a otra base \(B&rsquo;\), según el Teorema 4.21? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Eliminación de Gauss-Jordan en la matriz aumentada \([B&rsquo; | B]\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Factorización LU de la matriz \([B&rsquo; | B]\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Descomposición en valores singulares de la matriz \([B&rsquo; | B]\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Multiplicación directa de las matrices \(B\) y \(B&rsquo;\).</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Q16]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la principal ventaja de representar coordenadas en espacios \(n\)-dimensionales generales, según el texto? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Permite la representación de vectores de un espacio \(n\)-dimensional arbitrario con la misma notación usada en \(\mathbb {R}^n\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Facilita el cálculo de dimensiones adicionales en espacios \(n\)-dimensionales.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Reduce la complejidad computacional de las operaciones vectoriales en dimensiones altas.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Elimina la necesidad de bases para definir coordenadas en espacios vectoriales.</p>]]></text>
+  </answer>
+</question>
+ 
+</quiz>

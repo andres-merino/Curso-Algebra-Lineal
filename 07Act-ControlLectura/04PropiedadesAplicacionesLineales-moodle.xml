@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was generated on 2024-07-01 by XeLaTeX -->
+<!-- running on *NIX with the package moodle v0.9 -->
+
+<quiz>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Control - Propiedades Aplicacion Lineal</text>
+  </category>
+</question>
+ 
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P2]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de las siguientes afirmaciones sobre la operación suma de aplicaciones lineales es correcta? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Si \( f \) y \( g \) son aplicaciones lineales de \( V \) en \( W \), entonces \( (f + g)(v) = f(v) + g(v) \)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Si \( f \) y \( g \) son aplicaciones lineales de \( V \) en \( W \), entonces \( (f + g)(v) = f(g(v)) \)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Si \( f \) y \( g \) son aplicaciones lineales de \( V \) en \( W \), entonces \( (f + g)(v) = fg(v) \)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Si \( f \) y \( g \) son aplicaciones lineales de \( V \) en \( W \), entonces \( (f + g)(v) = f(v) - g(v) \)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P3]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es el resultado de la composición \( g \circ f \) si \( f \) y \( g \) son aplicaciones lineales entre los espacios indicados y sus matrices son \( A \) y \( B \), respectivamente? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>La matriz de \( g \circ f \) es \( BA \)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La matriz de \( g \circ f \) es \( AB \)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La matriz de \( g \circ f \) es \( A + B \)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La matriz de \( g \circ f \) es \( A - B \)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P4]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué característica debe tener una aplicación lineal para que sea invertible? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>La aplicación debe ser biyectiva</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La aplicación debe ser solo inyectiva</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La aplicación debe ser solo sobreyectiva</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Ninguna de las anteriores es necesaria</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P5]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la propiedad de la inversa de una aplicación lineal? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\( f^{-1}(\alpha x + \beta y) = \alpha f^{-1}(x) + \beta f^{-1}(y) \)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\( f^{-1}(\alpha x + \beta y) = \alpha f(x) + \beta f(y) \)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\( f^{-1}(\alpha x + \beta y) = f(\alpha x + \beta y) \)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\( f^{-1}(\alpha x + \beta y) = f^{-1}(\alpha ) + f^{-1}(\beta ) \)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P6]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si \( A \) es la matriz asociada a la aplicación biyectiva \( f : V \rightarrow W \), ¿cuál es la matriz asociada a la inversa de \( f \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\( A^{-1} \)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\( A^{T} \)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\( 2A \)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\( A^2 \)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P7]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué conjunto se denomina kernel de una transformación lineal \(T: V \rightarrow W\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>El conjunto de todos los vectores en \(V\) que son mapeados al vector cero en \(W\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El conjunto de todos los vectores en \(W\) que son mapeados al vector cero en \(V\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El conjunto de todos los vectores en \(V\) que son mapeados a ellos mismos en \(W\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El conjunto de todas las transformaciones posibles de \(V\) a \(W\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P8]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de las siguientes afirmaciones sobre el rango de una transformación lineal \(T: V \rightarrow W\) es correcta? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>El rango de \(T\) es un subespacio de \(W\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El rango de \(T\) es un subespacio de \(V\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El rango de \(T\) incluye todos los vectores de \(V\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El rango de \(T\) es siempre igual a la dimensión de \(V\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P9]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Bajo qué condición una transformación lineal \(T: V \rightarrow W\) es inyectiva? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(T\) es uno a uno si y solo si el kernel de \(T\) contiene únicamente el vector cero</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(T\) es uno a uno si el kernel de \(T\) incluye al menos un vector diferente de cero</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(T\) es uno a uno si su rango es igual al dominio \(V\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(T\) es uno a uno si cada vector en \(V\) tiene una preimagen única en \(W\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P10]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la relación entre la dimensión del dominio \(V\) y la suma de las dimensiones de la imagen y el kernel de una transformación lineal \(T: V \rightarrow W\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>La dimensión del dominio es igual a la suma de las dimensiones de la imagen y el kernel</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La dimensión del dominio es mayor que la suma de las dimensiones de la imagen y el kernel</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La dimensión del dominio es menor que la suma de las dimensiones de la imagen y el kernel</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>No existe relación entre la dimensión del dominio y la suma de las dimensiones de la imagen y el kernel</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P11]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si una transformación lineal \(T: V \rightarrow W\) es un isomorfismo, ¿qué se puede afirmar sobre las dimensiones de \(V\) y \(W\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(V\) y \(W\) tienen la misma dimensión</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(V\) tiene una dimensión mayor que \(W\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(W\) tiene una dimensión mayor que \(V\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Las dimensiones de \(V\) y \(W\) no están relacionadas</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P12]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué es una transformación lineal en el contexto de álgebra lineal? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Una función que toma un vector y devuelve otro, manteniendo líneas rectas y el origen fijo.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Una función que convierte vectores en matrices.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Una operación que siempre curva las líneas y mueve el origen.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Una transformación que convierte matrices en vectores.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P13]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cómo se visualiza una transformación lineal? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Imaginando los puntos de una cuadrícula infinita moviéndose hacia nuevos puntos sin cambiar su paralelismo o distancia relativa.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Pensando en vectores como flechas que apuntan de un espacio a otro.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Visualizando cómo los vectores se curvan y el espacio se distorsiona.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Considerando solo los vectores que se mueven hacia la derecha o hacia arriba.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P14]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué característica clave debe cumplir una transformación para ser considerada lineal? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Las líneas de la cuadrícula deben permanecer paralelas y a la misma distancia unas de otras.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Todas las líneas deben converger en el origen.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Las líneas rectas deben convertirse en curvas.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El origen debe desplazarse a una nueva posición.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P15]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cómo se pueden describir numéricamente las transformaciones lineales? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>A través de las coordenadas de los vectores de la base después de la transformación, organizadas en una matriz.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Usando una serie de funciones trigonométricas para calcular las nuevas posiciones.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Mediante el cálculo diferencial de cada componente del vector.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Con un conjunto de ecuaciones diferenciales que describen el movimiento de cada punto.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P16]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es un método para pensar en el producto de matrices? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Como la combinación lineal de los vectores de la base transformados, donde cada columna de la matriz representa el resultado de aplicar la transformación a cada vector de la base.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Memorizar las reglas de multiplicación de matrices sin entender el significado subyacente.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Visualizando el producto de matrices como una serie de operaciones aritméticas sin relación geométrica.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Ignorando las propiedades espaciales y concentrándose solo en los cálculos numéricos.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P17]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Por qué se suele trabajar principalmente en dos dimensiones? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Porque es más fácil visualizar y entender los conceptos en dos dimensiones antes de extenderlos a dimensiones superiores.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Porque las transformaciones en dos dimensiones son más complejas y requieren mayor atención.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Porque las matrices en dos dimensiones son más fáciles de calcular que en tres dimensiones.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Porque las transformaciones en dos dimensiones son menos útiles en aplicaciones prácticas.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P18]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cómo se puede visualizar una transformación que maneja vectores tridimensionales? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Moviendo puntos en un espacio tridimensional de manera que las líneas de las cuadrículas se mantengan paralelas y el origen fijo.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Utilizando simulaciones computacionales que generan imágenes en 4D.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Ignorando las dimensiones y enfocándose solo en los cambios de magnitud de los vectores.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Representando cada vector como un punto en un plano bidimensional.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P19]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cómo se describen completamente las transformaciones tridimensionales? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Especificando a dónde van a parar los tres vectores de la base unitaria y organizando estas coordenadas en una matriz de tres por tres.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Definiendo la orientación y longitud de cada vector después de la transformación.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Calculando el producto cruz de cada vector con los vectores unitarios estándar.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Usando una serie de transformaciones lineales en dos dimensiones.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[P21]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Por qué son importantes las matrices de tres dimensiones en campos como el diseño gráfico computacional y la robótica? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Porque permiten describir transformaciones complejas como rotaciones en tres dimensiones de manera más comprensible y descomponible.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Porque simplifican las ecuaciones necesarias para renderizar gráficos en tres dimensiones.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Porque reducen el costo computacional al trabajar con grandes volúmenes de datos.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Porque permiten una mayor precisión en la modelación de fenómenos físicos en simulaciones.</p>]]></text>
+  </answer>
+</question>
+ 
+</quiz>

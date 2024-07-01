@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was generated on 2024-07-01 by XeLaTeX -->
+<!-- running on *NIX with the package moodle v0.9 -->
+
+<quiz>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Control Espacios Vectoriales</text>
+  </category>
+</question>
+ 
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Contr. Espacio Vectorial 1]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>{¿Qué es un espacio vectorial?} </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Un conjunto \(V\) junto con dos operaciones (suma de vectores y producto por escalar) que cumple ciertas propiedades.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Un conjunto de vectores sin ninguna operación definida.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Una colección de objetos que pueden sumarse entre sí o multiplicarse por números, sin reglas específicas.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Una estructura matemática que incluye únicamente la operación de suma de vectores.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Contr. Espacio Vectorial 2]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>{Según el texto, ¿cuál de las siguientes opciones describe correctamente al cuerpo \(\mathbb {K}\) en el contexto de espacios vectoriales?} </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\mathbb {K}\) puede ser el conjunto de los números reales \(\mathbb {R}\) o el conjunto de los números complejos \(\mathbb {C}\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\mathbb {K}\) es exclusivamente el conjunto de los números enteros.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\mathbb {K}\) representa cualquier conjunto de matrices.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\mathbb {K}\) es un vector específico dentro del espacio vectorial.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Contr. Espacio Vectorial 3]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>{¿Cuál de las siguientes propiedades NO es requerida para que un conjunto \(V\) sea considerado un espacio vectorial?} </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La multiplicación de un vector por un escalar está bien definida.</p>]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Todos los vectores en \(V\) deben tener magnitud unitaria.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La suma de vectores en \(V\) está bien definida y es cerrada dentro de \(V\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Existe un vector cero que actúa como el elemento neutro en la suma de vectores.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Contr. Espacio Vectorial 4]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>{¿Qué se afirma sobre los elementos neutros y opuestos en un espacio vectorial?} </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>El elemento neutro y el opuesto en un espacio vectorial son únicos.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Hay múltiples elementos neutros y opuestos para cualquier espacio vectorial.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El elemento neutro y el opuesto pueden variar dependiendo del vector en cuestión.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>No existen elementos neutros ni opuestos en los espacios vectoriales.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Contr. Espacio Vectorial 5]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>{De acuerdo con el texto, ¿cuál de los siguientes conjuntos NO es un ejemplo de un espacio vectorial?} </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Los polinomios de grado \(n\) con coeficientes reales.</p>]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>El conjunto de polinomios con coeficientes reales de grado exactamente \(n\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Las matrices de tamaño \(m\times n\) sobre el cuerpo \(\mathbb {K}\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Las secuencias reales infinitas.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Contr. Espacio Vectorial 6]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>{¿Cuál de las siguientes opciones es una condición necesaria para que un conjunto \(V\) sea un espacio vectorial?} </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(V\) contiene un vector cero \(0\) tal que para todo \(u\) en \(V\), \(u + 0 = u\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(V\) contiene al menos un vector cuyo módulo es 1.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Todos los vectores en \(V\) deben ser ortogonales entre sí.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La suma de cualquier par de vectores en \(V\) debe resultar en un vector cuyo módulo es igual a la suma de los módulos de los vectores originales.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Contr. Espacio Vectorial 7]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>{¿Cuál de las siguientes afirmaciones es verdadera para cualquier elemento \(v\) de un espacio vectorial \(V\) y cualquier escalar \(c\)?} </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Si \(cv = 0\), entonces \(c = 0\) o \(v = 0\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Si \(cv = 0\), entonces \(c\) y \(v\) deben ser ambos distintos de cero.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La multiplicación de cualquier vector por cero siempre resulta en un vector cuyo módulo es 1.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Un vector multiplicado por su inverso aditivo siempre da como resultado el vector cero.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Contr. Espacio Vectorial 8]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>{¿Cuál de los siguientes conjuntos no forma un espacio vectorial debido a la falta de cerradura bajo la suma?} </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>El conjunto de todos los polinomios de grado exactamente 2.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El conjunto de todos los polinomios de grado menor o igual que 2.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El conjunto de todas las matrices de 2\(\times \) 3.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El conjunto de todas las funciones continuas definidas sobre toda la recta numérica.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Contr. Espacio Vectorial 9]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>{¿Cuál es el vector cero en el espacio vectorial de todos los polinomios de grado menor o igual que 2, \(P_2\)?} </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El polinomio \(p(x) = 1\).</p>]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>El polinomio \(p(x) = 0\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El polinomio \(p(x) = x^2\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El polinomio \(p(x) = x\).</p>]]></text>
+  </answer>
+</question>
+ 
+</quiz>

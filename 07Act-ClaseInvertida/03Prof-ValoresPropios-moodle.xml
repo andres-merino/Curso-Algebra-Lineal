@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was generated on 2024-07-01 by XeLaTeX -->
+<!-- running on *NIX with the package moodle v0.9 -->
+
+<quiz>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Valores propios</text>
+  </category>
+</question>
+ 
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 1]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 1 & 1 \\ 1 & 0 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1.618</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Clase Invertida Valores propios</text>
+  </category>
+</question>
+ 
+<question type="essay">
+  <name format="html">
+    <text><![CDATA[ClaseInvertida-Chat]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Copia el enlace del chat con ChatGPT como evidencia de la actividad realizada en casa. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <responserequired>0</responserequired>
+  <responseformat>plain</responseformat>
+  <responsefieldlines>5</responsefieldlines>
+  <attachments>0</attachments>
+  <attachmentsrequired>0</attachmentsrequired>
+  <graderinfo format="html"><text><![CDATA[
+    Acceder al enlace.
+  ]]></text></graderinfo>
+  <responsetemplate format="html"><text/></responsetemplate>
+</question>
+<question type="essay">
+  <name format="html">
+    <text><![CDATA[ClaseInvertida-Sol]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Alguna pregunta que ChatGPT no te supo responder? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <responserequired>0</responserequired>
+  <responseformat>plain</responseformat>
+  <responsefieldlines>5</responsefieldlines>
+  <attachments>0</attachments>
+  <attachmentsrequired>0</attachmentsrequired>
+  <graderinfo format="html"><text><![CDATA[
+    Solo para registro.
+  ]]></text></graderinfo>
+  <responsetemplate format="html"><text/></responsetemplate>
+</question>
+<question type="essay">
+  <name format="html">
+    <text><![CDATA[ClaseInvertida-Dudas]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué dudas tienes sobre calcular los valores propios de una matrix? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <responserequired>0</responserequired>
+  <responseformat>plain</responseformat>
+  <responsefieldlines>5</responsefieldlines>
+  <attachments>0</attachments>
+  <attachmentsrequired>0</attachmentsrequired>
+  <graderinfo format="html"><text><![CDATA[
+    Solo para registro.
+  ]]></text></graderinfo>
+  <responsetemplate format="html"><text/></responsetemplate>
+</question>
+ 
+</quiz>

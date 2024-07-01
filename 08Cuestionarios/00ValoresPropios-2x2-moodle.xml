@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was generated on 2024-07-01 by XeLaTeX -->
+<!-- running on *NIX with the package moodle v0.9 -->
+
+<quiz>
+ 
+<question type="category">
+  <category>
+    <text>$course$/top/Valores propios 2 por 2</text>
+  </category>
+</question>
+ 
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 1]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 1 & 1 \\ 1 & 0 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1.618</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 2]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} -2 & -2 \\ 2 & -1 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-1.500</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 3]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 0 & 1 \\ 2 & 2 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>2.732</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 4]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 1 & -2 \\ -1 & 0 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>2.000</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 5]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 1 & 1 \\ 2 & -2 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1.562</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 6]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} -2 & -2 \\ -1 & 0 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0.7320</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 7]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} -1 & -1 \\ -1 & -2 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-0.3820</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 8]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 0 & 2 \\ 2 & -1 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1.562</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 9]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 1 & -2 \\ 1 & -1 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 10]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} -1 & 2 \\ -2 & 0 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-0.5000</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 11]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 2 & -2 \\ 1 & 2 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>2.000</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 12]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} -1 & -2 \\ -2 & 0 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1.562</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 13]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} -2 & -2 \\ 2 & 0 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-1.000</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 14]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 1 & -1 \\ -1 & -1 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1.414</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 15]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 1 & -2 \\ 1 & -2 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 16]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 0 & -2 \\ -1 & 0 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1.414</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 17]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} -2 & -1 \\ 2 & 1 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 18]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} -1 & 1 \\ -1 & 0 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-0.5000</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 19]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 2 & 2 \\ -2 & -1 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0.5000</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 20]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 0 & -1 \\ -2 & 2 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>2.732</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 21]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} -2 & -1 \\ -2 & 0 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0.7320</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 22]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 0 & 1 \\ 2 & -2 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0.7320</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 23]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} -2 & 2 \\ 1 & -1 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 24]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 1 & 2 \\ -1 & 1 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1.000</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Valores propios 2 por 2 - 25]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Determine los valores propios de la matriz \[ A = \begin {pmatrix} 0 & -1 \\ -2 & -1 \end {pmatrix}. \] Escriba en forma decimal, con 2 decimales, el valor propio más grande. En caso de ser un número complejo, tome en cuenta solo la parte real. </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1.000</text>
+    <tolerance>0.01</tolerance>
+  </answer>
+</question>
+ 
+</quiz>
