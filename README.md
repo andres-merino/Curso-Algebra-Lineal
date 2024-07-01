@@ -142,11 +142,9 @@ Si deseas aportar directamente al curso, sigue estos pasos:
 
 ## Licencia
 
-Distribuido bajo la licencia CC BY-NC 4.0. 
+Distribuido bajo la licencia MIT. 
 
-[![CC BY-NC 4.0. License][license-shield]][license-url]
-
-
+[![MIT License][license-shield]][license-url]
 
 
 
@@ -161,7 +159,7 @@ Distribuido bajo la licencia CC BY-NC 4.0.
 [issues-shield]: https://img.shields.io/github/issues/andres-merino/Curso-Algebra-Lineal.svg?style=for-the-badge
 [issues-url]: https://github.com/andres-merino/Curso-Algebra-Lineal/issues
 [license-shield]: https://img.shields.io/github/license/andres-merino/Curso-Algebra-Lineal.svg?style=for-the-badge
-[license-url]: https://creativecommons.org/licenses/by-nc/4.0/deed.en
+[license-url]: https://es.wikipedia.org/wiki/Licencia_MIT
 [linkedin-shield]: https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url-aemt]: https://www.linkedin.com/in/andrés-merino-010a9b12b/
 [LaTeX]: https://img.shields.io/badge/LaTeX-008080?logo=latex&logoColor=fff&style=for-the-badge
