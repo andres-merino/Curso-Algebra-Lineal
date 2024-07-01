@@ -58,7 +58,7 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add -f **/*.pdf
-        git commit -m "chore: se agregan los PDFs compilados ♻️" || echo "No changes to commit"
+        git commit -m "chore: se agregan los PDFs compilados :wrench:" || echo "No changes to commit"
         git push
 
     - name: Check for XML files
@@ -76,5 +76,5 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add -f **/*.xml
-        git commit -m "chore: se agregan los PDFs y XMLs compilados ♻️" || echo "No changes to commit"
+        git commit -m "chore: se agregan los PDFs y XMLs compilados :wrench:" || echo "No changes to commit"
         git push
